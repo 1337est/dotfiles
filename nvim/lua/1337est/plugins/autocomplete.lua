@@ -43,6 +43,17 @@ return {
 		local luasnip = require("luasnip")
 		luasnip.config.setup({})
 
+		-- Defines a C++ snippet for function documentation
+		luasnip.add_snippets("cpp", {
+			luasnip.snippet("docf", {
+				luasnip.text_node("/* "),
+				luasnip.insert_node(1, "Function summary"),
+				luasnip.text_node({ "", " *", " * " }),
+				luasnip.insert_node(2, "Function description"),
+				luasnip.text_node({ "", " */" }),
+			}),
+		})
+
 		cmp.setup({
 			snippet = {
 				expand = function(args)
@@ -69,12 +80,6 @@ return {
 				--  This will auto-import if your LSP supports it.
 				--  This will expand snippets if the LSP sent a snippet.
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
-
-				-- If you prefer more traditional completion keymaps,
-				-- you can uncomment the following lines
-				-- ["<CR>"] = cmp.mapping.confirm({ select = true }),
-				-- ["<Tab>"] = cmp.mapping.select_next_item(),
-				-- ["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
 				-- Manually trigger a completion from nvim-cmp.
 				--  Generally you don't need this, because nvim-cmp will display

@@ -27,6 +27,12 @@ return {
 					no_ignore_parent = true,
 				},
 			},
+			defaults = {
+				file_ignore_patterns = {
+					"undodir",
+					"node_modules",
+				},
+			},
 		})
 		-- Enable Telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")

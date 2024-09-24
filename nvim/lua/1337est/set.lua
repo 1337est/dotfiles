@@ -60,7 +60,7 @@ vim.opt.inccommand = "split"
 
 vim.opt.cursorline = true -- Show which line your cursor is on
 
-vim.opt.colorcolumn = "80" -- Line at the 80th column
+vim.opt.colorcolumn = "81" -- Line at the nth column
 
 vim.opt.mouse = "a" -- Enables mouse mode
 

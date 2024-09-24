@@ -13,15 +13,25 @@ return {
 			sort = { sorter = "case_sensitive" },
 			view = {
 				side = "left",
+				preserve_window_proportions = true,
 				number = false,
 				relativenumber = false,
-				width = 30,
+				width = {
+					min = 30,
+					max = 50,
+					padding = 1,
+				},
 				signcolumn = "no",
 			},
 			renderer = { group_empty = false },
 			filters = {
 				dotfiles = false,
-				git_ignored = true,
+				git_ignored = false,
+			},
+			actions = {
+				open_file = {
+					resize_window = false,
+				},
 			},
 		})
 	end,
