@@ -27,6 +27,8 @@ export RANGER_LOAD_DEFAULT_RC=false
 # Define default browsers to try
 export BROWSER="firefox"
 
+export KEYTIMEOUT=1
+
 # Load .zshrc for shell configuration and executing commands
 [[ -s $XDG_CONFIG_HOME/zsh/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/.zshrc
 
