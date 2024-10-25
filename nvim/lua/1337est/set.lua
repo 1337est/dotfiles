@@ -37,8 +37,8 @@ vim.opt.incsearch = true -- Shows pattern match as you type
 
 vim.opt.termguicolors = true -- Enables 24-bit RGB color
 
-vim.opt.scrolloff = 14 -- Minimal screen lines above/below the cursor
-vim.opt.sidescrolloff = 7 -- Minimal screen lines to keep left/right
+vim.opt.scrolloff = 8 -- Minimal screen lines above/below the cursor
+vim.opt.sidescrolloff = 3 -- Minimal screen lines to keep left/right
 
 vim.opt.signcolumn = "yes" -- When and how to draw the signcolomn
 
@@ -60,7 +60,7 @@ vim.opt.inccommand = "split"
 
 vim.opt.cursorline = true -- Show which line your cursor is on
 
-vim.opt.colorcolumn = "81" -- Line at the nth column
+vim.opt.colorcolumn = "101" -- Line at the nth column
 
 vim.opt.mouse = "a" -- Enables mouse mode
 
