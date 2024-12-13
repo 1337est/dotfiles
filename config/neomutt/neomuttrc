@@ -1,0 +1,12 @@
+# Neomutt config sources
+source ~/.config/neomutt/settings.neomuttrc
+source ~/.config/neomutt/colors.neomuttrc
+source ~/.config/neomutt/mappings.neomuttrc
+
+# Accounts
+source ~/.config/neomutt/accounts/email_1.neomuttrc
+source ~/.config/neomutt/accounts/email_2.neomuttrc
+source ~/.config/neomutt/accounts/email_3.neomuttrc
+source ~/.config/neomutt/accounts/email_4.neomuttrc
+
+# vim: syntax=neomuttrc

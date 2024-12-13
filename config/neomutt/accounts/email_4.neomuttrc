@@ -1,0 +1,27 @@
+# Who dis?
+set realname = "Adrian Sanchez"
+set from = "$EMAIL4"
+
+# View mail with isyncrc via mbsync
+set folder = "$MYMAILDIR/email_4"
+# Send mail with msmtp
+set sendmail = "msmtp -a email_4"
+
+# Cache settings
+set header_cache = "~/.cache/neomutt/email_4/header_cache"
+set message_cachedir = "~/.cache/neomutt/email_4/message_cache"
+
+# Mailbox settings
+set mbox_type = Maildir
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+
+mailboxes +INBOX +Drafts +Sent +Trash
+named-mailboxes "ATT" =INBOX
+
+# mailbox synchronization settings
+macro index S '<enter-command>unset wait_key<enter><shell-escape>mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc" -V email_4<enter><shell-escape>notmuch new<enter>' "sync email_4"
+
+# vim: syntax=neomuttrc

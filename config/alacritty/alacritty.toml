@@ -1,0 +1,66 @@
+[terminal.shell]
+program = "/usr/bin/zsh"
+args = ["-1"]
+
+[window]
+padding = { x = 0, y = 0 }
+decorations = "Full"
+opacity = 0.90
+blur = false
+class = { instance = "Alacritty", general = "Alacritty" }
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Medium Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12
+
+[colors]
+draw_bold_text_with_bright_colors = true
+transparent_background_colors = true
+
+[colors.primary]
+foreground = "#ffffff"
+background = "#000000"
+
+[colors.normal]
+black =   "#2a2a2a"
+red =     "#f63856"
+green =   "#8bcd5b"
+yellow =  "#efbd5d"
+blue =    "#41a7fc"
+magenta = "#c75ae8"
+cyan =    "#34bfd0"
+white =   "#c4c5b5"
+
+[colors.bright]
+black =   "#3f3f3f"
+red =     "#992525"
+green =   "#98f379"
+yellow =  "#8f610d"
+blue =    "#61afef"
+magenta = "#862aa1"
+cyan =    "#56b6c2"
+white =   "#ffffff"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+blink_timeout = 0
+
+[terminal]
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"

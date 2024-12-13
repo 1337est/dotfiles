@@ -1,0 +1,30 @@
+[Default Applications]
+text/plain=nvim.desktop
+text/html=firefox.desktop
+text/x-mail-source=neomutt.desktop
+image/jpeg=swappy.desktop
+image/png=swappy.desktop
+audio/mpeg=mpv.desktop
+audio/x-wav=mpv.desktop
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+inode/directory=sway.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/msword=libreoffice-writer.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+application/vnd.ms-excel=libreoffice-calc.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
+application/vnd.ms-powerpoint=libreoffice-impress.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop
+application/zip=zip.desktop
+application/x-tar=tar.desktop
+application/x-gzip=gzip.desktop
+application/x-shellscript=nvim.desktop
+multipart/alternative=firefox.desktop
+multipart/mixed=firefox.desktop
+multipart/related=firefox.desktop
+multipart/form-data=firefox.desktop
+x-scheme-handler/mailto=neomutt.desktop
+
+[Added Associations]
+# You can add more associations below as needed

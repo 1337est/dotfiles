@@ -1,0 +1,105 @@
+
+IMAPStore email_1-remote
+Host imap.gmail.com
+Port 993
+UserCmd "echo $EMAIL1"
+PassCmd "pass Email/email_1"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore email_1-local
+Subfolders Verbatim
+Path /home/adrian/.local/share/mail/email_1/
+Inbox /home/adrian/.local/share/mail/email_1/INBOX
+Flatten .
+
+Channel email_1
+Expunge Both
+Far :email_1-remote:
+Near :email_1-local:
+Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+################################################################### End profile
+
+IMAPStore email_2-remote
+Host imap.gmail.com
+Port 993
+UserCmd "echo $EMAIL2"
+PassCmd "pass Email/email_2"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore email_2-local
+Subfolders Verbatim
+Path /home/adrian/.local/share/mail/email_2/
+Inbox /home/adrian/.local/share/mail/email_2/INBOX
+Flatten .
+
+Channel email_2
+Expunge Both
+Far :email_2-remote:
+Near :email_2-local:
+Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+################################################################### End profile
+
+IMAPStore email_3-remote
+Host imap.gmail.com
+Port 993
+UserCmd "echo $EMAIL3"
+PassCmd "pass Email/email_3"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore email_3-local
+Subfolders Verbatim
+Path /home/adrian/.local/share/mail/email_3/
+Inbox /home/adrian/.local/share/mail/email_3/INBOX
+Flatten .
+
+Channel email_3
+Expunge Both
+Far :email_3-remote:
+Near :email_3-local:
+Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+################################################################### End profile
+
+IMAPStore email_4-remote
+Host imap.mail.att.net
+Port 993
+UserCmd "echo $EMAIL4"
+PassCmd "pass Email/email_4"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore email_4-local
+Subfolders Verbatim
+Path /home/adrian/.local/share/mail/email_4/
+Inbox /home/adrian/.local/share/mail/email_4/INBOX
+Flatten .
+
+Channel email_4
+Expunge Both
+Far :email_4-remote:
+Near :email_4-local:
+Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+################################################################### End profile
+

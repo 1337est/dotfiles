@@ -1,0 +1,119 @@
+# set editor to neovim
+set editor = "nvim"
+
+# Set your name
+set my_name = "Adrian Sanchez"
+
+# View html automatically
+auto_view text/html text/calendar application/ics
+
+# Default to text when available and use w3m/lynx when no alternative available
+alternative_order text/html text/plain text/enriched text/*
+
+# main options
+set imap_check_subscribed           # fetch mailbox folders from selected email
+set use_envelope_from               # use variable "envelope_from_address"
+set use_from = "yes"
+set edit_headers                    # show headers when composing
+set fast_reply                      # to, cc, bcc, and subject skipped when provided
+set ask_cc                          # ask for CC:
+set fcc_attach                      # save attachments with the body
+set forward_format = "Fwd: %s"      # format of subject when forwarding
+set forward_decode                  # decodes complex MIME into text/plain when forwarding
+set include                         # include message in replies
+set attribution_intro = "On %d, %n wrote:" # text preceding to the quoted reply body
+set reply_to                        # use address in "Reply to:" field when replying
+set reverse_name                    # reply as whomever it was to
+set forward_quote                   # include message in forwards
+set text_flowed                     # better format handling for "format=flowed"
+set sig_dashes                      # adds "-- " before signature
+unset mime_forward                  # forward attachments as part of body
+set tmpdir = ~/.cache/neomutt/temp # where to keep temp files
+
+unset confirm_append    # don't ask when appending message to existing mailbox
+set quit                # quit neomutt without confirmation
+unset mark_old          # read/new vs read/new/old for viewed/unviewed mail
+set beep_new            # bell on new mails
+set pipe_decode         # decode headers and eval mimes when piping
+set thorough_search     # decode headers, body/attachments, and eval mimes before searching
+set timeout = 0         # seconds before neomutt times out, 0 = never
+
+# status bar, date format, finding stuff etc.
+set help                        # Display help bar at the top of index
+set status_on_top               # Status bar on top vs bottom (if help set, bottom)
+set status_chars = " *%A" # 1=unchanged, 2=changed, 3=readonly, 4=attach-message mode
+set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set date_format = "%d.%m.%Y %H:%M"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regex = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set send_charset = "utf-8:iso-8859-1:us-ascii"
+set charset = "utf-8"
+set arrow_cursor = "no" # Change `color indicator` depending
+
+# Pager View Options
+set pager_index_lines = 8  # Shows 10 lines of index when pager is active
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+set mailcap_path = ~/.config/neomutt/mailcap
+
+# --------------------------------------------------------------------------
+# SIDEBAR VARIABLES – shown with their default values
+# --------------------------------------------------------------------------
+# Should the Sidebar be shown?
+set sidebar_visible = yes
+# How wide should the Sidebar be in screen columns?
+
+# Note: Some characters, e.g. Chinese, take up two columns each.
+set sidebar_width = 20
+# Should the mailbox paths be abbreviated?
+set sidebar_short_path = yes
+# Number of top-level mailbox path subdirectories to truncate for display
+set sidebar_component_depth = 0
+# When abbreviating mailbox path names, use any of these characters as path
+# separators. Only the part after the last separators will be shown.
+# For file folders '/' is good. For IMAP folders, often '.' is useful.
+set sidebar_delim_chars = '/.'
+# If the mailbox path is abbreviated, should it be indented?
+set sidebar_folder_indent = no
+# Indent mailbox paths with this string.
+set sidebar_indent_string = '  '
+# Make the Sidebar only display mailboxes that contain new, or flagged,
+# mail.
+set sidebar_new_mail_only = no
+# Any mailboxes that are pinned will always be visible, even if the
+# sidebar_new_mail_only option is enabled.
+set sidebar_non_empty_mailbox_only = no
+# Only show mailboxes that contain some mail
+sidebar_pin '~/.local/share/mail/email_1'
+sidebar_pin '~/.local/share/mail/email_2'
+sidebar_pin '~/.local/share/mail/email_3'
+sidebar_pin '~/.local/share/mail/email_4'
+# When searching for mailboxes containing new mail, should the search wrap
+# around when it reaches the end of the list?
+set sidebar_next_new_wrap = no
+# Show the Sidebar on the right-hand side of the screen
+set sidebar_on_right = no
+# The character to use as the divider between the Sidebar and the other NeoMutt
+# panels.
+set sidebar_divider_char = '|'
+# Enable extended mailbox mode to calculate total, new, and flagged
+# message counts for each mailbox.
+set mail_check_stats
+# Display the Sidebar mailboxes using this format string.
+set sidebar_format = '%D%<F? [%F]>%* %<N?%N/>%S'
+# Sort the mailboxes in the Sidebar using this method:
+#       count    – total number of messages
+#       flagged  – number of flagged messages
+#       unread   – number of unread messages
+#       path     – mailbox path
+#       unsorted – do not sort the mailboxes
+set sidebar_sort_method = 'unsorted'
+# vim: syntax=neomuttrc

@@ -1,0 +1,39 @@
+# vim: filetype=msmtp
+
+defaults
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile ~/.local/state/msmtp/msmtp.log
+
+account email_1
+host smtp.gmail.com
+port 587
+tls_starttls on
+eval echo from "$EMAIL1"
+eval echo user "$EMAIL1"
+passwordeval "pass Email/email_1"
+
+account email_2
+host smtp.gmail.com
+port 587
+tls_starttls on
+eval echo from "$EMAIL2"
+eval echo user "$EMAIL2"
+passwordeval "pass Email/email_2"
+
+account email_3
+host smtp.gmail.com
+port 587
+tls_starttls on
+eval echo from "$EMAIL3"
+eval echo user "$EMAIL3"
+passwordeval "pass Email/email_3"
+
+account email_4
+host smtp.mail.att.net
+port 587
+tls_starttls on
+eval echo from "$EMAIL4"
+eval echo user "$EMAIL4"
+passwordeval "pass Email/email_4"

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Neomutt
+Comment=Calls script to open Neomutt mailto links
+Type=Application
+Exec=/home/adrian/GitHub/scripts/neomutt-mailto %u
+StartupNotify=true
+X-Desktop-File-Install-Version=0.28

@@ -1,0 +1,2 @@
+Things to add:
+1. Add comments explaining plugins
