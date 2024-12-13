@@ -40,7 +40,7 @@ alias lg='lazygit' # git but better?
 alias mbsync='mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc"'
 
 # Basic auto/tab complete:
-autoload -Uz compinit
+autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
