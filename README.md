@@ -1,5 +1,7 @@
 # My dotfiles
 
+I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09
+
 ## Structure
 
 - **config**: stores my $XDG_CONFIG_HOME directories and files
