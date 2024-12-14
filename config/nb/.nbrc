@@ -16,3 +16,4 @@
 export NB_AUDIO_TOOL=mpv
 export NB_ENCRYPTION_TOOL=gpg
 export NB_MARKDOWN_TOOL=bat
+export NB_AUTO_SYNC=0
