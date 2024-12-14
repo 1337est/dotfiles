@@ -81,6 +81,14 @@ I need to go through this entire readme as it was never finished, and is also no
       sudo chmod +x /usr/local/bin/nb &&
       sudo nb completions install # For this command to work, root needs their $EDITOR set, see the pam_env.conf file and set $EDITOR there.
     ```
-
     - What I'm currently doing: In my ~/Dev/bin directory I have a file named ~/Dev/bin/nb-completion.zsh (taken from https://github.com/xwmx/nb/blob/master/etc/nb-completion.zsh). I have ~/Dev/bin added to my path in my .zshenv file. Now nb will have tab autosuggestions/complete. Also,
+    - Another thing to note. nb pipes passphrases in from STDIN with gpg using `--passphrase-fd 0`. This is no longer supported as of GnuPG 2.1.0 and the use of gpg-agent and pinentry is required which does break the shell when gpg gets involved... Therefore You need to add to ~/.gnupg/gpg-agent.conf:
+    ```
+    allow-loopback-pinentry
+    ```
+    - Then also add to ~/.gnupg/gpg.conf:
+    ```
+    pinentry-mode loopback
+    ```
+    - Now either reload the gpg-agent by running `gpg-connect-agent reloadagent /bye` (the command should print `OK`), or reboot your computer, which we're doing soon anyways!
     - reboot your computer.
