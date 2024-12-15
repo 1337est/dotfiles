@@ -91,4 +91,21 @@ I need to go through this entire readme as it was never finished, and is also no
     pinentry-mode loopback
     ```
     - Now either reload the gpg-agent by running `gpg-connect-agent reloadagent /bye` (the command should print `OK`), or reboot your computer, which we're doing soon anyways!
+    - Added microsoft ttf files. What I did to get them on my system:
+        1. Download the microsoft 11 iso from there website into the ~/Downloads directory.
+        2. Issue these commands to extract the fonts:
+        ```bash
+        $ cd ~/Downloads
+        $ 7z e WinXY_YYMM_English_x64.iso sources/install.wim
+        $ 7z e install.wim 1/Windows/{Fonts/"*".{ttf,ttc},System32/Licenses/neutral/"*"/"*"/license.rtf} -ofonts/
+        $ cd ~/Downloads/fonts
+        $ sudo mkdir /usr/local/share/fonts
+        $ sudo mkdir /usr/local/share/fonts/WindowsFonts
+        $ sudo cp ./* /usr/local/share/fonts/WindowsFonts
+        $ sudo chmod 644 /usr/local/share/fonts/WindowsFonts/*
+        $ sudo fc-cache --force
+        $ sudo fc-cache-32 --force # Ensure multilib is enabled in pacman.conf and you have lib32-fontconfig downloaded
+        ```
+        3. Now you should have microsoft fonts on your system
+
     - reboot your computer.
