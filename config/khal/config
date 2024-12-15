@@ -46,6 +46,7 @@ timedelta = 7d
 color = ''
 default_color = light cyan
 method = fg
+multiple = ''
 
 [keybindings]
 view = enter
