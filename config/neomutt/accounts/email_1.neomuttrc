@@ -23,3 +23,5 @@ named-mailboxes "MAIN" =INBOX
 
 # mailbox synchronization settings
 macro index S '<enter-command>unset wait_key<enter><shell-escape>mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc" -V email_1<enter><shell-escape>notmuch new<enter>' "sync email_1"
+
+# vim: syntax=neomuttrc
