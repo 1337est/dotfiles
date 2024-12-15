@@ -15,7 +15,7 @@ export MANPAGER='nvim +Man!' # View man pages with nvim
 export KEYTIMEOUT=1 # x/100 seconds to wait before keystrokes (important for vi mode)
 
 # When things say "add this to your path", this is where they mean.
-export PATH="~/Dev/bin:$PATH"
+export PATH="$HOME/Dev/bin:$PATH"
 # Default browser
 export BROWSER="firefox"
 # For gpg signing to work
@@ -31,7 +31,6 @@ export GOPATH="$XDG_DATA_HOME/go" && mkdir -p "$GOPATH"
 export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_DIR"
 
 # Settings for nb note taking app
-export NB_DIR="$XDG_CONFIG_HOME/nb"
 export NBRC_PATH="$XDG_CONFIG_HOME/nb/.nbrc"
 
 # My setup needed for neomutt
