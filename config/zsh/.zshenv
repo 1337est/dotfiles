@@ -24,6 +24,9 @@ export GPG_TTY=$(tty)
 # App/user config directories/files
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc" && mkdir -p "$XDG_CONFIG_HOME/npm"
 
+# Node.js repl history location
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
+
 # App/user data directories/files
 export GOPATH="$XDG_DATA_HOME/go" && mkdir -p "$GOPATH"
 
@@ -32,6 +35,9 @@ export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_
 
 # Settings for nb note taking app
 export NBRC_PATH="$XDG_CONFIG_HOME/nb/.nbrc"
+
+# Settings for ~/.wgetrc, where we will set the wget-hsts file location
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # My setup needed for neomutt
 export MYMAILDIR="$XDG_DATA_HOME/mail"
