@@ -37,6 +37,7 @@ julia
 khal
 khard
 lazygit
+lib32-fontconfig
 libreoffice-still
 linux
 linux-docs
