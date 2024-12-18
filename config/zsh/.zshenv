@@ -33,9 +33,6 @@ export GOPATH="$XDG_DATA_HOME/go" && mkdir -p "$GOPATH"
 # Setting the grim default screenshot directory
 export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_DIR"
 
-# Settings for nb note taking app
-export NBRC_PATH="$XDG_CONFIG_HOME/nb/.nbrc"
-
 # Settings for ~/.wgetrc, where we will set the wget-hsts file location
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
