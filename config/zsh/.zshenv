@@ -6,7 +6,7 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history" && mkdir -p "$XDG_STATE_HOME/zsh"
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-export TERM="alacritty" # Terminal emulator supporting 256 color
+export TERM="kitty" # Terminal emulator supporting 256 color
 export PAGER="bat"
 # Editor configuration
 export EDITOR="nvim"
@@ -15,7 +15,7 @@ export MANPAGER='nvim +Man!' # View man pages with nvim
 export KEYTIMEOUT=1 # x/100 seconds to wait before keystrokes (important for vi mode)
 
 # When things say "add this to your path", this is where they mean.
-export PATH="$HOME/Dev/bin:$PATH"
+export PATH="$PATH"
 # Default browser
 export BROWSER="firefox"
 # For gpg signing to work

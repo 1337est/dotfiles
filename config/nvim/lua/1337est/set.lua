@@ -31,7 +31,7 @@ vim.opt.backup = false
 vim.opt.undofile = true -- Save undo history
 vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
 
-vim.opt.path:append("/home/adrian/Desktop/dev/libs/")
+-- vim.opt.path:append("/home/adrian/Desktop/dev/libs/")
 
 vim.opt.hlsearch = true -- Set highlight on search
 vim.opt.incsearch = true -- Shows pattern match as you type

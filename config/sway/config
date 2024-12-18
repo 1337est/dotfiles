@@ -9,7 +9,7 @@ set $up k
 set $right l
 
 # Terminal emulator
-set $term alacritty
+set $term kitty
 
 # Application launcher
 set $menu wmenu-run
