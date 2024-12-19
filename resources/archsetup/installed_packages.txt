@@ -1,4 +1,3 @@
-alacritty
 alsa-firmware
 alsa-utils
 amd-ucode
@@ -21,7 +20,6 @@ fastfetch
 fd
 firefox
 fzf
-gimp
 git
 github-cli
 glm
@@ -36,6 +34,7 @@ jdk-openjdk
 julia
 khal
 khard
+kitty
 lazygit
 lib32-fontconfig
 libreoffice-still
@@ -55,6 +54,7 @@ neomutt
 neovim
 networkmanager
 networkmanager-docs
+nnn
 nodejs
 notmuch
 npm
@@ -72,7 +72,7 @@ otf-hermit-nerd
 otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
-pandoc-cli
+pacutils
 pass
 php
 pipewire-alsa
@@ -90,7 +90,6 @@ rust
 rust-analyzer
 sl
 slurp
-socat
 sof-firmware
 stow
 swappy
@@ -100,7 +99,6 @@ swayidle
 swaylock
 tealdeer
 tesseract-data-eng
-tig
 timeshift
 tmux
 ttf-0xproto-nerd
@@ -165,7 +163,6 @@ vulkan-html-docs
 vulkan-radeon
 vulkan-utility-libraries
 vulkan-validation-layers
-w3m
 waybar
 wf-recorder
 wget
