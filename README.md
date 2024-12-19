@@ -107,5 +107,11 @@ I need to go through this entire readme as it was never finished, and is also no
         $ sudo fc-cache-32 --force # Ensure multilib is enabled in pacman.conf and you have lib32-fontconfig downloaded
         ```
         3. Now you should have microsoft fonts on your system
-
+    - I'm using nnn as my file manager and although you can just download the program using pacman, to get fonts and other things working, you'll need to clone the git repo and make compile with various settings.
+    ```bash
+    git clone https://github.com/jarun/nnn.git
+    cd nnn
+    sudo make O_NERD=1
+    sudo cp nnn /bin
+    ```
     - reboot your computer.

@@ -8,11 +8,12 @@ export SAVEHIST=10000
 
 export TERM="kitty" # Terminal emulator supporting 256 color
 export PAGER="bat"
+export MANPAGER='nvim +Man!' # View man pages with nvim
 # Editor configuration
 export EDITOR="nvim"
 export VISUAL="nvim"
-export MANPAGER='nvim +Man!' # View man pages with nvim
-export KEYTIMEOUT=1 # x/100 seconds to wait before keystrokes (important for vi mode)
+# x/100 seconds to wait before keystrokes (important for vi mode)
+export KEYTIMEOUT=1
 
 # When things say "add this to your path", this is where they mean.
 export PATH="$PATH"
@@ -21,30 +22,8 @@ export BROWSER="firefox"
 # For gpg signing to work
 export GPG_TTY=$(tty)
 
-# App/user config directories/files
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc" && mkdir -p "$XDG_CONFIG_HOME/npm"
-
-# Node.js repl history location
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
-
-# App/user data directories/files
-export GOPATH="$XDG_DATA_HOME/go" && mkdir -p "$GOPATH"
-
-# Setting the grim default screenshot directory
-export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_DIR"
-
-# Settings for ~/.wgetrc, where we will set the wget-hsts file location
-export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-
-# My setup needed for neomutt
-export MYMAILDIR="$XDG_DATA_HOME/mail"
-for acct_dir in "$MYMAILDIR/email_1" "$MYMAILDIR/email_2" "$MYMAILDIR/email_3" "$MYMAILDIR/email_4"; do
-    for box in "INBOX" "Drafts" "Sent" "Trash"; do
-        for cnt in "cur" "new" "tmp"; do
-            mkdir -p "$acct_dir/$box/$cnt"
-        done
-    done
-done
+# Load additional environment variables from extra.env
+[[ -s "$XDG_CONFIG_HOME/zsh/apps.zshenv" ]] && source "$XDG_CONFIG_HOME/zsh/apps.zshenv"
 
 # Load .zshrc for shell configuration and executing commands
 [[ -s $XDG_CONFIG_HOME/zsh/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/.zshrc

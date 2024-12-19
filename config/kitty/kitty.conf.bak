@@ -2,20 +2,59 @@
 
 #: Fonts {{{
 
-#: You can run `kitten choose-fonts` to select fonts in the terminal.
-#: To learn about manual font selection, read the font specification
+#: kitty has very powerful font management. You can configure
+#: individual font faces and even specify special fonts for particular
+#: characters.
+
+# font_family      monospace
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
+
+#: You can specify different fonts for the bold/italic/bold-italic
+#: variants. The easiest way to select fonts is to run the `kitten
+#: choose-fonts` command which will present a nice UI for you to
+#: select the fonts you want with previews and support for selecting
+#: variable fonts and font features. If you want to learn to select
+#: fonts manually, read the font specification syntax
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_family      family='JetBrainsMono Nerd Font' postscript_name=JetBrainsMonoNF-Regular
-bold_font        family='JetBrainsMono Nerd Font' postscript_name=JetBrainsMonoNF-SemiBold
-italic_font      family='JetBrainsMono Nerd Font' postscript_name=JetBrainsMonoNF-Italic
-bold_italic_font family='JetBrainsMono Nerd Font' postscript_name=JetBrainsMonoNF-SemiBoldItalic
+# font_size 11.0
 
-font_size 13.0
+#: Font size (in pts).
 
-# TODO: Add description here
+# force_ltr no
+
+#: kitty does not support BIDI (bidirectional text), however, for RTL
+#: scripts, words are automatically displayed in RTL. That is to say,
+#: in an RTL script, the words "HELLO WORLD" display in kitty as
+#: "WORLD HELLO", and if you try to select a substring of an RTL-
+#: shaped string, you will get the character that would be there had
+#: the string been LTR. For example, assuming the Hebrew word ירושלים,
+#: selecting the character that on the screen appears to be ם actually
+#: writes into the selection buffer the character י. kitty's default
+#: behavior is useful in conjunction with a filter to reverse the word
+#: order, however, if you wish to manipulate RTL glyphs, it can be
+#: very challenging to work with, so this option is provided to turn
+#: it off. Furthermore, this option can be used with the command line
+#: program GNU FriBidi <https://github.com/fribidi/fribidi#executable>
+#: to get BIDI support, because it will force kitty to always treat
+#: the text as LTR, which FriBidi expects for terminals.
+
 # symbol_map
+
+#: E.g. symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
+
+#: Map the specified Unicode codepoints to a particular font. Useful
+#: if you need special rendering for some symbols, such as for
+#: Powerline. Avoids the need for patched fonts. Each Unicode code
+#: point is specified in the form `U+<code point in hexadecimal>`. You
+#: can specify multiple code points, separated by commas and ranges
+#: separated by hyphens. This option can be specified multiple times.
+#: The syntax is::
+
+#:     symbol_map codepoints Font Family Name
 
 # narrow_symbols
 
