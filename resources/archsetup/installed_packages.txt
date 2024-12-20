@@ -26,6 +26,7 @@ glm
 gopls
 grim
 grub
+imv
 intel-ucode
 isync
 iw
