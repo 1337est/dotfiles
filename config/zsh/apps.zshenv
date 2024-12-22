@@ -16,7 +16,8 @@ export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # nnn:
-
+export NNN_PLUG='p:preview-tui;o:fzopen'
+export NNN_FIFO=/tmp/nnn.fifo
 
 # My setup needed for neomutt
 export MYMAILDIR="$XDG_DATA_HOME/mail"
