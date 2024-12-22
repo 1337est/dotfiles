@@ -16,7 +16,10 @@ export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # nnn:
-export NNN_PLUG='p:preview-tui;o:fzopen'
+export NNN_SSHFS="sshfs -o follow_symlinks" # make sshfs follow symlinks on the remote
+export NNN_COLORS="2136" # use a different color for each context
+export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
+export NNN_PLUG='p:preview-tui'
 export NNN_FIFO=/tmp/nnn.fifo
 
 # My setup needed for neomutt
