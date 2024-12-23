@@ -19,7 +19,7 @@ return {
 			{ "<leader>h_", hidden = true },
 			{ "<leader>k", group = "[K]eep" },
 			{ "<leader>l", group = "[L]azy" },
-			{ "<leader>n", group = "[N]vim-tree: " },
+			{ "<leader>n", group = "[N]eorg: " },
 			{ "<leader>r", group = "[R]ename" },
 			{ "<leader>r_", hidden = true },
 			{ "<leader>s", group = "[S]earch" },
