@@ -10,19 +10,22 @@ return {
 				["core.dirman"] = { -- Manages Neorg workspaces
 					config = {
 						workspaces = {
-							-- Main notes workspace
-							notes = "~/Notes", -- Main notes area
+							-- Top level workspace
+							random = "$XDG_DATA_HOME/neorg",
 
-							-- My desktop is covered in notes?
-							help = "~/Notes/help", -- Helpful/troubleshooting program notes
-							ideas = "~/Notes/ideas", -- My brain children
-							projects = "~/Notes/projects", -- Personal projects notes
-							research = "~/Notes/research", -- Research notes
-							rum = "~/Notes/rum", -- ruminations, my brain unleashed
-							school = "~/Notes/school", -- School notes
-							work = "~/Notes/work", -- Work notes
+							-- Main notes workspace
+							notes = "$XDG_DATA_HOME/neorg/notes", -- personal notes
+
+							-- Extra note workspaces
+							help = "$XDG_DATA_HOME/neorg/help", -- Helpful/troubleshooting program notes
+							ideas = "$XDG_DATA_HOME/neorg/ideas", -- My brain children
+							projects = "$XDG_DATA_HOME/neorg/projects", -- Personal projects notes
+							research = "$XDG_DATA_HOME/neorg/research", -- Research notes
+							rum = "$XDG_DATA_HOME/neorg/rum", -- ruminations, organized chaos?
+							school = "$XDG_DATA_HOME/neorg/school", -- School notes
+							work = "$XDG_DATA_HOME/neorg/work", -- Work notes
 						},
-						default_workspace = "notes",
+						default_workspace = "random",
 					},
 				},
 			},
