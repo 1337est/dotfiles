@@ -114,4 +114,13 @@ I need to go through this entire readme as it was never finished, and is also no
     sudo make O_NERD=1
     sudo cp nnn /bin
     ```
+    - I use the XDG Base Directory Specification for my workflow, which includes an:
+        - $XDG_DATA_HOME - defines the base directory relative to which user-specific data files should be stored. If $XDG_DATA_HOME is either not set or empty, a default equal to $HOME/.local/share should be used.
+        - $XDG_CONFIG_HOME - defines the base directory relative to which user-specific configuration files should be stored. If $XDG_CONFIG_HOME is either not set or empty, a default equal to $HOME/.config should be used.
+        - $XDG_STATE_HOME - defines the base directory relative to which user-specific state files should be stored. If $XDG_STATE_HOME is either not set or empty, a default equal to $HOME/.local/state should be used. The $XDG_STATE_HOME contains state data that should persist between (application) restarts, but that is not important or portable enough to the user that it should be stored in $XDG_DATA_HOME. It may contain:
+            - actions history (logs, history, recently used files, …)
+            - current state of the application that can be reused on a restart (view, layout, open files, undo history, …)
+        - $XDG_CACHE_HOME - defines the base directory relative to which user-specific non-essential data files should be stored. If $XDG_CACHE_HOME is either not set or empty, a default equal to $HOME/.cache should be used.
+        - User-specific executable files may be stored in $HOME/.local/bin. Distributions should ensure this directory shows up in the UNIX $PATH environment variable, at an appropriate place. Since $HOME might be shared between systems of different architectures, installing compiled binaries to $HOME/.local/bin could cause problems when used on systems of differing architectures. This is often not a problem, but the fact that $HOME becomes partially architecture-specific if compiled binaries are placed in it should be kept in mind.
+
     - reboot your computer.
