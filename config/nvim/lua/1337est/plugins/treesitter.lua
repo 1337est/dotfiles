@@ -34,10 +34,16 @@ return {
             "make",
             "ini",
         },
+        -- Install parsers synchronously (only applied to `ensure_installed`)
+        sync_install = false,
+
         -- Autoinstall languages that are not installed
         auto_install = true,
+        ignore_install = { "javascript" },
         highlight = {
             enable = true,
+            -- list of language that will be disabled
+            disable = {},
             -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
             --  If you are experiencing weird indenting issues, add the language to
             --  the list of additional_vim_regex_highlighting and disabled languages for indent.
