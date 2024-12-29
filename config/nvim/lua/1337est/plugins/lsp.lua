@@ -13,25 +13,27 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         { "williamboman/mason.nvim", config = true }, -- manages LSP, DAP, linters, formatters
-        "williamboman/mason-lspconfig.nvim",          -- integrates mason & lspconfig
+        "williamboman/mason-lspconfig.nvim", -- integrates mason & lspconfig
         'WhoIsSethDaniel/mason-tool-installer.nvim',
-        "hrsh7th/cmp-nvim-lsp",                       -- adds more completions for LSP's
+        "hrsh7th/cmp-nvim-lsp", -- adds more completions for LSP's
     },
 
     config = function()
         -- Making the keymaps
-        local lsp_group = vim.api.nvim_create_augroup("lsp-attach", { clear = true })
+        local lsp_group = vim.api.nvim_create_augroup("lsp-attach",
+            { clear = true })
         local autocmd = vim.api.nvim_create_autocmd
         --  This function gets run when an LSP attaches to a particular buffer.
-        --    That is to say, every time a new file is opened that is associated with
-        --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
-        --    function will be executed to configure the current buffer
+        --  That is to say, every time a new file is opened that is associated with
+        --  an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
+        --  function will be executed to configure the current buffer
         autocmd("LspAttach", {
             desc = "Sets keybindings when a LSP attaches to a buffer",
             group = lsp_group,
             callback = function(e)
                 local map = function(keys, func, desc)
-                    vim.keymap.set("n", keys, func, { buffer = e.buf, desc = "LSP: " .. desc })
+                    vim.keymap.set("n", keys, func,
+                        { buffer = e.buf, desc = "LSP: " .. desc })
                 end
 
                 -- Jump to the definition of the word under your cursor.
@@ -101,7 +103,8 @@ return {
                 -- When you move your cursor, the highlights will be cleared (the second autocommand).
                 local client = vim.lsp.get_client_by_id(e.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-                    local lsp_hl_group = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
+                    local lsp_hl_group = vim.api.nvim_create_augroup(
+                        'lsp-highlight', { clear = false })
                     autocmd({ 'CursorHold', 'CursorHoldI' }, {
                         buffer = e.buf,
                         group = lsp_hl_group,
@@ -115,7 +118,8 @@ return {
                     })
 
                     autocmd('LspDetach', {
-                        group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
+                        group = vim.api.nvim_create_augroup('lsp-detach',
+                            { clear = true }),
                         callback = function(event2)
                             vim.lsp.buf.clear_references()
                             vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
@@ -128,14 +132,16 @@ return {
                 -- This may be unwanted, since they displace some of your code
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
                     map('<leader>th', function()
-                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = e.buf })
+                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint
+                            .is_enabled { bufnr = e.buf })
                     end, '[T]oggle Inlay [H]ints')
                 end
             end,
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+        capabilities = vim.tbl_deep_extend("force", capabilities,
+            require("cmp_nvim_lsp").default_capabilities())
 
         local servers = {
             -- $XDG-CONFIG-HOME/clangd/config.yaml with CompileFlags: Add: [-I/path/to/dev/libs]
@@ -153,11 +159,32 @@ return {
             glsl_analyzer = {},
 
             lua_ls = {
-                -- cmd = {...},
-                -- filetypes = { ...},
+                cmd = { "lua-language-server" },
+                filetypes = { "lua" },
                 -- capabilities = {},
                 settings = {
                     Lua = {
+                        format = {
+                            enable = true,
+                            -- Put format options here
+                            -- NOTE: the value should be String!
+                            defaultConfig = {
+                                -- basics
+                                indent_style = "space",
+                                indent_size = "4",
+                                tab_width = "4",
+                                quote_style = "none", -- none/single/double
+                                continuation_indent = "4",
+                                max_line_length = "100",
+                                -- align
+                                align_function_params = "false",
+                                align_continuous_inline_comment = "false",
+                                -- line breaks
+                                break_all_list_when_line_exceed = "true",
+                                auto_collapse_lines = "false",
+                                break_before_braces = "false",
+                            },
+                        },
                         completion = {
                             callSnippet = "Replace",
                         },
@@ -191,7 +218,8 @@ return {
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
-                    server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                    server.capabilities = vim.tbl_deep_extend("force", {},
+                        capabilities, server.capabilities or {})
                     require("lspconfig")[server_name].setup(server)
                 end,
             },

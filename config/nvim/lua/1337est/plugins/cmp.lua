@@ -32,9 +32,9 @@ return {
         -- Adds other completion capabilities.
         --  nvim-cmp does not ship with all sources by default. They are split
         --  into multiple repos for maintenance purposes.
-        "hrsh7th/cmp-buffer",                  -- completions for words in different buffers
-        "hrsh7th/cmp-nvim-lsp",                -- adds more completions for LSP's
-        "hrsh7th/cmp-path",                    -- completions for filesystem paths
+        "hrsh7th/cmp-buffer", -- completions for words in different buffers
+        "hrsh7th/cmp-nvim-lsp", -- adds more completions for LSP's
+        "hrsh7th/cmp-path", -- completions for filesystem paths
         "hrsh7th/cmp-nvim-lsp-signature-help", -- display func-param signatures
     },
     config = function()
