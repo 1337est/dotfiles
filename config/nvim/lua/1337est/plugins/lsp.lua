@@ -180,7 +180,7 @@ return {
                                 align_function_params = "false",
                                 align_continuous_inline_comment = "false",
                                 -- line breaks
-                                break_all_list_when_line_exceed = "true",
+                                break_all_list_when_line_exceed = "false",
                                 auto_collapse_lines = "false",
                                 break_before_braces = "false",
                             },

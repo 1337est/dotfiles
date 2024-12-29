@@ -53,23 +53,11 @@ return {
                 full_name = false,
                 root_folder_label = ":~:s?$?/..?",
                 indent_width = 2,
-                special_files = {
-                    "Cargo.toml",
-                    "Makefile",
-                    "README.md",
-                    "readme.md"
-                },
+                special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
                 hidden_display = "none",
                 symlink_destination = true,
                 decorators = {
-                    "Git",
-                    "Open",
-                    "Hidden",
-                    "Modified",
-                    "Bookmark",
-                    "Diagnostics",
-                    "Copied",
-                    "Cut"
+                    "Git", "Open", "Hidden", "Modified", "Bookmark", "Diagnostics", "Copied", "Cut"
                 },
                 highlight_git = "none",
                 highlight_diagnostics = "none",
@@ -244,14 +232,7 @@ return {
                         picker = "default",
                         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
                         exclude = {
-                            filetype = {
-                                "notify",
-                                "packer",
-                                "qf",
-                                "diff",
-                                "fugitive",
-                                "fugitiveblame"
-                            },
+                            filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
                             buftype = { "nofile", "terminal", "help" },
                         },
                     },

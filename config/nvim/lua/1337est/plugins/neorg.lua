@@ -56,21 +56,14 @@ return {
                                 single = { icon = "≡" },
                             },
                             delimiter = {
-                                horizontal_line = {
-                                    icon = "─",
-                                    left = "here",
-                                    right = "window"
-                                },
+                                horizontal_line = { icon = "─", left = "here", right = "window" },
                                 strong = { icon = "⟪" },
                                 weak = { icon = "⟨" },
                             },
                             footnote = {
                                 multi_prefix = { icon = "⁑ " },
                                 multi_suffix = { icon = "⁑ " },
-                                single = {
-                                    icon = "⁎",
-                                    numeric_superscript = true
-                                },
+                                single = { icon = "⁎", numeric_superscript = true },
                             },
                             heading = {
                                 icons = { "◉", "◎", "○", "✺", "▶", "⤷" },
