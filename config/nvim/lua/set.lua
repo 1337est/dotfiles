@@ -2,10 +2,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- For my nerd font
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = true -- For my nerd font
 
-vim.opt.guicursor = ""
+vim.opt.guicursor = "" -- Disable cursor styling
 
 vim.opt.number = true -- Make line numbers default
 vim.opt.relativenumber = true -- Shows line # away from current line #
@@ -21,8 +20,9 @@ vim.opt.wrap = false -- Don't wrap text
 vim.opt.breakindent = true -- Makes text-wrap visually indented for continuity
 vim.opt.linebreak = true -- Wraps words instead of characters
 
+-- TODO: Play with the listchars a bit to find what you like
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "» ", leadmultispace = "·", trail = "·", nbsp = "␣" }
 
 vim.opt.swapfile = false
 vim.opt.backup = false
