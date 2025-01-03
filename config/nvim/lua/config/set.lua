@@ -20,9 +20,11 @@ vim.opt.wrap = false -- Don't wrap text
 vim.opt.breakindent = true -- Makes text-wrap visually indented for continuity
 vim.opt.linebreak = true -- Wraps words instead of characters
 
--- TODO: Play with the listchars a bit to find what you like
+-- visual indicators for empty space characters. See :help listchars
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", leadmultispace = "·", trail = "·", nbsp = "␣" }
+vim.opt.listchars = {
+    tab = "» ", trail = "·", nbsp = "␣", extends = "▶", precedes = "◀"
+}
 
 vim.opt.swapfile = false
 vim.opt.backup = false

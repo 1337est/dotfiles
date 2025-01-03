@@ -1,8 +1,8 @@
 return {
     -- Adds indentation guides between blocks of code
-    -- e.g. 2 indentation guide to the left
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
+    enabled = true,
     config = function()
         require("ibl").setup({
             enabled = true,
@@ -21,14 +21,14 @@ return {
             },
             whitespace = {
                 highlight = "IblWhitespace",
-                remove_blankline_trail = true,
+                remove_blankline_trail = false,
             },
             scope = {
                 enabled = true,
                 char = nil,
-                show_start = true,
-                show_end = true,
-                show_exact_scope = false,
+                show_start = false,
+                show_end = false,
+                show_exact_scope = true,
                 injected_languages = true,
                 highlight = "IblScope",
                 priority = 1024,
