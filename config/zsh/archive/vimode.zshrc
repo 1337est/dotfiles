@@ -9,17 +9,14 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 # Function to run before each prompt
 precmd() {
     vcs_info # Get version control information
+    set_prompt_color_vi_mode # Update the prompt color based on vi mode
 }
 
 # Enables dynamic/customizable prompts in ZSH
 setopt PROMPT_SUBST
 
-# Left prompt configuration
-# TODO: Make prompt change slash / char color for directory
-PROMPT="%F{red}[%F{yellow}%~%F{red}] ${vcs_info_msg_0_}
-%F{green}$%{$reset_color%}%f "
-# Right side prompt that shows user@machine
-RPROMPT='%F{red}[%F{yellow}%n%F{green}@%F{cyan}%M%F{red}]'
+# Right side prompt that shows user@machine in red brackets
+RPROMPT='%F{red}[%F{yellow}%n%F{green}@%F{blue}%M%F{red}]'
 
 # History options
 setopt APPEND_HISTORY # appends new entries to history instead of overwriting
@@ -50,17 +47,54 @@ compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 _comp_options+=(globdots)   #include hidden files
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# Source the khal completions file for zsh
-source ~/.config/khal/.khal-complete.zsh
+# vi mode
+bindkey -v
+
+# Function to set prompt color based on vi mode
+# In order this formats the left prompt in 2 levels:
+# 1st level is the path followed by version control info if present
+# 2nd level is where you type and has a Visual/Insert mode indicator
+function set_prompt_color_vi_mode {
+    local dir_color
+    if [[ $KEYMAP == vicmd ]]; then
+        dir_color="%F{yellow}" # Yellow for visual mode
+    else
+        dir_color="%F{blue}" # Blue for insert mode
+    fi
+
+    # 1st level with red brackets around CWD
+    PROMPT="%F{red}[${dir_color}%~%F{red}] ${vcs_info_msg_0_}
+"
+    # 2nd level line indicator based on vi mode
+    if [[ $KEYMAP == vicmd ]]; then
+        PROMPT+="%F{yellow}V%{$reset_color%}%f " # Visual mode indicator
+    else
+        PROMPT+="%F{green}$%{$reset_color%}%f "  # Insert mode indicator
+    fi
+}
+
+# Function to update prompt color when vi mode changes
+function zle-line-init zle-keymap-select {
+    set_prompt_color_vi_mode
+    zle reset-prompt
+}
+
+# Explicitly register zle-keymap-select and zle-line-init as ZLE widgets
+zle -N zle-keymap-select
+zle -N zle-line-init
 
 # Use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Source the khal completions file for zsh
+source ~/.config/khal/.khal-complete.zsh
 
 # Adding zoxide to zsh
 eval "$(zoxide init --cmd cd zsh)"
+
 # Load zsh-syntax-hilighting; should be last
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
