@@ -25,6 +25,9 @@ export GPG_TTY=$(tty)
 # Load additional environment variables from extra.env
 [[ -s "$XDG_CONFIG_HOME/zsh/apps.zshenv" ]] && source "$XDG_CONFIG_HOME/zsh/apps.zshenv"
 
+# Load functions.zshrc for functions needed for .zshrc file
+[[ -s "$XDG_CONFIG_HOME/zsh/functions.zshrc" ]] && source "$XDG_CONFIG_HOME/zsh/functions.zshrc"
+
 # Load .zshrc for shell configuration and executing commands
 [[ -s $XDG_CONFIG_HOME/zsh/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/.zshrc
 
