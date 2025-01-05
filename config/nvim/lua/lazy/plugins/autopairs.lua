@@ -1,6 +1,7 @@
 return {
     -- Automatically inserts full pair quotes, brackets, etc after first insert
     "windwp/nvim-autopairs",
+    enabled = true,
     event = "InsertEnter",
     -- Optional dependencies
     dependencies = { "hrsh7th/nvim-cmp" },

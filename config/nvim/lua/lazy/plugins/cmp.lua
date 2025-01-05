@@ -1,6 +1,7 @@
 return {
     -- auto-completions
     "hrsh7th/nvim-cmp",
+    enabled = true,
     event = "InsertEnter",
     dependencies = {
         "L3MON4D3/LuaSnip", -- snippet engine written in Lua

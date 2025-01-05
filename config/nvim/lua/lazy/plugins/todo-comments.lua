@@ -9,6 +9,7 @@ return {
 
     -- The above now has a nice highlighting effect for easily viewing comments
     "folke/todo-comments.nvim",
+    enabled = true,
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
         require("todo-comments").setup({

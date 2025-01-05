@@ -4,6 +4,4 @@ require("config.set")
 require("config.keys")
 require("config.cmd")
 -- lazy plugin manager config
-require("lazy.config")
--- Language Server Protocol servers
-require("lsp.servers")
+require("lazy.init")

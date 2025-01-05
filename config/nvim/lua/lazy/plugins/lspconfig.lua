@@ -1,5 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
+    enabled = true,
     dependencies = {
         { "williamboman/mason.nvim", config = true }, -- manages LSP, DAP, linters, formatters
         "williamboman/mason-lspconfig.nvim", -- integrates mason & lspconfig
