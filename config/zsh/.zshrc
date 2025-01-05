@@ -16,8 +16,8 @@ setopt PROMPT_SUBST
 
 # Left prompt configuration
 # TODO: Make prompt change slash / char color for directory
-PROMPT="%F{red}[%F{yellow}%~%F{red}] ${vcs_info_msg_0_}
-%F{green}$%{$reset_color%}%f "
+PROMPT='%F{red}[%F{yellow}%~%F{red}] ${vcs_info_msg_0_}
+%F{green}$%{$reset_color%}%f '
 # Right side prompt that shows user@machine
 RPROMPT='%F{red}[%F{yellow}%n%F{green}@%F{cyan}%M%F{red}]'
 
