@@ -98,24 +98,25 @@ return {
 
                 ["core.dirman"] = { -- Manages Neorg workspaces
                     config = {
+                        -- My desktop is my messy workspace filled with notes, like in real life
                         workspaces = {
                             -- Top level workspace
-                            random = "$XDG_DATA_HOME/neorg",
+                            neorg = "~/Desktop/neorg",
 
                             -- Main notes workspace
-                            notes = "$XDG_DATA_HOME/neorg/notes", -- personal notes
+                            notes = "~/Desktop/neorg/notes", -- personal notes
 
                             -- Extra note workspaces
-                            help = "$XDG_DATA_HOME/neorg/help", -- Helpful/troubleshooting program notes
-                            ideas = "$XDG_DATA_HOME/neorg/ideas", -- My brain children
-                            projects = "$XDG_DATA_HOME/neorg/projects", -- Personal projects notes
-                            research = "$XDG_DATA_HOME/neorg/research", -- Research notes
-                            rum = "$XDG_DATA_HOME/neorg/rum", -- ruminations, organized chaos?
-                            school = "$XDG_DATA_HOME/neorg/school", -- School notes
-                            work = "$XDG_DATA_HOME/neorg/work", -- Work notes
+                            help = "~/Desktop/neorg/help", -- Helpful/troubleshooting program notes
+                            ideas = "~/Desktop/neorg/ideas", -- My brain children
+                            projects = "~/Desktop/neorg/projects", -- Personal projects notes
+                            research = "~/Desktop/neorg/research", -- Research notes
+                            rum = "~/Desktop/neorg/rum", -- ruminations, organized chaos?
+                            school = "~/Desktop/neorg/school", -- School notes
+                            work = "~/Desktop/neorg/work", -- Work notes
                         },
                         index = "index.norg", -- The name of the main (root) .norg file
-                        default_workspace = "random",
+                        default_workspace = "neorg",
                         open_last_workspace = false,
                         use_popup = true,
                     },

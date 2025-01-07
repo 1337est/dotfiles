@@ -2,7 +2,312 @@
 
 I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09
 
-## Structure
+## Directory Structure of ~
+
+### Overview
+This document provides a description of the main directories in the `~` directory structure. Each directory is detailed below to give insight into its purpose and typical contents.
+
+### **`Videos`**
+
+ adrian
+├──  Videos
+
+A directory for organizing video files, such as tutorials, movies, and personal recordings.
+
+### **`Templates`**
+
+ adrian
+├──  Templates
+│   ├──  Makefile.vulkan
+│   ├──  Makefile
+│   └──  .clang-format
+
+Contains template files for quick use, including:
+
+- **`Makefile.vulkan`**
+  A template for Vulkan-specific projects.
+- **`.clang-format`**
+  A pre-configured Clang format template for code styling.
+
+### **`Public`**
+
+ adrian
+├──  Public
+
+A public directory used for sharing files with other users or systems.
+
+### **`Pictures`**
+
+ adrian
+├── 󰉏 Pictures
+│   ├──  Wallpapers
+│   ├──  Screenshots
+│   ├──  Profile
+│   ├──  Phone
+│   ├──  Icons
+│   ├──  Camera
+
+Used for organizing images. Subdirectories categorize the types of images stored:
+
+- **`Pictures/Camera`**
+  Photos taken with a camera.
+- **`Pictures/Icons`**
+  Custom and downloaded icons for UI or other design purposes.
+- **`Pictures/Phone`**
+  Photos and screenshots transferred from a phone.
+- **`Pictures/Profile`**
+  Profile pictures for various accounts or applications.
+- **`Pictures/Screenshots`**
+  Screenshots captured on the system.
+- **`Pictures/Wallpapers`**
+  A collection of desktop and mobile wallpapers.
+
+### **`Music`**
+
+ adrian
+├── 󱍙 Music
+
+A directory dedicated to music files, including albums, playlists, and personal recordings.
+
+### **`Downloads`**
+
+ adrian
+├── 󰉍 Downloads
+
+The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
+
+### **`Documents`**
+
+ adrian
+├──  Documents
+│   ├──  work
+│   ├──  school
+
+This directory is used for storing important documents and is further categorized:
+
+- **`Documents/work`**
+  Work-related documents, such as reports, meeting notes, and proposals.
+
+- **`Documents/school`**
+  Contains academic materials, assignments, and other school-related documents.
+
+### **`Desktop`**
+
+ adrian
+├──  Desktop
+│   ├──  neorg
+│   │   ├──  work
+│   │   ├──  school
+│   │   │   └──  index.norg
+│   │   ├──  rum
+│   │   │   ├──  timestop.norg
+│   │   │   ├──  the_awakener.norg
+│   │   │   ├──  quotes.norg
+│   │   │   ├──  kids.norg
+│   │   │   └──  cogito_libri_sapientiae.norg
+│   │   ├──  research
+│   │   │   ├──  nvim.norg
+│   │   │   └──  index.norg
+│   │   ├──  projects
+│   │   ├──  notes
+│   │   │   ├──  todo.norg
+│   │   │   └──  index.norg
+│   │   ├──  ideas
+│   │   │   ├──  terminal_platformer.norg
+│   │   │   ├──  shapes.norg
+│   │   │   ├──  reflection.norg
+│   │   │   └──  brrito.norg
+│   │   ├──  help
+│   │   │   ├──  vim-guide.norg
+│   │   │   ├──  new_arch_install.norg
+│   │   │   └──  bluetooth_issues.norg
+│   │   └──  index.norg
+
+The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
+
+- **`Desktop/neorg`**
+  A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
+
+### **`Code`**
+
+ adrian
+├──  Code
+│   ├──  research
+│   ├──  projects
+│   └──  github
+│       └──  dotfiles
+
+This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
+
+- **`Code/github`**
+  This is where personal GitHub repositories are stored, including configuration files and personal projects.
+
+- **`Code/github/dotfiles`**
+  A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
+
+ adrian
+├── 󰢬 .ssh
+├──  .password-store
+├──  .mozilla
+├──  .local
+│   ├──  state
+│   │   ├──  zsh
+│   │   │   └──  history
+│   │   ├──  nvim
+│   │   │   ├──  undodir
+│   │   │   ├──  swap
+│   │   │   ├──  lazy
+│   │   │   ├──  log
+│   │   ├──  neomutt
+│   │   │   └──  notmuch_search_queries
+│   │   ├──  msmtp
+│   │   │   └──  msmtp.log
+│   │   └──  lesshst
+│   ├──  share
+│   │   ├──  zoxide
+│   │   │   └──  db.zo
+│   │   ├──  vdirsyncer
+│   │   │   ├──  tokens
+│   │   │   ├──  status
+│   │   │   │   ├──  adrian_contacts
+│   │   │   │   ├──  adrian_calendar
+│   │   │   │   ├──  adrian_contacts.collections
+│   │   │   │   └──  adrian_calendar.collections
+│   │   │   ├──  contacts
+│   │   │   └──  calendars
+│   │   ├──  nvim
+│   │   │   ├──  mason
+│   │   │   ├──  lazy-rocks
+│   │   │   ├──  lazy
+│   │   │   │   ├──  onedark.nvim
+│   │   │   │   ├──  neorg
+│   │   │   │   ├──  lazy.nvim
+│   │   │   ├──  neorg.mpack
+│   │   │   └──  neorg.log
+│   │   ├── 󰇰 mail
+│   │   │   ├──  email_5
+│   │   │   │   ├──  Trash
+│   │   │   │   ├──  Sent
+│   │   │   │   ├──  INBOX
+│   │   │   │   └──  Drafts
+│   │   │   ├──  email_4
+│   │   │   │   ├──  Trash
+│   │   │   │   ├──  Sent
+│   │   │   │   ├──  INBOX
+│   │   │   │   └──  Drafts
+│   │   │   ├──  email_3
+│   │   │   │   ├──  Trash
+│   │   │   │   ├──  Sent
+│   │   │   │   ├──  INBOX
+│   │   │   │   └──  Drafts
+│   │   │   ├──  email_2
+│   │   │   │   ├──  Trash
+│   │   │   │   ├──  Sent
+│   │   │   │   ├──  INBOX
+│   │   │   │   └──  Drafts
+│   │   │   └──  email_1
+│   │   │       ├──  Trash
+│   │   │       ├──  Sent
+│   │   │       ├──  INBOX
+│   │   │       └──  Drafts
+│   │   ├──  libs
+│   │   │   ├──  tinyobjloader
+│   │   │   │   └──  tiny_obj_loader.h
+│   │   │   └──  stb
+│   │   │       └──  stb_image.h
+│   │   ├──  applications
+│   │   │   ├──  neomutt.desktop
+│   │   │   └──  mimeinfo.cache
+│   │   └──  recently-used.xbel
+│   └──  bin
+├── 󰢬 .gnupg
+│   └──  gpg-agent.conf
+├──  .config
+│   ├──  zsh ⇒ ../Code/github/dotfiles/config/zsh
+│   ├──  zathura ⇒ ../Code/github/dotfiles/config/zathura
+│   ├──  wget ⇒ ../Code/github/dotfiles/config/wget
+│   ├──  vdirsyncer ⇒ ../Code/github/dotfiles/config/vdirsyncer
+│   ├──  sway ⇒ ../Code/github/dotfiles/config/sway
+│   ├──  swappy ⇒ ../Code/github/dotfiles/config/swappy
+│   ├──  qalculate
+│   ├──  pulse
+│   ├──  nvim ⇒ ../Code/github/dotfiles/config/nvim
+│   ├──  npm ⇒ ../Code/github/dotfiles/config/npm
+│   ├──  notmuch ⇒ ../Code/github/dotfiles/config/notmuch
+│   ├──  nnn ⇒ ../Code/github/dotfiles/config/nnn
+│   ├──  neomutt ⇒ ../Code/github/dotfiles/config/neomutt
+│   ├──  msmtp ⇒ ../Code/github/dotfiles/config/msmtp
+│   ├──  mpv ⇒ ../Code/github/dotfiles/config/mpv
+│   ├──  libreoffice
+│   ├──  lazygit
+│   ├──  kitty ⇒ ../Code/github/dotfiles/config/kitty
+│   ├──  khard ⇒ ../Code/github/dotfiles/config/khard
+│   ├──  khal ⇒ ../Code/github/dotfiles/config/khal
+│   ├──  isync ⇒ ../Code/github/dotfiles/config/isync
+│   ├──  gtk-3.0
+│   ├──  go
+│   ├──  git ⇒ ../Code/github/dotfiles/config/git
+│   ├──  gh
+│   ├──  dconf
+│   ├──  clangd ⇒ ../Code/github/dotfiles/config/clangd
+│   ├──  audacity
+│   ├──  user-dirs.locale ⇒ ../Code/github/dotfiles/config/user-dirs.locale
+│   ├──  user-dirs.dirs ⇒ ../Code/github/dotfiles/config/user-dirs.dirs
+│   └──  mimeapps.list ⇒ ../Code/github/dotfiles/config/mimeapps.list
+└── 󰃨 .cache
+    ├──  wget
+    ├──  nvim
+    ├──  npm
+    ├──  neomutt
+    ├──  mpv
+    ├──  mozilla
+    ├──  mesa_shader_cache_db
+    ├──  mesa_shader_cache
+    ├──  luarocks
+    ├──  kitty
+    ├──  go-build
+    ├──  go
+    ├──  gegl-0.4
+    ├──  fontconfig
+    ├──  babl
+    └──  .bluetoothctl_history
+
+## Directory Structure of: dotfiles
+
+ dotfiles
+├──  config
+│   ├──  clangd
+│   ├──  git
+│   ├──  isync
+│   ├──  khal
+│   ├──  khard
+│   ├──  kitty
+│   ├──  mpv
+│   ├──  msmtp
+│   ├──  neomutt
+│   ├──  nnn
+│   ├──  notmuch
+│   ├──  npm
+│   ├──  nvim
+│   ├──  swappy
+│   ├──  sway
+│   ├──  vdirsyncer
+│   ├──  wget
+│   ├──  zathura
+│   ├──  zsh
+│   ├──  mimeapps.list
+│   ├──  user-dirs.dirs
+│   └──  user-dirs.locale
+├──  resources
+│   └──  MicrosoftFonts
+├──  sync
+│   └──  archsetup
+├──  system
+│   ├──  ly.config.ini
+│   ├──  neomutt.desktop
+│   ├──  pacman.conf
+│   └──  pam_env.conf
+└──  README.md
 
 - **config**: stores my $XDG_CONFIG_HOME directories and files
 - **pam_env.conf**: a system file located at /etc/security/pam_env.conf used to set my personal config variables such as my XDG_DIRS, ZDOTDIR, and EMAIL addresses
