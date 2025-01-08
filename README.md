@@ -388,7 +388,8 @@ This directory contains all coding-related projects and research. It's divided i
 
 ## Directory Structure of: dotfiles
 
- dotfiles
+```bash
+ Code/github/dotfiles
 ├──  config
 │   ├──  clangd
 │   ├──  git
@@ -422,6 +423,7 @@ This directory contains all coding-related projects and research. It's divided i
 │   ├──  pacman.conf
 │   └──  pam_env.conf
 └──  README.md
+```
 
 - **config**: stores my $XDG_CONFIG_HOME directories and files
 - **pam_env.conf**: a system file located at /etc/security/pam_env.conf used to set my personal config variables such as my XDG_DIRS, ZDOTDIR, and EMAIL addresses
