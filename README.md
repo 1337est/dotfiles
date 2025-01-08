@@ -9,18 +9,22 @@ This document provides a description of the main directories in the `~` director
 
 ### **`Videos`**
 
+```bash
  adrian
 ├──  Videos
+```
 
 A directory for organizing video files, such as tutorials, movies, and personal recordings.
 
 ### **`Templates`**
 
+```bash
  adrian
 ├──  Templates
 │   ├──  Makefile.vulkan
 │   ├──  Makefile
 │   └──  .clang-format
+```
 
 Contains template files for quick use, including:
 
@@ -31,13 +35,16 @@ Contains template files for quick use, including:
 
 ### **`Public`**
 
+```bash
  adrian
 ├──  Public
+```
 
 A public directory used for sharing files with other users or systems.
 
 ### **`Pictures`**
 
+```bash
  adrian
 ├── 󰉏 Pictures
 │   ├──  Wallpapers
@@ -46,6 +53,7 @@ A public directory used for sharing files with other users or systems.
 │   ├──  Phone
 │   ├──  Icons
 │   ├──  Camera
+```
 
 Used for organizing images. Subdirectories categorize the types of images stored:
 
@@ -64,24 +72,30 @@ Used for organizing images. Subdirectories categorize the types of images stored
 
 ### **`Music`**
 
+```bash
  adrian
 ├── 󱍙 Music
+```
 
 A directory dedicated to music files, including albums, playlists, and personal recordings.
 
 ### **`Downloads`**
 
+```bash
  adrian
 ├── 󰉍 Downloads
+```
 
 The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
 
 ### **`Documents`**
 
+```bash
  adrian
 ├──  Documents
 │   ├──  work
 │   ├──  school
+```
 
 This directory is used for storing important documents and is further categorized:
 
@@ -93,6 +107,7 @@ This directory is used for storing important documents and is further categorize
 
 ### **`Desktop`**
 
+```bash
  adrian
 ├──  Desktop
 │   ├──  neorg
@@ -122,6 +137,7 @@ This directory is used for storing important documents and is further categorize
 │   │   │   ├──  new_arch_install.norg
 │   │   │   └──  bluetooth_issues.norg
 │   │   └──  index.norg
+```
 
 The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
 
@@ -130,12 +146,14 @@ The desktop environment folder. Frequently used for temporary organization and o
 
 ### **`Code`**
 
+```bash
  adrian
 ├──  Code
 │   ├──  research
 │   ├──  projects
 │   └──  github
 │       └──  dotfiles
+```
 
 This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
 
@@ -145,27 +163,75 @@ This directory contains all coding-related projects and research. It's divided i
 - **`Code/github/dotfiles`**
   A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
 
+```bash
  adrian
 ├── 󰢬 .ssh
+```
+
+```bash
+ adrian
 ├──  .password-store
+```
+
+```bash
+ adrian
 ├──  .mozilla
+```
+
+```bash
+ adrian
 ├──  .local
 │   ├──  state
 │   │   ├──  zsh
 │   │   │   └──  history
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  state
 │   │   ├──  nvim
 │   │   │   ├──  undodir
 │   │   │   ├──  swap
 │   │   │   ├──  lazy
 │   │   │   ├──  log
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  state
 │   │   ├──  neomutt
 │   │   │   └──  notmuch_search_queries
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  state
 │   │   ├──  msmtp
 │   │   │   └──  msmtp.log
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  state
 │   │   └──  lesshst
+```
+
+```bash
+ adrian
+├──  .local
 │   ├──  share
 │   │   ├──  zoxide
 │   │   │   └──  db.zo
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  share
 │   │   ├──  vdirsyncer
 │   │   │   ├──  tokens
 │   │   │   ├──  status
@@ -175,6 +241,12 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   │   └──  adrian_calendar.collections
 │   │   │   ├──  contacts
 │   │   │   └──  calendars
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  share
 │   │   ├──  nvim
 │   │   │   ├──  mason
 │   │   │   ├──  lazy-rocks
@@ -184,6 +256,12 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   │   ├──  lazy.nvim
 │   │   │   ├──  neorg.mpack
 │   │   │   └──  neorg.log
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  share
 │   │   ├── 󰇰 mail
 │   │   │   ├──  email_5
 │   │   │   │   ├──  Trash
@@ -210,18 +288,49 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │       ├──  Sent
 │   │   │       ├──  INBOX
 │   │   │       └──  Drafts
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  share
 │   │   ├──  libs
 │   │   │   ├──  tinyobjloader
 │   │   │   │   └──  tiny_obj_loader.h
 │   │   │   └──  stb
 │   │   │       └──  stb_image.h
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  share
 │   │   ├──  applications
 │   │   │   ├──  neomutt.desktop
 │   │   │   └──  mimeinfo.cache
+```
+
+```bash
+ adrian
+├──  .local
+│   ├──  share
 │   │   └──  recently-used.xbel
+```
+
+```bash
+ adrian
+├──  .local
 │   └──  bin
+```
+
+```bash
+ adrian
 ├── 󰢬 .gnupg
 │   └──  gpg-agent.conf
+```
+
+```bash
+ adrian
 ├──  .config
 │   ├──  zsh ⇒ ../Code/github/dotfiles/config/zsh
 │   ├──  zathura ⇒ ../Code/github/dotfiles/config/zathura
@@ -254,6 +363,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   ├──  user-dirs.locale ⇒ ../Code/github/dotfiles/config/user-dirs.locale
 │   ├──  user-dirs.dirs ⇒ ../Code/github/dotfiles/config/user-dirs.dirs
 │   └──  mimeapps.list ⇒ ../Code/github/dotfiles/config/mimeapps.list
+```
+
+```bash
+ adrian
 └── 󰃨 .cache
     ├──  wget
     ├──  nvim
@@ -271,6 +384,7 @@ This directory contains all coding-related projects and research. It's divided i
     ├──  fontconfig
     ├──  babl
     └──  .bluetoothctl_history
+```
 
 ## Directory Structure of: dotfiles
 
