@@ -3,13 +3,12 @@
 [//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
 
 ## Directory Structure of ~
+This is the directory structure of the `$HOME` or `~` directory. Each directory listed is of important when it comes to configuring my personal dotfiles and is important for synchronization between computer systems (e.g. personal laptop/computer, work computer, etc.) The details are below as a per directory explanation.
 
-### Overview
-This document provides a description of the main directories in the `~` directory structure. Each directory is detailed below to give insight into its purpose and typical contents.
-
+### XDG Base Directories
 ### **`Videos`**
 
-A directory for organizing video files, such as tutorials, movies, and personal recordings.
+A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
 
 ```bash
  adrian
@@ -18,7 +17,7 @@ A directory for organizing video files, such as tutorials, movies, and personal 
 
 ### **`Templates`**
 
-Contains template files for quick use, including:
+Contains template files for quick use.
 
 ```bash
  adrian
