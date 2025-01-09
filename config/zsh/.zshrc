@@ -8,7 +8,7 @@ setopt HIST_IGNORE_DUPS # will not record duplicate commands run consecutively
 setopt PROMPT_SUBST
 
 # aliases
-alias ls='lsd --group-dirs=first' # lsd with directories first
+alias ls='lsd --group-dirs=last' # lsd with directories first/last/none
 alias lsa='ls -A' # ls All
 alias lsl='ls -lh --git --header' # ls long
 alias lst='ls --tree --depth=2' # ls tree
