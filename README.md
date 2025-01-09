@@ -6,6 +6,8 @@
 This is the directory structure of the `$HOME` or `~` directory. Each directory listed is of important when it comes to configuring my personal dotfiles and is important for synchronization between computer systems (e.g. personal laptop/computer, work computer, etc.) The details are below as a per directory explanation.
 
 ### XDG Base Directories
+
+A short specification to the XDG Base Directories can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/):
 ### **`Videos`**
 
 A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
