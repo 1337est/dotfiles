@@ -7,7 +7,7 @@ This is the directory structure of the `$HOME` or `~` directory. Each directory 
 
 ### XDG Base Directories
 
-A short specification to the XDG Base Directories can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/):
+A short specification to the XDG Base Directories can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/){:target="_blank"}:
 ### **`Videos`**
 
 A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
