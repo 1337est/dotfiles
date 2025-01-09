@@ -1,6 +1,6 @@
 # My dotfiles
 
-I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09
+[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
 
 ## Directory Structure of ~
 
@@ -9,14 +9,16 @@ This document provides a description of the main directories in the `~` director
 
 ### **`Videos`**
 
+A directory for organizing video files, such as tutorials, movies, and personal recordings.
+
 ```bash
  adrian
 ├──  Videos
 ```
 
-A directory for organizing video files, such as tutorials, movies, and personal recordings.
-
 ### **`Templates`**
+
+Contains template files for quick use, including:
 
 ```bash
  adrian
@@ -26,8 +28,6 @@ A directory for organizing video files, such as tutorials, movies, and personal 
 │   └──  .clang-format
 ```
 
-Contains template files for quick use, including:
-
 - **`Makefile.vulkan`**
   A template for Vulkan-specific projects.
 - **`.clang-format`**
@@ -35,14 +35,16 @@ Contains template files for quick use, including:
 
 ### **`Public`**
 
+A public directory used for sharing files with other users or systems.
+
 ```bash
  adrian
 ├──  Public
 ```
 
-A public directory used for sharing files with other users or systems.
-
 ### **`Pictures`**
+
+Used for organizing images. Subdirectories categorize the types of images stored:
 
 ```bash
  adrian
@@ -54,8 +56,6 @@ A public directory used for sharing files with other users or systems.
 │   ├──  Icons
 │   ├──  Camera
 ```
-
-Used for organizing images. Subdirectories categorize the types of images stored:
 
 - **`Pictures/Camera`**
   Photos taken with a camera.
@@ -72,23 +72,25 @@ Used for organizing images. Subdirectories categorize the types of images stored
 
 ### **`Music`**
 
+A directory dedicated to music files, including albums, playlists, and personal recordings.
+
 ```bash
  adrian
 ├── 󱍙 Music
 ```
 
-A directory dedicated to music files, including albums, playlists, and personal recordings.
-
 ### **`Downloads`**
+
+The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
 
 ```bash
  adrian
 ├── 󰉍 Downloads
 ```
 
-The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
-
 ### **`Documents`**
+
+This directory is used for storing important documents and is further categorized:
 
 ```bash
  adrian
@@ -97,8 +99,6 @@ The default location for downloaded files. Files are typically moved from here t
 │   ├──  school
 ```
 
-This directory is used for storing important documents and is further categorized:
-
 - **`Documents/work`**
   Work-related documents, such as reports, meeting notes, and proposals.
 
@@ -106,6 +106,8 @@ This directory is used for storing important documents and is further categorize
   Contains academic materials, assignments, and other school-related documents.
 
 ### **`Desktop`**
+
+The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
 
 ```bash
  adrian
@@ -139,12 +141,12 @@ This directory is used for storing important documents and is further categorize
 │   │   └──  index.norg
 ```
 
-The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
-
 - **`Desktop/neorg`**
   A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
 
 ### **`Code`**
+
+This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
 
 ```bash
  adrian
@@ -155,28 +157,42 @@ The desktop environment folder. Frequently used for temporary organization and o
 │       └──  dotfiles
 ```
 
-This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
-
 - **`Code/github`**
   This is where personal GitHub repositories are stored, including configuration files and personal projects.
 
 - **`Code/github/dotfiles`**
   A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
 
+### **`.ssh`**
+
+This directory stores SSH-related configuration and key files. It includes private and public keys, known hosts, and SSH configuration files necessary for secure remote connections.
+
 ```bash
  adrian
 ├── 󰢬 .ssh
 ```
+
+### **`.password-store`**
+
+A directory used by the `pass` utility to store encrypted password files. Each entry corresponds to a file encrypted with GPG, organizing credentials securely.
 
 ```bash
  adrian
 ├──  .password-store
 ```
 
+### **`.mozilla`**
+
+Contains profiles and data for Mozilla-based applications, such as Firefox. This includes bookmarks, extensions, cookies, and other user-specific settings.
+
 ```bash
  adrian
 ├──  .mozilla
 ```
+
+### **`$XDG_STATE_HOME/zsh`**
+
+Stores Zsh state files, such as command history. This ensures persistent and organized shell session tracking.
 
 ```bash
  adrian
@@ -185,6 +201,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   ├──  zsh
 │   │   │   └──  history
 ```
+
+### **`$XDG_STATE_HOME/nvim`**
+
+Contains Neovim state files, such as undo history, swap files, and logs. This directory enhances Neovim's ability to recover and track session states.
 
 ```bash
  adrian
@@ -197,6 +217,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   ├──  log
 ```
 
+### **`$XDG_STATE_HOME/neomutt`**
+
+Stores state files for Neomutt, such as cached searches and session metadata. This ensures efficient email management and search operations.
+
 ```bash
  adrian
 ├──  .local
@@ -204,6 +228,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   ├──  neomutt
 │   │   │   └──  notmuch_search_queries
 ```
+
+### **`$XDG_STATE_HOME/msmtp`**
+
+Holds logs and state information for the msmtp email client, such as sent email logs. This aids in debugging and usage tracking.
 
 ```bash
  adrian
@@ -213,12 +241,20 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   └──  msmtp.log
 ```
 
+### **`$XDG_STATE_HOME/files`**
+
+Contains state files for various tools, such as the history file for `less`. These files enhance session persistence and user experience.
+
 ```bash
  adrian
 ├──  .local
 │   ├──  state
 │   │   └──  lesshst
 ```
+
+### **`$XDG_DATA_HOME/zoxide`**
+
+Stores the `zoxide` database, which tracks frequently used directories for fast navigation. The database file improves productivity by enabling smart `cd` commands.
 
 ```bash
  adrian
@@ -227,6 +263,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   ├──  zoxide
 │   │   │   └──  db.zo
 ```
+
+### **`$XDG_DATA_HOME/vdirsyncer`**
+
+Contains data for `vdirsyncer`, including tokens, status files, and synchronized contacts/calendars. This directory is crucial for managing calendar and contact synchronization.
 
 ```bash
  adrian
@@ -243,6 +283,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   └──  calendars
 ```
 
+### **`$XDG_DATA_HOME/nvim`**
+
+Holds Neovim data files, including plugin installations, runtime metadata, and log files. This directory enables plugin management and debugging.
+
 ```bash
  adrian
 ├──  .local
@@ -257,6 +301,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   ├──  neorg.mpack
 │   │   │   └──  neorg.log
 ```
+
+### **`$XDG_DATA_HOME/mail`**
+
+Contains email storage for local accounts, organized into folders like Inbox, Sent, and Trash. It is used by email clients for mail synchronization.
 
 ```bash
  adrian
@@ -290,6 +338,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │       └──  Drafts
 ```
 
+### **`$XDG_DATA_HOME/libs`**
+
+Stores header files for libraries used in projects. These include third-party libraries like `stb` and `tinyobjloader`, simplifying dependency management.
+
 ```bash
  adrian
 ├──  .local
@@ -301,6 +353,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │       └──  stb_image.h
 ```
 
+### **`$XDG_DATA_HOME/applications`**
+
+Contains `.desktop` entries for applications, enabling them to appear in menus or launchers. It includes a Neomutt launcher and MIME type associations.
+
 ```bash
  adrian
 ├──  .local
@@ -310,6 +366,10 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   │   └──  mimeinfo.cache
 ```
 
+### **`$XDG_DATA_HOME/files`**
+
+Stores metadata for recently used files, allowing applications to track and display file usage.
+
 ```bash
  adrian
 ├──  .local
@@ -317,17 +377,54 @@ This directory contains all coding-related projects and research. It's divided i
 │   │   └──  recently-used.xbel
 ```
 
+### **`~/.local/bin`**
+
+A directory for user-specific executables. It includes scripts and binaries not installed system-wide.
+
 ```bash
  adrian
 ├──  .local
 │   └──  bin
 ```
 
+### **`.gnupg`**
+
+The `.gnupg` directory contains configuration and key files used by GnuPG (GNU Privacy Guard) for encryption, signing, and verification of data. It stores private keys, public keys, and settings for the `gpg-agent`. For example, `gpg-agent.conf` contains user-defined configurations for the GPG agent.
+
 ```bash
  adrian
 ├── 󰢬 .gnupg
 │   └──  gpg-agent.conf
 ```
+
+### **`$XDG_CACHE_HOME`**
+
+The `$XDG_CACHE_HOME` directory is used to store non-essential cached data that can be regenerated if deleted. This directory improves performance by caching frequently accessed data for applications. Examples include shader caches, command histories, and temporary build files.
+
+```bash
+ adrian
+└── 󰃨 .cache
+    ├──  wget
+    ├──  nvim
+    ├──  npm
+    ├──  neomutt
+    ├──  mpv
+    ├──  mozilla
+    ├──  mesa_shader_cache_db
+    ├──  mesa_shader_cache
+    ├──  luarocks
+    ├──  kitty
+    ├──  go-build
+    ├──  go
+    ├──  gegl-0.4
+    ├──  fontconfig
+    ├──  babl
+    └──  .bluetoothctl_history
+```
+
+### **`$XDG_CONFIG_HOME`**
+
+Description here
 
 ```bash
  adrian
@@ -363,27 +460,6 @@ This directory contains all coding-related projects and research. It's divided i
 │   ├──  user-dirs.locale ⇒ ../Code/github/dotfiles/config/user-dirs.locale
 │   ├──  user-dirs.dirs ⇒ ../Code/github/dotfiles/config/user-dirs.dirs
 │   └──  mimeapps.list ⇒ ../Code/github/dotfiles/config/mimeapps.list
-```
-
-```bash
- adrian
-└── 󰃨 .cache
-    ├──  wget
-    ├──  nvim
-    ├──  npm
-    ├──  neomutt
-    ├──  mpv
-    ├──  mozilla
-    ├──  mesa_shader_cache_db
-    ├──  mesa_shader_cache
-    ├──  luarocks
-    ├──  kitty
-    ├──  go-build
-    ├──  go
-    ├──  gegl-0.4
-    ├──  fontconfig
-    ├──  babl
-    └──  .bluetoothctl_history
 ```
 
 ## Directory Structure of: dotfiles
