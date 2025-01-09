@@ -1,112 +1,36 @@
 # My dotfiles
 
-[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
-
 ## Directory Structure of ~
 This is the directory structure of the `$HOME` or `~` directory. Each directory listed is of important when it comes to configuring my personal dotfiles and is important for synchronization between computer systems (e.g. personal laptop/computer, work computer, etc.) The details are below as a per directory explanation.
 
-### XDG Base Directories
+### **XDG User Directories**
 
-A short specification to the XDG Base Directories can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/):
-### **`Videos`**
+I'm also using the `xdg-user-dirs` utility to create common directories such as: `Desktop`, `Documents`, `Downloads`, `Music`, `Pictures`, `Public`, `Templates`, and `Videos`, as well as a personal `Code` directory. More info on how the `xdg-user-dirs` utility works can be found [here](https://wiki.archlinux.org/title/XDG_user_directories)
 
-A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
+I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
 
-```bash
- adrian
-├──  Videos
-```
+[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
 
-### **`Templates`**
+#### **`Code`**
 
-Contains template files for quick use.
+This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
 
 ```bash
  adrian
-├──  Templates
-│   ├──  Makefile.vulkan
-│   ├──  Makefile
-│   └──  .clang-format
+├──  Code
+│   ├──  research
+│   ├──  projects
+│   └──  github
+│       └──  dotfiles
 ```
 
-- **`Makefile.vulkan`**
-  A template for Vulkan-specific projects.
-- **`.clang-format`**
-  A pre-configured Clang format template for code styling.
+- **`Code/github`**
+  This is where personal GitHub repositories are stored, including configuration files and personal projects.
 
-### **`Public`**
+- **`Code/github/dotfiles`**
+  A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
 
-A public directory used for sharing files with other users or systems.
-
-```bash
- adrian
-├──  Public
-```
-
-### **`Pictures`**
-
-Used for organizing images. Subdirectories categorize the types of images stored:
-
-```bash
- adrian
-├── 󰉏 Pictures
-│   ├──  Wallpapers
-│   ├──  Screenshots
-│   ├──  Profile
-│   ├──  Phone
-│   ├──  Icons
-│   ├──  Camera
-```
-
-- **`Pictures/Camera`**
-  Photos taken with a camera.
-- **`Pictures/Icons`**
-  Custom and downloaded icons for UI or other design purposes.
-- **`Pictures/Phone`**
-  Photos and screenshots transferred from a phone.
-- **`Pictures/Profile`**
-  Profile pictures for various accounts or applications.
-- **`Pictures/Screenshots`**
-  Screenshots captured on the system.
-- **`Pictures/Wallpapers`**
-  A collection of desktop and mobile wallpapers.
-
-### **`Music`**
-
-A directory dedicated to music files, including albums, playlists, and personal recordings.
-
-```bash
- adrian
-├── 󱍙 Music
-```
-
-### **`Downloads`**
-
-The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
-
-```bash
- adrian
-├── 󰉍 Downloads
-```
-
-### **`Documents`**
-
-This directory is used for storing important documents and is further categorized:
-
-```bash
- adrian
-├──  Documents
-│   ├──  work
-│   ├──  school
-```
-
-- **`Documents/work`**
-  Work-related documents, such as reports, meeting notes, and proposals.
-
-- **`Documents/school`**
-  Contains academic materials, assignments, and other school-related documents.
-
-### **`Desktop`**
+#### **`Desktop`**
 
 The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
 
@@ -145,24 +69,107 @@ The desktop environment folder. Frequently used for temporary organization and o
 - **`Desktop/neorg`**
   A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
 
-### **`Code`**
+#### **`Documents`**
 
-This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
+This directory is used for storing important documents and is further categorized:
 
 ```bash
  adrian
-├──  Code
-│   ├──  research
-│   ├──  projects
-│   └──  github
-│       └──  dotfiles
+├──  Documents
+│   ├──  work
+│   ├──  school
 ```
 
-- **`Code/github`**
-  This is where personal GitHub repositories are stored, including configuration files and personal projects.
+- **`Documents/work`**
+  Work-related documents, such as reports, meeting notes, and proposals.
 
-- **`Code/github/dotfiles`**
-  A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
+- **`Documents/school`**
+  Contains academic materials, assignments, and other school-related documents.
+
+#### **`Downloads`**
+
+The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
+
+```bash
+ adrian
+├── 󰉍 Downloads
+```
+
+#### **`Music`**
+
+A directory dedicated to music files, including albums, playlists, and personal recordings.
+
+```bash
+ adrian
+├── 󱍙 Music
+```
+
+#### **`Pictures`**
+
+Used for organizing images. Subdirectories categorize the types of images stored:
+
+```bash
+ adrian
+├── 󰉏 Pictures
+│   ├──  Wallpapers
+│   ├──  Screenshots
+│   ├──  Profile
+│   ├──  Phone
+│   ├──  Icons
+│   ├──  Camera
+```
+
+- **`Pictures/Camera`**
+  Photos taken with a camera.
+- **`Pictures/Icons`**
+  Custom and downloaded icons for UI or other design purposes.
+- **`Pictures/Phone`**
+  Photos and screenshots transferred from a phone.
+- **`Pictures/Profile`**
+  Profile pictures for various accounts or applications.
+- **`Pictures/Screenshots`**
+  Screenshots captured on the system.
+- **`Pictures/Wallpapers`**
+  A collection of desktop and mobile wallpapers.
+
+#### **`Public`**
+
+A public directory used for sharing files with other users or systems.
+
+```bash
+ adrian
+├──  Public
+```
+
+#### **`Templates`**
+
+Contains template files for quick use.
+
+```bash
+ adrian
+├──  Templates
+│   ├──  Makefile.vulkan
+│   ├──  Makefile
+│   └──  .clang-format
+```
+
+- **`Makefile.vulkan`**
+  A template for Vulkan-specific projects.
+- **`.clang-format`**
+  A pre-configured Clang format template for code styling.
+
+#### **`Videos`**
+
+A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
+
+```bash
+ adrian
+├──  Videos
+```
+
+### **XDG Base Directories**
+
+I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
 
 ### **`.ssh`**
 
