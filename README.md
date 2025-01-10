@@ -1,27 +1,23 @@
-# My dotfiles
-
-## Directory Structure of ~
+# Directory Structure of ~
 This is the directory structure of the `$HOME` or `~` directory. Each directory listed is of important when it comes to configuring my personal dotfiles and is important for synchronization between computer systems (e.g. personal laptop/computer, work computer, etc.) The details are below as a per directory explanation.
 
-### **XDG User Directories**
+## **XDG User Directories**
 
 I'm also using the `xdg-user-dirs` utility to create common directories such as: `Desktop`, `Documents`, `Downloads`, `Music`, `Pictures`, `Public`, `Templates`, and `Videos`, as well as a personal `Code` directory. More info on how the `xdg-user-dirs` utility works can be found [here](https://wiki.archlinux.org/title/XDG_user_directories)
 
-I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
-
 [//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
 
-#### **`Code`**
+### **`Code`**
 
 This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
 
 ```bash
  adrian
 ├──  Code
-│   ├──  research
+│   ├──  github
+│   │   └──  dotfiles
 │   ├──  projects
-│   └──  github
-│       └──  dotfiles
+│   └──  research
 ```
 
 - **`Code/github`**
@@ -30,7 +26,7 @@ This directory contains all coding-related projects and research. It's divided i
 - **`Code/github/dotfiles`**
   A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
 
-#### **`Desktop`**
+### **`Desktop`**
 
 The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
 
@@ -69,7 +65,7 @@ The desktop environment folder. Frequently used for temporary organization and o
 - **`Desktop/neorg`**
   A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
 
-#### **`Documents`**
+### **`Documents`**
 
 This directory is used for storing important documents and is further categorized:
 
@@ -86,7 +82,7 @@ This directory is used for storing important documents and is further categorize
 - **`Documents/school`**
   Contains academic materials, assignments, and other school-related documents.
 
-#### **`Downloads`**
+### **`Downloads`**
 
 The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
 
@@ -95,7 +91,7 @@ The default location for downloaded files. Files are typically moved from here t
 ├── 󰉍 Downloads
 ```
 
-#### **`Music`**
+### **`Music`**
 
 A directory dedicated to music files, including albums, playlists, and personal recordings.
 
@@ -104,7 +100,7 @@ A directory dedicated to music files, including albums, playlists, and personal 
 ├── 󱍙 Music
 ```
 
-#### **`Pictures`**
+### **`Pictures`**
 
 Used for organizing images. Subdirectories categorize the types of images stored:
 
@@ -132,7 +128,7 @@ Used for organizing images. Subdirectories categorize the types of images stored
 - **`Pictures/Wallpapers`**
   A collection of desktop and mobile wallpapers.
 
-#### **`Public`**
+### **`Public`**
 
 A public directory used for sharing files with other users or systems.
 
@@ -141,7 +137,7 @@ A public directory used for sharing files with other users or systems.
 ├──  Public
 ```
 
-#### **`Templates`**
+### **`Templates`**
 
 Contains template files for quick use.
 
@@ -158,7 +154,7 @@ Contains template files for quick use.
 - **`.clang-format`**
   A pre-configured Clang format template for code styling.
 
-#### **`Videos`**
+### **`Videos`**
 
 A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
 
@@ -167,7 +163,7 @@ A directory for organizing video files, such as tutorials, movies, and personal 
 ├──  Videos
 ```
 
-### **XDG Base Directories**
+## **XDG Base Directories**
 
 I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
 
