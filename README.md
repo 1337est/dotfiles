@@ -5,19 +5,17 @@ This is the directory structure of the `$HOME` or `~` directory. Each directory 
 
 I'm also using the `xdg-user-dirs` utility to create common directories such as: `Desktop`, `Documents`, `Downloads`, `Music`, `Pictures`, `Public`, `Templates`, and `Videos`, as well as a personal `Code` directory. More info on how the `xdg-user-dirs` utility works can be found [here](https://wiki.archlinux.org/title/XDG_user_directories)
 
-[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
-
 ### **`Code`**
 
 This is where my code lives. A conglomeration of github repos, personal projects, and research.
 
 ```
  adrian
-├──  Code
-│   ├──  github
-│   │   └──  dotfiles
-│   ├──  projects
-│   └──  research
+└──  Code
+    ├──  github
+    │   └──  dotfiles
+    ├──  projects
+    └──  research
 ```
 
 - **`Code/github/dotfiles`**
@@ -29,67 +27,41 @@ This is where my dotfiles repo (the one you're reading now) is located. This dir
 
 ### **`Desktop`**
 
-The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
+My desktop needs to be cleaned frequently, but never does. Just like a real desktop, I try and use this space to hold random things I'm working on. I put them where they need to go when I have the free time to do so. Furthermore, I utilize a Neovim plugin called `neorg` to manage my notes that I keep on my `Desktop`. You can learn more about it [here](https://github.com/nvim-neorg/neorg). As a general overview, it's a note taking utility centered around the well known Org-mode that Emacs has. Subdirectories within `neorg` contain an organized note-taking flow. Here is the structure I like to use for my notes:
 
 ```
  adrian
-├──  Desktop
-│   ├──  neorg
-│   │   ├──  work
-│   │   ├──  school
-│   │   │   └──  index.norg
-│   │   ├──  rum
-│   │   │   ├──  timestop.norg
-│   │   │   ├──  the_awakener.norg
-│   │   │   ├──  quotes.norg
-│   │   │   ├──  kids.norg
-│   │   │   └──  cogito_libri_sapientiae.norg
-│   │   ├──  research
-│   │   │   ├──  nvim.norg
-│   │   │   └──  index.norg
-│   │   ├──  projects
-│   │   ├──  notes
-│   │   │   ├──  todo.norg
-│   │   │   └──  index.norg
-│   │   ├──  ideas
-│   │   │   ├──  terminal_platformer.norg
-│   │   │   ├──  shapes.norg
-│   │   │   ├──  reflection.norg
-│   │   │   └──  brrito.norg
-│   │   ├──  help
-│   │   │   ├──  vim-guide.norg
-│   │   │   ├──  new_arch_install.norg
-│   │   │   └──  bluetooth_issues.norg
-│   │   └──  index.norg
+└──  Desktop
+    └──  neorg
+        ├──  index.norg
+        ├──  help
+        ├──  ideas
+        ├──  notes
+        ├──  projects
+        ├──  research
+        ├──  rum
+        ├──  school
+        └──  work
 ```
 
-- **`Desktop/neorg`**
-A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
+[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
 
 ### **`Documents`**
 
-This directory is used for storing important documents and is further categorized:
+This directory is used for storing important documents. What more is there to know?
 
 ```
  adrian
-├──  Documents
-│   ├──  work
-│   ├──  school
+└──  Documents
 ```
-
-- **`Documents/work`**
-Work-related documents, such as reports, meeting notes, and proposals.
-
-- **`Documents/school`**
-Contains academic materials, assignments, and other school-related documents.
 
 ### **`Downloads`**
 
-The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
+The default location for downloaded files. Files are typically moved from here to their respective locations when I have the time, similar to the `Desktop`.
 
 ```
  adrian
-├── 󰉍 Downloads
+└── 󰉍 Downloads
 ```
 
 ### **`Music`**
@@ -98,7 +70,7 @@ A directory dedicated to music files, including albums, playlists, and personal 
 
 ```
  adrian
-├── 󱍙 Music
+└── 󱍙 Music
 ```
 
 ### **`Pictures`**
@@ -107,13 +79,13 @@ Used for organizing images. Subdirectories categorize the types of images stored
 
 ```
  adrian
-├── 󰉏 Pictures
-│   ├──  Wallpapers
-│   ├──  Screenshots
-│   ├──  Profile
-│   ├──  Phone
-│   ├──  Icons
-│   ├──  Camera
+└── 󰉏 Pictures
+    ├──  Camera
+    ├──  Icons
+    ├──  Phone
+    ├──  Profile
+    ├──  Screenshots
+    └──  Wallpapers
 ```
 
 - **`Pictures/Camera`**
@@ -135,7 +107,7 @@ A public directory used for sharing files with other users or systems.
 
 ```
  adrian
-├──  Public
+└──  Public
 ```
 
 ### **`Templates`**
@@ -144,10 +116,10 @@ Contains template files for quick use.
 
 ```
  adrian
-├──  Templates
-│   ├──  Makefile.vulkan
-│   ├──  Makefile
-│   └──  .clang-format
+└──  Templates
+    ├──  .clang-format
+    ├──  Makefile
+    └──  Makefile.vulkan
 ```
 
 - **`Makefile.vulkan`**
@@ -161,29 +133,19 @@ A directory for organizing video files, such as tutorials, movies, and personal 
 
 ```
  adrian
-├──  Videos
+└──  Videos
 ```
 
-## **XDG Base Directories**
+## Hidden `.directories`
 
-I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
+### **`.gnupg`**
 
-### **`.ssh`**
-
-This directory stores SSH-related configuration and key files. It includes private and public keys, known hosts, and SSH configuration files necessary for secure remote connections.
+The `.gnupg` directory contains configuration and key files used by GnuPG (GNU Privacy Guard) for encryption, signing, and verification of data. It stores private keys, public keys, and settings for the `gpg-agent`. For example, `gpg-agent.conf` contains user-defined configurations for the GPG agent.
 
 ```
  adrian
-├── 󰢬 .ssh
-```
-
-### **`.password-store`**
-
-A directory used by the `pass` utility to store encrypted password files. Each entry corresponds to a file encrypted with GPG, organizing credentials securely.
-
-```
- adrian
-├──  .password-store
+└── 󰢬 .gnupg
+    └──  gpg-agent.conf
 ```
 
 ### **`.mozilla`**
@@ -192,8 +154,30 @@ Contains profiles and data for Mozilla-based applications, such as Firefox. This
 
 ```
  adrian
-├──  .mozilla
+└──  .mozilla
 ```
+
+### **`.password-store`**
+
+A directory used by the `pass` utility to store encrypted password files. Each entry corresponds to a file encrypted with GPG, organizing credentials securely.
+
+```
+ adrian
+└──  .password-store
+```
+
+### **`.ssh`**
+
+This directory stores SSH-related configuration and key files. It includes private and public keys, known hosts, and SSH configuration files necessary for secure remote connections.
+
+```
+ adrian
+└── 󰢬 .ssh
+```
+
+## **XDG Base Directories**
+
+I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
 
 ### **`$XDG_STATE_HOME/zsh`**
 
@@ -201,10 +185,10 @@ Stores Zsh state files, such as command history. This ensures persistent and org
 
 ```
  adrian
-├──  .local
-│   ├──  state
-│   │   ├──  zsh
-│   │   │   └──  history
+└──  .local
+    └──  state
+        └──  zsh
+            └──  history
 ```
 
 ### **`$XDG_STATE_HOME/nvim`**
@@ -213,13 +197,13 @@ Contains Neovim state files, such as undo history, swap files, and logs. This di
 
 ```
  adrian
-├──  .local
-│   ├──  state
-│   │   ├──  nvim
-│   │   │   ├──  undodir
-│   │   │   ├──  swap
-│   │   │   ├──  lazy
-│   │   │   ├──  log
+└──  .local
+    └──  state
+        └──  nvim
+            ├──  undodir
+            ├──  swap
+            ├──  lazy
+            └──  log
 ```
 
 ### **`$XDG_STATE_HOME/neomutt`**
@@ -228,10 +212,10 @@ Stores state files for Neomutt, such as cached searches and session metadata. Th
 
 ```
  adrian
-├──  .local
-│   ├──  state
-│   │   ├──  neomutt
-│   │   │   └──  notmuch_search_queries
+└──  .local
+    └──  state
+        └──  neomutt
+            └──  notmuch_search_queries
 ```
 
 ### **`$XDG_STATE_HOME/msmtp`**
@@ -240,10 +224,10 @@ Holds logs and state information for the msmtp email client, such as sent email 
 
 ```
  adrian
-├──  .local
-│   ├──  state
-│   │   ├──  msmtp
-│   │   │   └──  msmtp.log
+└──  .local
+    └──  state
+        └──  msmtp
+            └──  msmtp.log
 ```
 
 ### **`$XDG_STATE_HOME/files`**
@@ -252,9 +236,9 @@ Contains state files for various tools, such as the history file for `less`. The
 
 ```
  adrian
-├──  .local
-│   ├──  state
-│   │   └──  lesshst
+└──  .local
+    └──  state
+        └──  lesshst
 ```
 
 ### **`$XDG_DATA_HOME/zoxide`**
@@ -263,10 +247,10 @@ Stores the `zoxide` database, which tracks frequently used directories for fast 
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   ├──  zoxide
-│   │   │   └──  db.zo
+└──  .local
+    └──  share
+        └──  zoxide
+            └──  db.zo
 ```
 
 ### **`$XDG_DATA_HOME/vdirsyncer`**
@@ -275,17 +259,17 @@ Contains data for `vdirsyncer`, including tokens, status files, and synchronized
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   ├──  vdirsyncer
-│   │   │   ├──  tokens
-│   │   │   ├──  status
-│   │   │   │   ├──  adrian_contacts
-│   │   │   │   ├──  adrian_calendar
-│   │   │   │   ├──  adrian_contacts.collections
-│   │   │   │   └──  adrian_calendar.collections
-│   │   │   ├──  contacts
-│   │   │   └──  calendars
+└──  .local
+    └──  share
+        └──  vdirsyncer
+            ├──  tokens
+            ├──  status
+            │   ├──  adrian_contacts
+            │   ├──  adrian_calendar
+            │   ├──  adrian_contacts.collections
+            │   └──  adrian_calendar.collections
+            ├──  contacts
+            └──  calendars
 ```
 
 ### **`$XDG_DATA_HOME/nvim`**
@@ -294,17 +278,17 @@ Holds Neovim data files, including plugin installations, runtime metadata, and l
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   ├──  nvim
-│   │   │   ├──  mason
-│   │   │   ├──  lazy-rocks
-│   │   │   ├──  lazy
-│   │   │   │   ├──  onedark.nvim
-│   │   │   │   ├──  neorg
-│   │   │   │   ├──  lazy.nvim
-│   │   │   ├──  neorg.mpack
-│   │   │   └──  neorg.log
+└──  .local
+    └──  share
+        └──  nvim
+            ├──  mason
+            ├──  lazy-rocks
+            ├──  lazy
+            │   ├──  onedark.nvim
+            │   ├──  neorg
+            │   └──  lazy.nvim
+            ├──  neorg.mpack
+            └──  neorg.log
 ```
 
 ### **`$XDG_DATA_HOME/mail`**
@@ -313,34 +297,34 @@ Contains email storage for local accounts, organized into folders like Inbox, Se
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   ├── 󰇰 mail
-│   │   │   ├──  email_5
-│   │   │   │   ├──  Trash
-│   │   │   │   ├──  Sent
-│   │   │   │   ├──  INBOX
-│   │   │   │   └──  Drafts
-│   │   │   ├──  email_4
-│   │   │   │   ├──  Trash
-│   │   │   │   ├──  Sent
-│   │   │   │   ├──  INBOX
-│   │   │   │   └──  Drafts
-│   │   │   ├──  email_3
-│   │   │   │   ├──  Trash
-│   │   │   │   ├──  Sent
-│   │   │   │   ├──  INBOX
-│   │   │   │   └──  Drafts
-│   │   │   ├──  email_2
-│   │   │   │   ├──  Trash
-│   │   │   │   ├──  Sent
-│   │   │   │   ├──  INBOX
-│   │   │   │   └──  Drafts
-│   │   │   └──  email_1
-│   │   │       ├──  Trash
-│   │   │       ├──  Sent
-│   │   │       ├──  INBOX
-│   │   │       └──  Drafts
+└──  .local
+    └──  share
+        └── 󰇰 mail
+            ├──  email_5
+            │   ├──  Trash
+            │   ├──  Sent
+            │   ├──  INBOX
+            │   └──  Drafts
+            ├──  email_4
+            │   ├──  Trash
+            │   ├──  Sent
+            │   ├──  INBOX
+            │   └──  Drafts
+            ├──  email_3
+            │   ├──  Trash
+            │   ├──  Sent
+            │   ├──  INBOX
+            │   └──  Drafts
+            ├──  email_2
+            │   ├──  Trash
+            │   ├──  Sent
+            │   ├──  INBOX
+            │   └──  Drafts
+            └──  email_1
+                ├──  Trash
+                ├──  Sent
+                ├──  INBOX
+                └──  Drafts
 ```
 
 ### **`$XDG_DATA_HOME/libs`**
@@ -349,13 +333,13 @@ Stores header files for libraries used in projects. These include third-party li
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   ├──  libs
-│   │   │   ├──  tinyobjloader
-│   │   │   │   └──  tiny_obj_loader.h
-│   │   │   └──  stb
-│   │   │       └──  stb_image.h
+└──  .local
+    └──  share
+        └──  libs
+            ├──  tinyobjloader
+            │   └──  tiny_obj_loader.h
+            └──  stb
+                └──  stb_image.h
 ```
 
 ### **`$XDG_DATA_HOME/applications`**
@@ -364,11 +348,11 @@ Contains `.desktop` entries for applications, enabling them to appear in menus o
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   ├──  applications
-│   │   │   ├──  neomutt.desktop
-│   │   │   └──  mimeinfo.cache
+└──  .local
+    └──  share
+        └──  applications
+            ├──  neomutt.desktop
+            └──  mimeinfo.cache
 ```
 
 ### **`$XDG_DATA_HOME/files`**
@@ -377,9 +361,9 @@ Stores metadata for recently used files, allowing applications to track and disp
 
 ```
  adrian
-├──  .local
-│   ├──  share
-│   │   └──  recently-used.xbel
+└──  .local
+    └──  share
+        └──  recently-used.xbel
 ```
 
 ### **`~/.local/bin`**
@@ -388,18 +372,8 @@ A directory for user-specific executables. It includes scripts and binaries not 
 
 ```
  adrian
-├──  .local
-│   └──  bin
-```
-
-### **`.gnupg`**
-
-The `.gnupg` directory contains configuration and key files used by GnuPG (GNU Privacy Guard) for encryption, signing, and verification of data. It stores private keys, public keys, and settings for the `gpg-agent`. For example, `gpg-agent.conf` contains user-defined configurations for the GPG agent.
-
-```
- adrian
-├── 󰢬 .gnupg
-│   └──  gpg-agent.conf
+└──  .local
+    └──  bin
 ```
 
 ### **`$XDG_CACHE_HOME`**
@@ -409,22 +383,22 @@ The `$XDG_CACHE_HOME` directory is used to store non-essential cached data that 
 ```
  adrian
 └── 󰃨 .cache
-├──  wget
-├──  nvim
-├──  npm
-├──  neomutt
-├──  mpv
-├──  mozilla
-├──  mesa_shader_cache_db
-├──  mesa_shader_cache
-├──  luarocks
-├──  kitty
-├──  go-build
-├──  go
-├──  gegl-0.4
-├──  fontconfig
-├──  babl
-└──  .bluetoothctl_history
+    ├──  wget
+    ├──  nvim
+    ├──  npm
+    ├──  neomutt
+    ├──  mpv
+    ├──  mozilla
+    ├──  mesa_shader_cache_db
+    ├──  mesa_shader_cache
+    ├──  luarocks
+    ├──  kitty
+    ├──  go-build
+    ├──  go
+    ├──  gegl-0.4
+    ├──  fontconfig
+    ├──  babl
+    └──  .bluetoothctl_history
 ```
 
 ### **`$XDG_CONFIG_HOME`**
@@ -433,77 +407,43 @@ Description here
 
 ```
  adrian
-├──  .config
-│   ├──  zsh ⇒ ../Code/github/dotfiles/config/zsh
-│   ├──  zathura ⇒ ../Code/github/dotfiles/config/zathura
-│   ├──  wget ⇒ ../Code/github/dotfiles/config/wget
-│   ├──  vdirsyncer ⇒ ../Code/github/dotfiles/config/vdirsyncer
-│   ├──  sway ⇒ ../Code/github/dotfiles/config/sway
-│   ├──  swappy ⇒ ../Code/github/dotfiles/config/swappy
-│   ├──  qalculate
-│   ├──  pulse
-│   ├──  nvim ⇒ ../Code/github/dotfiles/config/nvim
-│   ├──  npm ⇒ ../Code/github/dotfiles/config/npm
-│   ├──  notmuch ⇒ ../Code/github/dotfiles/config/notmuch
-│   ├──  nnn ⇒ ../Code/github/dotfiles/config/nnn
-│   ├──  neomutt ⇒ ../Code/github/dotfiles/config/neomutt
-│   ├──  msmtp ⇒ ../Code/github/dotfiles/config/msmtp
-│   ├──  mpv ⇒ ../Code/github/dotfiles/config/mpv
-│   ├──  libreoffice
-│   ├──  lazygit
-│   ├──  kitty ⇒ ../Code/github/dotfiles/config/kitty
-│   ├──  khard ⇒ ../Code/github/dotfiles/config/khard
-│   ├──  khal ⇒ ../Code/github/dotfiles/config/khal
-│   ├──  isync ⇒ ../Code/github/dotfiles/config/isync
-│   ├──  gtk-3.0
-│   ├──  go
-│   ├──  git ⇒ ../Code/github/dotfiles/config/git
-│   ├──  gh
-│   ├──  dconf
-│   ├──  clangd ⇒ ../Code/github/dotfiles/config/clangd
-│   ├──  audacity
-│   ├──  user-dirs.locale ⇒ ../Code/github/dotfiles/config/user-dirs.locale
-│   ├──  user-dirs.dirs ⇒ ../Code/github/dotfiles/config/user-dirs.dirs
-│   └──  mimeapps.list ⇒ ../Code/github/dotfiles/config/mimeapps.list
+└──  .config
+    ├──  zsh ⇒ ../Code/github/dotfiles/config/zsh
+    ├──  zathura ⇒ ../Code/github/dotfiles/config/zathura
+    ├──  wget ⇒ ../Code/github/dotfiles/config/wget
+    ├──  vdirsyncer ⇒ ../Code/github/dotfiles/config/vdirsyncer
+    ├──  sway ⇒ ../Code/github/dotfiles/config/sway
+    ├──  swappy ⇒ ../Code/github/dotfiles/config/swappy
+    ├──  qalculate
+    ├──  pulse
+    ├──  nvim ⇒ ../Code/github/dotfiles/config/nvim
+    ├──  npm ⇒ ../Code/github/dotfiles/config/npm
+    ├──  notmuch ⇒ ../Code/github/dotfiles/config/notmuch
+    ├──  nnn ⇒ ../Code/github/dotfiles/config/nnn
+    ├──  neomutt ⇒ ../Code/github/dotfiles/config/neomutt
+    ├──  msmtp ⇒ ../Code/github/dotfiles/config/msmtp
+    ├──  mpv ⇒ ../Code/github/dotfiles/config/mpv
+    ├──  libreoffice
+    ├──  lazygit
+    ├──  kitty ⇒ ../Code/github/dotfiles/config/kitty
+    ├──  khard ⇒ ../Code/github/dotfiles/config/khard
+    ├──  khal ⇒ ../Code/github/dotfiles/config/khal
+    ├──  isync ⇒ ../Code/github/dotfiles/config/isync
+    ├──  gtk-3.0
+    ├──  go
+    ├──  git ⇒ ../Code/github/dotfiles/config/git
+    ├──  gh
+    ├──  dconf
+    ├──  clangd ⇒ ../Code/github/dotfiles/config/clangd
+    ├──  audacity
+    ├──  user-dirs.locale ⇒ ../Code/github/dotfiles/config/user-dirs.locale
+    ├──  user-dirs.dirs ⇒ ../Code/github/dotfiles/config/user-dirs.dirs
+    └──  mimeapps.list ⇒ ../Code/github/dotfiles/config/mimeapps.list
 ```
 
 ## Directory Structure of: dotfiles
 
 ```
- Code/github/dotfiles
-├──  config
-│   ├──  clangd
-│   ├──  git
-│   ├──  isync
-│   ├──  khal
-│   ├──  khard
-│   ├──  kitty
-│   ├──  mpv
-│   ├──  msmtp
-│   ├──  neomutt
-│   ├──  nnn
-│   ├──  notmuch
-│   ├──  npm
-│   ├──  nvim
-│   ├──  swappy
-│   ├──  sway
-│   ├──  vdirsyncer
-│   ├──  wget
-│   ├──  zathura
-│   ├──  zsh
-│   ├──  mimeapps.list
-│   ├──  user-dirs.dirs
-│   └──  user-dirs.locale
-├──  resources
-│   └──  MicrosoftFonts
-├──  sync
-│   └──  archsetup
-├──  system
-│   ├──  ly.config.ini
-│   ├──  neomutt.desktop
-│   ├──  pacman.conf
-│   └──  pam_env.conf
-└──  README.md
 ```
 
 - **config**: stores my $XDG_CONFIG_HOME directories and files
