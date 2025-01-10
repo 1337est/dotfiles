@@ -9,9 +9,9 @@ I'm also using the `xdg-user-dirs` utility to create common directories such as:
 
 ### **`Code`**
 
-This directory contains all coding-related projects and research. It's divided into subdirectories for better organization:
+This is where my code lives. A conglomeration of github repos, personal projects, and research.
 
-```bash
+```
  adrian
 ├──  Code
 │   ├──  github
@@ -20,17 +20,18 @@ This directory contains all coding-related projects and research. It's divided i
 │   └──  research
 ```
 
-- **`Code/github`**
-  This is where personal GitHub repositories are stored, including configuration files and personal projects.
-
 - **`Code/github/dotfiles`**
-  A GitHub repository containing configuration files (dotfiles) for various tools and applications. These are symlinked into the `.config` directory for easy management and version control.
+This is where my dotfiles repo (the one you're reading now) is located. This directory contains a `dotfiles/config`, directory that is symlinked via the `stow` utility into the `~/.config` directory for easy management and version control. To perform this operation, ensure you have `stow` installed, as per your OS's package manager. Once `stow` is installed:
+  ```bash
+    $ cd ~/Code/github/dotfiles # Navigate to you dotfiles directory
+    $ stow config -t ~/.config # symlink the directory config to the "[t]arget" ~/.config directory
+  ```
 
 ### **`Desktop`**
 
 The desktop environment folder. Frequently used for temporary organization and ongoing work. It also includes:
 
-```bash
+```
  adrian
 ├──  Desktop
 │   ├──  neorg
@@ -63,13 +64,13 @@ The desktop environment folder. Frequently used for temporary organization and o
 ```
 
 - **`Desktop/neorg`**
-  A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
+A directory specifically for managing Neorg files. Subdirectories within contain structured notes for work, school, projects, research, and personal ideas.
 
 ### **`Documents`**
 
 This directory is used for storing important documents and is further categorized:
 
-```bash
+```
  adrian
 ├──  Documents
 │   ├──  work
@@ -77,16 +78,16 @@ This directory is used for storing important documents and is further categorize
 ```
 
 - **`Documents/work`**
-  Work-related documents, such as reports, meeting notes, and proposals.
+Work-related documents, such as reports, meeting notes, and proposals.
 
 - **`Documents/school`**
-  Contains academic materials, assignments, and other school-related documents.
+Contains academic materials, assignments, and other school-related documents.
 
 ### **`Downloads`**
 
 The default location for downloaded files. Files are typically moved from here to their respective permanent locations.
 
-```bash
+```
  adrian
 ├── 󰉍 Downloads
 ```
@@ -95,7 +96,7 @@ The default location for downloaded files. Files are typically moved from here t
 
 A directory dedicated to music files, including albums, playlists, and personal recordings.
 
-```bash
+```
  adrian
 ├── 󱍙 Music
 ```
@@ -104,7 +105,7 @@ A directory dedicated to music files, including albums, playlists, and personal 
 
 Used for organizing images. Subdirectories categorize the types of images stored:
 
-```bash
+```
  adrian
 ├── 󰉏 Pictures
 │   ├──  Wallpapers
@@ -116,23 +117,23 @@ Used for organizing images. Subdirectories categorize the types of images stored
 ```
 
 - **`Pictures/Camera`**
-  Photos taken with a camera.
+Photos taken with a camera.
 - **`Pictures/Icons`**
-  Custom and downloaded icons for UI or other design purposes.
+Custom and downloaded icons for UI or other design purposes.
 - **`Pictures/Phone`**
-  Photos and screenshots transferred from a phone.
+Photos and screenshots transferred from a phone.
 - **`Pictures/Profile`**
-  Profile pictures for various accounts or applications.
+Profile pictures for various accounts or applications.
 - **`Pictures/Screenshots`**
-  Screenshots captured on the system.
+Screenshots captured on the system.
 - **`Pictures/Wallpapers`**
-  A collection of desktop and mobile wallpapers.
+A collection of desktop and mobile wallpapers.
 
 ### **`Public`**
 
 A public directory used for sharing files with other users or systems.
 
-```bash
+```
  adrian
 ├──  Public
 ```
@@ -141,7 +142,7 @@ A public directory used for sharing files with other users or systems.
 
 Contains template files for quick use.
 
-```bash
+```
  adrian
 ├──  Templates
 │   ├──  Makefile.vulkan
@@ -150,15 +151,15 @@ Contains template files for quick use.
 ```
 
 - **`Makefile.vulkan`**
-  A template for Vulkan-specific projects.
+A template for Vulkan-specific projects.
 - **`.clang-format`**
-  A pre-configured Clang format template for code styling.
+A pre-configured Clang format template for code styling.
 
 ### **`Videos`**
 
 A directory for organizing video files, such as tutorials, movies, and personal recordings. Applications that use this directory include: TODO: mpv, swappy?, etc
 
-```bash
+```
  adrian
 ├──  Videos
 ```
@@ -171,7 +172,7 @@ I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.l
 
 This directory stores SSH-related configuration and key files. It includes private and public keys, known hosts, and SSH configuration files necessary for secure remote connections.
 
-```bash
+```
  adrian
 ├── 󰢬 .ssh
 ```
@@ -180,7 +181,7 @@ This directory stores SSH-related configuration and key files. It includes priva
 
 A directory used by the `pass` utility to store encrypted password files. Each entry corresponds to a file encrypted with GPG, organizing credentials securely.
 
-```bash
+```
  adrian
 ├──  .password-store
 ```
@@ -189,7 +190,7 @@ A directory used by the `pass` utility to store encrypted password files. Each e
 
 Contains profiles and data for Mozilla-based applications, such as Firefox. This includes bookmarks, extensions, cookies, and other user-specific settings.
 
-```bash
+```
  adrian
 ├──  .mozilla
 ```
@@ -198,7 +199,7 @@ Contains profiles and data for Mozilla-based applications, such as Firefox. This
 
 Stores Zsh state files, such as command history. This ensures persistent and organized shell session tracking.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  state
@@ -210,7 +211,7 @@ Stores Zsh state files, such as command history. This ensures persistent and org
 
 Contains Neovim state files, such as undo history, swap files, and logs. This directory enhances Neovim's ability to recover and track session states.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  state
@@ -225,7 +226,7 @@ Contains Neovim state files, such as undo history, swap files, and logs. This di
 
 Stores state files for Neomutt, such as cached searches and session metadata. This ensures efficient email management and search operations.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  state
@@ -237,7 +238,7 @@ Stores state files for Neomutt, such as cached searches and session metadata. Th
 
 Holds logs and state information for the msmtp email client, such as sent email logs. This aids in debugging and usage tracking.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  state
@@ -249,7 +250,7 @@ Holds logs and state information for the msmtp email client, such as sent email 
 
 Contains state files for various tools, such as the history file for `less`. These files enhance session persistence and user experience.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  state
@@ -260,7 +261,7 @@ Contains state files for various tools, such as the history file for `less`. The
 
 Stores the `zoxide` database, which tracks frequently used directories for fast navigation. The database file improves productivity by enabling smart `cd` commands.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -272,7 +273,7 @@ Stores the `zoxide` database, which tracks frequently used directories for fast 
 
 Contains data for `vdirsyncer`, including tokens, status files, and synchronized contacts/calendars. This directory is crucial for managing calendar and contact synchronization.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -291,7 +292,7 @@ Contains data for `vdirsyncer`, including tokens, status files, and synchronized
 
 Holds Neovim data files, including plugin installations, runtime metadata, and log files. This directory enables plugin management and debugging.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -310,7 +311,7 @@ Holds Neovim data files, including plugin installations, runtime metadata, and l
 
 Contains email storage for local accounts, organized into folders like Inbox, Sent, and Trash. It is used by email clients for mail synchronization.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -346,7 +347,7 @@ Contains email storage for local accounts, organized into folders like Inbox, Se
 
 Stores header files for libraries used in projects. These include third-party libraries like `stb` and `tinyobjloader`, simplifying dependency management.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -361,7 +362,7 @@ Stores header files for libraries used in projects. These include third-party li
 
 Contains `.desktop` entries for applications, enabling them to appear in menus or launchers. It includes a Neomutt launcher and MIME type associations.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -374,7 +375,7 @@ Contains `.desktop` entries for applications, enabling them to appear in menus o
 
 Stores metadata for recently used files, allowing applications to track and display file usage.
 
-```bash
+```
  adrian
 ├──  .local
 │   ├──  share
@@ -385,7 +386,7 @@ Stores metadata for recently used files, allowing applications to track and disp
 
 A directory for user-specific executables. It includes scripts and binaries not installed system-wide.
 
-```bash
+```
  adrian
 ├──  .local
 │   └──  bin
@@ -395,7 +396,7 @@ A directory for user-specific executables. It includes scripts and binaries not 
 
 The `.gnupg` directory contains configuration and key files used by GnuPG (GNU Privacy Guard) for encryption, signing, and verification of data. It stores private keys, public keys, and settings for the `gpg-agent`. For example, `gpg-agent.conf` contains user-defined configurations for the GPG agent.
 
-```bash
+```
  adrian
 ├── 󰢬 .gnupg
 │   └──  gpg-agent.conf
@@ -405,32 +406,32 @@ The `.gnupg` directory contains configuration and key files used by GnuPG (GNU P
 
 The `$XDG_CACHE_HOME` directory is used to store non-essential cached data that can be regenerated if deleted. This directory improves performance by caching frequently accessed data for applications. Examples include shader caches, command histories, and temporary build files.
 
-```bash
+```
  adrian
 └── 󰃨 .cache
-    ├──  wget
-    ├──  nvim
-    ├──  npm
-    ├──  neomutt
-    ├──  mpv
-    ├──  mozilla
-    ├──  mesa_shader_cache_db
-    ├──  mesa_shader_cache
-    ├──  luarocks
-    ├──  kitty
-    ├──  go-build
-    ├──  go
-    ├──  gegl-0.4
-    ├──  fontconfig
-    ├──  babl
-    └──  .bluetoothctl_history
+├──  wget
+├──  nvim
+├──  npm
+├──  neomutt
+├──  mpv
+├──  mozilla
+├──  mesa_shader_cache_db
+├──  mesa_shader_cache
+├──  luarocks
+├──  kitty
+├──  go-build
+├──  go
+├──  gegl-0.4
+├──  fontconfig
+├──  babl
+└──  .bluetoothctl_history
 ```
 
 ### **`$XDG_CONFIG_HOME`**
 
 Description here
 
-```bash
+```
  adrian
 ├──  .config
 │   ├──  zsh ⇒ ../Code/github/dotfiles/config/zsh
@@ -468,7 +469,7 @@ Description here
 
 ## Directory Structure of: dotfiles
 
-```bash
+```
  Code/github/dotfiles
 ├──  config
 │   ├──  clangd
@@ -579,8 +580,8 @@ Description here
     - Currently using `nb` for my note taking. This currently is only available in the AUR, but I downloaded this time through:
     ```bash
     sudo wget https://raw.github.com/xwmx/nb/master/nb -O /usr/local/bin/nb &&
-      sudo chmod +x /usr/local/bin/nb &&
-      sudo nb completions install # For this command to work, root needs their $EDITOR set, see the pam_env.conf file and set $EDITOR there.
+    sudo chmod +x /usr/local/bin/nb &&
+    sudo nb completions install # For this command to work, root needs their $EDITOR set, see the pam_env.conf file and set $EDITOR there.
     ```
     - What I'm currently doing: In my ~/Dev/bin directory I have a file named ~/Dev/bin/nb-completion.zsh (taken from https://github.com/xwmx/nb/blob/master/etc/nb-completion.zsh). I have ~/Dev/bin added to my path in my .zshenv file. Now nb will have tab autosuggestions/complete. Also,
     - Another thing to note. nb pipes passphrases in from STDIN with gpg using `--passphrase-fd 0`. This is no longer supported as of GnuPG 2.1.0 and the use of gpg-agent and pinentry is required which does break the shell when gpg gets involved... Therefore You need to add to ~/.gnupg/gpg-agent.conf:
