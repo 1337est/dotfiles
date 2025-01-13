@@ -15,6 +15,13 @@ export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots" && mkdir -p "$GRIM_DEFAULT_
 # wget: Settings for ~/.wgetrc, where we will set the wget-hsts file location
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
+# gpg: Setting home directory and tty for signing to work properly
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GPG_TTY=$(tty)
+
+# pass: changes the password storage directory
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
 # nnn:
 export NNN_SSHFS="sshfs -o follow_symlinks" # make sshfs follow symlinks on the remote
 export NNN_COLORS="2136" # use a different color for each context

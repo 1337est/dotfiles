@@ -19,8 +19,6 @@ export KEYTIMEOUT=1
 export PATH="$PATH"
 # Default browser
 export BROWSER="firefox"
-# For gpg signing to work
-export GPG_TTY=$(tty)
 
 # Load additional environment variables from extra.env
 [[ -s "$XDG_CONFIG_HOME/zsh/apps.zshenv" ]] && source "$XDG_CONFIG_HOME/zsh/apps.zshenv"
