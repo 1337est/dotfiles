@@ -44,8 +44,6 @@ My desktop needs to be cleaned frequently, but never does. Just like a real desk
         └──  work
 ```
 
-[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
-
 ### **`Documents`**
 
 This directory is used for storing important documents. What more is there to know?
@@ -136,17 +134,9 @@ A directory for organizing video files, such as tutorials, movies, and personal 
 └──  Videos
 ```
 
-## Hidden `.directories`
+[//]: # (TODO I need to go through this entire readme as it was never finished, and is also now out of date since: 2024-12-09)
 
-### **`.gnupg`**
-
-The `.gnupg` directory contains configuration and key files used by GnuPG (GNU Privacy Guard) for encryption, signing, and verification of data. It stores private keys, public keys, and settings for the `gpg-agent`. For example, `gpg-agent.conf` contains user-defined configurations for the GPG agent.
-
-```
- adrian
-└── 󰢬 .gnupg
-    └──  gpg-agent.conf
-```
+## Hidden `.directories` TODO: Update .gnupg to xdg-data-home
 
 ### **`.mozilla`**
 
@@ -155,15 +145,6 @@ Contains profiles and data for Mozilla-based applications, such as Firefox. This
 ```
  adrian
 └──  .mozilla
-```
-
-### **`.password-store`**
-
-A directory used by the `pass` utility to store encrypted password files. Each entry corresponds to a file encrypted with GPG, organizing credentials securely.
-
-```
- adrian
-└──  .password-store
 ```
 
 ### **`.ssh`**
@@ -178,6 +159,25 @@ This directory stores SSH-related configuration and key files. It includes priva
 ## **XDG Base Directories**
 
 I'm following the XDG directory standard for `~/.config` `~/.local/share`, `~/.local/state`, `~/.cache`, and `~/.local/bin`. A brief intro to the XDG Base Directories Specification can be found [here](https://specifications.freedesktop.org/basedir-spec/latest/)
+
+### **`.gnupg`**
+
+The `.gnupg` directory contains configuration and key files used by GnuPG (GNU Privacy Guard) for encryption, signing, and verification of data. It stores private keys, public keys, and settings for the `gpg-agent`. For example, `gpg-agent.conf` contains user-defined configurations for the GPG agent.
+
+```
+ adrian
+└── 󰢬 .gnupg
+    └──  gpg-agent.conf
+```
+
+### **`.password-store`**
+
+A directory used by the `pass` utility to store encrypted password files. Each entry corresponds to a file encrypted with GPG, organizing credentials securely.
+
+```
+ adrian
+└──  .password-store
+```
 
 ### **`$XDG_STATE_HOME/zsh`**
 
