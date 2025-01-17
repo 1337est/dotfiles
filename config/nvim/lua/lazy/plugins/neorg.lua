@@ -100,11 +100,14 @@ return {
                     config = {
                         -- My desktop is my messy workspace filled with notes, like in real life
                         workspaces = {
-                            -- Top level workspace
-                            neorg = "~/Desktop/neorg",
+                            -- Local workspaces --
+                            -- Top level notes workspace (not a git repo -- random)
+                            desktop = "~/Desktop",
+                            school = "~/Desktop/school/neorg", -- School notes
+                            work = "~/Desktop/work/neorg", -- Work notes
 
-                            -- Main notes workspace
-                            notes = "~/Desktop/neorg/notes", -- personal notes
+                            -- Main notes workspace (git repo)
+                            neorg = "~/Desktop/neorg", -- personal notes
 
                             -- Extra note workspaces
                             help = "~/Desktop/neorg/help", -- Helpful/troubleshooting program notes
@@ -112,11 +115,9 @@ return {
                             projects = "~/Desktop/neorg/projects", -- Personal projects notes
                             research = "~/Desktop/neorg/research", -- Research notes
                             rum = "~/Desktop/neorg/rum", -- ruminations, organized chaos?
-                            school = "~/Desktop/neorg/school", -- School notes
-                            work = "~/Desktop/neorg/work", -- Work notes
                         },
                         index = "index.norg", -- The name of the main (root) .norg file
-                        default_workspace = "neorg",
+                        default_workspace = "desktop",
                         open_last_workspace = false,
                         use_popup = true,
                     },
