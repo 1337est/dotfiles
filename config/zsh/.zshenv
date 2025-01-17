@@ -18,7 +18,7 @@ export KEYTIMEOUT=1
 # When things say "add this to your path", this is where they mean.
 export PATH="$PATH"
 # Default browser
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 
 # Load additional environment variables from extra.env
 [[ -s "$XDG_CONFIG_HOME/zsh/apps.zshenv" ]] && source "$XDG_CONFIG_HOME/zsh/apps.zshenv"
