@@ -18,7 +18,6 @@ duf
 efibootmgr
 fastfetch
 fd
-firefox
 fzf
 git
 github-cli
@@ -159,6 +158,8 @@ ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 ttf-zed-mono-nerd
 vdirsyncer
+vivaldi
+vivaldi-ffmpeg-codecs
 vulkan-extra-layers
 vulkan-extra-tools
 vulkan-html-docs
@@ -171,7 +172,6 @@ wget
 wireplumber-docs
 wl-clipboard
 wmenu
-xdg-user-dirs
 zathura
 zathura-djvu
 zathura-pdf-mupdf
