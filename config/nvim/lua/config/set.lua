@@ -29,7 +29,7 @@ vim.opt.listchars = {
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true -- Save undo history
-vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undodir"
 
 vim.opt.hlsearch = true -- Set highlight on search
 vim.opt.incsearch = true -- Shows pattern match as you type

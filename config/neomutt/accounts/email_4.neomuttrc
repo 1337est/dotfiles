@@ -8,8 +8,8 @@ set folder = "$MYMAILDIR/email_4"
 set sendmail = "msmtp -a email_4"
 
 # Cache settings
-set header_cache = "~/.cache/neomutt/email_4/header_cache"
-set message_cachedir = "~/.cache/neomutt/email_4/message_cache"
+set header_cache = "$XDG_CACHE_HOME/neomutt/email_4/header_cache"
+set message_cachedir = "$XDG_CACHE_HOME/neomutt/email_4/message_cache"
 
 # Mailbox settings
 set mbox_type = Maildir

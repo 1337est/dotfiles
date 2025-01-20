@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
 # npm: App/user config directories/files
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc" && mkdir -p "$XDG_CONFIG_HOME/npm"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # Node.js: repl history location
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history" && mkdir -p "$XDG_DATA_HOME/node"
 
 # go: App/user data directories/files
 export GOPATH="$XDG_DATA_HOME/go" && mkdir -p "$GOPATH"

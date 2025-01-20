@@ -100,21 +100,20 @@ return {
                     config = {
                         -- My desktop is my messy workspace filled with notes, like in real life
                         workspaces = {
-                            -- Local workspaces --
+                            -- Local notes workspaces --
                             -- Top level notes workspace (not a git repo -- random)
-                            desktop = "~/Desktop",
-                            school = "~/Desktop/school/neorg", -- School notes
-                            work = "~/Desktop/work/neorg", -- Work notes
+                            desktop = os.getenv("XDG_DESKTOP_DIR"), -- ~/Desktop
+                            school = os.getenv("LEET_SCHOOL_DIR"), -- School notes ~/Desktop/school
+                            work = os.getenv("LEET_WORK_DIR"), -- Work notes ~/Desktop/work
+                            projects = os.getenv("LEET_PROJECTS_DIR"), -- Personal projects notes ~/Code/projects
+                            research = os.getenv("LEET_RESEARCH_DIR"), -- Research notes ~/Code/research
 
                             -- Main notes workspace (git repo)
-                            neorg = "~/Desktop/neorg", -- personal notes
-
+                            neorg = os.getenv("XDG_DESKTOP_DIR") .. "/neorg", -- personal notes
                             -- Extra note workspaces
-                            help = "~/Desktop/neorg/help", -- Helpful/troubleshooting program notes
-                            ideas = "~/Desktop/neorg/ideas", -- My brain children
-                            projects = "~/Desktop/neorg/projects", -- Personal projects notes
-                            research = "~/Desktop/neorg/research", -- Research notes
-                            rum = "~/Desktop/neorg/rum", -- ruminations, organized chaos?
+                            help = os.getenv("XDG_DESKTOP_DIR") .. "/neorg/help", -- Helpful/troubleshooting program notes
+                            ideas = os.getenv("XDG_DESKTOP_DIR") .. "/neorg/ideas", -- My brain children
+                            rum = os.getenv("XDG_DESKTOP_DIR") .. "/neorg/rum", -- ruminations, organized chaos?
                         },
                         index = "index.norg", -- The name of the main (root) .norg file
                         default_workspace = "desktop",

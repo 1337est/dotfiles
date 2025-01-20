@@ -19,11 +19,12 @@ font pango: JetBrainsMono Nerd Font 12
 
 # Display configuration: Read `man sway-output` for a complete reference.
 # Default wallpaper
-output * bg /home/adrian/Pictures/Wallpapers/abomination-v1.png fill
+output * bg ~/Pictures/wallpapers/abomination-v1.png fill
 
+# You can get the names of your outputs by running: swaymsg -t get_outputs
 # Monitor configuration
-output DP-1 pos 0 0 mode 3840x2160@120Hz
-output HDMI-A-1 pos 3840 0 mode 3840x2160@120Hz
+output DP-1 pos 0 0 mode 3840x2160@60Hz
+output HDMI-A-1 pos 3840 0 mode 3840x2160@60Hz
 
 # Inactivity configuration: Read `man swayidle` for a complete reference.
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -157,6 +158,10 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Screenshot
     bindsym $mod+p exec grim -g "$(slurp)" - | swappy -f -
     bindsym $mod+Shift+p exec grim

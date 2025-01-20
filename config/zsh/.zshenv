@@ -21,6 +21,9 @@ export PATH="$PATH"
 export BROWSER="vivaldi"
 
 # Load additional environment variables from extra.env
+[[ -s "$XDG_CONFIG_HOME/zsh/user-dirs.zshenv" ]] && source "$XDG_CONFIG_HOME/zsh/user-dirs.zshenv"
+
+# Load additional environment variables from extra.env
 [[ -s "$XDG_CONFIG_HOME/zsh/apps.zshenv" ]] && source "$XDG_CONFIG_HOME/zsh/apps.zshenv"
 
 # Load functions.zshrc for functions needed for .zshrc file

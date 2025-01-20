@@ -1,6 +1,6 @@
 [Default Applications]
 text/plain=nvim.desktop
-text/html=firefox.desktop
+text/html=vivaldi-stable.desktop
 text/x-mail-source=neomutt.desktop
 image/jpeg=swappy.desktop
 image/png=swappy.desktop
@@ -20,10 +20,10 @@ application/zip=zip.desktop
 application/x-tar=tar.desktop
 application/x-gzip=gzip.desktop
 application/x-shellscript=nvim.desktop
-multipart/alternative=firefox.desktop
-multipart/mixed=firefox.desktop
-multipart/related=firefox.desktop
-multipart/form-data=firefox.desktop
+multipart/alternative=vivaldi-stable.desktop
+multipart/mixed=vivaldi-stable.desktop
+multipart/related=vivaldi-stable.desktop
+multipart/form-data=vivaldi-stable.desktop
 x-scheme-handler/mailto=neomutt.desktop
 
 [Added Associations]

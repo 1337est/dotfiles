@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+# Use Alacritty to open Neomutt and pass any arguments (such as mailto links)
+MUTT_CONFIG="$HOME/.config/neomutt"
+EMAILS=$(cd "$MUTT_CONFIG/accounts" && find . -type f -name '*.neomuttrc' | sed "s|./||; s|.neomuttrc$||" | sort)
+CHOICE=$(echo "$EMAILS" | wmenu -i -l "$(echo "$EMAILS" | wc -l)" -p "Select address to send from")
+[ -z "$CHOICE" ] && exit
+ACCOUNT_CONFIG_FILE=$(find "$MUTT_CONFIG/accounts" -name "*$CHOICE*")
+exec "$TERM" -e neomutt "$@" -F "$MUTT_CONFIG/neomuttrc" -F "$ACCOUNT_CONFIG_FILE"

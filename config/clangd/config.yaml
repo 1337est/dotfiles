@@ -1,2 +1,2 @@
 CompileFlags:
-  Add: [-I/home/adrian/Desktop/dev/libs]
+  Add: [-I/home/adrian/.local/lib]
