@@ -41,16 +41,11 @@ return {
                 ["core.concealer"] = { -- Makes your notes pretty
                     config = {
                         folds = true,
+                        -- basic: use a mixture of icons (includes cute flower icons)
+                        -- diamond: use diamond shapes for headings
+                        -- varied: use a mix of round and diamond shapes for headings, no cute flowers
                         icon_preset = "basic",
                         icons = {
-                            code_block = {
-                                conceal = false,
-                                content_only = true,
-                                insert_enabled = true,
-                                padding = { left = 0, right = 0 },
-                                spell_check = true,
-                                width = "fullwidth",
-                            },
                             definition = {
                                 multi_prefix = { icon = "⋙ " },
                                 multi_suffix = { icon = "⋘ " },
@@ -92,7 +87,7 @@ return {
                                 urgent = { icon = "⚠" },
                             },
                         },
-                        init_open_folds = "auto",
+                        init_open_folds = "never",
                     },
                 },
 
