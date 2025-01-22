@@ -33,6 +33,15 @@ return {
                 map("<leader>rn", function() buf.rename() end, "[R]e[n]ame")
 
                 local client = vim.lsp.get_client_by_id(e.data.client_id)
+                if client.supports_method('textDocument/formatting') then
+                    -- Format the current buffer on save
+                    autocmd('BufWritePre', {
+                        buffer = e.buf,
+                        callback = function()
+                            vim.lsp.buf.format({ bufnr = e.buf, id = client.id })
+                        end,
+                    })
+                end
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
                     local lsp_hl_group = vim.api.nvim_create_augroup(
                         'lsp-highlight', { clear = false })

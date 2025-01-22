@@ -6,9 +6,10 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history" && mkdir -p "$XDG_STATE_HOME/zsh"
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-export TERM="kitty" # Terminal emulator supporting 256 color
+export TERM="ghostty" # Terminal emulator supporting 256 color
 export PAGER="bat"
 export MANPAGER='nvim +Man!' # View man pages with nvim
+export MANWIDTH=999
 # Editor configuration
 export EDITOR="nvim"
 export VISUAL="nvim"
