@@ -171,6 +171,11 @@ bindsym $mod+r mode "resize"
     # NOTE: not recording properly over different screen outputs? keep snip within a single monitor
     bindsym $mod+Shift+w exec wf-recorder -g "$$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
     bindsym $mod+Shift+BackSpace exec killall -s SIGINT wf-recorder
+
+# Hide sway titles in general (removes the title string, and removes the physical title bar)
+for_window [title=".*"] title_format ""
+for_window [app_id=".*"] border none
+
 # Status Bar:
 # Read `man waybar` for more information about this section.
 bar {

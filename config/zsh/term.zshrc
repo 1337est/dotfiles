@@ -24,14 +24,14 @@ function set_prompt {
     if [[ $KEYMAP == vicmd ]]; then
         dir_color="%F{yellow}" # Yellow for visual mode
     else
-        dir_color="%F{blue}" # Blue for insert mode
+        dir_color="%F{cyan}" # Blue for insert mode
     fi
 
     # 1st level with red brackets around CWD
     PROMPT="%F{red}[${dir_color}%~%F{red}] ${vcs_info_msg_0_}
 "
     # Right side prompt that shows user@machine
-    RPROMPT='%F{red}[%F{yellow}%n%F{green}@%F{cyan}%M%F{red}]'
+    RPROMPT='%F{red}[%F{yellow}%n%F{green}@%F{blue}%M%F{red}]'
 
     # 2nd level line indicator based on vi mode
     if [[ $KEYMAP == vicmd ]]; then
