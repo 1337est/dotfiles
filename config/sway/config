@@ -15,7 +15,12 @@ set $term kitty
 set $menu wmenu-run
 
 # Font
-font pango: JetBrainsMono Nerd Font 12
+font pango: JetBrainsMono Nerd Font 0.001
+
+default_border pixel 3
+default_floating_border none
+titlebar_padding 1
+titlebar_border_thickness 0
 
 # Display configuration: Read `man sway-output` for a complete reference.
 # Default wallpaper
