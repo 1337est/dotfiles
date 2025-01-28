@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
 
 # Hide sway titles in general (removes the title string, and removes the physical title bar)
 for_window [title=".*"] title_format ""
-for_window [app_id=".*"] border none
+for_window [app_id=".*"] border pixel 2
 
 # Status Bar:
 # Read `man waybar` for more information about this section.

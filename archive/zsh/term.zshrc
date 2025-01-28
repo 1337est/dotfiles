@@ -6,6 +6,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 _comp_options+=(globdots)   #include hidden files
+eval "$(dircolors)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # get version control info
