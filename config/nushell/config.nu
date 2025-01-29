@@ -6,12 +6,11 @@
 # ------------------------
 # History-related settings
 # ------------------------
-# $env.config.history
 
 $env.config.history = {
-    max_size: 5_000_000,
-    sync_on_enter: true,
-    file_format: "sqlite",
+    max_size: 5_000_000
+    sync_on_enter: true
+    file_format: "sqlite"
     isolation: true
 }
 
@@ -20,7 +19,9 @@ $env.config.history = {
 # ----------------------
 
 $env.config.show_banner = false
+
 $env.config.rm.always_trash = false
+
 $env.config.recursion_limit = 50
 
 # ---------------------------
@@ -28,10 +29,14 @@ $env.config.recursion_limit = 50
 # ---------------------------
 
 $env.config.edit_mode = "vi"
+
 $env.config.buffer_editor = "editor"
-$env.config.cursor_shape.emacs = "inherit"         # Cursor shape in emacs mode
-$env.config.cursor_shape.vi_insert = "blink_block"       # Cursor shape in vi-insert mode
-$env.config.cursor_shape.vi_normal = "block"  # Cursor shape in normal vi mode
+
+$env.config.cursor_shape = {
+    emacs: "inherit"         # Cursor shape in emacs mode
+    vi_insert: "blink_block"       # Cursor shape in vi-insert mode
+    vi_normal: "block"  # Cursor shape in normal vi mode
+}
 
 # --------------------
 # Completions Behavior
@@ -56,78 +61,296 @@ $env.config.completions = {
 # --------------------
 # Terminal Integration
 # --------------------
-# Nushell can output a number of escape codes to enable advanced features in Terminal Emulators
-# that support them. Settings in this section enable or disable these features in Nushell.
-# Features aren't supported by your Terminal can be disabled. Features can also be disabled,
-#  of course, if there is a conflict between the Nushell and Terminal's implementation.
 
-# use_kitty_protocol (bool):
-# A keyboard enhancement protocol supported by the Kitty Terminal. Additional keybindings are
-# available when using this protocol in a supported terminal. For example, without this protocol,
-# Ctrl+I is interpreted as the Tab Key. With this protocol, Ctrl+I and Tab can be mapped separately.
 $env.config.use_kitty_protocol = false
 
-# osc2 (bool):
-# When true, the current directory and running command are shown in the terminal tab/window title.
-# Also abbreviates the directory name by prepending ~ to the home directory and its subdirectories.
-$env.config.shell_integration.osc2 = true
+$env.config.shell_integration = {
+    osc2: true
+    osc7: true
+    osc9_9: false
+    osc8: true
+    osc133: true
+    osc633: true
+    reset_application_mode: true
+}
 
-# osc7 (bool):
-# Nushell will report the current directory to the terminal using OSC 7. This is useful when
-# spawning new tabs in the same directory.
-$env.config.shell_integration.osc7 = true
-
-# osc9_9 (bool):
-# Enables/Disables OSC 9;9 support, originally a ConEmu terminal feature. This is an
-# alternative to OSC 7 which also communicates the current path to the terminal.
-$env.config.shell_integration.osc9_9 = false
-
-# osc8 (bool):
-# When true, the `ls` command will generate clickable links that can be launched in another
-# application by the terminal.
-# Note: This setting replaces the now deprecated `ls.clickable_links`
-$env.config.shell_integration.osc8 = true
-
-# Deprecated
-# $env.config.ls.clickable_links = true
-
-# osc133 (bool):
-# true/false to enable/disable OSC 133 support, a set of several escape sequences which
-# report the (1) starting location of the prompt, (2) ending location of the prompt,
-# (3) starting location of the command output, and (4) the exit code of the command.
-
-# originating with Final Term. These sequences report information regarding the prompt
-# location as well as command status to the terminal. This enables advanced features in
-# some terminals, including the ability to provide separate background colors for the
-# command vs. the output, collapsible output, or keybindings to scroll between prompts.
-$env.config.shell_integration.osc133 = true
-
-# osc633 (bool):
-# true/false to enable/disable OSC 633, an extension to OSC 133 for Visual Studio Code
-$env.config.shell_integration.osc633 = true
-
-# reset_application_mode (bool):
-# true/false to enable/disable sending ESC[?1l to the terminal
-# This sequence is commonly used to keep cursor key modes in sync between the local
-# terminal and a remove SSH host.
-$env.config.shell_integration.reset_application_mode = true
-
-# bracketed_paste (bool):
-# true/false to enable/disable the bracketed-paste feature, which allows multiple-lines
-# to be pasted into Nushell at once without immediate execution. When disabled,
-# each pasted line is executed as it is received.
-# Note that bracketed paste is not currently supported on the Windows version of
-# Nushell.
 $env.config.bracketed_paste = true
 
-# use_ansi_coloring (bool):
-# true/false to enable/disable the use of ANSI colors in Nushell internal commands.
-# When disabled, output from Nushell built-in commands will display only in the default
-# foreground color.
-# Note: Does not apply to the `ansi` command.
 $env.config.use_ansi_coloring = true
 
-#####################################################################################################
+# ----------------------
+# Error Display Settings
+# ----------------------
+
+$env.config.error_style = "fancy"
+
+$env.config.display_errors = {
+    exit_code: false
+    termination_signal: true
+}
+
+# -------------
+# Table Display
+# -------------
+
+$env.config.footer_mode = 25
+
+$env.config.table = {
+    mode: "default"
+    index_mode: "always"
+    show_empty: true
+    padding: {
+        left: 1
+        right: 1
+    }
+    trim: {
+        methodology: "wrapping"
+        wrapping_try_keep_words: true
+    }
+    header_on_separator: false
+    abbreviated_row_count: null
+    footer_inheritance: false
+}
+
+# ----------------
+# Datetime Display
+# ----------------
+
+$env.config.datetime_format = {
+    normal: "%m/%d/%y %I:%M:%S%p"
+    table: null
+}
+
+# ----------------
+# Filesize Display
+# ----------------
+
+$env.config.filesize = {
+    metric: true
+    format: "auto"
+}
+
+# ---------------------
+# Miscellaneous Display
+# ---------------------
+
+$env.config.render_right_prompt_on_last_line = false
+
+$env.config.float_precision = 2
+
+$env.config.ls.use_ls_colors = true
+
+$env.config.hooks = {
+    pre_prompt: []
+    pre_execution: []
+    env_change: {
+        PWD: [{|before, after| null }]
+    }
+    display_output: "if (term size).columns >= 100 { table -e } else { table }"
+    command_not_found: []
+}
+
+# -----------
+# Keybindings
+# -----------
+# keybindings (list): A list of user-defined keybindings
+# Nushell/Reedline keybindings can be added or overridden using this setting.
+# See https://www.nushell.sh/book/line_editor.html#keybindings for details.
+# -----
+
+# Menus
+# -----
+# menus (list):
+#
+# Nushell/Reedline menus can be created and modified using this setting.
+# See https://www.nushell.sh/book/line_editor.html#menus for details.
+#
+# Note that menus are usually activated via keybindings, which are defined in
+# $env.config.keybindings (above).
+
+# ---------------
+# Plugin behavior
+# ---------------
+
+$env.config.plugins = {}
+
+$env.config.plugin_gc = {
+    default: {
+        enabled: true
+        stop_after: 10sec
+    }
+    plugins: {}
+}
+
+# -------------------------------------
+# Themes/Colors and Syntax Highlighting
+# -------------------------------------
+# For more information on defining custom themes, see
+# https://www.nushell.sh/book/coloring_and_theming.html
+
+# Use and/or contribute to the theme collection at
+# https://github.com/nushell/nu_scripts/tree/main/themes
+
+$env.config.highlight_resolved_externals = true
+
+# color_config (record): A record of shapes, types, UI elements, etc. that can be styled (e.g.,
+# colorized) in Nushell, either on the commandline itself (shapes) or in output.
+#
+# Note that this is usually set through a theme provided by a record in a custom command. For
+# instance, the standard library contains two "starter" theme commands: "dark-theme" and
+# "light-theme". For example:
+use std/config dark-theme
+$env.config.color_config = (dark-theme)
+
+# Or, individual color settings can be configured or overridden.
+#
+# Values can be one of:
+# - A color name such as "red" (see `ansi -l` for a list)
+# - A color RGB value in the form of "#C4C9C6"
+# - A record including:
+#   * `fg` (color)
+#   * `bg` (color)
+#   * `attr`: a string with one or more of:
+#     - 'n': normal
+#     - 'b': bold
+#     - 'u': underline
+#     - 'r': reverse
+#     - 'i': italics
+#     - 'd': dimmed
+
+# color_config.shape_*: Applies syntax highlighting based on the "shape" (inferred or declared type) of an
+# element on the commandline. Nushell's parser can identify shapes based on many criteria, often
+# as the commandline is being typed.
+
+# color.config.<type>
+# *Values* of a particular *type* can be styled differently than the *shape*.
+# Note that the style is applied only when this type is displayed in *structured* data (list,
+# record, or table). It is not currently applied to basic raw values.
+
+
+$env.config.color_config.shape_table
+$env.config.color_config.shape_binary
+$env.config.color_config.string
+$env.config.color_config.shape_operator
+$env.config.color_config.shape_record
+$env.config.color_config.shape_raw_string
+$env.config.color_config.cell-path
+$env.config.color_config.range
+$env.config.color_config.shape_keyword
+$env.config.color_config.shape_int
+$env.config.color_config.search_result
+$env.config.color_config.leading_trailing_space_bg
+$env.config.color_config.shape_external_resolved
+$env.config.color_config.duration
+$env.config.color_config.nothing
+$env.config.color_config.shape_external
+$env.config.color_config.float
+$env.config.color_config.block
+$env.config.color_config.empty
+$env.config.color_config.shape_flag
+$env.config.color_config.filesize
+$env.config.color_config.shape_filepath
+$env.config.color_config.shape_block
+$env.config.color_config.shape_globpattern
+$env.config.color_config.shape_directory
+$env.config.color_config.shape_glob_interpolation
+# $env.config.color_config.glob # must be declared
+$env.config.color_config.binary
+$env.config.color_config.separator
+$env.config.color_config.row_index
+$env.config.color_config.record
+$env.config.color_config.int
+$env.config.color_config.shape_range
+$env.config.color_config.shape_custom
+$env.config.color_config.shape_closure
+$env.config.color_config.shape_float
+$env.config.color_config.shape_list
+$env.config.color_config.hints
+$env.config.color_config.header
+$env.config.color_config.shape_bool
+$env.config.color_config.shape_string_interpolation
+$env.config.color_config.shape_garbage
+$env.config.color_config.shape_pipe
+$env.config.color_config.shape_variable
+$env.config.color_config.shape_nothing
+$env.config.color_config.shape_string
+$env.config.color_config.shape_internalcall
+$env.config.color_config.shape_signature
+$env.config.color_config.shape_vardecl
+$env.config.color_config.shape_redirection
+$env.config.color_config.shape_datetime
+$env.config.color_config.shape_match_pattern
+$env.config.color_config.list
+$env.config.color_config.shape_externalarg
+$env.config.color_config.shape_literal
+$env.config.color_config.date
+# $env.config.color_config.closure
+$env.config.color_config.shape_matching_brackets
+$env.config.color_config.bool
+
+# ------------------------
+# `explore` command colors
+# ------------------------
+# Configure the UI colors of the `explore` command
+# Allowed values are the same as for the `color_config` options above.
+$env.config.explore = {}
+
+# ---------------------------------------------------------------------------------------
+# Environment Variables
+# ---------------------------------------------------------------------------------------
+
+$env.PROMPT_COMMAND = $env.PROMPT_COMMAND? | default {||
+    let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
+        null => $env.PWD
+        '' => '~'
+        $relative_pwd => ([~ $relative_pwd] | path join)
+    }
+
+    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
+    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
+    let path_segment = $"($path_color)($dir)(ansi reset)"
+
+    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+}
+$env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
+    # create a right prompt in magenta with green separators and am/pm underlined
+    let time_segment = ([
+        (ansi reset)
+        (ansi magenta)
+        (date now | format date '%x %X') # try to respect user's locale
+    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
+        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
+
+    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
+        (ansi rb)
+        ($env.LAST_EXIT_CODE)
+    ] | str join)
+    } else { "" }
+
+    ([$last_exit_code, (char space), $time_segment] | str join)
+}
+$env.PROMPT_INDICATOR = ""
+$env.PROMPT_INDICATOR_VI_INSERT = ": "
+$env.PROMPT_INDICATOR_VI_NORMAL = "〉"
+$env.PROMPT_MULTILINE_INDICATOR = "::: "
+
+$env.TRANSIENT_PROMPT_COMMAND = "🚀 "
+$env.TRANSIENT_PROMPT_INDICATOR = ""
+$env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = ""
+$env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ""
+$env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ""
+$env.TRANSIENT_PROMPT_COMMAND_RIGHT = ""
+
+const NU_LIB_DIRS = [
+    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ($nu.data-dir | path join 'completions') # default home for nushell completions
+]
+const NU_LIB_DIRS = $NU_LIB_DIRS ++ [($nu.default-config-dir | path join 'modules')]
+
+const NU_PLUGIN_DIRS = [
+    ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+]
+const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join 'plugins')]
 
 use std/util "path add"
 path add "~/.local/bin"
@@ -135,6 +358,7 @@ path add "~/.local/bin"
 # You can remove duplicate directories from the path using:
 $env.PATH = ($env.PATH | uniq)
 
+# TODO: get rid of list and specify individually
 let $ENV_VARS = [
     # basic and app specific environment values
     [
@@ -241,28 +465,6 @@ for entry in $ENV_VARS.1 {
         }
     }
 }
-
-# starship prompt
-###############################################################################
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
-$env.STARSHIP_SHELL = "nu"
-
-def create_left_prompt [] {
-    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
-}
-
-# Use nushell functions to define your right and left prompt
-$env.PROMPT_COMMAND = { || create_left_prompt }
-$env.PROMPT_COMMAND_RIGHT = ""
-
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
-$env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = ": "
-$env.PROMPT_INDICATOR_VI_NORMAL = "〉"
-$env.PROMPT_MULTILINE_INDICATOR = "::: "
 
 # carapace
 source ~/.cache/carapace/init.nu

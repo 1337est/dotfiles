@@ -720,3 +720,11 @@ source .config/nushell/config.nu
 $env.config.completions
 nvim env.nu
 z dot
+lazygit 
+ls
+cd config/nushell/
+ls
+exit
+nvim config.nu
+ls
+exit
