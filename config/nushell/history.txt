@@ -728,3 +728,5 @@ exit
 nvim config.nu
 ls
 exit
+default --help
+exit

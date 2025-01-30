@@ -1,20 +1,20 @@
 [user]
-	name = 1337est
-	email = 59178218+1337est@users.noreply.github.com
-	signingkey = 5596860E4313A9F5
+    name = 1337est
+    email = 59178218+1337est@users.noreply.github.com
+    signingkey = 5596860E4313A9F5
 [commit]
-	gpgsign = true
+    gpgsign = true
 [tag]
-	gpgSign = true
+    gpgSign = true
 [credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+    helper =
+    helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+    helper =
+    helper = !/usr/bin/gh auth git-credential
 [pull]
-	rebase = true
+    rebase = true
 [push]
-	default = current
+    default = current
 [init]
-	defaultBranch = main
+    defaultBranch = main

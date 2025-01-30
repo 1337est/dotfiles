@@ -310,7 +310,7 @@ $env.PROMPT_COMMAND = $env.PROMPT_COMMAND? | default {||
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)(ansi reset)"
 
-    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+    $"($path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)")\n"
 }
 $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
     # create a right prompt in magenta with green separators and am/pm underlined
@@ -330,16 +330,10 @@ $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 $env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = ": "
-$env.PROMPT_INDICATOR_VI_NORMAL = "〉"
-$env.PROMPT_MULTILINE_INDICATOR = "::: "
+$env.PROMPT_INDICATOR_VI_INSERT = ":🚀 "
+$env.PROMPT_INDICATOR_VI_NORMAL = ":📄 "
+$env.PROMPT_MULTILINE_INDICATOR = ":-> "
 
-$env.TRANSIENT_PROMPT_COMMAND = "🚀 "
-$env.TRANSIENT_PROMPT_INDICATOR = ""
-$env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = ""
-$env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ""
-$env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ""
-$env.TRANSIENT_PROMPT_COMMAND_RIGHT = ""
 
 const NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
@@ -352,119 +346,61 @@ const NU_PLUGIN_DIRS = [
 ]
 const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join 'plugins')]
 
+# Basic environment variables
+$env.EDITOR = 'nvim'
+$env.VISUAL = 'nvim'
+$env.TERM = 'ghostty'
+$env.PAGER = 'bat'
+$env.MANPAGER = 'nvim +Man!'
+$env.MANWIDTH = 999
+$env.BROWSER = 'vivaldi'
+$env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+$env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
+$env.XDG_DATA_HOME = ($env.HOME | path join '.local/share')
+$env.XDG_STATE_HOME = ($env.HOME | path join '.local/state')
+$env.XDG_BIN_HOME = ($env.HOME | path join '.local/bin')
+$env.XDG_LIB_HOME = ($env.HOME | path join '.local/lib')
+
+# App specific environment variables
+$env.NODE_REPL_HISTORY = ''
+$env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
+$env.GNUPGHOME = ($env.XDG_DATA_HOME | path join 'gnupg')
+$env.GPG_TTY = (tty) # Get the current tty dynamically
+$env.PASSWORD_STORE_DIR = ($env.XDG_DATA_HOME | path join 'pass')
+$env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
+
+# Personal environment variables
+$env.MY_CODE_DIR = ($env.HOME | path join 'Code')
+$env.MY_GITHUB_DIR = ($env.HOME | path join 'Code/github')
+$env.MY_ALGO_DIR = ($env.HOME | path join 'Code/algo')
+$env.MY_PJ_DIR = ($env.HOME | path join 'Code/pajamas')
+$env.MY_CURIOUS_DIR = ($env.HOME | path join 'Code/curious')
+
+$env.MY_DESK_DIR = ($env.HOME | path join 'Desktop')
+$env.MY_SCHOOL_DIR = ($env.HOME | path join 'Desktop/school')
+$env.MY_WORK_DIR = ($env.HOME | path join 'Desktop/work')
+
+$env.MY_PICS_DIR = ($env.HOME | path join 'Pictures')
+$env.MY_CAM_DIR = ($env.HOME | path join 'Pictures/camera')
+$env.MY_ICONS_DIR = ($env.HOME | path join 'Pictures/icons')
+$env.MY_PHONE_DIR = ($env.HOME | path join 'Pictures/phone')
+$env.MY_PROFILE_DIR = ($env.HOME | path join 'Pictures/profile')
+$env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
+$env.MY_WALLPAPERS_DIR = ($env.HOME | path join 'Pictures/wallpapers')
+
+$env.MY_DOCS_DIR = ($env.HOME | path join 'Documents')
+$env.MY_DOWNLOADS_DIR = ($env.HOME | path join 'Downloads')
+$env.MY_MUSIC_DIR = ($env.HOME | path join 'Music')
+$env.MY_PUBLIC_DIR = ($env.HOME | path join 'Public')
+$env.MY_TEMPLATES_DIR = ($env.HOME | path join 'Templates')
+$env.MY_VIDEOS_DIR = ($env.HOME | path join 'Videos')
+
 use std/util "path add"
-path add "~/.local/bin"
+# Add to path here
+path add $env.XDG_BIN_HOME
 
 # You can remove duplicate directories from the path using:
 $env.PATH = ($env.PATH | uniq)
-
-# TODO: get rid of list and specify individually
-let $ENV_VARS = [
-    # basic and app specific environment values
-    [
-        # pager
-        { name: "PAGER", value: 'bat' },
-        { name: "MANPAGER", value: 'nvim +Man!' },
-        { name: "MANWIDTH", value: 999 },
-
-        # editor
-        { name: "EDITOR", value: 'nvim' },
-        { name: "VISUAL", value: 'nvim' },
-
-        # terminal
-        { name: "TERM", value: 'ghostty' },
-
-        # browser
-        { name: "BROWSER", value: "vivaldi" },
-
-        # npm
-        { name: "NPM_CONFIG_USERCONFIG", value: ($env.XDG_CONFIG_HOME | path join 'npm/npmrc') },
-
-        # Node.js
-        { name: "NODE_REPL_HISTORY", value: '' },
-
-        # Grim
-        { name: "GRIM_DEFAULT_DIR", value: ($env.HOME | path join 'Pictures/screenshots') },
-
-        # wget
-        { name: "WGETRC", value: ($env.XDG_CONFIG_HOME | path join 'wget/wgetrc') },
-
-        # GPG
-        { name: "GNUPGHOME", value: ($env.XDG_DATA_HOME | path join 'gnupg') },
-        { name: "GPG_TTY", value: (tty) }, # Get the current tty dynamically
-
-        # pass
-        { name: "PASSWORD_STORE_DIR", value: ($env.XDG_DATA_HOME | path join 'pass') },
-
-        # nnn
-        { name: "NNN_SSHFS", value: "sshfs -o follow_symlinks" },
-        { name: "NNN_COLORS", value: "2136" },
-        { name: "NNN_TRASH", value: "1" },
-        { name: "NNN_PLUG", value: "p:preview-tui" },
-        { name: "NNN_FIFO", value: "/tmp/nnn.fifo" }
-    ]
-    # environment values and paths that need to be generated if not present
-    [
-        # XDG_COMMON_DIRS
-        { name: "DESKTOP_DIR", path: ($env.HOME | path join 'Desktop') },
-        { name: "DOCUMENTS_DIR", path: ($env.HOME | path join 'Documents') },
-        { name: "DOWNLOAD_DIR", path: ($env.HOME | path join 'Downloads') },
-        { name: "MUSIC_DIR", path: ($env.HOME | path join 'Music') },
-        { name: "PICTURES_DIR", path: ($env.HOME | path join 'Pictures') },
-        { name: "PUBLICSHARE_DIR", path: ($env.HOME | path join 'Public') },
-        { name: "TEMPLATES_DIR", path: ($env.HOME | path join 'Templates') },
-        { name: "VIDEOS_DIR", path: ($env.HOME | path join 'Videos') }
-
-        # USER_CODE_DIRS
-        { name: "CODE_DIR", path: ($env.HOME | path join 'Code') },
-        { name: "GITHUB_DIR", path: ($env.HOME | path join 'Code/github') },
-        { name: "LEET_DIR", path: ($env.HOME | path join 'Code/leet') },
-        { name: "PROJECTS_DIR", path: ($env.HOME | path join 'Code/projects') },
-        { name: "RESEARCH_DIR", path: ($env.HOME | path join 'Code/research') },
-
-        # USER_DESKTOP_DIRS
-        { name: "SCHOOL_DIR", path: ($env.HOME | path join 'Desktop/school') },
-        { name: "WORK_DIR", path: ($env.HOME | path join 'Desktop/work') },
-
-        # USER_PICTURES_DIRS
-        { name: "CAMERA_DIR", path: ($env.HOME | path join 'Pictures/camera') },
-        { name: "ICONS_DIR", path: ($env.HOME | path join 'Pictures/icons') },
-        { name: "PHONE_DIR", path: ($env.HOME | path join 'Pictures/phone') },
-        { name: "PROFILE_DIR", path: ($env.HOME | path join 'Pictures/profile') },
-        { name: "SCREENSHOTS_DIR", path: ($env.HOME | path join 'Pictures/screenshots') },
-        { name: "WALLPAPERS_DIR", path: ($env.HOME | path join 'Pictures/wallpapers') },
-
-        # USER_BIN_DIR
-        { name: "BIN_DIR", path: ($env.HOME | path join '.local/bin') },
-
-        # USER_LIB_DIR
-        { name: "LIB_DIR", path: ($env.HOME | path join '.local/lib') }
-
-        # Go
-        { name: "GOPATH", path: ($env.XDG_DATA_HOME | path join 'go') },
-
-        # My mail directories
-        { name: "MYMAILDIR", path: ($env.XDG_DATA_HOME | path join 'mail') },
-    ],
-]
-
-# Iterate over the directory definitions to export variables and create directories
-for entry in $ENV_VARS.0 {
-    load-env { $entry.name: $entry.value }
-}
-for entry in $ENV_VARS.1 {
-    load-env { $entry.name: $entry.path }
-    mkdir $entry.path
-    if $entry.name == "MYMAILDIR" {
-        for acct in [ "email_1" "email_2" "email_2" "email_4" ] {
-            for box in [ "INBOX" "Drafts" "Sent" "Trash" ] {
-                for cnt in [ "cur" "new" "tmp" ] {
-                    mkdir ($entry.path | path join $acct | path join $box | path join $cnt)
-                }
-            }
-        }
-    }
-}
 
 # carapace
 source ~/.cache/carapace/init.nu
