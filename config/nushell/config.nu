@@ -324,6 +324,7 @@ const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join '
 $env.EDITOR = 'nvim'
 $env.VISUAL = 'nvim'
 $env.TERM = 'ghostty'
+$env.SHELL = 'nu'
 $env.PAGER = 'bat'
 $env.MANPAGER = 'nvim +Man!'
 $env.MANWIDTH = 999
