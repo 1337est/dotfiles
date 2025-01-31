@@ -199,8 +199,8 @@ $env.config.highlight_resolved_externals = true
 # Note that this is usually set through a theme provided by a record in a custom command. For
 # instance, the standard library contains two "starter" theme commands: "dark-theme" and
 # "light-theme". For example:
-use std/config dark-theme
-$env.config.color_config = (dark-theme)
+# use std/config dark-theme
+# $env.config.color_config = (dark-theme)
 
 # Or, individual color settings can be configured or overridden.
 #
@@ -228,117 +228,86 @@ $env.config.color_config = (dark-theme)
 # record, or table). It is not currently applied to basic raw values.
 
 
-$env.config.color_config.shape_table
-$env.config.color_config.shape_binary
-$env.config.color_config.string
-$env.config.color_config.shape_operator
-$env.config.color_config.shape_record
-$env.config.color_config.shape_raw_string
-$env.config.color_config.cell-path
-$env.config.color_config.range
-$env.config.color_config.shape_keyword
-$env.config.color_config.shape_int
-$env.config.color_config.search_result
-$env.config.color_config.leading_trailing_space_bg
-$env.config.color_config.shape_external_resolved
-$env.config.color_config.duration
-$env.config.color_config.nothing
-$env.config.color_config.shape_external
-$env.config.color_config.float
-$env.config.color_config.block
-$env.config.color_config.empty
-$env.config.color_config.shape_flag
-$env.config.color_config.filesize
-$env.config.color_config.shape_filepath
-$env.config.color_config.shape_block
-$env.config.color_config.shape_globpattern
-$env.config.color_config.shape_directory
-$env.config.color_config.shape_glob_interpolation
+# $env.config.color_config.shape_table
+# $env.config.color_config.shape_binary
+# $env.config.color_config.string
+# $env.config.color_config.shape_operator
+# $env.config.color_config.shape_record
+# $env.config.color_config.shape_raw_string
+# $env.config.color_config.cell-path
+# $env.config.color_config.range
+# $env.config.color_config.shape_keyword
+# $env.config.color_config.shape_int
+# $env.config.color_config.search_result
+# $env.config.color_config.leading_trailing_space_bg
+# $env.config.color_config.shape_external_resolved
+# $env.config.color_config.duration
+# $env.config.color_config.nothing
+# $env.config.color_config.shape_external
+# $env.config.color_config.float
+# $env.config.color_config.block
+# $env.config.color_config.empty
+# $env.config.color_config.shape_flag
+# $env.config.color_config.filesize
+# $env.config.color_config.shape_filepath
+# $env.config.color_config.shape_block
+# $env.config.color_config.shape_globpattern
+# $env.config.color_config.shape_directory
+# $env.config.color_config.shape_glob_interpolation
 # $env.config.color_config.glob # must be declared
-$env.config.color_config.binary
-$env.config.color_config.separator
-$env.config.color_config.row_index
-$env.config.color_config.record
-$env.config.color_config.int
-$env.config.color_config.shape_range
-$env.config.color_config.shape_custom
-$env.config.color_config.shape_closure
-$env.config.color_config.shape_float
-$env.config.color_config.shape_list
-$env.config.color_config.hints
-$env.config.color_config.header
-$env.config.color_config.shape_bool
-$env.config.color_config.shape_string_interpolation
-$env.config.color_config.shape_garbage
-$env.config.color_config.shape_pipe
-$env.config.color_config.shape_variable
-$env.config.color_config.shape_nothing
-$env.config.color_config.shape_string
-$env.config.color_config.shape_internalcall
-$env.config.color_config.shape_signature
-$env.config.color_config.shape_vardecl
-$env.config.color_config.shape_redirection
-$env.config.color_config.shape_datetime
-$env.config.color_config.shape_match_pattern
-$env.config.color_config.list
-$env.config.color_config.shape_externalarg
-$env.config.color_config.shape_literal
-$env.config.color_config.date
+# $env.config.color_config.binary
+# $env.config.color_config.separator
+# $env.config.color_config.row_index
+# $env.config.color_config.record
+# $env.config.color_config.int
+# $env.config.color_config.shape_range
+# $env.config.color_config.shape_custom
+# $env.config.color_config.shape_closure
+# $env.config.color_config.shape_float
+# $env.config.color_config.shape_list
+# $env.config.color_config.hints
+# $env.config.color_config.header
+# $env.config.color_config.shape_bool
+# $env.config.color_config.shape_string_interpolation
+# $env.config.color_config.shape_garbage
+# $env.config.color_config.shape_pipe
+# $env.config.color_config.shape_variable
+# $env.config.color_config.shape_nothing
+# $env.config.color_config.shape_string
+# $env.config.color_config.shape_internalcall
+# $env.config.color_config.shape_signature
+# $env.config.color_config.shape_vardecl
+# $env.config.color_config.shape_redirection
+# $env.config.color_config.shape_datetime
+# $env.config.color_config.shape_match_pattern
+# $env.config.color_config.list
+# $env.config.color_config.shape_externalarg
+# $env.config.color_config.shape_literal
+# $env.config.color_config.date
 # $env.config.color_config.closure
-$env.config.color_config.shape_matching_brackets
-$env.config.color_config.bool
+# $env.config.color_config.shape_matching_brackets
+# $env.config.color_config.bool
 
 # ------------------------
 # `explore` command colors
 # ------------------------
 # Configure the UI colors of the `explore` command
 # Allowed values are the same as for the `color_config` options above.
-$env.config.explore = {}
+# $env.config.explore = {}
 
 # ---------------------------------------------------------------------------------------
 # Environment Variables
 # ---------------------------------------------------------------------------------------
 
-$env.PROMPT_COMMAND = $env.PROMPT_COMMAND? | default {||
-    let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
-        null => $env.PWD
-        '' => '~'
-        $relative_pwd => ([~ $relative_pwd] | path join)
-    }
-
-    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
-    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
-    let path_segment = $"($path_color)($dir)(ansi reset)"
-
-    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
-}
-$env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
-    # create a right prompt in magenta with green separators and am/pm underlined
-    let time_segment = ([
-        (ansi reset)
-        (ansi magenta)
-        (date now | format date '%x %X') # try to respect user's locale
-    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
-        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
-
-    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
-        (ansi rb)
-        ($env.LAST_EXIT_CODE)
-    ] | str join)
-    } else { "" }
-
-    ([$last_exit_code, (char space), $time_segment] | str join)
-}
+# Starship prompt for git integration
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 # 👺 🐢 📌 ☕ 📜 👻 🚀
 # $env.PROMPT_INDICATOR = ":🚀 "
 # $env.PROMPT_INDICATOR_VI_INSERT = ":👺 "
 # $env.PROMPT_INDICATOR_VI_NORMAL = ":👻 "
 # $env.PROMPT_MULTILINE_INDICATOR = ":🐢 "
-
-# Starship prompt for git integration
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 const NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts

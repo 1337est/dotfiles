@@ -12,7 +12,6 @@ local servers = {
     html = {},
     cssls = {},
     sqlls = {},
-    glslls = {},
     glsl_analyzer = {},
     lua_ls = {
         cmd = { "lua-language-server" },
