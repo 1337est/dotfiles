@@ -24,7 +24,7 @@ if not (which yay | is-empty) {
     print "yay is installed, continuing package installation..."
 } else {
     print "Installing yay..."
-    mkdirp ~/Code/aur
+    mkdir ~/Code/aur
     cd ~/Code/aur
     sudo pacman -S --needed --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git
