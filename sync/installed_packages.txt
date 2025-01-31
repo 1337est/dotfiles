@@ -56,7 +56,6 @@ otf-font-awesome
 pacutils
 pandoc-cli
 pass
-php
 pipewire-alsa
 pipewire-docs
 pipewire-pulse
@@ -86,8 +85,10 @@ ttf-jetbrains-mono-nerd
 vivaldi
 vulkan-extra-layers
 vulkan-extra-tools
+vulkan-headers
 vulkan-html-docs
 vulkan-radeon
+vulkan-tools
 vulkan-utility-libraries
 vulkan-validation-layers
 waybar
