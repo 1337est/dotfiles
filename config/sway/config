@@ -15,7 +15,7 @@ set $term ghostty
 set $menu wmenu-run
 
 # Font
-font pango: JetBrainsMono Nerd Font 12
+font pango: JetBrainsMono Nerd Font 16
 
 # Display configuration: Read `man sway-output` for a complete reference.
 # Default wallpaper

@@ -3,13 +3,13 @@ font-family-bold = JetBrainsMono NF Bold
 font-family-italic = JetBrainsMono NF Italic
 font-family-bold-italic = JetBrainsMono NF Bold Italic
 
-font-size = 12
+font-size = 14
 
 theme = tokyonight
 
-background-opacity = 0.99
+background-opacity = 0.97
 
-unfocused-split-opacity = 0.99
+unfocused-split-opacity = 0.97
 
 window-decoration = true
 

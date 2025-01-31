@@ -11,7 +11,6 @@ local servers = {
     bashls = {},
     html = {},
     cssls = {},
-    cmake = {},
     sqlls = {},
     glslls = {},
     glsl_analyzer = {},

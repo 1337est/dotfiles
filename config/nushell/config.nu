@@ -329,11 +329,16 @@ $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
 
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
-$env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = ":🚀 "
-$env.PROMPT_INDICATOR_VI_NORMAL = ":📄 "
-$env.PROMPT_MULTILINE_INDICATOR = ":-> "
 
+# 👺 🐢 📌 ☕ 📜 👻 🚀
+# $env.PROMPT_INDICATOR = ":🚀 "
+# $env.PROMPT_INDICATOR_VI_INSERT = ":👺 "
+# $env.PROMPT_INDICATOR_VI_NORMAL = ":👻 "
+# $env.PROMPT_MULTILINE_INDICATOR = ":🐢 "
+
+# Starship prompt for git integration
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 const NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
@@ -388,6 +393,7 @@ $env.XDG_VIDEOS_DIR         = ($env.HOME | path join 'Videos');                 
 $env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.GPG_TTY = (tty) # Get the current tty dynamically
 $env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
+$env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 
 use std/util "path add"
 # Add to path here
