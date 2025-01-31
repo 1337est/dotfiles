@@ -10,7 +10,6 @@ bluez
 bluez-utils
 brightnessctl
 carapace-bin
-carapace-bin-debug
 clang
 cmake
 composer
