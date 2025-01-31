@@ -730,3 +730,50 @@ ls
 exit
 default --help
 exit
+ls
+exit
+ls -a
+exit
+cd .config/
+ls
+$nu.config-path
+cd nushell/
+ls
+nvim config.nu
+ls
+ls -a
+ls .local/
+ls
+z .local/
+sudo pacman -Runs zoxide
+sudo pacman -S zoxide
+ls .local/
+ls .local/share/
+$nu.env-path
+z ~
+ls
+^z ~
+exit
+exit
+nvim $nu.env-path
+exit
+$env.PATH
+ls
+cd .config
+ls
+cd nushell/
+ls
+zoxide
+cd
+ls .local/share/
+ls
+cd -
+ls
+exit
+nvim config.nu
+cd
+ls
+ls -a
+cd -
+nvim config.nu
+exit

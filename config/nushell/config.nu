@@ -310,7 +310,7 @@ $env.PROMPT_COMMAND = $env.PROMPT_COMMAND? | default {||
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)(ansi reset)"
 
-    $"($path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)")\n"
+    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
 }
 $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
     # create a right prompt in magenta with green separators and am/pm underlined
@@ -354,50 +354,45 @@ $env.PAGER = 'bat'
 $env.MANPAGER = 'nvim +Man!'
 $env.MANWIDTH = 999
 $env.BROWSER = 'vivaldi'
-$env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
-$env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
-$env.XDG_DATA_HOME = ($env.HOME | path join '.local/share')
-$env.XDG_STATE_HOME = ($env.HOME | path join '.local/state')
-$env.XDG_BIN_HOME = ($env.HOME | path join '.local/bin')
-$env.XDG_LIB_HOME = ($env.HOME | path join '.local/lib')
+$env.XDG_CONFIG_HOME        = ($env.HOME | path join '.config')
+$env.XDG_CACHE_HOME         = ($env.HOME | path join '.cache')
+$env.XDG_DATA_HOME          = ($env.HOME | path join '.local/share')
+$env.XDG_STATE_HOME         = ($env.HOME | path join '.local/state')
+$env.XDG_BIN_HOME           = ($env.HOME | path join '.local/bin');             mkdir $env.XDG_BIN_HOME
+$env.XDG_LIB_HOME           = ($env.HOME | path join '.local/lib');             mkdir $env.XDG_LIB_HOME
+$env.MY_CODE_DIR            = ($env.HOME | path join 'Code');                   mkdir $env.MY_CODE_DIR
+$env.MY_ALGO_DIR            = ($env.HOME | path join 'Code/algo');              mkdir $env.MY_ALGO_DIR
+$env.MY_AUR_DIR             = ($env.HOME | path join 'Code/aur');               mkdir $env.MY_AUR_DIR
+$env.MY_CURIOUS_DIR         = ($env.HOME | path join 'Code/curious');           mkdir $env.MY_CURIOUS_DIR
+$env.MY_GITHUB_DIR          = ($env.HOME | path join 'Code/github');            mkdir $env.MY_GITHUB_DIR
+$env.MY_PJ_DIR              = ($env.HOME | path join 'Code/pajamas');           mkdir $env.MY_PJ_DIR
+$env.XDG_DESKTOP_DIR        = ($env.HOME | path join 'Desktop');                mkdir $env.XDG_DESKTOP_DIR
+$env.MY_NOTES_DIR           = ($env.HOME | path join 'Desktop/notes');          mkdir $env.MY_NOTES_DIR
+$env.MY_SCHOOL_DIR          = ($env.HOME | path join 'Desktop/school');         mkdir $env.MY_SCHOOL_DIR
+$env.MY_WORK_DIR            = ($env.HOME | path join 'Desktop/work');           mkdir $env.MY_WORK_DIR
+$env.XDG_DOCUMENTS_DIR      = ($env.HOME | path join 'Documents');              mkdir $env.XDG_DOCUMENTS_DIR
+$env.XDG_DOWNLOAD_DIR       = ($env.HOME | path join 'Downloads');              mkdir $env.XDG_DOWNLOAD_DIR
+$env.XDG_MUSIC_DIR          = ($env.HOME | path join 'Music');                  mkdir $env.XDG_MUSIC_DIR
+$env.XDG_PICTURES_DIR       = ($env.HOME | path join 'Pictures');               mkdir $env.XDG_PICTURES_DIR
+$env.MY_CAM_DIR             = ($env.HOME | path join 'Pictures/camera');        mkdir $env.MY_CAM_DIR
+$env.MY_ICONS_DIR           = ($env.HOME | path join 'Pictures/icons');         mkdir $env.MY_ICONS_DIR
+$env.MY_PHONE_DIR           = ($env.HOME | path join 'Pictures/phone');         mkdir $env.MY_PHONE_DIR
+$env.MY_PROFILE_DIR         = ($env.HOME | path join 'Pictures/profile');       mkdir $env.MY_PROFILE_DIR
+$env.MY_SCREENSHOTS_DIR     = ($env.HOME | path join 'Pictures/screenshots');   mkdir $env.MY_SCREENSHOTS_DIR
+$env.MY_WALLPAPERS_DIR      = ($env.HOME | path join 'Pictures/wallpapers');    mkdir $env.MY_WALLPAPERS_DIR
+$env.XDG_PUBLICSHARE_DIR    = ($env.HOME | path join 'Public');                 mkdir $env.XDG_PUBLICSHARE_DIR
+$env.XDG_TEMPLATES_DIR      = ($env.HOME | path join 'Templates');              mkdir $env.XDG_TEMPLATES_DIR
+$env.XDG_VIDEOS_DIR         = ($env.HOME | path join 'Videos');                 mkdir $env.XDG_VIDEOS_DIR
 
 # App specific environment variables
-$env.NODE_REPL_HISTORY = ''
 $env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
-$env.GNUPGHOME = ($env.XDG_DATA_HOME | path join 'gnupg')
 $env.GPG_TTY = (tty) # Get the current tty dynamically
-$env.PASSWORD_STORE_DIR = ($env.XDG_DATA_HOME | path join 'pass')
 $env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
-
-# Personal environment variables
-$env.MY_CODE_DIR = ($env.HOME | path join 'Code')
-$env.MY_GITHUB_DIR = ($env.HOME | path join 'Code/github')
-$env.MY_ALGO_DIR = ($env.HOME | path join 'Code/algo')
-$env.MY_PJ_DIR = ($env.HOME | path join 'Code/pajamas')
-$env.MY_CURIOUS_DIR = ($env.HOME | path join 'Code/curious')
-
-$env.MY_DESK_DIR = ($env.HOME | path join 'Desktop')
-$env.MY_SCHOOL_DIR = ($env.HOME | path join 'Desktop/school')
-$env.MY_WORK_DIR = ($env.HOME | path join 'Desktop/work')
-
-$env.MY_PICS_DIR = ($env.HOME | path join 'Pictures')
-$env.MY_CAM_DIR = ($env.HOME | path join 'Pictures/camera')
-$env.MY_ICONS_DIR = ($env.HOME | path join 'Pictures/icons')
-$env.MY_PHONE_DIR = ($env.HOME | path join 'Pictures/phone')
-$env.MY_PROFILE_DIR = ($env.HOME | path join 'Pictures/profile')
-$env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
-$env.MY_WALLPAPERS_DIR = ($env.HOME | path join 'Pictures/wallpapers')
-
-$env.MY_DOCS_DIR = ($env.HOME | path join 'Documents')
-$env.MY_DOWNLOADS_DIR = ($env.HOME | path join 'Downloads')
-$env.MY_MUSIC_DIR = ($env.HOME | path join 'Music')
-$env.MY_PUBLIC_DIR = ($env.HOME | path join 'Public')
-$env.MY_TEMPLATES_DIR = ($env.HOME | path join 'Templates')
-$env.MY_VIDEOS_DIR = ($env.HOME | path join 'Videos')
 
 use std/util "path add"
 # Add to path here
 path add $env.XDG_BIN_HOME
+path add ($env.GOPATH | path join "bin")
 
 # You can remove duplicate directories from the path using:
 $env.PATH = ($env.PATH | uniq)

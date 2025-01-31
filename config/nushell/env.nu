@@ -17,10 +17,12 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-# zoxide
-zoxide init nushell | save -f ~/.local/share/zoxide/db.nu
-
-# carapace-bin
+# carapace-bin bridges: https://carapace-sh.github.io/carapace-bin/spec/bridge.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
+# zoxide
+mkdir ~/.local/share/zoxide
+zoxide init nushell | save -f ~/.local/share/zoxide/db.nu
+
