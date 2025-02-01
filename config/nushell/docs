@@ -329,7 +329,7 @@ $env.config.table.trim = {
 # header_on_separator (bool):
 # true: Displays the column headers as part of the top (or bottom) border of the table
 # false: Displays the column header in its own row with a separator below.
-$env.config.table.header_on_separator = false
+$env.config.table.header_on_separator = true
 
 # abbreviated_row_count (int or nothing):
 # If set to an int, all tables will be abbreviated to only show the first <n> and last <n> rows

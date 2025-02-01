@@ -98,10 +98,10 @@ $env.config.footer_mode = 25
 $env.config.table = {
     mode: "default"
     index_mode: "always"
-    show_empty: true
+    show_empty: false
     padding: {
-        left: 1
-        right: 1
+        left: 0
+        right: 0
     }
     trim: {
         methodology: "wrapping"
