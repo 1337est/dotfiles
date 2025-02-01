@@ -24,8 +24,7 @@ if not (which yay | is-empty) {
     print "yay is installed, continuing package installation..."
 } else {
     print "Installing yay..."
-    mkdir ~/Code/aur
-    cd ~/Code/aur
+    cd ~/
     sudo pacman -S --needed --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay
@@ -33,6 +32,7 @@ if not (which yay | is-empty) {
     yay -Y --gendb
     yay -Syu --devel
     yay -Y --devel --save
+    rm -r ~/yay
 }
 
 print "##################################"
