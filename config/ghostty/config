@@ -1,9 +1,24 @@
+# -----------
+# Font Family
+# -----------
 font-family = JetBrainsMono Nerd Font
+
 font-family-bold = JetBrainsMono NF Bold
 font-family-italic = JetBrainsMono NF Italic
 font-family-bold-italic = JetBrainsMono NF Bold Italic
 
-font-size = 13
+# ----------
+# Font Style
+# ----------
+font-style = default
+
+font-style-bold = default
+font-style-italic = default
+font-style-bold-italic = default
+
+# TODO: Document default values
+
+font-size = 14
 
 theme = tokyonight
 
