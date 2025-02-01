@@ -158,10 +158,6 @@ $env.config.hooks = {
 # PROMPT
 # ------
 
-# Starship prompt for git integration
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
 $env.PROMPT_INDICATOR = "🚀 "
 $env.PROMPT_INDICATOR_VI_INSERT = "👺 "
 $env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
@@ -226,22 +222,55 @@ $env.MY_PROFILE_DIR         = ($env.HOME | path join 'Pictures/profile')
 $env.MY_SCREENSHOTS_DIR     = ($env.HOME | path join 'Pictures/screenshots')
 $env.MY_WALLPAPERS_DIR      = ($env.HOME | path join 'Pictures/wallpapers')
 
-# App specific environment variables
+# -------------------------
+# App Environment Variables
+# -------------------------
+
+# `grim` - directory for screenshots taken by grim
 $env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
-$env.GPG_TTY = (tty) # Get the current tty dynamically
+
+# `gpg` - Get the current tty dynamically
+$env.GPG_TTY = (tty)
+
+# `go` - go data (modules/pkg/binaries) directory
 $env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
+
+# `starship` - config location
 $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 
+# carapace-bin bridges: https://carapace-sh.github.io/carapace-bin/spec/bridge.html
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+
+# ---------------
+# App Integration
+# ---------------
+
+# $env.data-dir is used to in several startup tasks
+#   1. ($nu.data-dir)/nushell/completions is added to the $env.NU_LIB_DIRS search path.
+#   2. ($nu.data-dir)/vendor/autoload is added as the last path in nu.vendor-autoload-dirs.
+#       This means that files in this directory will be read last during startup
+#       (and thus override any definitions made in earlier files).
+#
+# Note that the directory represented by $nu.data-dir, nor any of its subdirectories,
+# are created by default. Creation and use of these directories is up to the user.
+# A lot of apps say to source at the end. Adding these files to vendor/autoload, completes
+# this step for you.
+
+mkdir ($nu.data-dir | path join "vendor/autoload")
+
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
+
+carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+
+# ----
+# PATH
+# ----
+
 use std/util "path add"
-# Add to path here
 path add $env.XDG_BIN_HOME
 path add ($env.GOPATH | path join "bin")
 
-# You can remove duplicate directories from the path using:
+# Remove duplicate directories from the PATH
 $env.PATH = ($env.PATH | uniq)
-
-# carapace
-source ~/.cache/carapace/init.nu
-
-# Enabling zoxide
-source ~/.local/share/zoxide/db.nu
