@@ -41,7 +41,6 @@ $env.config.cursor_shape = {
 # --------------------
 # Completions Behavior
 # --------------------
-
 $env.config.completions = {
     sort: "smart"
     case_sensitive: false
@@ -51,8 +50,10 @@ $env.config.completions = {
     external: {
         enable: true
         max_results: 100
-        completer: {|spans|
-            carapace $spans.0 nushell ...$spans | from json
+        completer: {|spans: list<string>|
+            carapace $spans.0 nushell ...$spans
+            | from json
+            | if ($in | default [] | where value == $"($spans | last)ERR" | is-empty) { $in } else { null }
         }
     }
     use_ls_colors: true

@@ -10,15 +10,15 @@ font-family-bold-italic = JetBrainsMono NF Bold Italic
 # ----------
 # Font Style
 # ----------
-font-style = default
+# font-style = default
 
-font-style-bold = default
-font-style-italic = default
-font-style-bold-italic = default
+# font-style-bold = default
+# font-style-italic = default
+# font-style-bold-italic = default
 
 # TODO: Document default values
 
-font-size = 14
+font-size = 15
 
 theme = tokyonight
 
@@ -28,4 +28,4 @@ unfocused-split-opacity = 0.95
 
 window-decoration = true
 
-window-theme = ghostty
+window-theme = auto
