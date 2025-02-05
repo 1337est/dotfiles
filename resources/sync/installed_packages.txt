@@ -1,8 +1,6 @@
 alsa-firmware
 alsa-utils
 amd-ucode
-audacity
-audacity-docs
 base
 base-devel
 bat
@@ -13,12 +11,15 @@ carapace-bin
 clang
 cmake
 composer
+copyq
 cups
 discord
 duf
+dunst
 efibootmgr
 fastfetch
 fd
+fuzzel
 fzf
 ghostty
 git
@@ -27,6 +28,10 @@ glm
 gopls
 grim
 grub
+hyprland
+hyprpaper
+hyprpicker
+hyprpolkitagent
 imv
 intel-ucode
 iw
@@ -41,7 +46,6 @@ linux-docs
 linux-firmware
 luarocks
 lvm2
-ly
 man-db
 man-pages
 mpv
@@ -61,7 +65,7 @@ pipewire-pulse
 plocate
 postgresql
 python-pip
-qalculate-gtk
+qt5-wayland
 ripgrep
 ruby
 rubygems
@@ -81,6 +85,7 @@ syncthing
 tealdeer
 timeshift
 ttf-jetbrains-mono-nerd
+uwsm
 vivaldi
 vulkan-extra-layers
 vulkan-extra-tools
@@ -95,7 +100,9 @@ wf-recorder
 wireplumber-docs
 wl-clipboard
 wmenu
+xdg-desktop-portal-hyprland
 yay
 yay-debug
+yazi
 zig
 zoxide
