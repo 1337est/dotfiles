@@ -13,6 +13,7 @@ local servers = {
     cssls = {},
     sqlls = {},
     glsl_analyzer = {},
+    hyprls = {},
     lua_ls = {
         cmd = { "lua-language-server" },
         filetypes = { "lua" },

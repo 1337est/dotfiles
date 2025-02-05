@@ -35,6 +35,8 @@ return {
                 "cmake",
                 "make",
                 "ini",
+                "hyprlang",
+                "nu",
             },
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -49,6 +51,11 @@ return {
                 additional_vim_regex_highlighting = { "ruby" },
             },
             indent = { enable = true, disable = { "ruby" } },
+        })
+        vim.filetype.add({
+            pattern = {
+                [".*/hypr/.*%.conf"] = "hyprlang",
+            }
         })
     end,
 }
