@@ -155,15 +155,6 @@ $env.config.hooks = {
 # Environment Variables
 # ---------------------------------------------------------------------------------------
 
-# ------
-# PROMPT
-# ------
-
-$env.PROMPT_INDICATOR = "🚀 "
-$env.PROMPT_INDICATOR_VI_INSERT = "👺 "
-$env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
-$env.PROMPT_MULTILINE_INDICATOR = "🐢 "
-
 # ---------------------------
 # Default Program Variables
 # ---------------------------
@@ -258,6 +249,7 @@ $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 # A lot of apps say to source at the end. Adding these files to vendor/autoload, completes
 # this step for you.
 
+# Check the output of $nu.data-dir in terminal to see where this will be located
 mkdir ($nu.data-dir | path join "vendor/autoload")
 
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
@@ -265,6 +257,32 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
 
 carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+
+# provides many features. Check out: https://docs.atuin.sh
+atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
+
+# ---------
+# SSG Agent
+# ---------
+
+# loading ssh keys and environment variables via keychain utility
+keychain --eval --quiet id_ed25519
+    | lines
+    | where not ($it | is-empty)
+    | parse "{k}={v}; export {k2};"
+    | select k v
+    | transpose --header-row
+    | into record
+    | load-env
+
+# ------
+# PROMPT
+# ------
+
+$env.PROMPT_INDICATOR = "🚀 "
+$env.PROMPT_INDICATOR_VI_INSERT = "👺 "
+$env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
+$env.PROMPT_MULTILINE_INDICATOR = "🐢 "
 
 # ----
 # PATH
