@@ -127,8 +127,8 @@ $env.config.datetime_format = {
 # ----------------
 
 $env.config.filesize = {
-    metric: true
-    format: "auto"
+    unit: metric
+    precision: 1
 }
 
 # ---------------------
