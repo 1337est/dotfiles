@@ -1,6 +1,7 @@
 alsa-firmware
 alsa-utils
 amd-ucode
+atuin
 base
 base-devel
 bat
@@ -38,6 +39,7 @@ iw
 java-runtime-common
 jdk-openjdk
 julia
+keychain
 lazygit
 lib32-fontconfig
 libreoffice-still
