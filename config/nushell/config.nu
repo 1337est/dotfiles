@@ -210,11 +210,12 @@ $env.MY_ALGO_DIR            = ($env.HOME | path join 'Code/algo')
 $env.MY_CURIOUS_DIR         = ($env.HOME | path join 'Code/curious')
 $env.MY_PJ_DIR              = ($env.HOME | path join 'Code/pajamas')
 
-$env.MY_NOTES_DIR           = ($env.HOME | path join 'Desktop/notes')
 $env.MY_SCHOOL_DIR          = ($env.HOME | path join 'Desktop/school')
 $env.MY_WORK_DIR            = ($env.HOME | path join 'Desktop/work')
 
 $env.MY_GITHUB_DIR          = ($env.HOME | path join 'Github')
+
+$env.MY_NOTES_DIR           = ($env.HOME | path join 'Notes')
 
 $env.MY_CAM_DIR             = ($env.HOME | path join 'Pictures/camera')
 $env.MY_ICONS_DIR           = ($env.HOME | path join 'Pictures/icons')
