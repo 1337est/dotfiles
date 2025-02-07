@@ -234,47 +234,6 @@ $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 # carapace-bin bridges: https://carapace-sh.github.io/carapace-bin/spec/bridge.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
-# ---------------
-# App Integration
-# ---------------
-
-# $env.data-dir is used to in several startup tasks
-#   1. ($nu.data-dir)/nushell/completions is added to the $env.NU_LIB_DIRS search path.
-#   2. ($nu.data-dir)/vendor/autoload is added as the last path in nu.vendor-autoload-dirs.
-#       This means that files in this directory will be read last during startup
-#       (and thus override any definitions made in earlier files).
-#
-# Note that the directory represented by $nu.data-dir, nor any of its subdirectories,
-# are created by default. Creation and use of these directories is up to the user.
-# A lot of apps say to source at the end. Adding these files to vendor/autoload, completes
-# this step for you.
-
-# Check the output of $nu.data-dir in terminal to see where this will be located
-mkdir ($nu.data-dir | path join "vendor/autoload")
-
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
-zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
-
-carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
-
-# provides many features. Check out: https://docs.atuin.sh
-atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
-
-# ---------
-# SSG Agent
-# ---------
-
-# loading ssh keys and environment variables via keychain utility
-keychain --eval --quiet id_ed25519
-    | lines
-    | where not ($it | is-empty)
-    | parse "{k}={v}; export {k2};"
-    | select k v
-    | transpose --header-row
-    | into record
-    | load-env
-
 # ------
 # PROMPT
 # ------
@@ -294,3 +253,45 @@ path add ($env.GOPATH | path join "bin")
 
 # Remove duplicate directories from the PATH
 $env.PATH = ($env.PATH | uniq)
+
+# ------------------------
+# Autoload App Integration
+# ------------------------
+
+# $env.data-dir is used to in several startup tasks
+#   1. ($nu.data-dir)/nushell/completions is added to the $env.NU_LIB_DIRS search path.
+#   2. ($nu.data-dir)/vendor/autoload is added as the last path in nu.vendor-autoload-dirs.
+#       This means that files in this directory will be read last during startup
+#       (and thus override any definitions made in earlier files).
+#
+# Note that the directory represented by $nu.data-dir, nor any of its subdirectories,
+# are created by default. Creation and use of these directories is up to the user.
+# A lot of apps say to source at the end. Adding these files to vendor/autoload, completes
+# this step for you.
+
+# Check the output of $nu.data-dir in terminal to see where this will be located
+mkdir ($nu.data-dir | path join "vendor/autoload")
+
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+zoxide init --cmd cd nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
+
+# provides many features. Check out: https://docs.atuin.sh
+atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
+
+carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+
+# ---------
+# SSG Agent
+# ---------
+
+# loading ssh keys and environment variables via keychain utility
+keychain --eval --quiet id_ed25519
+    | lines
+    | where not ($it | is-empty)
+    | parse "{k}={v}; export {k2};"
+    | select k v
+    | transpose --header-row
+    | into record
+    | load-env
+
