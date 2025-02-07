@@ -16,7 +16,6 @@ copyq
 cups
 discord
 duf
-dunst
 efibootmgr
 fastfetch
 fd
@@ -48,6 +47,7 @@ linux-docs
 linux-firmware
 luarocks
 lvm2
+mako
 man-db
 man-pages
 mpv
@@ -87,7 +87,6 @@ syncthing
 tealdeer
 timeshift
 ttf-jetbrains-mono-nerd
-uwsm
 vivaldi
 vulkan-extra-layers
 vulkan-extra-tools
