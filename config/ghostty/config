@@ -31,3 +31,5 @@ window-decoration = true
 window-theme = auto
 
 window-vsync = true
+
+working-directory = inherit

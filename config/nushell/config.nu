@@ -234,6 +234,10 @@ $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 # carapace-bin bridges: https://carapace-sh.github.io/carapace-bin/spec/bridge.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
+$env.__zoxide_hooked = default false
+$env._ZO_DATA_DIR = ($env.HOME | path join '.local/share/zoxide')
+$env._ZO_ECHO = 1
+
 # ------
 # PROMPT
 # ------
@@ -254,6 +258,10 @@ path add ($env.GOPATH | path join "bin")
 # Remove duplicate directories from the PATH
 $env.PATH = ($env.PATH | uniq)
 
+# ---------------
+# App Integration
+# ---------------
+
 # ------------------------
 # Autoload App Integration
 # ------------------------
@@ -270,16 +278,49 @@ $env.PATH = ($env.PATH | uniq)
 # this step for you.
 
 # Check the output of $nu.data-dir in terminal to see where this will be located
-mkdir ($nu.data-dir | path join "vendor/autoload")
+let autoload_dir = ($nu.data-dir | path join "vendor/autoload")
+mkdir $autoload_dir
 
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+# List of initialization data for apps
+let apps = [
+    {
+        name: "starship",
+        file: "starship.nu",
+        command: (starship init nu),
+        description: "A minimal, blazingly-fast, and infinitely customizable prompt
+        for any shell."
+    },
+    {
+        name: "atuin",
+        file: "atuin.nu",
+        command: (atuin init nu)
+        description: "atuin replaces your existing shell history with a SQLite database,
+        and records additional context for your commands. Additionally, it provides optional
+        and fully encrypted synchronisation of your history between machines, via an Atuin server."
+    },
+    {
+        name: "carapace",
+        file: "carapace.nu",
+        command: (carapace _carapace nushell)
+        description: "carapace provides argument completion for multiple CLI commands,
+        and works across multiple POSIX and non-POSIX shells (to include nushell)."
+    },
+    {
+        name: "zoxide",
+        file: "zoxide.nu",
+        command: (zoxide init --cmd cd nushell)
+        description: "zoxide is a smarter cd command. It remembers directories!"
+    },
+]
 
-zoxide init --cmd cd nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
-
-# provides many features. Check out: https://docs.atuin.sh
-atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
-
-carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+# Iterate over list of apps and generate the file if it doesn't exist
+# This ensures non redundant creation of the files
+for app in $apps {
+    let file_path = ($autoload_dir | path join $app.file)
+    if (not ($file_path | path exists)) {
+        $app.command | save -f $file_path
+    }
+}
 
 # ---------
 # SSG Agent
