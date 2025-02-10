@@ -159,25 +159,25 @@ $env.config.hooks = {
 # Default Program Variables
 # ---------------------------
 
-$env.EDITOR = 'nvim'
-$env.VISUAL = 'nvim'
-$env.TERM = 'ghostty'
-$env.SHELL = 'nu'
-$env.PAGER = 'bat'
-$env.MANPAGER = 'nvim +Man!'
-$env.MANWIDTH = 999
-$env.BROWSER = 'vivaldi'
+$env.EDITOR     = 'nvim'
+$env.VISUAL     = 'nvim'
+$env.TERM       = 'ghostty'
+$env.SHELL      = 'nu'
+$env.PAGER      = 'bat'
+$env.MANPAGER   = 'nvim +Man!'
+$env.MANWIDTH   = 999
+$env.BROWSER    = 'vivaldi'
 
 # --------------------
 # XDG Base Directories
 # --------------------
 
-$env.XDG_CONFIG_HOME        = ($env.HOME | path join '.config')
-$env.XDG_CACHE_HOME         = ($env.HOME | path join '.cache')
-$env.XDG_DATA_HOME          = ($env.HOME | path join '.local/share')
-$env.XDG_STATE_HOME         = ($env.HOME | path join '.local/state')
-$env.XDG_BIN_HOME           = ($env.HOME | path join '.local/bin')
-$env.XDG_LIB_HOME           = ($env.HOME | path join '.local/lib')
+$env.XDG_CONFIG_HOME    = ($env.HOME | path join '.config')
+$env.XDG_CACHE_HOME     = ($env.HOME | path join '.cache')
+$env.XDG_DATA_HOME      = ($env.HOME | path join '.local/share')
+$env.XDG_STATE_HOME     = ($env.HOME | path join '.local/state')
+$env.XDG_BIN_HOME       = ($env.HOME | path join '.local/bin')
+$env.XDG_LIB_HOME       = ($env.HOME | path join '.local/lib')
 
 # --------------------
 # XDG User Directories
@@ -196,24 +196,24 @@ $env.XDG_VIDEOS_DIR         = ($env.HOME | path join 'Videos')
 # MY Personal Directories
 # -----------------------
 
-$env.MY_CODE_DIR            = ($env.HOME | path join 'Code')
-$env.MY_ALGO_DIR            = ($env.HOME | path join 'Code/algo')
-$env.MY_CURIOUS_DIR         = ($env.HOME | path join 'Code/curious')
-$env.MY_PJ_DIR              = ($env.HOME | path join 'Code/pajamas')
+$env.MY_CODE_DIR    = ($env.HOME | path join 'Code')
+$env.MY_ALGO_DIR    = ($env.HOME | path join 'Code/algo')
+$env.MY_CURIOUS_DIR = ($env.HOME | path join 'Code/curious')
+$env.MY_PJ_DIR      = ($env.HOME | path join 'Code/pajamas')
 
-$env.MY_SCHOOL_DIR          = ($env.HOME | path join 'Desktop/school')
-$env.MY_WORK_DIR            = ($env.HOME | path join 'Desktop/work')
+$env.MY_SCHOOL_DIR  = ($env.HOME | path join 'Desktop/school')
+$env.MY_WORK_DIR    = ($env.HOME | path join 'Desktop/work')
 
-$env.MY_GITHUB_DIR          = ($env.HOME | path join 'Github')
+$env.MY_GITHUB_DIR  = ($env.HOME | path join 'Github')
 
-$env.MY_NOTES_DIR           = ($env.HOME | path join 'Notes')
+$env.MY_NOTES_DIR   = ($env.HOME | path join 'Notes')
 
-$env.MY_CAM_DIR             = ($env.HOME | path join 'Pictures/camera')
-$env.MY_ICONS_DIR           = ($env.HOME | path join 'Pictures/icons')
-$env.MY_PHONE_DIR           = ($env.HOME | path join 'Pictures/phone')
-$env.MY_PROFILE_DIR         = ($env.HOME | path join 'Pictures/profile')
-$env.MY_SCREENSHOTS_DIR     = ($env.HOME | path join 'Pictures/screenshots')
-$env.MY_WALLPAPERS_DIR      = ($env.HOME | path join 'Pictures/wallpapers')
+$env.MY_CAM_DIR         = ($env.HOME | path join 'Pictures/camera')
+$env.MY_ICONS_DIR       = ($env.HOME | path join 'Pictures/icons')
+$env.MY_PHONE_DIR       = ($env.HOME | path join 'Pictures/phone')
+$env.MY_PROFILE_DIR     = ($env.HOME | path join 'Pictures/profile')
+$env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
+$env.MY_WALLPAPERS_DIR  = ($env.HOME | path join 'Pictures/wallpapers')
 
 # -------------------------
 # App Environment Variables
@@ -235,14 +235,14 @@ $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
 $env.__zoxide_hooked = default false
-$env._ZO_DATA_DIR = ($env.HOME | path join '.local/share/zoxide')
-$env._ZO_ECHO = 1
+$env._ZO_DATA_DIR   = ($env.HOME | path join '.local/share/zoxide')
+$env._ZO_ECHO       = 1
 
 # ------
 # PROMPT
 # ------
 
-$env.PROMPT_INDICATOR = "🚀 "
+$env.PROMPT_INDICATOR           = "🚀 "
 $env.PROMPT_INDICATOR_VI_INSERT = "👺 "
 $env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
 $env.PROMPT_MULTILINE_INDICATOR = "🐢 "
