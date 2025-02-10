@@ -6,35 +6,15 @@ return {
     config = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
-                -- fullstack
-                "javascript",
-                "typescript",
-                "html",
-                "css",
-                "json",
-                "sql",
                 -- defaults
                 "c",
+                "cpp",
                 "lua",
                 "vim",
                 "vimdoc",
                 "query",
-                -- extra
-                "bash",
-                "c_sharp",
-                "cpp",
                 "go",
-                "markdown",
-                "markdown_inline",
-                "python",
-                "rust",
-                "haskell",
-                "diff",
-                "luadoc",
-                "glsl",
-                "cmake",
-                "make",
-                "ini",
+
                 "hyprlang",
                 "nu",
             },

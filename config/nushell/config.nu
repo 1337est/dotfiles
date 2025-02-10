@@ -235,8 +235,6 @@ $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
 $env.__zoxide_hooked = default false
-$env._ZO_DATA_DIR   = ($env.HOME | path join '.local/share/zoxide')
-$env._ZO_ECHO       = 1
 
 # ------
 # PROMPT
@@ -246,17 +244,6 @@ $env.PROMPT_INDICATOR           = "🚀 "
 $env.PROMPT_INDICATOR_VI_INSERT = "👺 "
 $env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
 $env.PROMPT_MULTILINE_INDICATOR = "🐢 "
-
-# ----
-# PATH
-# ----
-
-use std/util "path add"
-path add $env.XDG_BIN_HOME
-path add ($env.GOPATH | path join "bin")
-
-# Remove duplicate directories from the PATH
-$env.PATH = ($env.PATH | uniq)
 
 # ---------------
 # App Integration
@@ -349,3 +336,13 @@ keychain --eval --quiet id_ed25519
     | into record
     | load-env
 
+# ----
+# PATH
+# ----
+
+use std/util "path add"
+path add $env.XDG_BIN_HOME
+path add ($env.GOPATH | path join "bin")
+
+# Remove duplicate directories from the PATH
+$env.PATH = ($env.PATH | uniq)

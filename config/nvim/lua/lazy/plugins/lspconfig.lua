@@ -6,6 +6,7 @@ return {
         "williamboman/mason-lspconfig.nvim", -- integrates mason & lspconfig
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         "hrsh7th/cmp-nvim-lsp", -- adds more completions for LSP's
+        "hrsh7th/nvim-cmp",
     },
 
     config = function()
