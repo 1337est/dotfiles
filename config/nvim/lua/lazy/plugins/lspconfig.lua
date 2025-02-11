@@ -4,9 +4,15 @@ return {
     dependencies = {
         { "williamboman/mason.nvim", config = true }, -- manages LSP, DAP, linters, formatters
         "williamboman/mason-lspconfig.nvim", -- integrates mason & lspconfig
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        "hrsh7th/cmp-nvim-lsp-signature-help", -- display func-param signatures
         "hrsh7th/cmp-nvim-lsp", -- adds more completions for LSP's
+        "hrsh7th/cmp-buffer", -- completions for words in different buffers
+        "hrsh7th/cmp-path", -- completions for filesystem paths
+        "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
+        "L3MON4D3/LuaSnip", -- snippet engine written in Lua
+        "saadparwaiz1/cmp_luasnip", -- completions for LuaSnip
+        "j-hui/fidget.nvim",
     },
 
     config = function()
@@ -76,24 +82,131 @@ return {
             end,
         })
 
-        -- Load server configurations from lsp_server.lua
-        local lsp_servers = require("lsp.servers")
-        local servers = lsp_servers.servers
-        local capabilities = lsp_servers.capabilities
+        local cmp = require('cmp')
+        local cmp_lsp = require('cmp_nvim_lsp')
+        local capabilities = vim.tbl_deep_extend(
+            "force",
+            {},
+            vim.lsp.protocol.make_client_capabilities(),
+            cmp_lsp.default_capabilities())
+
+        require("fidget").setup({})
 
         require("mason").setup()
-        require("mason-tool-installer").setup {
-            ensure_installed = vim.tbl_keys(servers),
-        }
         require("mason-lspconfig").setup({
+            ensure_installed = {
+                "clangd",
+                "gopls",
+                "rust_analyzer",
+                "hyprls",
+                "lua_ls",
+            },
             handlers = {
                 function(server_name)
-                    local server = servers[server_name] or {}
-                    server.capabilities = vim.tbl_deep_extend("force", {}, capabilities,
-                        server.capabilities or {})
-                    require("lspconfig")[server_name].setup(server)
+                    require("lspconfig")[server_name].setup {
+                        capabilities = capabilities
+                    }
+                end,
+
+                zls = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.zls.setup({
+                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+                        settings = {
+                            zls = {
+                                enable_inlay_hints = true,
+                                enable_snippets = true,
+                                warn_style = true,
+                            },
+                        },
+                    })
+                    vim.g.zig_fmt_parse_errors = 0
+                    vim.g.zig_fmt_autosave = 0
+                end,
+                ["lua_ls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.lua_ls.setup {
+                        capabilities = capabilities,
+                        settings = {
+                            Lua = {
+                                runtime = { version = "Lua 5.1" },
+                                format = {
+                                    enable = true,
+                                    defaultConfig = {
+                                        indent_style = "space",
+                                        indent_size = "4",
+                                        tab_width = "4",
+                                        quote_style = "none",
+                                        continuation_indent = "4",
+                                        max_line_length = "100",
+                                        align_function_params = "false",
+                                        align_continuous_inline_comment = "false",
+                                        align_array_table = "false",
+                                        break_all_list_when_line_exceed = "false",
+                                        auto_collapse_lines = "false",
+                                        break_before_braces = "false",
+                                    },
+                                },
+                                completion = { callSnippet = "Replace" },
+                                diagnostics = {
+                                    disable = { "mising-fiels" },
+                                    globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+                                }
+                            }
+                        }
+                    }
+                end,
+            }
+        })
+
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        local luasnip = require('luasnip')
+
+        cmp.setup({
+            snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
+            completion = { completeopt = "menu,menuone,noinsert" },
+            mapping = cmp.mapping.preset.insert({
+                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ["<C-Space>"] = cmp.mapping.complete(),
+                ["<C-l>"] = cmp.mapping(function()
+                    if luasnip.expand_or_locally_jumpable() then
+                        luasnip.expand_or_jump()
+                    end
+                end, { "i", "s" }),
+                ["<C-h>"] = cmp.mapping(function()
+                    if luasnip.locally_jumpable(-1) then
+                        luasnip.jump(-1)
+                    end
+                end, { "i", "s" }),
+                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-f>"] = cmp.mapping.scroll_docs(4),
+            }),
+            sources = cmp.config.sources({
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+            }, {
+                { name = "path" },
+                { name = "buffer" },
+                { name = "nvim_lsp_signature_help" },
+            })
         })
-    end,
+
+        vim.diagnostic.config({
+            -- update_in_insert = true,
+            float = {
+                focusable = false,
+                style = "minimal",
+                border = "rounded",
+                source = "always",
+                header = "",
+                prefix = "",
+            },
+        })
+    end
 }
