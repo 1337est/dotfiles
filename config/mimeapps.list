@@ -1,7 +1,7 @@
 [Default Applications]
 text/plain=nvim.desktop
 text/html=vivaldi-stable.desktop
-text/x-mail-source=neomutt.desktop
+text/x-mail-source=vivaldi-stable.desktop
 image/jpeg=swappy.desktop
 image/png=swappy.desktop
 audio/mpeg=mpv.desktop
@@ -9,7 +9,7 @@ audio/x-wav=mpv.desktop
 video/mp4=mpv.desktop
 video/x-matroska=mpv.desktop
 inode/directory=sway.desktop
-application/pdf=org.pwmt.zathura.desktop
+application/pdf=vivaldi-stable.desktop
 application/msword=libreoffice-writer.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 application/vnd.ms-excel=libreoffice-calc.desktop
@@ -24,7 +24,7 @@ multipart/alternative=vivaldi-stable.desktop
 multipart/mixed=vivaldi-stable.desktop
 multipart/related=vivaldi-stable.desktop
 multipart/form-data=vivaldi-stable.desktop
-x-scheme-handler/mailto=neomutt.desktop
+x-scheme-handler/mailto=vivaldi-stable.desktop
 
 [Added Associations]
 # You can add more associations below as needed
