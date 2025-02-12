@@ -271,6 +271,7 @@ def --env y [...args] {
 #   2. ($nu.data-dir)/vendor/autoload is added as the last path in nu.vendor-autoload-dirs.
 #       This means that files in this directory will be read last during startup
 #       (and thus override any definitions made in earlier files).
+#   3. ($nu.data-dir)/
 #
 # Note that the directory represented by $nu.data-dir, nor any of its subdirectories,
 # are created by default. Creation and use of these directories is up to the user.
@@ -313,13 +314,11 @@ let apps = [
     },
 ]
 
-# Iterate over list of apps and generate the file if it doesn't exist
-# This ensures non redundant creation of the files
+# Iterate over list of apps and generate the file
+# NOTE: The file will be generated each time you open a shell to ensure app updates are incorporated
 for app in $apps {
     let file_path = ($autoload_dir | path join $app.file)
-    if (not ($file_path | path exists)) {
-        $app.command | save -f $file_path
-    }
+    $app.command | save -f $file_path
 }
 
 # ---------

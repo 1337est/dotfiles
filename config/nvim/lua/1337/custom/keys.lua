@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist,
     { desc = "Open diagnostic [Q]uickfix list" })
 
 -- C-hjkl for window movement
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Navigate to left window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Navigate to lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Navigate to upper window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Navigate to right window" })
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Navigate left" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Navigate down" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Navigate up" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Navigate right" })

@@ -1,7 +1,4 @@
--- require(x.y.z.module) searches and acquires lua/x/y/z/module.lua
--- personal configs
-require("config.set")
-require("config.keys")
-require("config.cmd")
--- lazy plugin manager config
-require("lazy.init")
+require("1337.custom.set")
+require("1337.custom.keys")
+require("1337.custom.cmd")
+require("1337.lazy")

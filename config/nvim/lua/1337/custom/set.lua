@@ -66,6 +66,10 @@ vim.opt.mousescroll = "ver:1,hor:2"
 
 vim.opt.showmode = false -- Don't show mode, since it's already in status line
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`

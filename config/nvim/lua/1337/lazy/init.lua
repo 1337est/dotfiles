@@ -29,7 +29,12 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
     -- Each file in lua/lazy/plugins/* should return a table with the plugins you want to install
-    spec = "lazy.plugins",
+    -- TODO: Add more lazy.directories, to better format setup
+    spec = {
+        { import = "1337.lazy.plugins" },
+    },
     checker = { notify = false },
     change_detection = { notify = false },
 })
+
+require("1337.lazy.cmd.lsp")
