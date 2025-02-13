@@ -9,12 +9,13 @@ return {
     },
 
     config = function()
-        -- Load server configurations from lsp_server.lua
-        local lsp_servers = require("1337.lsp.servers")
+        -- need to be specific since I also have custom.cmd
+        require("lazy.plugins.custom.lsp.cmd")
+        -- Load server configurations from servers.lua
+        local lsp_servers = require("lazy.plugins.custom.lsp.servers")
         local servers = lsp_servers.servers
         local capabilities = lsp_servers.capabilities
 
-        require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = vim.tbl_keys(servers),
             handlers = {
