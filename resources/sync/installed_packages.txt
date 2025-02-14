@@ -19,6 +19,7 @@ duf
 efibootmgr
 fastfetch
 fd
+fish
 fuzzel
 fzf
 ghostty
@@ -28,7 +29,9 @@ glm
 gopls
 grim
 grub
+hypridle
 hyprland
+hyprlock
 hyprpaper
 hyprpicker
 hyprpolkitagent
@@ -107,3 +110,4 @@ yay-debug
 yazi
 zig
 zoxide
+zsh
