@@ -41,6 +41,7 @@ $env.config.cursor_shape = {
 # --------------------
 # Completions Behavior
 # --------------------
+
 $env.config.completions = {
     sort: "smart"
     case_sensitive: false
@@ -294,7 +295,7 @@ let apps = [
     {
         name: "atuin",
         file: "atuin.nu",
-        command: (atuin init nu)
+        command: (atuin init nu --disable-up-arrow)
         description: "atuin replaces your existing shell history with a SQLite database,
         and records additional context for your commands. Additionally, it provides optional
         and fully encrypted synchronisation of your history between machines, via an Atuin server."
