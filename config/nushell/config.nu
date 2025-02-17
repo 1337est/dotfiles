@@ -51,10 +51,8 @@ $env.config.completions = {
     external: {
         enable: true
         max_results: 100
-        completer: {|spans: list<string>|
-            carapace $spans.0 nushell ...$spans
-            | from json
-            | if ($in | default [] | where value == $"($spans | last)ERR" | is-empty) { $in } else { null }
+        completer: {|spans|
+            carapace $spans.0 nushell ...$spans | from json
         }
     }
     use_ls_colors: true
@@ -235,8 +233,6 @@ $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 # carapace-bin bridges: https://carapace-sh.github.io/carapace-bin/spec/bridge.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
-$env.__zoxide_hooked = default false
-
 # ------
 # PROMPT
 # ------
@@ -316,11 +312,18 @@ let apps = [
 ]
 
 # Iterate over list of apps and generate the file
-# NOTE: The file will be generated each time you open a shell to ensure app updates are incorporated
 for app in $apps {
     let file_path = ($autoload_dir | path join $app.file)
     $app.command | save -f $file_path
 }
+# WARN: There is a separate invocation of the above `$app.command | save -f $file_path` located in
+# the `$nu.user-autoload-dirs` directory. This is to override any setting you may want to change.
+# However, any `.nu` files in `$nu.user-autoload-dirs` will be automatically sourced during
+# startup. This occurs after any vendor files have been processed, allowing user override of vendor
+# settings if needed. However, since the files in $nu.vendor-autoload-dirs are created every shell
+# instance to keep updated, this means changes made to the `$nu.user-autoload-dirs` files
+# are not necessarily up to date with the latest changes. Ensure no conflicting changes in
+# the `$nu.vendor-autoload-dirs` files if something breaks.
 
 # ---------
 # SSG Agent
