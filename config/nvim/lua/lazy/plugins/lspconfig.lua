@@ -9,9 +9,8 @@ return {
     },
 
     config = function()
-        -- need to be specific since I also have custom.cmd
         require("lazy.plugins.custom.lsp.cmd")
-        -- Load server configurations from servers.lua
+
         local lsp_servers = require("lazy.plugins.custom.lsp.servers")
         local servers = lsp_servers.servers
         local capabilities = lsp_servers.capabilities

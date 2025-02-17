@@ -1,31 +1,19 @@
-local augroup = vim.api.nvim_create_augroup("lsp-attach", { clear = true })
+local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-local buf = vim.lsp.buf
-local telebuilt = require('telescope.builtin')
 
+local lsp_attach_group = augroup("lsp-attach", { clear = true })
 autocmd("LspAttach", {
     desc = "Sets keybindings when a LSP attaches to a buffer",
-    group = augroup,
+    group = lsp_attach_group,
     callback = function(e)
-        local map = function(keys, func, desc)
-            vim.keymap.set("n", keys, func,
-                { buffer = e.buf, desc = "LSP: " .. desc })
-        end
-
-        map("gd", telebuilt.lsp_definitions, "[G]oto [D]efinition")
-        map("gr", telebuilt.lsp_references, "[G]oto [R]eferences")
-        map("gI", telebuilt.lsp_implementations, "[G]oto [I]mplementation")
-        map("<leader>D", telebuilt.lsp_type_definitions, "Type [D]efinition")
-        map("<leader>ds", telebuilt.lsp_document_symbols, "[D]ocument [S]ymbols")
-        map("<leader>ws", telebuilt.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-        map("<leader>rn", function() buf.rename() end, "[R]e[n]ame")
-        map("<leader>ca", function() buf.code_action() end, "[C]ode [A]ction")
-        map("gD", function() buf.declaration() end, "[G]oto [D]eclaration")
-        map("K", function() buf.hover() end, "Shows Documentation")
-
+        local keys = require("lazy.plugins.custom.lsp.keys")
         local client = vim.lsp.get_client_by_id(e.data.client_id)
 
-        if client.supports_method('textDocument/formatting') then
+        if client then
+            keys.setup(e.buf, client)
+        end
+
+        if client and client.supports_method('textDocument/formatting') then
             -- Format the current buffer on save
             autocmd('BufWritePre', {
                 buffer = e.buf,
@@ -36,33 +24,27 @@ autocmd("LspAttach", {
         end
 
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-            local lsp_hl_group = vim.api.nvim_create_augroup(
-                'lsp-highlight', { clear = false })
+            local lsp_hl_group = augroup('lsp-highlight', { clear = false })
             autocmd({ 'CursorHold', 'CursorHoldI' }, {
                 buffer = e.buf,
                 group = lsp_hl_group,
-                callback = buf.document_highlight,
+                callback = vim.lsp.buf.document_highlight,
             })
             autocmd({ 'CursorMoved', 'CursorMovedI' }, {
                 buffer = e.buf,
                 group = lsp_hl_group,
-                callback = buf.clear_references,
-            })
-            autocmd('LspDetach', {
-                group = vim.api.nvim_create_augroup('lsp-detach',
-                    { clear = true }),
-                callback = function(event2)
-                    buf.clear_references()
-                    vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
-                end,
+                callback = vim.lsp.buf.clear_references,
             })
         end
+    end,
+})
 
-        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map('<leader>th', function()
-                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint
-                    .is_enabled { bufnr = e.buf })
-            end, '[T]oggle Inlay [H]ints')
-        end
+local lsp_detach_group = augroup("lsp-detach", { clear = true })
+autocmd("LspDetach", {
+    desc = "Clears LSP highlights on detach",
+    group = lsp_detach_group,
+    callback = function(e)
+        vim.lsp.buf.clear_references()
+        vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = e.buf })
     end,
 })
