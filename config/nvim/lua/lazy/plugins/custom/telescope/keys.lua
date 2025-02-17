@@ -2,7 +2,7 @@
 local telebuilt = require("telescope.builtin")
 local map = function(keys, func, desc)
     vim.keymap.set("n", keys, func,
-        { desc = "TLSC: " .. desc })
+        { desc = "TEL: " .. desc })
 end
 
 map("<leader>sh", telebuilt.help_tags, "[S]earch [H]elp")
