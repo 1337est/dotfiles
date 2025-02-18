@@ -1,9 +1,6 @@
 #!/usr/bin/env nu
 
-# TODO: Integrate this setup with notifications using mako, and a waybar notification for when there is a recording going on.
-# (slurp | complete | get exit_code) == 0 # not selecting anything: false
-# (slurp | complete | get exit_code) == 0 # selecting region: true
-# command: (slurp | complete | get exit_code) == 0
+# TODO: Integrate this setup with waybar to see when there is a recording going on.
 if (ps | where name == wf-recorder | is-empty) {
     let region = (slurp | complete)
     if (($region.exit_code) == 1) {
