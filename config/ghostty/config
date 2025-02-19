@@ -18,7 +18,7 @@ font-family-bold-italic = JetBrainsMono NF Bold Italic
 
 # TODO: Document default values
 
-font-size = 15
+font-size = 13
 
 theme = tokyonight
 
