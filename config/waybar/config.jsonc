@@ -75,7 +75,7 @@
         "scroll-step": 0.2
     },
     "network": {
-        "format-wifi": "{essid} {signalStrength}%",
+        "format-wifi": "{essid}  {signalStrength}%",
         "format-ethernet": "{ipaddr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-disconnected": "No Network ⚠",
