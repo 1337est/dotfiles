@@ -1,24 +1,25 @@
 * {
-    font-family: JetBrainsMono Nerd Font, sans-serif;
-    font-size: 18px;
-    border-radius: 8px;
-    padding: 4px 8px;
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 2.0rem;
+    font-style: normal;
+    min-height: 0;
 }
 
 /* Window */
-#window,
 window#waybar {
-    background: rgba(20, 20, 20, 0.85);
-    border-radius: 12px;
-    border: 1px solid rgba(50, 50, 50, 0.8);
+    background: rgba(30, 30, 46, 0.8);
+    border-radius: 1em;
+    border: 0.05em solid rgba(50, 50, 50, 0.8);
     color: #d3dae3;
     transition: background-color 0.3s ease-in-out;
 }
 
 /* Workspaces */
 #workspaces button {
-    padding: 4px 8px;
-    margin: 2px;
+    padding: 0.3em 0.6em;
+    margin: 0.01em;
     background: transparent;
     color: #b0bec5;
     transition: all 0.2s ease-in-out;
@@ -27,7 +28,7 @@ window#waybar {
 #workspaces button.active {
     background: #26B656;
     color: #ffffff;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -0.2em #ffffff;
 }
 
 #workspaces button:hover {
@@ -44,47 +45,41 @@ window#waybar {
     background-color: #b12a34;
     /* White text */
     color: #ffffff;
-    padding: 4px 10px;
-    border-radius: 5px;
+    padding: 0.4em 0.6em;
     font-weight: bold;
 }
 
-/* Add a subtle glowing effect to make it even more attention-grabbing */
 #submap.critical {
     animation: submap-glow 1s infinite alternate;
 }
 
 @keyframes submap-glow {
     from {
-        box-shadow: 0 0 10px #b12a34;
+        box-shadow: 0 0 0.6em #b12a34;
     }
 
     to {
-        box-shadow: 0 0 15px #ff4d5a;
+        box-shadow: 0 0 0.9em #ff4d5a;
     }
 }
 
 /* wireplumber */
 #wireplumber {
     background-color: #44475a;
-    /* Dark background */
     color: #ffffff;
-    /* White text */
-    padding: 4px 10px;
-    border-radius: 5px;
+    padding: 0.4em 0.6em;
 }
 
 #wireplumber.muted {
     background-color: #6272a4;
-    /* Muted color */
     color: #ff5555;
-    /* Red text for muted state */
 }
 
 /* network */
 #network {
     background: #1b1f27;
     color: #89b4fa;
+    padding: 0.3em 0.5em;
 }
 
 #network.disconnected {
@@ -96,6 +91,7 @@ window#waybar {
 #battery {
     background: #1b1f27;
     color: #ffffff;
+    padding: 0.3em 0.5em;
 }
 
 #battery.charging {
@@ -109,7 +105,6 @@ window#waybar {
     animation: blink 1s steps(2) infinite;
 }
 
-/* keyframes */
 @keyframes blink {
     50% {
         background: #ffffff;
