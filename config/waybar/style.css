@@ -10,10 +10,8 @@
 /* Window */
 window#waybar {
     background: rgba(30, 30, 46, 0.8);
-    border-radius: 1em;
-    border: 0.05em solid rgba(50, 50, 50, 0.8);
-    color: #d3dae3;
-    transition: background-color 0.3s ease-in-out;
+    border-bottom: 1px solid #282828;
+    color: #f4d9e1
 }
 
 /* Workspaces */
