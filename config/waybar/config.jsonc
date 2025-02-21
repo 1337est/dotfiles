@@ -96,5 +96,11 @@
         "format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    }
+    },
+
+    "custom/hyprpicker": {
+        "format": "󰈋",
+        "on-click": "hyprpicker -a -f hex",
+        "on-click-right": "hyprpicker -a -f rgb"
+    },
 }

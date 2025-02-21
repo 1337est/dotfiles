@@ -1,6 +1,5 @@
 #!/usr/bin/env nu
 
-# TODO: Integrate this setup with waybar to see when there is a recording going on.
 if (ps | where name == wf-recorder | is-empty) {
     let region = (slurp | complete)
     if (($region.exit_code) == 1) {

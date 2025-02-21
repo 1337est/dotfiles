@@ -9,14 +9,13 @@
 
 /* Window */
 window#waybar {
-    color: #93a4c3;
-    background: rgba(26, 33, 46, 0.8);
+    color: #a5b0c5;
+    background: rgba(36, 43, 56, 0.8);
 }
 
 /* Workspaces */
 #workspaces {
-    background: #21283b;
-    border: solid 0.0em #93a4c3;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -25,30 +24,30 @@ window#waybar {
 }
 
 #workspaces button {
-    color: #6c7d9c;
+    color: #a5b0c5;
     background: transparent;
     border-radius: 0.8em;
     padding: 0.0em 0.4em;
 }
 
 #workspaces button.active {
-    color: #8bcd5b;
-    background: #331c1e;
-    box-shadow: inset 0 -0.15em #ffffff;
+    color: #97ca72;
+    background: #303d27;
+    box-shadow: inset 0 -0.15em #7d899f;
 }
 
 #workspaces button:hover {
-    color: #8bcd5b;
-    background: rgba(51, 28, 30, 0.1);
+    color: #97ca72;
+    background: #9a6b16;
 }
 
 #workspaces button.urgent {
-    background: #f65866;
+    background: #ef5f6b;
 }
 
 #cpu {
-    color: #8bcd5b;
-    background: #21283b;
+    color: #97ca72;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -57,7 +56,7 @@ window#waybar {
 
 #memory {
     color: #41a7fc;
-    background: #21283b;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -65,8 +64,8 @@ window#waybar {
 }
 
 #disk {
-    color: #efbd5d;
-    background: #21283b;
+    color: #ebc275;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -76,8 +75,7 @@ window#waybar {
 /* hyprland submap */
 #submap {
     color: #ffffff;
-    background: #992525;
-    border: solid 0.0em #93a4c3;
+    background: #a13131;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -90,77 +88,80 @@ window#waybar {
 
 @keyframes submap-glow {
     from {
-        box-shadow: 0.0em 0.0em 0.6em #992525;
+        box-shadow: 0.0em 0.0em 0.6em #a13131;
     }
 
     to {
-        box-shadow: 0.0em 0.0em 0.9em #f65866;
+        box-shadow: 0.0em 0.0em 0.9em #ef5f6b;
     }
 }
 
 /* wireplumber */
 #wireplumber {
-    color: #8bcd5b;
-    background: #283347;
-    border: solid 0.0em #93a4c3;
+    color: #97ca72;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
+    font-weight: bold;
 }
 
 #wireplumber.muted {
-    background: #455574;
-    color: #f65866;
+    background: #546178;
+    color: #ef5f6b;
+    font-weight: bold;
 }
 
 /* network */
 #network {
     color: #41a7fc;
-    background: #1a212e;
-    border: solid 0.0em #93a4c3;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
+    font-weight: bold;
 }
 
 #network.disconnected {
-    background: #f65866;
+    background: #ef5f6b;
     color: #ffffff;
+    font-weight: bold;
 }
 
 /* battery */
 #battery {
     color: #ffffff;
     background: #1a212e;
-    border: solid 0.0em #93a4c3;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
+    font-weight: bold;
 }
 
 #battery.charging {
-    background: #8bcd5b;
+    background: #97ca72;
     color: #ffffff;
+    font-weight: bold;
 }
 
 #battery.critical:not(.charging) {
-    background: #f65866;
+    background: #ef5f6b;
     color: #ffffff;
     animation: blink 1s steps(2) infinite;
+    font-weight: bold;
 }
 
 @keyframes blink {
     50% {
         background: #ffffff;
-        color: #f65866;
+        color: #ef5f6b;
     }
 }
 
 /* clock */
 #clock {
-    color: black;
-    background: #f2cc81;
-    border: solid 0.0em #93a4c3;
+    color: #ebc275;
+    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;

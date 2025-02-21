@@ -10,14 +10,14 @@ return {
     config = function()
         require("onedark").setup({
             -- Main options --
-            style = "deep", -- dark, darker, cool, deep, warm, warmer, light
+            style = "cool", -- dark, darker, cool, deep, warm, warmer, light
             transparent = true,
             ending_tildes = true,
             cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
             -- toggle theme style ---
             toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-            toggle_style_list = { 'darker', 'dark', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
+            toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
             -- Change code style --
             -- Options are italic, bold, underline, none
