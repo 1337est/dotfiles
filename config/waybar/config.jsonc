@@ -6,15 +6,18 @@
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
+
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
     ],
+
     "modules-center": [
         "cpu",
         "memory",
         "disk",
     ],
+
     "modules-right": [
         "hyprland/submap",
         "tray",
@@ -74,12 +77,14 @@
         "max-volume": 150,
         "scroll-step": 0.2
     },
+
     "network": {
         "format-wifi": "{essid}  {signalStrength}%",
         "format-ethernet": "{ipaddr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-disconnected": "No Network ⚠",
     },
+
     "battery": {
         "states": {
             "good": 65,
@@ -92,15 +97,10 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon} ",
     },
+
     "clock": {
         "format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    },
-
-    "custom/hyprpicker": {
-        "format": "󰈋",
-        "on-click": "hyprpicker -a -f hex",
-        "on-click-right": "hyprpicker -a -f rgb"
     },
 }

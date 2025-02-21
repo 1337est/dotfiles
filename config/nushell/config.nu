@@ -3,9 +3,11 @@
 # config nu --doc | nu-highlight | less -R # for viewing in the terminal
 # config nu --doc out> ~/path/to/file # for saving the output to a file
 
-# ------------------------
+# -----------------------------------------------------------------------------
+# Nushell Config
+# -----------------------------------------------------------------------------
+
 # History-related settings
-# ------------------------
 
 $env.config.history = {
     max_size: 5_000_000
@@ -14,33 +16,23 @@ $env.config.history = {
     isolation: true
 }
 
-# ----------------------
 # Miscellaneous Settings
-# ----------------------
 
 $env.config.show_banner = false
-
 $env.config.rm.always_trash = false
-
 $env.config.recursion_limit = 50
 
-# ---------------------------
 # Commandline Editor Settings
-# ---------------------------
 
 $env.config.edit_mode = "vi"
-
 $env.config.buffer_editor = "editor"
-
 $env.config.cursor_shape = {
     emacs: "inherit"         # Cursor shape in emacs mode
     vi_insert: "blink_block"       # Cursor shape in vi-insert mode
     vi_normal: "block"  # Cursor shape in normal vi mode
 }
 
-# --------------------
 # Completions Behavior
-# --------------------
 
 $env.config.completions = {
     sort: "smart"
@@ -58,12 +50,9 @@ $env.config.completions = {
     use_ls_colors: true
 }
 
-# --------------------
 # Terminal Integration
-# --------------------
 
 $env.config.use_kitty_protocol = false
-
 $env.config.shell_integration = {
     osc2: true
     osc7: true
@@ -73,28 +62,20 @@ $env.config.shell_integration = {
     osc633: true
     reset_application_mode: true
 }
-
 $env.config.bracketed_paste = true
-
 $env.config.use_ansi_coloring = true
 
-# ----------------------
 # Error Display Settings
-# ----------------------
 
 $env.config.error_style = "fancy"
-
 $env.config.display_errors = {
     exit_code: false
     termination_signal: true
 }
 
-# -------------
 # Table Display
-# -------------
 
 $env.config.footer_mode = 25
-
 $env.config.table = {
     mode: "default"
     index_mode: "always"
@@ -112,34 +93,25 @@ $env.config.table = {
     footer_inheritance: false
 }
 
-# ----------------
 # Datetime Display
-# ----------------
 
 $env.config.datetime_format = {
     normal: "%m/%d/%y %I:%M:%S%p"
     table: null
 }
 
-# ----------------
 # Filesize Display
-# ----------------
 
 $env.config.filesize = {
     unit: metric
     precision: 1
 }
 
-# ---------------------
 # Miscellaneous Display
-# ---------------------
 
 $env.config.render_right_prompt_on_last_line = false
-
 $env.config.float_precision = 2
-
 $env.config.ls.use_ls_colors = true
-
 $env.config.hooks = {
     pre_prompt: []
     pre_execution: []
@@ -150,13 +122,11 @@ $env.config.hooks = {
     command_not_found: []
 }
 
-# ---------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Environment Variables
-# ---------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
-# ---------------------------
 # Default Program Variables
-# ---------------------------
 
 $env.EDITOR     = 'nvim'
 $env.VISUAL     = 'nvim'
@@ -167,9 +137,7 @@ $env.MANPAGER   = 'nvim +Man!'
 $env.MANWIDTH   = 999
 $env.BROWSER    = 'vivaldi'
 
-# --------------------
 # XDG Base Directories
-# --------------------
 
 $env.XDG_CONFIG_HOME    = ($env.HOME | path join '.config')
 $env.XDG_CACHE_HOME     = ($env.HOME | path join '.cache')
@@ -178,9 +146,7 @@ $env.XDG_STATE_HOME     = ($env.HOME | path join '.local/state')
 $env.XDG_BIN_HOME       = ($env.HOME | path join '.local/bin')
 $env.XDG_LIB_HOME       = ($env.HOME | path join '.local/lib')
 
-# --------------------
 # XDG User Directories
-# --------------------
 
 $env.XDG_DESKTOP_DIR        = ($env.HOME | path join 'Desktop')
 $env.XDG_DOCUMENTS_DIR      = ($env.HOME | path join 'Documents')
@@ -191,22 +157,16 @@ $env.XDG_PUBLICSHARE_DIR    = ($env.HOME | path join 'Public')
 $env.XDG_TEMPLATES_DIR      = ($env.HOME | path join 'Templates')
 $env.XDG_VIDEOS_DIR         = ($env.HOME | path join 'Videos')
 
-# -----------------------
 # MY Personal Directories
-# -----------------------
 
 $env.MY_CODE_DIR    = ($env.HOME | path join 'Code')
 $env.MY_ALGO_DIR    = ($env.HOME | path join 'Code/algo')
 $env.MY_CURIOUS_DIR = ($env.HOME | path join 'Code/curious')
 $env.MY_PJ_DIR      = ($env.HOME | path join 'Code/pajamas')
-
 $env.MY_SCHOOL_DIR  = ($env.HOME | path join 'Desktop/school')
 $env.MY_WORK_DIR    = ($env.HOME | path join 'Desktop/work')
-
 $env.MY_GITHUB_DIR  = ($env.HOME | path join 'Github')
-
 $env.MY_NOTES_DIR   = ($env.HOME | path join 'Notes')
-
 $env.MY_CAM_DIR         = ($env.HOME | path join 'Pictures/camera')
 $env.MY_ICONS_DIR       = ($env.HOME | path join 'Pictures/icons')
 $env.MY_PHONE_DIR       = ($env.HOME | path join 'Pictures/phone')
@@ -214,41 +174,23 @@ $env.MY_PROFILE_DIR     = ($env.HOME | path join 'Pictures/profile')
 $env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.MY_WALLPAPERS_DIR  = ($env.HOME | path join 'Pictures/wallpapers')
 
-# -------------------------
 # App Environment Variables
-# -------------------------
 
-# `grim` - directory for screenshots taken by grim
 $env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
-
-# `gpg` - Get the current tty dynamically
 $env.GPG_TTY = (tty)
-
-# `go` - go data (modules/pkg/binaries) directory
 $env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
-
-# `starship` - config location
 $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
-
-# carapace-bin bridges: https://carapace-sh.github.io/carapace-bin/spec/bridge.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
-# ------
 # PROMPT
-# ------
 
 $env.PROMPT_INDICATOR           = "🚀 "
 $env.PROMPT_INDICATOR_VI_INSERT = "👺 "
 $env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
 $env.PROMPT_MULTILINE_INDICATOR = "🐢 "
 
-# ---------------
 # App Integration
-# ---------------
 
-# yazi shell wrapper for `y` command. Need to start yazi through `y` to use
-# `q` quit with change to cwd
-# `Q` quit without changing cwd
 def --env y [...args] {
     let tmp = (mktemp -t "yazi-cwd.XXXXXX")
     yazi ...$args --cwd-file $tmp
@@ -259,9 +201,7 @@ def --env y [...args] {
     rm -fp $tmp
 }
 
-# ------------------------
 # Autoload App Integration
-# ------------------------
 
 # $env.data-dir is used to in several startup tasks
 #   1. ($nu.data-dir)/nushell/completions is added to the $env.NU_LIB_DIRS search path.
@@ -325,11 +265,8 @@ for app in $apps {
 # are not necessarily up to date with the latest changes. Ensure no conflicting changes in
 # the `$nu.vendor-autoload-dirs` files if something breaks.
 
-# ---------
-# SSG Agent
-# ---------
+# SSH Agent/key management via keychain utility
 
-# loading ssh keys and environment variables via keychain utility
 keychain --eval --quiet id_ed25519
     | lines
     | where not ($it | is-empty)
@@ -339,9 +276,9 @@ keychain --eval --quiet id_ed25519
     | into record
     | load-env
 
-# ----
+# -----------------------------------------------------------------------------
 # PATH
-# ----
+# -----------------------------------------------------------------------------
 
 use std/util "path add"
 path add $env.XDG_BIN_HOME
