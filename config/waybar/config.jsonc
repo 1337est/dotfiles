@@ -86,11 +86,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% {icon} ",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{time} {icon} ",
     },
     "clock": {
         "format": "{:%H:%M}",
