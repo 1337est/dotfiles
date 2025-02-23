@@ -2,10 +2,7 @@ font-family = JetBrainsMono Nerd Font
 font-family-bold = JetBrainsMono NF Bold
 font-family-italic = JetBrainsMono NF Italic
 font-family-bold-italic = JetBrainsMono NF Bold Italic
-# Laptop 1920x1080
-# font-size = 8
-# Desktop 3840x2160
-font-size = 16
+font-size = 13
 
 theme = tokyonight
 
