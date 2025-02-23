@@ -1,4 +1,3 @@
-/* General */
 * {
     border: none;
     border-radius: 0.0em;
@@ -8,15 +7,16 @@
     min-height: 0.0em;
 }
 
-/* Waybar */
 window#waybar {
     color: #a5b0c5;
-    background: rgba(54, 60, 81, 0.8);
+    background: rgba(54, 60, 81, 0.9);
+    border-radius: 0.8em;
+    margin: 0.4em;
+    padding: 0.0em 0.4em;
 }
 
-/* Workspaces */
 #workspaces {
-    background: #242b38;
+    background: rgba(36, 43, 56, 1.0);
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -25,30 +25,46 @@ window#waybar {
 }
 
 #workspaces button {
-    color: #a5b0c5;
+    color: #546178;
     background: transparent;
     border-radius: 0.8em;
     padding: 0.0em 0.4em;
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.visible {
     color: #97ca72;
     background: #303d27;
     box-shadow: inset 0 -0.15em #7d899f;
 }
 
 #workspaces button:hover {
-    color: #97ca72;
-    background: #9a6b16;
+    color: #5ab0f6;
+    background: #303d27;
 }
 
 #workspaces button.urgent {
     background: #ef5f6b;
 }
 
+#idle_inhibitor {
+    background: rgba(36, 43, 56, 1.0);
+    border-radius: 0.8em;
+    margin: 0.4em;
+    padding: 0.0em 0.4em;
+}
+
+#idle_inhibitor.deactivated {
+    color: #ef5f6b;
+}
+
+#idle_inhibitor.activated {
+    color: #97ca72;
+}
+
 #cpu {
     color: #97ca72;
-    background: #242b38;
+    background: rgba(36, 43, 56, 1.0);
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -57,7 +73,7 @@ window#waybar {
 
 #memory {
     color: #41a7fc;
-    background: #242b38;
+    background: rgba(36, 43, 56, 1.0);
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -66,14 +82,13 @@ window#waybar {
 
 #disk {
     color: #ebc275;
-    background: #242b38;
+    background: rgba(36, 43, 56, 1.0);
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
     font-weight: bold;
 }
 
-/* hyprland submap */
 #submap {
     color: #ffffff;
     background: #a13131;
@@ -97,10 +112,9 @@ window#waybar {
     }
 }
 
-/* wireplumber */
 #wireplumber {
     color: #97ca72;
-    background: #242b38;
+    background: rgba(36, 43, 56, 1.0);
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -113,10 +127,9 @@ window#waybar {
     font-weight: bold;
 }
 
-/* network */
 #network {
     color: #41a7fc;
-    background: #242b38;
+    background: rgba(36, 43, 56, 1.0);
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
@@ -129,7 +142,6 @@ window#waybar {
     font-weight: bold;
 }
 
-/* battery */
 #battery {
     color: #ffffff;
     background: #1a212e;
@@ -159,12 +171,16 @@ window#waybar {
     }
 }
 
-/* clock */
 #clock {
     color: #ebc275;
-    background: #242b38;
     border-radius: 0.8em;
     margin: 0.4em;
     padding: 0.0em 0.4em;
     font-weight: bold;
+}
+
+#tray {
+    border-radius: 0.8em;
+    margin: 0.4em;
+    padding: 0.0em 0.4em;
 }

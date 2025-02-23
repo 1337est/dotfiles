@@ -6,51 +6,59 @@
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
+    "reload_style_on_change": true,
 
-    // Choose the order of the modules
+    // ************************************************************ //
+    // LEFT MODULES
+    // ************************************************************ //
     "modules-left": [
-        "hyprland/workspaces",
-    ],
-
-    "modules-center": [
         "cpu",
         "memory",
         "disk",
-    ],
-
-    "modules-right": [
+        "idle_inhibitor",
         "hyprland/submap",
-        "tray",
-        "wireplumber",
-        "network",
-        "battery",
-        "clock",
     ],
 
     "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": true,
+        "active-only": true,
+        "all-outputs": false,
         "format": "{icon}",
         "format-icons": {
-            "1": " ",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " ",
+            "1": "",
+            "2": "󰊠",
+            "3": "󱍢",
+            "4": "",
+            "5": "",
             "default": ""
         },
     },
 
-    "memory": {
-        "format": "󰍛 {}%",
-        "format-alt": "󰍛 {used}/{total} GiB",
-        "interval": 5
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " ",
+        },
     },
 
+    // ************************************************************ //
+    // CENTER MODULES
+    // ************************************************************ //
+    "modules-center": [
+        "hyprland/workspaces",
+        "tray",
+    ],
+
     "cpu": {
-        "format": "󰻠 {usage}%",
-        "format-alt": "󰻠 {avg_frequency} GHz",
-        "interval": 5
+        "format": " {usage}%",
+        "format-alt": " {avg_frequency} GHz",
+        "interval": 5,
+    },
+
+    "memory": {
+        "format": " {}%",
+        "format-alt": " {used}/{total} GiB",
+        "interval": 5,
     },
 
     "disk": {
@@ -59,48 +67,80 @@
         "interval": 5,
     },
 
+    // ************************************************************ //
+    // RIGHT MODULES
+    // ************************************************************ //
+    "modules-right": [
+        "clock",
+        "wireplumber",
+        "network",
+        "battery",
+    ],
+
     "hyprland/submap": {
-        "format": "📐 {}",
+        "format": " {}",
         "max-length": 15,
         "tooltip": false,
     },
 
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
     },
 
     "wireplumber": {
-        "format": "{volume}%",
-        "format-muted": "",
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
         "on-click": "helvum",
-        "max-volume": 150,
-        "scroll-step": 0.2
+        "max-volume": 100.0,
+        "scroll-step": 0.2,
+        "format-icons": ["", "", ""],
     },
 
     "network": {
         "format-wifi": "{essid}  {signalStrength}%",
-        "format-ethernet": "{ipaddr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-disconnected": "No Network ⚠",
+        "format-ethernet": "{ipaddr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-disconnected": "No Network ",
     },
 
     "battery": {
         "states": {
             "good": 65,
             "warning": 30,
-            "critical": 15
+            "critical": 15,
         },
         "format": "{capacity}% {icon} ",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄 ",
+        "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon} ",
     },
 
     "clock": {
-        "format": "{:%H:%M}",
+        "interval": 1,
+        "format": "{:%T}",
+        "format-alt": "{:%F}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
 }
