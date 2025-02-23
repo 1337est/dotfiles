@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0.0em;
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-style: normal;
     min-height: 0.0em;
 }
@@ -10,16 +10,16 @@
 window#waybar {
     color: #a5b0c5;
     background: rgba(54, 60, 81, 0.9);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
 }
 
 #workspaces {
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: normal;
     font-style: normal;
 }
@@ -27,8 +27,8 @@ window#waybar {
 #workspaces button {
     color: #546178;
     background: transparent;
-    border-radius: 0.8em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    padding: 0.0em 0.2em;
 }
 
 #workspaces button.active,
@@ -49,9 +49,9 @@ window#waybar {
 
 #idle_inhibitor {
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
 }
 
 #idle_inhibitor.deactivated {
@@ -65,36 +65,36 @@ window#waybar {
 #cpu {
     color: #97ca72;
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
 #memory {
     color: #41a7fc;
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
 #disk {
     color: #ebc275;
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
 #submap {
     color: #ffffff;
     background: #a13131;
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
@@ -115,9 +115,9 @@ window#waybar {
 #wireplumber {
     color: #97ca72;
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
@@ -130,9 +130,9 @@ window#waybar {
 #network {
     color: #41a7fc;
     background: rgba(36, 43, 56, 1.0);
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
@@ -145,9 +145,9 @@ window#waybar {
 #battery {
     color: #ffffff;
     background: #1a212e;
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
@@ -173,14 +173,14 @@ window#waybar {
 
 #clock {
     color: #ebc275;
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
     font-weight: bold;
 }
 
 #tray {
-    border-radius: 0.8em;
-    margin: 0.4em;
-    padding: 0.0em 0.4em;
+    border-radius: 0.4em;
+    margin: 0.2em;
+    padding: 0.0em 0.2em;
 }
