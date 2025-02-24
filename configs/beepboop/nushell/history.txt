@@ -1,0 +1,817 @@
+ls
+l
+clear
+lsd
+ls
+cd Code/github/dotfiles/
+ls
+lsd
+ls
+man nvim
+man nu
+man nushell
+ls
+cd ~/.config
+ls
+cd nushell
+ls
+clear
+ls
+cd ../
+ls
+clear
+ls -l 
+clear
+which nu
+ls /etc/shells
+cat /etc/shells
+bat /etc/shells
+clear
+cat /etc/shells
+man chsh
+chsh -l
+man chsh
+chsh -s /bin/nu
+whereis nu
+which nu
+ls /sbin/nu
+chsh -s /usr/bin/nu
+which nu
+chsh -s /sbin/nu
+chsh -l
+chsh -s /bin/nu
+clear
+ls
+exit
+clear
+cleawr
+clear
+cd dot
+ls
+cd .config/
+ls
+cd ../
+cd Code/github/dotfiles/
+ls
+cd system
+ls
+nvim ly.config.ini
+clear
+cd ../
+ls
+cd config/
+ls
+cd ../
+ls
+mkdir archive
+ls
+cd config/
+ls
+mv zsh/ ../archive/ 
+ls
+mv kitty/ ../archive/ 
+ls
+sudo pacman -Qi lsd
+sudo pacman -Runs lsd
+sway
+cd Code/github/dotfiles/
+ls
+cd .config/
+ls
+cd ~/Code/github
+cd dotfiles
+ls
+cd config/
+ls
+cdd ~/.config/
+cd ~/.config
+clear
+ls
+rm kitty zsh 
+ls
+cd nushell
+ls
+nvim env.nu
+$env | table -e
+$env.EMAIL1
+env.FOO = 'BAR'
+$env.FOO = 'BAR'
+env.FOO
+$env.FOO
+clear
+exit
+$env.FOO
+clear
+cd .config/nushell/
+printenv
+man man
+exit
+printenv
+man man
+exit
+printenv
+printenv PAGER
+printenv MANPAGER
+printenv MANWIDTH
+printenv manwidth
+exit
+printenv EDITOR
+printenv VISUAL
+exit
+printenv EDITOR
+printenv VISUAL
+exit
+printenv EDITOR
+printenv VISUAL
+exit
+printenv PATH
+ls 
+ls .local/
+exit
+printenv PATH
+printenv BROWSER
+exit
+ls
+printenv FOO
+printenv
+cd .config/
+printenv
+exit
+ls
+printenv FOO
+exit
+printenv XDG_DESKTOP_DIR
+exit
+printenv XDG_DESKTOP_DIR
+exit
+printenv XDG_DESKTOP_DIR
+ls
+rmdir Music/ 
+rmdir Public/ 
+ls
+lsa
+printenv XDG_DESKTOP_DIR
+ls -a
+exit
+printenv XDG
+printenv $XDG_DESKTOP_DIR
+printenv XDG_DESKTOP_DIR
+printenv XDG_DOWNLOAD_DIR
+ls
+printenv $PAGER
+printenv PAGER
+clear
+mkdir -p $XDG_MUSIC_DIR
+mkdir -p XDG_MUSIC_DIR
+ls
+mkdir -h 
+mkdir foo/bar/baz
+ls
+ls foo
+ls foo/bar
+ls foo/bar/baz
+rmdir foo
+rm foo/bar/
+rm -r foo/ 
+ls
+mkdir XDG_MUSIC_DIR
+ls
+rm XDG_MUSIC_DIR/ 
+ls
+mkdir $XDG_MUSIC_DIR
+ls
+mkdir $env.XDG_MUSIC_DIR
+ls
+exit
+ls
+rmdir Music/
+ls
+exit
+ls
+rmdir Music/
+ls
+$env
+$env | table -e 
+$env { BROWSER }
+$env { $BROWSER }
+config env --doc | nu-highlight 
+config nu --doc | nu-highlight | less -R
+printenv
+? 
+nvim config.nu
+config nu --doc | nu-highlight | less -R
+exit
+$env.XDG[0]
+exit
+ls
+exit
+let XDG = {<\n>    XDG_DESKTOP_DIR: ($env.HOME | path join 'Desktop'),<\n>    XDG_DOCUMENTS_DIR: ($env.HOME | path join 'Documents'),<\n>    XDG_DOWNLOAD_DIR: ($env.HOME | path join 'Downloads'),<\n>    XDG_MUSIC_DIR: ($env.HOME | path join 'Music'),<\n>    XDG_PICTURES_DIR: ($env.HOME | path join 'Pictures'),<\n>    XDG_PUBLICSHARE_DIR: ($env.HOME | path join 'Public'),<\n>    XDG_TEMPLATES_DIR: ($env.HOME | path join 'Templates'),<\n>    XDG_VIDEOS_DIR: ($env.HOME | path join 'Videos')<\n>}
+$XDG.0
+$XDG.XDG_DESKTOP_DIR
+let XDG = [<\n>[ environment path ];<\n>[ XDG_DESKTOP_DIR: ($env.HOME | path join 'Desktop') ],<\n>[ XDG_DOCUMENTS_DIR: ($env.HOME | path join 'Documents') ],<\n>[ XDG_DOWNLOAD_DIR: ($env.HOME | path join 'Downloads') ],<\n>[ XDG_MUSIC_DIR: ($env.HOME | path join 'Music') ],<\n>[ XDG_PICTURES_DIR: ($env.HOME | path join 'Pictures') ],<\n>[ XDG_PUBLICSHARE_DIR: ($env.HOME | path join 'Public') ],<\n>[ XDG_TEMPLATES_DIR: ($env.HOME | path join 'Templates') ],<\n>[ XDG_VIDEOS_DIR: ($env.HOME | path join 'Videos') ]<\n>]
+$XDG.environment.0
+$XDG.path.0
+let XDG = [<\n>[ environment path ];<\n>[ XDG_DESKTOP_DIR: ($env.HOME | path join 'Desktop') ],<\n>[ XDG_DOCUMENTS_DIR: ($env.HOME | path join 'Documents') ],<\n>[ XDG_DOWNLOAD_DIR: ($env.HOME | path join 'Downloads') ],<\n>[ XDG_MUSIC_DIR: ($env.HOME | path join 'Music') ],<\n>[ XDG_PICTURES_DIR: ($env.HOME | path join 'Pictures') ],<\n>[ XDG_PUBLICSHARE_DIR: ($env.HOME | path join 'Public') ],<\n>[ XDG_TEMPLATES_DIR: ($env.HOME | path join 'Templates') ],<\n>[ XDG_VIDEOS_DIR: ($env.HOME | path join 'Videos') ]<\n>] | load-env
+let XDG = [<\n>[ environment path ];<\n>{ XDG_DESKTOP_DIR: ($env.HOME | path join 'Desktop') },<\n>{ XDG_DOCUMENTS_DIR: ($env.HOME | path join 'Documents') },<\n>{ XDG_DOWNLOAD_DIR: ($env.HOME | path join 'Downloads') },<\n>{ XDG_MUSIC_DIR: ($env.HOME | path join 'Music') },<\n>{ XDG_PICTURES_DIR: ($env.HOME | path join 'Pictures') },<\n>{ XDG_PUBLICSHARE_DIR: ($env.HOME | path join 'Public') },<\n>{ XDG_TEMPLATES_DIR: ($env.HOME | path join 'Templates') },<\n>{ XDG_VIDEOS_DIR: ($env.HOME | path join 'Videos') }<\n>] | load-env
+let XDG = [<\n>[ environment path ];<\n>[ XDG_DESKTOP_DIR: ($env.HOME | path join 'Desktop') ],<\n>[ XDG_DOCUMENTS_DIR: ($env.HOME | path join 'Documents') ],<\n>[ XDG_DOWNLOAD_DIR: ($env.HOME | path join 'Downloads') ],<\n>[ XDG_MUSIC_DIR: ($env.HOME | path join 'Music') ],<\n>[ XDG_PICTURES_DIR: ($env.HOME | path join 'Pictures') ],<\n>[ XDG_PUBLICSHARE_DIR: ($env.HOME | path join 'Public') ],<\n>[ XDG_TEMPLATES_DIR: ($env.HOME | path join 'Templates') ],<\n>[ XDG_VIDEOS_DIR: ($env.HOME | path join 'Videos') ]<\n>]
+load-env $XDG.environment
+load-env $XDG.0
+load-env $XDG.1
+load-env $XDG.2
+load-env $XDG.3
+load-env $XDG.4
+printenv
+load-env $XDG.5
+printenv
+load-env $XDG.6
+load-env $XDG.7
+load-env $XDG.8
+exit
+printenv
+exit
+$ENV_VARS
+$ENV_VARS.0
+exit
+ls
+rmdir Music/ 
+ls
+rmdir Public/ Videos/ 
+ls
+exit
+ls
+exit
+printenv NODE_REPL_HISTORY
+printenv
+exit
+printenv MYMAILDIR
+for acct in [$MYMAILDIR/email_1 $MYMAILDIR/email_2 $MYMAILDIR/email_3 $MYMAILDIR/email_4] {<\n>}
+for acct in [$env.MYMAILDIR/email_1 $env.MYMAILDIR/email_2 $env.MYMAILDIR/email_3 $env.MYMAILDIR/email_4] {<\n>}
+printenv
+exit
+$ENV_VARS
+printenv
+exit
+$ENV_VARS
+exit
+$ENV_VARS
+$ENV_VARS.1
+$ENV_VARS.1.24
+$ENV_VARS.1.24.setup
+$ENV_VARS.1.24.setup.acct
+exit
+ls
+printenv
+exit
+nvim archive/zsh
+exit
+exit
+ls
+clear
+cd .config/
+ls
+cd ../
+ls
+cd Code/
+ls
+cd github/
+ls
+cd dotfiles/
+ls
+clear
+ls
+cd config/
+ls
+ls ~/
+ls -a ~/
+locate zsh
+cd 
+cd .config/
+ls
+ls -a
+cd
+ls
+lsd -l .config/
+cd Code/github/dotfiles/
+ls
+cd config/
+ls
+cd
+ls
+cd ..
+ls
+cd adrian/
+ls
+locate archive
+locate archive | grep "zsh"
+locate zsh | grep "archive"
+sudo updatedb
+locate zsh | grep "archive"
+cd ~/Code/github/dotfiles
+ls
+cd
+ls .config/
+rm -r ~/.config/nushell; stow config/ -t ~/.config
+ls ~/.config/
+ls
+exit
+history
+clear
+ls .config/
+cd dot
+cd zsh
+cd Code/github/dotfiles/archive/
+exit
+cd Code/github/dotfiles/archive/zsh/
+ls
+nvim .
+exit
+$nu.env-path
+$nu.config-path
+exit
+ls .local/share/zoxide/
+help config env
+config env
+config nu 
+$nu.config.buffer_editor
+$nu.config-path
+printenv
+$env.config.buffer_editor
+$env.config
+cd Code/github/dotfiles/archive/zsh/
+ls
+nvim .
+exit
+nvim zsh/.zshenv
+ls
+clear
+ls
+cd
+sudo systemctl enable nix-daemon 
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+groups 
+groups adrian
+sudo groups
+sudo groups root
+groups adrian
+groupadd -r nixbld
+groups nixbld
+man groupadd
+man group
+cat /etc/group
+printenv
+gpasswd -a adrian nix-users
+sudo gpasswd -a adrian nix-users
+groups adrian
+nvim ~/Code/github/dotfiles/README.md
+nvim /etc/sudoers
+sudo nvim /etc/sudoers 
+exit
+groups adrian
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+sudo systemctl enable nix-daemon 
+sudo systemctl start nix-daemon 
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+sudo nix-channel --update
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+sudo nix-channel --update
+groups adrian
+groups root
+nix-env -iA nixpkgs.hello
+exit
+nix-env -iA nixpkgs.hello
+sudo systemctl stop nix-daemon 
+sudo systemctl disable nix-daemon 
+sudo systemctl enable nix-daemon 
+sudo systemctl start nix-daemon 
+groups adrian
+nix-channel --update
+ls /nix/var/nix/daemon-socket/socket
+ls /nix/var/nix/daemon-socket/
+sudo ls /nix/var/nix/daemon-socket/
+sudo ls /nix/var/nix
+sudo ls -l /nix/var/nix
+groups adrian
+chgrp nix-users /nix/var/nix/daemon-socket 
+sudo chgrp nix-users /nix/var/nix/daemon-socket 
+sudo ls -l /nix/var/nix
+echo $NIX_PATH
+nix-channel --list
+nix-channel --update
+(1..10) | each {|n| <\n>    useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r -s (which nologin)<\n>    nixbld$n<\n>}
+[1..10] | each {|n| <\n>    useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r -s (which nologin)<\n>    nixbld$n<\n>}
+(1..10) | each {|n| <\n>    useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r -s (which nologin)<\n>    nixbld$n<\n>}
+(1..10) | each {|n| <\n>    useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r -s ...(which nologin)<\n>    nixbld$n<\n>}
+(1..10) | each {|n| <\n>    useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r -s ...(which nologin | get path)<\n>    nixbld$n<\n>}
+grep -E '^sudo|^wheel' /etc/group
+sudo whoami
+(1..10) | each {|n| <\n>    sudo useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r -s ...(which nologin | get path)<\n>    nixbld$n<\n>}
+sudo -v
+sudo nu
+groups
+groups adrian
+nix-channel --update
+sudo nix-channel --update
+nix-env -iA  nixpkgs.hello
+sudo nix-env -iA  nixpkgs.hello
+hello
+sudo hello
+ls
+ls -a
+ls -al
+cd .config/nushell/
+nvim .
+sudo updatedb
+locate nix
+locate nix | grep "bin"
+locate nix | grep "bin" | grep "profile"
+locate nix | grep "profile"
+sudo pacman -Runs nix 
+sudo updatedb
+locate nix
+locate nix | grep "/nix"
+locate nix | grep "/nix/"
+sudo rm -r /nix 
+sudo updatedb 
+locate nix | grep "/nix/"
+sudo rm -r /home/adrian/.local/state/nix
+sh <(curl -L https://nixos.org/nix/install) --daemon
+exit
+sh <(curl -L https://nixos.org/nix/install) --daemon
+exit
+zsh
+exit
+nix search nixpkgs librewolf
+cat /etc/bash.bashrc
+bat /etc/bash.bashrc
+sudo nvim /etc/bash.bashrc
+nvim /etc/bash.bashrc
+exit
+if (path exists $env.NIX_PATH) {<\n>. $env.NIX_PATH<\n>}
+path exists | ~/.config {<\n>print "yes"<\n>}
+if (path exists | ~/.config) {<\n>print "yes"<\n>}
+if ( ~/.config | path exists) {<\n>print "yes"<\n>}
+if ( /home/adrian | path exists) {<\n>print "yes"<\n>}
+if ( '~/.config' | path exists) {<\n>print "yes"<\n>}
+exit
+bat /etc/.zshrc
+bat /etc/zshrc
+exit
+ls /etc/nix/
+ls /etc/nix/nix.conf
+bat /etc/nix/nix.conf
+locate nix.conf
+sudo updatedb
+locate nix.conf
+ls .config/
+exit
+ls
+open $env.NIX_PATH
+open $env.NIX_PATH | zsh -c $in
+clear
+nvim /etc/zshrc
+ls
+ls -a
+rm -r .nix-channels .nix-defexpr/ 
+ls -a
+ls .config/
+cd .config/
+ls
+cd nix/
+ls
+nvim nix.conf
+nix search nixpkgs librewolf
+exit
+nix search nixpkgs librewolf
+$env.PATH
+nvim ../nushell/
+sudo nvim /etc/nix/nix.conf
+exit
+nix run 'nixpkgs#hello'
+hello
+command -v hello
+man command
+which hello
+exit
+nix shell 'nixpkgs#hello'
+exit
+which hello
+hello
+ls /
+locate bin | grep "/bin/"
+locate pacman | grep "/bin/"
+ls -a
+locate .nix-profile
+sudo updatedb
+locate .nix-profile
+locate profile | grep "bin"
+locate nix | grep "bin"
+locate nix | grep "bin" | grep "profile"
+cd .config/nushell/
+zsh
+$env.PATH
+exit
+zsh
+$env.PATH
+exit
+nvim .
+cd
+ls
+rm -r -r /nix 
+sudo rm -r /nix/ 
+sudo systemctl stop nix-daemon.service
+sudo systemctl disable nix-daemon.socket nix-daemon.service
+sudo rm -r -f /etc/nix/ /etc/profile.d/nix.sh /etc/tmpfiles.d/nix-daemon.conf /nix ~root/.nix-channels ~root/.nix-defexpr ~root/.nix-profile
+sudo updatedb
+locate nix
+sudo rm -r .config/nix/ 
+sudo rm -r .cache/nix/
+sudo updatedb
+locate nix | grep "home"
+sudo nvim /etc/bashrc.backup-before-nix
+sudo nvim /etc/bash.bash_logout
+sudo nvim /etc/bash.bashrc
+cd /etc/
+cat bash.bash_logout
+cat bash.bashrc
+cat bash.bashrc.backup-before-nix
+sudo rm /etc/bash.bashrc.backup-before-nix
+cat bashrc
+cat bashrc.backup-before-nix
+sudo rm /etc/bashrc.backup-before-nix
+ls
+cat profile
+cat profile | grep "nix"
+cat zsh/zprofile
+cat zsh/zshrc
+sudo nvim zsh
+rm zsh/zshrc.backup-before-nix
+sudo rm zsh/zshrc.backup-before-nix
+ls
+sudo nvim zshrc
+sudo rm zshrc.backup-before-nix
+ls | grep "nix"
+ls | grep "paper"
+cd
+ls
+ls -a
+cd .config/
+ls -a
+cd /
+ls -a
+cd root
+sudo cd root
+sudo -s
+ls
+clear
+cd .config
+ls
+cd
+cd .config/
+ls
+cd nushell/
+ls
+nvim env.nu
+nvim config.nu
+ls
+cd
+let fish_completer = ...
+let fish_completer = {|spans|<\n>    fish --command $'complete "--do-complete=($spans | str join " ")"'<\n>    | from tsv --flexible --noheaders --no-infer<\n>    | rename value description<\n>}
+let carapace_completer = {|spans|<\n>    carapace $spans.0 nushell ...$spans | from json<\n>}
+let carapace_completer = {|spans: list<string>|<\n>    carapace $spans.0 nushell ...$spans<\n>    | from json<\n>    | if ($in | default [] | where value =~ '^-.*ERR$' | is-empty) { $in } else { null }<\n>}
+let zoxide_completer = {|spans|<\n>    $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}<\n>}
+let external_completer = {|spans|<\n>    let expanded_alias = scope aliases<\n>    | where name == $spans.0<\n>    | get -i 0.expansion<\n><\n>    let spans = if $expanded_alias != null {<\n>        $spans<\n>        | skip 1<\n>        | prepend ($expanded_alias | split row ' ' | take 1)<\n>    } else {<\n>        $spans<\n>    }<\n><\n>    match $spans.0 {<\n>        # carapace completions are incorrect for nu<\n>        nu => $fish_completer<\n>        # fish completes commits and branch names in a nicer way<\n>        git => $fish_completer<\n>        # carapace doesn't have completions for asdf<\n>        asdf => $fish_completer<\n>        # use zoxide completions for zoxide commands<\n>        __zoxide_z | __zoxide_zi => $zoxide_completer<\n>        _ => $carapace_completer<\n>    } | do $in $spans<\n>}
+$env.config
+$env.config.completions
+$env.config.completions.external
+$env.config.completions.external = { completer: $external_completer }
+sudo nvim /etc/pacman.conf
+pacman -F pacman
+sudo pacman -Fy
+pacman -F pacman
+sudo pacman -Syu
+zsh
+plugins list
+plugin list
+sudo pacman -Ss carapace
+sudo pacman -Ss cara
+cd nu
+z nu
+nvim config.nu
+ls
+cd
+clear
+cd Code
+ls
+mkdir aur
+cd aur
+ls
+git clone https://aur.archlinux.org/carapace-bin.git
+cd carapace-bin/
+makepkg -si
+clear
+sudo pacman -Syu
+$env.PATH
+z nushell
+nvim config.nu 
+exit
+z aur
+ls
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si
+yay -Y --gendb
+yay -Syu --devel
+yay -Y --devel --save
+yay
+yay -Qi
+yay -Qei
+cd
+pacman -Ss starship
+nu --version
+sudo pacman -S starship
+$nu.data-dir
+cd .local/share/
+ls
+cd nushell
+z nushell
+nvim config.nu
+source config.nu
+z dot
+cd ~/Code/github
+clear
+z vk
+ls
+z python
+cd ../
+ls
+cd learn-stuff/
+ls
+cd python/
+ls
+cd Basics/
+ls
+z vk
+ls
+cd src
+ls
+cd systems/
+ls
+cd
+clear
+$nu.config-path
+ls
+cd config/
+ls
+cd nushell
+ls
+nvim config.nu
+exit
+z vk
+ls
+clear
+cd
+ls
+cd Code/github
+ls
+clear
+exit
+exit
+clear
+cd
+ls
+clear
+z nushell
+nvim config.nu
+printenv
+locate nu | grep "doc"
+locate nushell | grep "doc"
+nvim /usr/share/doc/nushell/README.md 
+nvim /usr/share/doc/
+locate nushell | grep "config"
+history | grep "nu"
+config nu --doc | nu-highlight | less -R
+config nu --doc
+z nu
+ls
+config nu --doc out> defaults.nu
+ls
+nvim defaults.nu 
+exit
+$env.config.history
+source .config/nushell/config.nu
+$env.config.history
+$env.config.show_banner
+$env.config.rm
+$env.config.recursion_limit
+$env.config.edit_mode
+$env.config.buffer_editor
+$env.config.buffer_editor.cursor_shape
+$env.config.cursor_shape
+source .config/nushell/config.nu
+$env.config.cursor_shape
+$env.config.completions
+$env.config.completions.external
+$env.config.completions.external.completer
+$env.config.completions
+source .config/nushell/config.nu
+$env.config.completions
+nvim env.nu
+z dot
+lazygit 
+ls
+cd config/nushell/
+ls
+exit
+nvim config.nu
+ls
+exit
+default --help
+exit
+ls
+exit
+ls -a
+exit
+cd .config/
+ls
+$nu.config-path
+cd nushell/
+ls
+nvim config.nu
+ls
+ls -a
+ls .local/
+ls
+z .local/
+sudo pacman -Runs zoxide
+sudo pacman -S zoxide
+ls .local/
+ls .local/share/
+$nu.env-path
+z ~
+ls
+^z ~
+exit
+exit
+nvim $nu.env-path
+exit
+$env.PATH
+ls
+cd .config
+ls
+cd nushell/
+ls
+zoxide
+cd
+ls .local/share/
+ls
+cd -
+ls
+exit
+nvim config.nu
+cd
+ls
+ls -a
+cd -
+nvim config.nu
+exit
+cd Github/
+ls
+cd dotfiles/
+ls
+cd config/
+ls
+cd nushell/
+ls
+exit
+nvim config.nu
+cd ../../
+ls
+nvim .gitignore
+git status
+cat .gitignore
+nvim .gitignore
+git status
+git add .gitignore config/nushell/config.nu;
+git commit -m "fixing typo";
+git push origin main
+clear
+ls
+git status
+git rm --cached config/nushell/history.txt
+git status
+git add .; git commit -m "removing history file";
+git push
+git status
+exit
+ls
+cd Github/dotfiles/
+ls
+exit
+cd .config/
+z .config
+$env.__zoxide_hooked
+$env.__zoxide_hooked | describe 
+exit

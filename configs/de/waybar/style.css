@@ -9,14 +9,14 @@
 
 window#waybar {
     color: #a5b0c5;
-    background: rgba(54, 60, 81, 0.9);
+    background: rgba(54, 60, 81, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
 }
 
 #workspaces {
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -35,17 +35,17 @@ window#waybar {
 #workspaces button.active,
 #workspaces button.visible {
     color: #97ca72;
-    background: #303d27;
+    background: rgba(48, 61, 39, 0.7);
     box-shadow: inset 0 -0.15em #7d899f;
 }
 
 #workspaces button:hover {
     color: #5ab0f6;
-    background: #303d27;
+    background: rgba(48, 61, 39, 0.7);
 }
 
 #workspaces button.urgent {
-    background: #ef5f6b;
+    background: rgba(161, 49, 49, 0.7);
 }
 
 #idle_inhibitor {
@@ -60,7 +60,7 @@ window#waybar {
 
 #cpu {
     color: #97ca72;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -69,7 +69,7 @@ window#waybar {
 
 #memory {
     color: #41a7fc;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -78,7 +78,7 @@ window#waybar {
 
 #disk {
     color: #ebc275;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -87,7 +87,7 @@ window#waybar {
 
 #submap {
     color: #ef5f6b;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -110,7 +110,7 @@ window#waybar {
 
 #wireplumber {
     color: #97ca72;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -118,14 +118,14 @@ window#waybar {
 }
 
 #wireplumber.muted {
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     color: #ef5f6b;
     font-weight: bold;
 }
 
 #network {
     color: #41a7fc;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -134,13 +134,13 @@ window#waybar {
 
 #network.disconnected {
     color: #ef5f6b;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     font-weight: bold;
 }
 
 #battery {
     color: #ebc275;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
@@ -149,27 +149,27 @@ window#waybar {
 
 #battery.charging {
     color: #97ca72;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     font-weight: bold;
 }
 
 #battery.critical:not(.charging) {
     color: #ef5f6b;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     animation: blink 1s steps(2) infinite;
     font-weight: bold;
 }
 
 @keyframes blink {
     50% {
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.7);
         color: #ef5f6b;
     }
 }
 
 #clock {
     color: #ebc275;
-    background: #1a212e;
+    background: rgba(21, 24, 32, 0.7);
     border-radius: 0.4em;
     margin: 0.2em;
     padding: 0.0em 0.2em;
