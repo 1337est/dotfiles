@@ -1,23 +1,23 @@
 
-IMAPStore email_1-remote
+IMAPStore sanch-remote
 Host imap.gmail.com
 Port 993
-UserCmd "echo $EMAIL1"
-PassCmd "pass Email/email_1"
-AuthMechs LOGIN
+UserCmd "pass email/sanch/username"
+PassCmd "pass email/sanch/app_pass"
+AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore email_1-local
+MaildirStore sanch-local
 Subfolders Verbatim
-Path /home/adrian/.local/share/mail/email_1/
-Inbox /home/adrian/.local/share/mail/email_1/INBOX
+Path ~/.local/share/email/sanch/
+Inbox ~/.local/share/email/sanch/INBOX
 Flatten .
 
-Channel email_1
+Channel sanch
 Expunge Both
-Far :email_1-remote:
-Near :email_1-local:
+Far :sanch-remote:
+Near :sanch-local:
 Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
 Create Both
 SyncState *
@@ -25,25 +25,25 @@ MaxMessages 0
 ExpireUnread no
 ################################################################### End profile
 
-IMAPStore email_2-remote
+IMAPStore leet-remote
 Host imap.gmail.com
 Port 993
-UserCmd "echo $EMAIL2"
-PassCmd "pass Email/email_2"
-AuthMechs LOGIN
+UserCmd "pass email/leet/username"
+PassCmd "pass email/leet/app_pass"
+AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore email_2-local
+MaildirStore leet-local
 Subfolders Verbatim
-Path /home/adrian/.local/share/mail/email_2/
-Inbox /home/adrian/.local/share/mail/email_2/INBOX
+Path ~/.local/share/email/leet/
+Inbox ~/.local/share/email/leet/INBOX
 Flatten .
 
-Channel email_2
+Channel leet
 Expunge Both
-Far :email_2-remote:
-Near :email_2-local:
+Far :leet-remote:
+Near :leet-local:
 Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
 Create Both
 SyncState *
@@ -51,25 +51,25 @@ MaxMessages 0
 ExpireUnread no
 ################################################################### End profile
 
-IMAPStore email_3-remote
+IMAPStore spag-remote
 Host imap.gmail.com
 Port 993
-UserCmd "echo $EMAIL3"
-PassCmd "pass Email/email_3"
-AuthMechs LOGIN
+UserCmd "pass email/spag/username"
+PassCmd "pass email/spag/app_pass"
+AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore email_3-local
+MaildirStore spag-local
 Subfolders Verbatim
-Path /home/adrian/.local/share/mail/email_3/
-Inbox /home/adrian/.local/share/mail/email_3/INBOX
+Path ~/.local/share/email/spag/
+Inbox ~/.local/share/email/spag/INBOX
 Flatten .
 
-Channel email_3
+Channel spag
 Expunge Both
-Far :email_3-remote:
-Near :email_3-local:
+Far :spag-remote:
+Near :spag-local:
 Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
 Create Both
 SyncState *
@@ -77,25 +77,25 @@ MaxMessages 0
 ExpireUnread no
 ################################################################### End profile
 
-IMAPStore email_4-remote
+IMAPStore sbc-remote
 Host imap.mail.att.net
 Port 993
-UserCmd "echo $EMAIL4"
-PassCmd "pass Email/email_4"
-AuthMechs LOGIN
+UserCmd "pass email/sbc/username"
+PassCmd "pass email/sbc/app_pass"
+AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore email_4-local
+MaildirStore sbc-local
 Subfolders Verbatim
-Path /home/adrian/.local/share/mail/email_4/
-Inbox /home/adrian/.local/share/mail/email_4/INBOX
+Path ~/.local/share/email/sbc/
+Inbox ~/.local/share/email/sbc/INBOX
 Flatten .
 
-Channel email_4
+Channel sbc
 Expunge Both
-Far :email_4-remote:
-Near :email_4-local:
+Far :sbc-remote:
+Near :sbc-local:
 Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
 Create Both
 SyncState *

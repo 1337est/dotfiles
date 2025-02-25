@@ -3,37 +3,37 @@
 defaults
 auth on
 tls on
-tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile ~/.local/state/msmtp/msmtp.log
 
-account email_1
+account sanch
 host smtp.gmail.com
 port 587
 tls_starttls on
-eval echo from "$EMAIL1"
-eval echo user "$EMAIL1"
-passwordeval "pass Email/email_1"
+from eval "pass email/sanch/username"
+user eval "pass email/sanch/username"
+passwordeval "pass email/sanch/app_pass"
 
-account email_2
+account leet
 host smtp.gmail.com
 port 587
 tls_starttls on
-eval echo from "$EMAIL2"
-eval echo user "$EMAIL2"
-passwordeval "pass Email/email_2"
+from eval "pass email/leet/username"
+user eval "pass email/leet/username"
+passwordeval "pass email/leet/app_pass"
 
-account email_3
+account spag
 host smtp.gmail.com
 port 587
 tls_starttls on
-eval echo from "$EMAIL3"
-eval echo user "$EMAIL3"
-passwordeval "pass Email/email_3"
+from eval "pass email/spag/username"
+user eval "pass email/spag/username"
+passwordeval "pass email/spag/app_pass"
 
-account email_4
+account sbc
 host smtp.mail.att.net
 port 587
 tls_starttls on
-eval echo from "$EMAIL4"
-eval echo user "$EMAIL4"
-passwordeval "pass Email/email_4"
+from eval "pass email/sbc/username"
+user eval "pass email/sbc/username"
+passwordeval "pass email/sbc/app_pass"
