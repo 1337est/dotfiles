@@ -7,7 +7,6 @@ let template_config = open ($env.XDG_CONFIG_HOME | path join "himalaya/template.
 let sanch_email = (pass show email/sanch/username | str trim)
 let leet_email = (pass show email/leet/username | str trim)
 let spag_email = (pass show email/spag/username | str trim)
-let sbc_email = (pass show email/sbc/username | str trim)
 
 # Stores properly updated values in a table by updating the templated table
 let himalaya_config = ($template_config
@@ -22,10 +21,6 @@ let himalaya_config = ($template_config
     | update accounts.spag.email $spag_email
     | update accounts.spag.backend.login $spag_email
     | update accounts.spag.message.send.backend.login $spag_email
-
-    | update accounts.sbc.email $sbc_email
-    | update accounts.sbc.backend.login $sbc_email
-    | update accounts.sbc.message.send.backend.login $sbc_email
 )
 
 #  After updating the `emailN@domain.com`, turn the table back into a toml file
