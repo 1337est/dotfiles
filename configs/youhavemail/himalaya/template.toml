@@ -1,0 +1,59 @@
+[accounts.sanch]
+default = true
+email = "email1@domain.com"
+display-name = "Adrian Sanchez"
+downloads-dir = "~/Downloads"
+backend.type = "imap"
+backend.host = "imap.gmail.com"
+backend.port = 993
+backend.login = "email1@domain.com"
+backend.encryption.type = "tls"
+backend.auth.type = "password"
+backend.auth.command = "pass show email/sanch/app_pass"
+message.send.backend.type = "smtp"
+message.send.backend.host = "smtp.gmail.com"
+message.send.backend.port = 587
+message.send.backend.login = "email1@domain.com"
+message.send.backend.encryption.type = "start-tls"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.command = "pass show email/sanch/app_pass"
+
+[accounts.leet]
+default = false
+email = "email2@domain.com"
+display-name = "Leetius Leetington"
+downloads-dir = "~/Downloads"
+backend.type = "imap"
+backend.host = "imap.gmail.com"
+backend.port = 993
+backend.login = "email2@domain.com"
+backend.encryption.type = "tls"
+backend.auth.type = "password"
+backend.auth.command = "pass show email/leet/app_pass"
+message.send.backend.type = "smtp"
+message.send.backend.host = "smtp.gmail.com"
+message.send.backend.port = 587
+message.send.backend.login = "email2@domain.com"
+message.send.backend.encryption.type = "start-tls"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.command = "pass show email/leet/app_pass"
+
+[accounts.spag]
+default = false
+email = "email3@domain.com"
+display-name = "Cryptic Spag"
+downloads-dir = "~/Downloads"
+backend.type = "imap"
+backend.host = "imap.gmail.com"
+backend.port = 993
+backend.login = "email3@domain.com"
+backend.encryption.type = "tls"
+backend.auth.type = "password"
+backend.auth.command = "pass show email/spag/app_pass"
+message.send.backend.type = "smtp"
+message.send.backend.host = "smtp.gmail.com"
+message.send.backend.port = 587
+message.send.backend.login = "email3@domain.com"
+message.send.backend.encryption.type = "start-tls"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.command = "pass show email/spag/app_pass"
