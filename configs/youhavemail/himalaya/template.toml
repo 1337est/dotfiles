@@ -1,20 +1,18 @@
-signature = "V/r,\n"
-signature-delim = "-- \n"
-downloads-dir = "~/Downloads"
-
 [accounts.sanch]
 default = true
 email = "email1@domain.com"
 display-name = "Adrian Sanchez"
+signature = "V/r,\n"
+signature-delim = "-- \n"
 downloads-dir = "~/Downloads"
 folder.aliases.inbox = "INBOX"
 folder.aliases.all = "[Gmail]/All Mail"
-folder.aliases.sent = "[Gmail]/Sent Mail"
 folder.aliases.drafts = "[Gmail]/Drafts"
-folder.aliases.trash = "[Gmail]/Trash"
-folder.aliases.starred = "[Gmail]/Starred"
 folder.aliases.important = "[Gmail]/Important"
+folder.aliases.sent = "[Gmail]/Sent Mail"
 folder.aliases.spam = "[Gmail]/Spam"
+folder.aliases.starred = "[Gmail]/Starred"
+folder.aliases.trash = "[Gmail]/Trash"
 folder.list.page-size = 25
 envelope.list.page-size = 25
 backend.type = "imap"
@@ -33,18 +31,20 @@ message.send.backend.auth.type = "password"
 message.send.backend.auth.command = "pass show email/email1/app_pass"
 
 [accounts.leet]
-default = false
+default = true
 email = "email2@domain.com"
 display-name = "Leetius Leetington"
+signature = "V/r,\n"
+signature-delim = "-- \n"
 downloads-dir = "~/Downloads"
 folder.aliases.inbox = "INBOX"
 folder.aliases.all = "[Gmail]/All Mail"
-folder.aliases.sent = "[Gmail]/Sent Mail"
 folder.aliases.drafts = "[Gmail]/Drafts"
-folder.aliases.trash = "[Gmail]/Trash"
-folder.aliases.starred = "[Gmail]/Starred"
 folder.aliases.important = "[Gmail]/Important"
+folder.aliases.sent = "[Gmail]/Sent Mail"
 folder.aliases.spam = "[Gmail]/Spam"
+folder.aliases.starred = "[Gmail]/Starred"
+folder.aliases.trash = "[Gmail]/Trash"
 folder.list.page-size = 25
 envelope.list.page-size = 25
 backend.type = "imap"
@@ -63,18 +63,20 @@ message.send.backend.auth.type = "password"
 message.send.backend.auth.command = "pass show email/email2/app_pass"
 
 [accounts.crypt]
-default = false
+default = true
 email = "email3@domain.com"
 display-name = "Cryptic Spag"
+signature = "V/r,\n"
+signature-delim = "-- \n"
 downloads-dir = "~/Downloads"
 folder.aliases.inbox = "INBOX"
 folder.aliases.all = "[Gmail]/All Mail"
-folder.aliases.sent = "[Gmail]/Sent Mail"
 folder.aliases.drafts = "[Gmail]/Drafts"
-folder.aliases.trash = "[Gmail]/Trash"
-folder.aliases.starred = "[Gmail]/Starred"
 folder.aliases.important = "[Gmail]/Important"
+folder.aliases.sent = "[Gmail]/Sent Mail"
 folder.aliases.spam = "[Gmail]/Spam"
+folder.aliases.starred = "[Gmail]/Starred"
+folder.aliases.trash = "[Gmail]/Trash"
 folder.list.page-size = 25
 envelope.list.page-size = 25
 backend.type = "imap"

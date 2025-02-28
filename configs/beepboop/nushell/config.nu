@@ -202,9 +202,7 @@ $env.config.hooks = {
 # -----------------------------------------------------------------------------
 
 alias h = himalaya
-alias hs = himalaya envelope list --account sanch
-alias hl = himalaya envelope list --account leet
-alias hc = himalaya envelope list --account crypt
+alias hls = himalaya envelope list -a
 
 # -----------------------------------------------------------------------------
 # Environment Variables
