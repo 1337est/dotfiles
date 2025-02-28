@@ -43,6 +43,7 @@ iw
 java-runtime-common
 jdk-openjdk
 julia
+kanshi
 keychain
 lazygit
 lib32-fontconfig
