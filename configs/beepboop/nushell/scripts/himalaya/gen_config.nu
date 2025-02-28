@@ -9,9 +9,9 @@ let leet_email = (pass show email/leet/username | str trim)
 let crypt_email = (pass show email/crypt/username | str trim)
 
 # Uses the `pass` utility to store email account passwords
-let sanch_pass = ("pass email/sanch/app_pass" | str trim)
-let leet_pass = ("pass email/leet/app_pass" | str trim)
-let crypt_pass = ("pass email/crypt/app_pass" | str trim)
+let sanch_pass = ("pass show email/sanch/app_pass" | str trim)
+let leet_pass = ("pass show email/leet/app_pass" | str trim)
+let crypt_pass = ("pass show email/crypt/app_pass" | str trim)
 
 # Stores properly updated values in a table by updating the templated table
 let himalaya_config = ($template_config
