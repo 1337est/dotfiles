@@ -34,6 +34,8 @@ $env.config.cursor_shape = {
 
 # Completions Behavior
 
+let external_completer = {|spans|
+}
 $env.config.completions = {
     sort: "smart"
     case_sensitive: false
@@ -44,7 +46,27 @@ $env.config.completions = {
         enable: true
         max_results: 100
         completer: {|spans|
-            carapace $spans.0 nushell ...$spans | from json
+            let carapace_completer = {|spans: list<string>|
+                carapace $spans.0 nushell ...$spans
+                | from json
+                | if ($in | default [] | where value == $"($spans | last)ERR" | is-empty) { $in } else { null }
+            }
+
+            let expanded_alias = scope aliases
+            | where name == $spans.0
+            | get -i 0.expansion
+
+            let spans = if $expanded_alias != null {
+                $spans
+                | skip 1
+                | prepend ($expanded_alias | split row ' ' | take 1)
+            } else {
+                $spans
+            }
+
+            match $spans.0 {
+                _ => $carapace_completer
+            } | do $in $spans
         }
     }
     use_ls_colors: true
@@ -121,6 +143,14 @@ $env.config.hooks = {
     display_output: "if (term size).columns >= 100 { table -e } else { table }"
     command_not_found: []
 }
+
+# -----------------------------------------------------------------------------
+# Aliases
+# -----------------------------------------------------------------------------
+
+alias hl = himalaya envelope list
+alias hm = himalaya message
+alias hf = himalaya folder
 
 # -----------------------------------------------------------------------------
 # Environment Variables
