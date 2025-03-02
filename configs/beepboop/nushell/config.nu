@@ -201,8 +201,10 @@ $env.config.hooks = {
 # Aliases
 # -----------------------------------------------------------------------------
 
-alias h = himalaya
-alias hls = himalaya envelope list -a
+alias sanch = himalaya -c ~/.config/himalaya/accounts/sanch.toml
+alias leet = himalaya -c ~/.config/himalaya/accounts/leet.toml
+alias spag = himalaya -c ~/.config/himalaya/accounts/spag.toml
+alias sbc = himalaya -c ~/.config/himalaya/accounts/sbc.toml
 
 # -----------------------------------------------------------------------------
 # Environment Variables

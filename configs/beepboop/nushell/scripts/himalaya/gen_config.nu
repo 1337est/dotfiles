@@ -5,7 +5,8 @@ let template_config = open ($env.XDG_CONFIG_HOME | path join "himalaya/template.
 
 let sanch_email = (pass show email/sanch/username | str trim)
 let sanch_pass = ("pass show email/sanch/app_pass" | str trim)
-let sanch_config = ($template_config | reject accounts.leet accounts.crypt
+let sanch_config = ($template_config
+    | reject accounts.leet accounts.spag accounts.sbc
     | update accounts.sanch.email $sanch_email
     | update accounts.sanch.backend.login $sanch_email
     | update accounts.sanch.message.send.backend.login $sanch_email
@@ -15,7 +16,8 @@ let sanch_config = ($template_config | reject accounts.leet accounts.crypt
 
 let leet_email = (pass show email/leet/username | str trim)
 let leet_pass = ("pass show email/leet/app_pass" | str trim)
-let leet_config = ($template_config | reject accounts.sanch accounts.crypt
+let leet_config = ($template_config
+    | reject accounts.sanch accounts.spag accounts.sbc
     | update accounts.leet.email $leet_email
     | update accounts.leet.backend.login $leet_email
     | update accounts.leet.message.send.backend.login $leet_email
@@ -23,19 +25,31 @@ let leet_config = ($template_config | reject accounts.sanch accounts.crypt
     | update accounts.leet.message.send.backend.auth.command $leet_pass
 )
 
-let crypt_email = (pass show email/crypt/username | str trim)
-let crypt_pass = ("pass show email/crypt/app_pass" | str trim)
-let crypt_config = ($template_config | reject accounts.leet accounts.sanch
-    | update accounts.crypt.email $crypt_email
-    | update accounts.crypt.backend.login $crypt_email
-    | update accounts.crypt.message.send.backend.login $crypt_email
-    | update accounts.crypt.backend.auth.command $crypt_pass
-    | update accounts.crypt.message.send.backend.auth.command $crypt_pass
+let spag_email = (pass show email/spag/username | str trim)
+let spag_pass = ("pass show email/spag/app_pass" | str trim)
+let spag_config = ($template_config
+    | reject accounts.leet accounts.sanch accounts.sbc
+    | update accounts.spag.email $spag_email
+    | update accounts.spag.backend.login $spag_email
+    | update accounts.spag.message.send.backend.login $spag_email
+    | update accounts.spag.backend.auth.command $spag_pass
+    | update accounts.spag.message.send.backend.auth.command $spag_pass
 )
 
+let sbc_email = (pass show email/sbc/username | str trim)
+let sbc_pass = ("pass show email/sbc/app_pass" | str trim)
+let sbc_config = ($template_config
+    | reject accounts.leet accounts.sanch accounts.spag
+    | update accounts.sbc.email $sbc_email
+    | update accounts.sbc.backend.login $sbc_email
+    | update accounts.sbc.message.send.backend.login $sbc_email
+    | update accounts.sbc.backend.auth.command $sbc_pass
+    | update accounts.sbc.message.send.backend.auth.command $sbc_pass
+)
 let himalaya_config = $sanch_config
     | merge deep -s append $leet_config | update accounts.leet.default false
-    | merge deep -s append $crypt_config | update accounts.crypt.default false
+    | merge deep -s append $spag_config | update accounts.spag.default false
+    | merge deep -s append $sbc_config | update accounts.sbc.default false
 
 # make accounts dir if it doesn't exist
 let accounts_dir = ($env.XDG_CONFIG_HOME | path join "himalaya/accounts")
@@ -44,5 +58,6 @@ mkdir $accounts_dir
 # Save each account config as a separate .toml file
 $sanch_config | to toml | save -f $"($accounts_dir)/sanch.toml"
 $leet_config | to toml | save -f $"($accounts_dir)/leet.toml"
-$crypt_config | to toml | save -f $"($accounts_dir)/crypt.toml"
+$spag_config | to toml | save -f $"($accounts_dir)/spag.toml"
+$sbc_config | to toml | save -f $"($accounts_dir)/sbc.toml"
 $himalaya_config | to toml | save -f ($env.XDG_CONFIG_HOME | path join "himalaya/config.toml")
