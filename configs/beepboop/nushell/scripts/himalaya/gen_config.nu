@@ -46,6 +46,7 @@ let sbc_config = ($template_config
     | update accounts.sbc.backend.auth.command $sbc_pass
     | update accounts.sbc.message.send.backend.auth.command $sbc_pass
 )
+
 let himalaya_config = $sanch_config
     | merge deep -s append $leet_config | update accounts.leet.default false
     | merge deep -s append $spag_config | update accounts.spag.default false
