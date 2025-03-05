@@ -3,8 +3,8 @@
 # Creates a table from the template.toml
 let template_config = open ($env.XDG_CONFIG_HOME | path join "himalaya/template.toml")
 
-let sanch_email = (pass show email/sanch/username | str trim)
-let sanch_pass = ("pass show email/sanch/app_pass" | str trim)
+let sanch_email = (pass show google/sanch/username | str trim)
+let sanch_pass = ("pass show google/sanch/app_pass" | str trim)
 let sanch_config = ($template_config
     | reject accounts.leet accounts.spag accounts.sbc
     | update accounts.sanch.email $sanch_email
@@ -14,8 +14,8 @@ let sanch_config = ($template_config
     | update accounts.sanch.message.send.backend.auth.command $sanch_pass
 )
 
-let leet_email = (pass show email/leet/username | str trim)
-let leet_pass = ("pass show email/leet/app_pass" | str trim)
+let leet_email = (pass show google/leet/username | str trim)
+let leet_pass = ("pass show google/leet/app_pass" | str trim)
 let leet_config = ($template_config
     | reject accounts.sanch accounts.spag accounts.sbc
     | update accounts.leet.email $leet_email
@@ -25,8 +25,8 @@ let leet_config = ($template_config
     | update accounts.leet.message.send.backend.auth.command $leet_pass
 )
 
-let spag_email = (pass show email/spag/username | str trim)
-let spag_pass = ("pass show email/spag/app_pass" | str trim)
+let spag_email = (pass show google/spag/username | str trim)
+let spag_pass = ("pass show google/spag/app_pass" | str trim)
 let spag_config = ($template_config
     | reject accounts.leet accounts.sanch accounts.sbc
     | update accounts.spag.email $spag_email
@@ -36,8 +36,8 @@ let spag_config = ($template_config
     | update accounts.spag.message.send.backend.auth.command $spag_pass
 )
 
-let sbc_email = (pass show email/sbc/username | str trim)
-let sbc_pass = ("pass show email/sbc/app_pass" | str trim)
+let sbc_email = (pass show yahoo/sbc/username | str trim)
+let sbc_pass = ("pass show yahoo/sbc/app_pass" | str trim)
 let sbc_config = ($template_config
     | reject accounts.leet accounts.sanch accounts.spag
     | update accounts.sbc.email $sbc_email
