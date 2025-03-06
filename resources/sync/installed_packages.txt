@@ -63,6 +63,7 @@ networkmanager-docs
 notmuch
 npm
 nushell
+nyxt
 openssh
 otf-font-awesome
 pacutils
