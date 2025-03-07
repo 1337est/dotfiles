@@ -219,7 +219,7 @@ $env.SHELL      = 'nu'
 $env.PAGER      = 'bat'
 $env.MANPAGER   = 'nvim +Man!'
 $env.MANWIDTH   = 999
-$env.BROWSER    = 'vivaldi'
+$env.BROWSER    = 'qutebrowser'
 
 # XDG Base Directories --------------------------------------------------------
 
