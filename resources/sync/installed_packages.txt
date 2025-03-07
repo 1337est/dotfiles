@@ -63,7 +63,6 @@ networkmanager-docs
 notmuch
 npm
 nushell
-nyxt
 openssh
 otf-font-awesome
 pacutils
@@ -76,6 +75,7 @@ plocate
 postgresql
 python-pip
 qt5-wayland
+qutebrowser
 ripgrep
 ruby
 rubygems
