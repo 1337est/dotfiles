@@ -3,11 +3,11 @@
 # config nu --doc | nu-highlight | less -R # for viewing in the terminal
 # config nu --doc out> ~/path/to/file # for saving the output to a file
 
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Nushell Config
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
-# History-related settings ----------------------------------------------------
+# History-related settings -----------------------------------------------------
 
 $env.config.history = {
     max_size: 5_000_000
@@ -16,13 +16,13 @@ $env.config.history = {
     isolation: true
 }
 
-# Miscellaneous Settings ------------------------------------------------------
+# Miscellaneous Settings -------------------------------------------------------
 
 $env.config.show_banner = false
 $env.config.rm.always_trash = false
 $env.config.recursion_limit = 50
 
-# Commandline Editor Settings -------------------------------------------------
+# Commandline Editor Settings --------------------------------------------------
 
 $env.config.edit_mode = "vi"
 $env.config.buffer_editor = "editor"
@@ -32,7 +32,7 @@ $env.config.cursor_shape = {
     vi_normal: "block"  # Cursor shape in normal vi mode
 }
 
-# Completions Behavior --------------------------------------------------------
+# Completions Behavior ---------------------------------------------------------
 
 $env.config.completions = {
     sort: "smart"
@@ -70,7 +70,7 @@ $env.config.completions = {
     use_ls_colors: true
 }
 
-# Keybindings -----------------------------------------------------------------
+# Keybindings ------------------------------------------------------------------
 
 # keybindings (list): A list of user-defined keybindings
 # Nushell/Reedline keybindings can be added or overridden using this setting.
@@ -120,12 +120,12 @@ $env.config.keybindings ++= [
     },
 ]
 
-# Menus -----------------------------------------------------------------------
+# Menus ------------------------------------------------------------------------
 
 $env.config.menus ++= [
 ]
 
-# Terminal Integration --------------------------------------------------------
+# Terminal Integration ---------------------------------------------------------
 
 $env.config.use_kitty_protocol = false
 $env.config.shell_integration = {
@@ -140,7 +140,7 @@ $env.config.shell_integration = {
 $env.config.bracketed_paste = true
 $env.config.use_ansi_coloring = true
 
-# Error Display Settings ------------------------------------------------------
+# Error Display Settings -------------------------------------------------------
 
 $env.config.error_style = "fancy"
 $env.config.display_errors = {
@@ -148,7 +148,7 @@ $env.config.display_errors = {
     termination_signal: true
 }
 
-# Table Display ---------------------------------------------------------------
+# Table Display ----------------------------------------------------------------
 
 $env.config.footer_mode = 25
 $env.config.table = {
@@ -168,21 +168,21 @@ $env.config.table = {
     footer_inheritance: false
 }
 
-# Datetime Display ------------------------------------------------------------
+# Datetime Display -------------------------------------------------------------
 
 $env.config.datetime_format = {
     normal: "%m/%d/%y %I:%M:%S%p"
     table: null
 }
 
-# Filesize Display ------------------------------------------------------------
+# Filesize Display -------------------------------------------------------------
 
 $env.config.filesize = {
     unit: metric
     precision: 1
 }
 
-# Miscellaneous Display -------------------------------------------------------
+# Miscellaneous Display --------------------------------------------------------
 
 $env.config.render_right_prompt_on_last_line = false
 $env.config.float_precision = 2
@@ -197,20 +197,20 @@ $env.config.hooks = {
     command_not_found: []
 }
 
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Aliases
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 alias sanch = himalaya -c ~/.config/himalaya/accounts/sanch.toml
 alias leet = himalaya -c ~/.config/himalaya/accounts/leet.toml
 alias spag = himalaya -c ~/.config/himalaya/accounts/spag.toml
 alias sbc = himalaya -c ~/.config/himalaya/accounts/sbc.toml
 
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Environment Variables
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
-# Default Program Variables ---------------------------------------------------
+# Default Program Variables ----------------------------------------------------
 
 $env.EDITOR     = 'nvim'
 $env.VISUAL     = 'nvim'
@@ -221,7 +221,7 @@ $env.MANPAGER   = 'nvim +Man!'
 $env.MANWIDTH   = 999
 $env.BROWSER    = 'qutebrowser'
 
-# XDG Base Directories --------------------------------------------------------
+# XDG Base Directories ---------------------------------------------------------
 
 $env.XDG_CONFIG_HOME    = ($env.HOME | path join '.config')
 $env.XDG_CACHE_HOME     = ($env.HOME | path join '.cache')
@@ -230,7 +230,7 @@ $env.XDG_STATE_HOME     = ($env.HOME | path join '.local/state')
 $env.XDG_BIN_HOME       = ($env.HOME | path join '.local/bin')
 $env.XDG_LIB_HOME       = ($env.HOME | path join '.local/lib')
 
-# XDG User Directories --------------------------------------------------------
+# XDG/MY_SOMETHING_DIRECTORY ---------------------------------------------------
 
 $env.XDG_DESKTOP_DIR        = ($env.HOME | path join 'Desktop')
 $env.XDG_DOCUMENTS_DIR      = ($env.HOME | path join 'Documents')
@@ -241,17 +241,21 @@ $env.XDG_PUBLICSHARE_DIR    = ($env.HOME | path join 'Public')
 $env.XDG_TEMPLATES_DIR      = ($env.HOME | path join 'Templates')
 $env.XDG_VIDEOS_DIR         = ($env.HOME | path join 'Videos')
 
-# MY Personal Directories -----------------------------------------------------
+# MY Personal Directories ------------------------------------------------------
 
 $env.MY_CODE_DIR    = ($env.HOME | path join 'Code')
 $env.MY_ALGO_DIR    = ($env.HOME | path join 'Code/algo')
 $env.MY_CURIOUS_DIR = ($env.HOME | path join 'Code/curious')
 $env.MY_LEARN_DIR   = ($env.HOME | path join 'Code/learn')
 $env.MY_PJ_DIR      = ($env.HOME | path join 'Code/pajamas')
+
 $env.MY_SCHOOL_DIR  = ($env.HOME | path join 'Desktop/school')
 $env.MY_WORK_DIR    = ($env.HOME | path join 'Desktop/work')
+
 $env.MY_GITHUB_DIR  = ($env.HOME | path join 'Github')
+
 $env.MY_NOTES_DIR   = ($env.HOME | path join 'Notes')
+
 $env.MY_CAM_DIR         = ($env.HOME | path join 'Pictures/camera')
 $env.MY_ICONS_DIR       = ($env.HOME | path join 'Pictures/icons')
 $env.MY_PHONE_DIR       = ($env.HOME | path join 'Pictures/phone')
@@ -259,7 +263,7 @@ $env.MY_PROFILE_DIR     = ($env.HOME | path join 'Pictures/profile')
 $env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.MY_WALLPAPERS_DIR  = ($env.HOME | path join 'Pictures/wallpapers')
 
-# App Environment Variables ---------------------------------------------------
+# App Environment Variables ----------------------------------------------------
 
 $env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.GPG_TTY = (tty)
@@ -267,14 +271,14 @@ $env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
 $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
-# PROMPT ----------------------------------------------------------------------
+# PROMPT -----------------------------------------------------------------------
 
 $env.PROMPT_INDICATOR           = "🚀 "
 $env.PROMPT_INDICATOR_VI_INSERT = "👺 "
 $env.PROMPT_INDICATOR_VI_NORMAL = "👻 "
 $env.PROMPT_MULTILINE_INDICATOR = "🐢 "
 
-# App Integration -------------------------------------------------------------
+# App Integration --------------------------------------------------------------
 
 # yazi terminal file explorer
 def --env y [...args] {
@@ -297,7 +301,7 @@ keychain --eval --quiet id_ed25519
     | into record
     | load-env
 
-# Autoload App Integration ----------------------------------------------------
+# Autoload App Integration -----------------------------------------------------
 
 # $env.data-dir is used to in several startup tasks
 #   1. ($nu.data-dir)/nushell/completions is added to the $env.NU_LIB_DIRS search path.
