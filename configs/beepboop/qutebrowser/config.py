@@ -35,3 +35,5 @@ c.hints.find_implementation = "javascript"
 c.url.default_page = "https://www.google.com/search?hl=en&q="
 c.url.searchengines = {"DEFAULT": "https://google.com/search?hl=en&q={}"}
 c.url.start_pages = "https://github.com"
+
+c.zoom.default = "125%"
