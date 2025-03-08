@@ -16,8 +16,6 @@ c.fileselect.folder.command = ["ghostty", "-e", "yazi", "--cwd-file={}"]
 c.fileselect.multiple_files.command = ["ghostty", "-e", "yazi", "--chooser-file={}"]
 c.fileselect.single_file.command = ["ghostty", "-e", "yazi", "--chooser-file={}"]
 
-c.hints.find_implementation = "javascript"
-
 c.url.default_page = "https://www.google.com/search?hl=en&q="
 c.url.searchengines = {"DEFAULT": "https://google.com/search?hl=en&q={}"}
 c.url.start_pages = "https://github.com"
