@@ -1,7 +1,7 @@
 # vim: syntax=dosini
 
 [database]
-path=/home/adrian/.local/share/mail
+path=/home/adrian/.local/share/email
 [user]
 name=adrian
 [new]

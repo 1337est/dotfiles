@@ -1,15 +1,14 @@
-
 IMAPStore sanch-remote
 Host imap.gmail.com
 Port 993
-UserCmd "pass email/sanch/username"
-PassCmd "pass email/sanch/app_pass"
+UserCmd "pass google/sanch/username"
+PassCmd "pass google/sanch/app_pass"
 AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore sanch-local
-Subfolders Verbatim
+SubFolders Verbatim
 Path ~/.local/share/email/sanch/
 Inbox ~/.local/share/email/sanch/INBOX
 Flatten .
@@ -18,7 +17,7 @@ Channel sanch
 Expunge Both
 Far :sanch-remote:
 Near :sanch-local:
-Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
 Create Both
 SyncState *
 MaxMessages 0
@@ -28,14 +27,14 @@ ExpireUnread no
 IMAPStore leet-remote
 Host imap.gmail.com
 Port 993
-UserCmd "pass email/leet/username"
-PassCmd "pass email/leet/app_pass"
+UserCmd "pass google/leet/username"
+PassCmd "pass google/leet/app_pass"
 AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore leet-local
-Subfolders Verbatim
+SubFolders Verbatim
 Path ~/.local/share/email/leet/
 Inbox ~/.local/share/email/leet/INBOX
 Flatten .
@@ -44,7 +43,7 @@ Channel leet
 Expunge Both
 Far :leet-remote:
 Near :leet-local:
-Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
 Create Both
 SyncState *
 MaxMessages 0
@@ -54,14 +53,14 @@ ExpireUnread no
 IMAPStore spag-remote
 Host imap.gmail.com
 Port 993
-UserCmd "pass email/spag/username"
-PassCmd "pass email/spag/app_pass"
+UserCmd "pass google/spag/username"
+PassCmd "pass google/spag/app_pass"
 AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore spag-local
-Subfolders Verbatim
+SubFolders Verbatim
 Path ~/.local/share/email/spag/
 Inbox ~/.local/share/email/spag/INBOX
 Flatten .
@@ -70,7 +69,7 @@ Channel spag
 Expunge Both
 Far :spag-remote:
 Near :spag-local:
-Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
 Create Both
 SyncState *
 MaxMessages 0
@@ -80,14 +79,14 @@ ExpireUnread no
 IMAPStore sbc-remote
 Host imap.mail.att.net
 Port 993
-UserCmd "pass email/sbc/username"
-PassCmd "pass email/sbc/app_pass"
+UserCmd "pass yahoo/sbc/username"
+PassCmd "pass yahoo/sbc/app_pass"
 AuthMechs PLAIN
 TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore sbc-local
-Subfolders Verbatim
+SubFolders Verbatim
 Path ~/.local/share/email/sbc/
 Inbox ~/.local/share/email/sbc/INBOX
 Flatten .
@@ -96,10 +95,9 @@ Channel sbc
 Expunge Both
 Far :sbc-remote:
 Near :sbc-local:
-Patterns "INBOX" !"Inbox" "Drafts" "Sent" "Trash"
+Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
 Create Both
 SyncState *
 MaxMessages 0
 ExpireUnread no
 ################################################################### End profile
-

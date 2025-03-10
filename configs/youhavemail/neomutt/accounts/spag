@@ -1,0 +1,25 @@
+# vim: syntax=neomuttrc
+
+# Who dis?
+set real_name = "Cryptic Spag"
+set from = "$(pass google/spag/username)"
+
+# local store for mail from mbsync
+set mbox_type = Maildir
+set folder = "$HOME/.local/share/email/spag"
+set spool_file = "+INBOX"
+set record = "+[Gmail].Sent Mail"
+set postponed = "+[Gmail].Drafts"
+set trash = "+[Gmail].Trash"
+
+# Send mail with msmtp
+set sendmail = "msmtp -a spag"
+
+# Cache settings
+set header_cache = "$XDG_CACHE_HOME/neomutt/spag/header_cache"
+set message_cachedir = "$XDG_CACHE_HOME/neomutt/spag/message_cache"
+
+mailboxes `find ~/.local/share/email/spag/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g' | sort | tr '\n' ' '`
+
+# mailbox synchronization settings
+macro index S '<enter-command>unset wait_key<enter><shell-escape>mbsync -c "$XDG_CONFIG_HOME/isyncrc" -V spag<enter><shell-escape>notmuch new<enter>' "sync spag"

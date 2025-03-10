@@ -1,0 +1,211 @@
+##################
+# Misc. Commands #
+##################
+
+auto_view text/html text/calendar application/ics
+
+alternative_order text/html text/plain text/enriched text/*
+
+sidebar_pin '~/.local/share/email/sanch'
+sidebar_pin '~/.local/share/email/leet'
+sidebar_pin '~/.local/share/email/spag'
+sidebar_pin '~/.local/share/email/sbc'
+
+####################
+# Setting Commands #
+####################
+
+set ask_cc
+set beep_new
+set charset = "utf-8"
+set color_directcolor
+unset confirm_append
+set date_format = "%d.%m.%Y %H:%M"
+set edit_headers
+set editor = "nvim"
+set fast_reply
+set forward_format = "Fwd: %s"
+set forward_quote
+set include
+set imap_check_subscribed
+set mailcap_path = ~/.config/neomutt/mailcap
+set mail_check_stats
+set menu_scroll
+unset markers
+unset mark_old
+set pipe_decode
+set pager_index_lines = 8
+set pager_context = 3
+set pager_stop
+set quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set reply_to
+set reverse_name
+set reply_regex = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set status_on_top
+set status_chars = " *%A"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set sidebar_visible
+set sidebar_short_path
+set sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
+set text_flowed
+set tmp_dir = ~/.cache/neomutt/temp
+set timeout = 0
+set tilde
+set use_envelope_from
+set uncollapse_jump
+
+###################
+# Colors commands #
+###################
+
+mono bold bold
+mono body bold "^gpg: Good signature"
+mono body bold "^gpg: BAD signature from.*"
+mono error bold
+mono indicator reverse
+mono underline underline
+color attachment "#ccddee" default
+color body "#a13131" default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
+color body "#6db9f7" default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"
+color body "#97ca72" default "\`[^\`]*\`"
+color body "#6db9f7" default "^# \.*"
+color body "#56cadd" default "^## \.*"
+color body "#a3d977" default "^### \.*"
+color body "#ebc275" default "^(\t| )*(-|\\*) \.*"
+color body "#56cadd" default "[;:][-o][)/(|]"
+color body "#56cadd" default "[;:][)(|]"
+color body "#56cadd" default "[ ][*][^*]*[*][ ]?"
+color body "#56cadd" default "[ ]?[*][^*]*[*][ ]"
+color body "#ef5f6b" default "(BAD signature)"
+color body "#4dbdcb" default "(Good signature)"
+color body "#1e242e" default "^gpg: Good signature .*"
+color body "#f0cc89" default "^gpg: "
+color body "#f0cc89" "#ef5f6b" "^gpg: BAD signature from.*"
+color body "#ef5f6b" default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+color bold "#0e1013" default
+color error "#ef5f6b" default
+color hdrdefault "#a3d977" default
+color header "#ca72e4" default "^From"
+color header "#56cadd" default "^Subject"
+color header "#ffffff" default "^(CC|BCC)"
+color header "#5ab0f6" default ".*"
+color index "#ebc275" default '.*'
+color index_author "#ef5f6b" default '.*'
+color index_subject "#4dbdcb" default '.*'
+color index_number "#5ab0f6" default
+color index "#f0cc89" "#0e1013" "~N"
+color index_author "#a13131" "#0e1013" "~N"
+color index_subject "#56cadd" "#0e1013" "~N"
+color index "#f0cc89" "#5ab0f6" "~T"
+color index_author "#a13131" "#5ab0f6" "~T"
+color index_subject "#56cadd" "#5ab0f6" "~T"
+color index "#a3d977" default "~F"
+color index_author "#a3d977" default "~F"
+color index_subject "#a3d977" default "~F"
+color indicator "#1e242e" "#ccddee"
+color markers "#ef5f6b" "#ccddee"
+color message "#4dbdcb" default
+color normal default default
+color quoted "#97ca72" default
+color quoted1 "#5ab0f6" default
+color quoted2 "#4dbdcb" default
+color quoted3 "#ebc275" default
+color quoted4 "#ef5f6b" default
+color quoted5 "#a13131" default
+color search "#ca72e4" default
+color sidebar_highlight "#0e1013" "#ebc275"
+color sidebar_divider "#1e242e" "#0e1013"
+color sidebar_flagged "#ef5f6b" "#0e1013"
+color sidebar_indicator "#0e1013" "#97ca72"
+color sidebar_new "#97ca72" "#0e1013"
+color signature "#a3d977" default
+color status "#f0cc89" "#0e1013"
+color tilde "#0e1013" default
+color underline "#0e1013" default
+
+########
+# Keys #
+########
+
+# [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-2-%C2%A0index-menu)
+bind index \005 next-undeleted
+bind index \031 previous-undeleted
+bind index \Ck sidebar-prev
+bind index \Cj sidebar-next
+bind index \Co sidebar-open
+bind index <space> collapse-thread
+bind index <tab> sync-mailbox
+bind index @ compose-to-sender
+bind index B sidebar-toggle-visible
+bind index d half-down
+bind index D purge-message
+bind index D delete-message
+bind index g noop
+bind index gg first-entry
+bind index G last-entry
+bind index h noop
+bind index l display-message
+bind index L limit
+bind index R group-reply
+bind index u half-up
+bind index U undelete-message
+macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.local/state/neomutt/notmuch_search_queries<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.local/state/neomutt/notmuch_search_queries) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
+macro index <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
+macro index <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
+macro index <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
+macro index <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
+
+# [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-3-%C2%A0pager-menu)
+bind pager \005 next-line
+bind pager \031 previous-line
+bind pager \Ck sidebar-prev
+bind pager \Cj sidebar-next
+bind pager \Co sidebar-open
+bind pager @ compose-to-sender
+bind pager B sidebar-toggle-visible
+bind pager c imap-fetch-mail
+bind pager d half-down
+bind pager D purge-message
+bind pager g noop
+bind pager gg top
+bind pager G bottom
+bind pager h exit
+bind pager j next-line
+bind pager k previous-line
+bind pager l view-attachments
+bind pager R group-reply
+bind pager u half-up
+macro pager <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
+macro pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
+macro pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
+macro pager <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
+
+# [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-6-%C2%A0attachment-menu)
+bind attach <return> view-mailcap
+bind attach l view-mailcap
+bind attach h exit
+
+# [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-9-%C2%A0browser-menu)
+bind browser h goto-parent
+bind browser l select-entry
+bind browser gg top-page
+bind browser G bottom-page
+bind browser d half-down
+bind browser u half-up
+
+# [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-12-%C2%A0editor-menu)
+bind editor <space> noop
+bind editor <tab> complete-query
+bind editor ^T complete
+
+############
+# Accounts #
+############
+source ~/.config/neomutt/accounts/sanch
+source ~/.config/neomutt/accounts/leet
+source ~/.config/neomutt/accounts/spag
+source ~/.config/neomutt/accounts/sbc
+
+# Start on the first email, not last
+source ~/.config/neomutt/accounts/sanch

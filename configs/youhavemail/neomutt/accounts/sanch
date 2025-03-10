@@ -1,0 +1,25 @@
+# vim: syntax=neomuttrc
+
+# Who dis?
+set real_name = "Adrian Sanchez"
+set from = "$(pass google/sanch/username)"
+
+# local store for mail from mbsync
+set mbox_type = Maildir
+set folder = "$HOME/.local/share/email/sanch"
+set spool_file = "+INBOX"
+set record = "+[Gmail].Sent Mail"
+set postponed = "+[Gmail].Drafts"
+set trash = "+[Gmail].Trash"
+
+# Send mail with msmtp
+set sendmail = "msmtp -a sanch"
+
+# Cache settings
+set header_cache = "$XDG_CACHE_HOME/neomutt/sanch/header_cache"
+set message_cachedir = "$XDG_CACHE_HOME/neomutt/sanch/message_cache"
+
+mailboxes `find ~/.local/share/email/sanch/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g' | sort | tr '\n' ' '`
+
+# mailbox synchronization settings
+macro index S '<enter-command>unset wait_key<enter><shell-escape>mbsync -c "$XDG_CONFIG_HOME/isyncrc" -V sanch<enter><shell-escape>notmuch new<enter>' "sync sanch"

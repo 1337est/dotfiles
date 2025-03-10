@@ -205,6 +205,7 @@ alias sanch = himalaya -c ~/.config/himalaya/accounts/sanch.toml
 alias leet = himalaya -c ~/.config/himalaya/accounts/leet.toml
 alias spag = himalaya -c ~/.config/himalaya/accounts/spag.toml
 alias sbc = himalaya -c ~/.config/himalaya/accounts/sbc.toml
+alias neomutt = with-env { TERM: "xterm-direct" } { neomutt }
 
 # ------------------------------------------------------------------------------
 # Environment Variables
@@ -262,6 +263,15 @@ $env.MY_PHONE_DIR       = ($env.HOME | path join 'Pictures/phone')
 $env.MY_PROFILE_DIR     = ($env.HOME | path join 'Pictures/profile')
 $env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.MY_WALLPAPERS_DIR  = ($env.HOME | path join 'Pictures/wallpapers')
+
+$env.MY_EMAIL_DIR       = ($env.HOME | path join '.local/share/email')
+# Create email directories for email accounts in MY_EMAIL_DIR
+mkdir $env.MY_EMAIL_DIR
+mkdir $"($env.MY_EMAIL_DIR)/sanch"
+mkdir $"($env.MY_EMAIL_DIR)/leet"
+mkdir $"($env.MY_EMAIL_DIR)/spag"
+mkdir $"($env.MY_EMAIL_DIR)/sbc"
+mkdir $"($env.XDG_STATE_HOME)/msmtp"
 
 # App Environment Variables ----------------------------------------------------
 
@@ -325,23 +335,19 @@ let apps = [
         name: "starship",
         file: "starship.nu",
         command: (starship init nu),
-        description: "A minimal, blazingly-fast, and infinitely customizable prompt
-        for any shell."
+        description: "A minimal, blazingly-fast, and infinitely customizable prompt for any shell."
     },
     {
         name: "atuin",
         file: "atuin.nu",
         command: (atuin init nu --disable-up-arrow)
-        description: "atuin replaces your existing shell history with a SQLite database,
-        and records additional context for your commands. Additionally, it provides optional
-        and fully encrypted synchronisation of your history between machines, via an Atuin server."
+        description: "atuin replaces your existing shell history with a SQLite database, and records additional context for your commands. Additionally, it provides optional and fully encrypted synchronisation of your history between machines, via an Atuin server."
     },
     {
         name: "carapace",
         file: "carapace.nu",
         command: (carapace _carapace nushell)
-        description: "carapace provides argument completion for multiple CLI commands,
-        and works across multiple POSIX and non-POSIX shells (to include nushell)."
+        description: "carapace provides argument completion for multiple CLI commands, and works across multiple POSIX and non-POSIX shells (to include nushell)."
     },
     {
         name: "zoxide",

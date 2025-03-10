@@ -1,0 +1,44 @@
+# vim: filetype=msmtp
+
+################# GLOBAL
+defaults
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile ~/.local/state/msmtp/msmtp.log
+
+################# SANCH
+account sanch
+host smtp.gmail.com
+port 587
+tls_starttls on
+eval echo from "$(pass google/sanch/username)"
+eval echo user "$(pass google/sanch/username)"
+passwordeval "pass google/sanch/app_pass"
+
+################# LEET
+account leet
+host smtp.gmail.com
+port 587
+tls_starttls on
+eval echo from "$(pass google/leet/username)"
+eval echo user "$(pass google/leet/username)"
+passwordeval "pass google/leet/app_pass"
+
+################# SPAG
+account spag
+host smtp.gmail.com
+port 587
+tls_starttls on
+eval echo from "$(pass google/spag/username)"
+eval echo user "$(pass google/spag/username)"
+passwordeval "pass google/spag/app_pass"
+
+################# SBC
+account sbc
+host smtp.mail.att.net
+port 587
+tls_starttls on
+eval echo from "$(pass yahoo/sbc/username)"
+eval echo user "$(pass yahoo/sbc/username)"
+passwordeval "pass yahoo/sbc/app_pass"
