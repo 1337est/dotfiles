@@ -17,7 +17,7 @@ set sendmail = "msmtp -a leet"
 
 # Cache settings
 set header_cache = "$XDG_CACHE_HOME/neomutt/leet/header_cache"
-set message_cachedir = "$XDG_CACHE_HOME/neomutt/leet/message_cache"
+set message_cache_dir = "$XDG_CACHE_HOME/neomutt/leet/message_cache"
 
 unmailboxes *
 mailboxes `find ~/.local/share/email/neomutt/mbsync/leet/ -type d -name cur \

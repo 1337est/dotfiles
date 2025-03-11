@@ -17,7 +17,7 @@ set sendmail = "msmtp -a spag"
 
 # Cache settings
 set header_cache = "$XDG_CACHE_HOME/neomutt/spag/header_cache"
-set message_cachedir = "$XDG_CACHE_HOME/neomutt/spag/message_cache"
+set message_cache_dir = "$XDG_CACHE_HOME/neomutt/spag/message_cache"
 
 unmailboxes *
 mailboxes `find ~/.local/share/email/neomutt/mbsync/spag/ -type d -name cur \

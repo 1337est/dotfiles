@@ -17,7 +17,7 @@ set sendmail = "msmtp -a sbc"
 
 # Cache settings
 set header_cache = "$XDG_CACHE_HOME/neomutt/sbc/header_cache"
-set message_cachedir = "$XDG_CACHE_HOME/neomutt/sbc/message_cache"
+set message_cache_dir = "$XDG_CACHE_HOME/neomutt/sbc/message_cache"
 
 unmailboxes *
 mailboxes =INBOX =Draft =Sent =Bulk =Archive =Trash

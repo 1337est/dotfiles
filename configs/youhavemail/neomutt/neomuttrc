@@ -6,10 +6,10 @@ auto_view text/html text/calendar application/ics
 
 alternative_order text/html text/plain text/enriched text/*
 
-sidebar_pin '~/.local/share/email/neomutt/mbsync/sanch'
 sidebar_pin '~/.local/share/email/neomutt/mbsync/leet'
-sidebar_pin '~/.local/share/email/neomutt/mbsync/spag'
+sidebar_pin '~/.local/share/email/neomutt/mbsync/sanch'
 sidebar_pin '~/.local/share/email/neomutt/mbsync/sbc'
+sidebar_pin '~/.local/share/email/neomutt/mbsync/spag'
 
 ####################
 # Setting Commands #
@@ -138,10 +138,10 @@ bind index g noop
 bind index gg first-entry
 bind index G last-entry
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.local/share/email/neomutt/notmuch/queries<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.local/share/email/neomutt/notmuch/queries) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
-macro index <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
-macro index <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
-macro index <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
-macro index <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
+macro index <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
+macro index <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
+macro index <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
+macro index <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
 
 # [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-3-%C2%A0pager-menu)
 bind pager \Cp sidebar-prev
@@ -154,10 +154,10 @@ bind pager gg top
 bind pager G bottom
 bind pager j next-line
 bind pager k previous-line
-macro pager <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
-macro pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
-macro pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
-macro pager <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
+macro pager <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
+macro pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
+macro pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
+macro pager <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
 
 # [Reference - NeoMutt](https://neomutt.org/guide/reference.html#4-6-%C2%A0attachment-menu)
 bind attach <return> view-mailcap
@@ -180,8 +180,9 @@ bind editor ^T complete
 ############
 # Accounts #
 ############
-# Start on the first email, not last
-source ~/.config/neomutt/accounts/sbc
+
+# Source the email you want on startup last to start on that email
 source ~/.config/neomutt/accounts/spag
-source ~/.config/neomutt/accounts/leet
+source ~/.config/neomutt/accounts/sbc
 source ~/.config/neomutt/accounts/sanch
+source ~/.config/neomutt/accounts/leet

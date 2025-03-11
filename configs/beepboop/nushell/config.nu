@@ -280,7 +280,7 @@ $env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.GPG_TTY = (tty)
 $env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
 $env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+$env.CARAPACE_BRIDGES = 'fish,bash'
 
 # PROMPT -----------------------------------------------------------------------
 
