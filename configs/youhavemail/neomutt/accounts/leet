@@ -2,11 +2,11 @@
 
 # Who dis?
 set real_name = "Leetius Leetington"
-set from = "$(pass google/leet/username)"
+set from = "`pass google/leet/username`"
 
 # local store for mail from mbsync
 set mbox_type = Maildir
-set folder = "$HOME/.local/share/email/leet"
+set folder = "$HOME/.local/share/email/neomutt/mbsync/leet"
 set spool_file = "+INBOX"
 set record = "+[Gmail].Sent Mail"
 set postponed = "+[Gmail].Drafts"
@@ -19,7 +19,14 @@ set sendmail = "msmtp -a leet"
 set header_cache = "$XDG_CACHE_HOME/neomutt/leet/header_cache"
 set message_cachedir = "$XDG_CACHE_HOME/neomutt/leet/message_cache"
 
-mailboxes `find ~/.local/share/email/leet/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g' | sort | tr '\n' ' '`
+unmailboxes *
+mailboxes `find ~/.local/share/email/neomutt/mbsync/leet/ -type d -name cur \
+| sed -e 's:/cur/*$::' -e 's/ /\\ /g' \
+| sort \
+| tr '\n' ' '`
+named-mailboxes "$from" "+INBOX"
 
 # mailbox synchronization settings
-macro index S '<enter-command>unset wait_key<enter><shell-escape>mbsync -c "$XDG_CONFIG_HOME/isyncrc" -V leet<enter><shell-escape>notmuch new<enter>' "sync leet"
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+<shell-escape>mbsync -V leet<enter>\
+<shell-escape>notmuch new<enter><check-stats>' "sync leet"

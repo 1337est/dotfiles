@@ -9,8 +9,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore sanch-local
 SubFolders Verbatim
-Path ~/.local/share/email/sanch/
-Inbox ~/.local/share/email/sanch/INBOX
+Path ~/.local/share/email/neomutt/mbsync/sanch/
+Inbox ~/.local/share/email/neomutt/mbsync/sanch/INBOX
 Flatten .
 
 Channel sanch
@@ -35,8 +35,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore leet-local
 SubFolders Verbatim
-Path ~/.local/share/email/leet/
-Inbox ~/.local/share/email/leet/INBOX
+Path ~/.local/share/email/neomutt/mbsync/leet/
+Inbox ~/.local/share/email/neomutt/mbsync/leet/INBOX
 Flatten .
 
 Channel leet
@@ -61,8 +61,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore spag-local
 SubFolders Verbatim
-Path ~/.local/share/email/spag/
-Inbox ~/.local/share/email/spag/INBOX
+Path ~/.local/share/email/neomutt/mbsync/spag/
+Inbox ~/.local/share/email/neomutt/mbsync/spag/INBOX
 Flatten .
 
 Channel spag
@@ -87,8 +87,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore sbc-local
 SubFolders Verbatim
-Path ~/.local/share/email/sbc/
-Inbox ~/.local/share/email/sbc/INBOX
+Path ~/.local/share/email/neomutt/mbsync/sbc/
+Inbox ~/.local/share/email/neomutt/mbsync/sbc/INBOX
 Flatten .
 
 Channel sbc

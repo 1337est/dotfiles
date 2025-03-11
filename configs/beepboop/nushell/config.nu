@@ -267,11 +267,12 @@ $env.MY_WALLPAPERS_DIR  = ($env.HOME | path join 'Pictures/wallpapers')
 $env.MY_EMAIL_DIR       = ($env.HOME | path join '.local/share/email')
 # Create email directories for email accounts in MY_EMAIL_DIR
 mkdir $env.MY_EMAIL_DIR
-mkdir $"($env.MY_EMAIL_DIR)/sanch"
-mkdir $"($env.MY_EMAIL_DIR)/leet"
-mkdir $"($env.MY_EMAIL_DIR)/spag"
-mkdir $"($env.MY_EMAIL_DIR)/sbc"
-mkdir $"($env.XDG_STATE_HOME)/msmtp"
+mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/leet"
+mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/sanch"
+mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/sbc"
+mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/spag"
+mkdir $"($env.MY_EMAIL_DIR)/neomutt/msmtp"
+mkdir $"($env.MY_EMAIL_DIR)/neomutt/notmuch"
 
 # App Environment Variables ----------------------------------------------------
 

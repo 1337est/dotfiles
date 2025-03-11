@@ -2,11 +2,11 @@
 
 # Who dis?
 set real_name = "Adrian Sanchez"
-set from = "$(pass yahoo/sbc/username)"
+set from = "`pass yahoo/sbc/username`"
 
 # View mail with isyncrc via mbsync
 set mbox_type = Maildir
-set folder = "$HOME/.local/share/email/sbc"
+set folder = "$HOME/.local/share/email/neomutt/mbsync/sbc"
 set spool_file = "+INBOX"
 set record = "+Sent"
 set postponed = "+Draft"
@@ -19,7 +19,12 @@ set sendmail = "msmtp -a sbc"
 set header_cache = "$XDG_CACHE_HOME/neomutt/sbc/header_cache"
 set message_cachedir = "$XDG_CACHE_HOME/neomutt/sbc/message_cache"
 
-mailboxes `find ~/.local/share/email/sbc/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g' | sort | tr '\n' ' '`
+unmailboxes *
+mailboxes =INBOX =Draft =Sent =Bulk =Archive =Trash
+named-mailboxes "$from" "+INBOX"
+named-mailboxes "Drafts" "+Draft"
 
 # mailbox synchronization settings
-macro index S '<enter-command>unset wait_key<enter><shell-escape>mbsync -c "$XDG_CONFIG_HOME/isyncrc" -V sbc<enter><shell-escape>notmuch new<enter>' "sync sbc"
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+<shell-escape>mbsync -V sbc<enter>\
+<shell-escape>notmuch new<enter><check-stats>' "sync sbc"
