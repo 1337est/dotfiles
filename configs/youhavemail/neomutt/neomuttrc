@@ -2,9 +2,8 @@
 # Misc. Commands #
 ##################
 
-auto_view text/html text/calendar application/ics
-
-alternative_order text/html text/plain text/enriched text/*
+auto_view           text/html text/calendar application/ics
+alternative_order   text/html text/plain text/enriched text/*
 
 sidebar_pin '~/.local/share/email/neomutt/mbsync/leet'
 sidebar_pin '~/.local/share/email/neomutt/mbsync/sanch'
@@ -15,45 +14,46 @@ sidebar_pin '~/.local/share/email/neomutt/mbsync/spag'
 # Setting Commands #
 ####################
 
-set ask_cc
-set beep_new
-set charset = "utf-8"
-set color_directcolor
-unset confirm_append
-set date_format = "%d.%m.%Y %H:%M"
-set edit_headers
-set editor = "nvim"
-set fast_reply
-set forward_format = "Fwd: %s"
-set forward_quote
-set include
-set imap_check_subscribed
-set mailcap_path = ~/.config/neomutt/mailcap
-set mail_check_stats
-set menu_scroll
-unset markers
-unset mark_old
-set pipe_decode
-set pager_index_lines = 8
-set pager_context = 3
-set pager_stop
-set quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-set reply_to
-set reverse_name
-set reply_regex = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
-set status_on_top
-set status_chars = " *%A"
-set sort = threads
-set sort_aux = reverse-last-date-received
-set sidebar_visible
-set sidebar_short_path
-set sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
-set text_flowed
-set tmp_dir = ~/.cache/neomutt/temp
-set timeout = 0
-set tilde
-set use_envelope_from
-set uncollapse_jump
+set     ask_cc
+set     abort_key = "<Esc>"
+set     beep_new
+set     charset = "utf-8"
+set     color_directcolor
+unset   confirm_append
+set     date_format = "%d.%m.%Y %H:%M"
+set     edit_headers
+set     editor = "nvim"
+set     fast_reply
+set     forward_format = "Fwd: %s"
+set     forward_quote
+set     include
+set     imap_check_subscribed
+set     mailcap_path = ~/.config/neomutt/mailcap
+set     mail_check_stats
+set     menu_scroll
+unset   markers
+unset   mark_old
+set     pipe_decode
+set     pager_index_lines = 8
+set     pager_context = 3
+set     pager_stop
+set     quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set     reply_to
+set     reverse_name
+set     reply_regex = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set     status_on_top
+set     status_chars = " *%A"
+set     sort = threads
+set     sort_aux = reverse-last-date-received
+set     sidebar_visible
+set     sidebar_short_path
+set     sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
+set     text_flowed
+set     tmp_dir = ~/.cache/neomutt/temp
+set     timeout = 0
+set     tilde
+set     use_envelope_from
+set     uncollapse_jump
 
 ###################
 # Colors commands #
@@ -182,44 +182,111 @@ color underline "#0e1013" default
 # Navigation #
 ##############
 
-unbind * i
-unbind * M
-unbind * C
-unbind * d
+# Do this to not see all the junk you don't care about on the help menu
+unbind pager <Return>
+unbind pager <Backspace>
+unbind index,pager <Space>
+unbind index,pager,browser, <Tab>
 
+unbind * \*
+unbind * %
+unbind * \&
+unbind * .
+unbind * A
+unbind * J
+unbind * K
+unbind * L
+unbind * U
+unbind * W
+unbind * x
+unbind * <
+unbind * =
+unbind * >
+unbind * H
+unbind * L
+unbind * M
+unbind * Z
+unbind * [
+unbind * ]
+unbind * <
+unbind * <Left>
+unbind * <Down>
+unbind * <Up>
+unbind * <Right>
+unbind * i
+unbind * \Ce
+unbind * \Cb # urlview
+unbind * \Cf
+unbind * \Ck
+unbind * \Cr
+unbind * \Ct
+unbind * \#
+# https://neomutt.org/guide/configuration.html#6-3-%C2%A0enter-versus-return
+unbind * <Enter>
+
+# Also have ESCDELAY = 0 (see `man ESCDELAY`)
+unbind * <Esc>a
 unbind * <Esc>b
 unbind * <Esc>c
-unbind * <Esc>C
 unbind * <Esc>d
 unbind * <Esc>e
 unbind * <Esc>f
+unbind * <Esc>g
+unbind * <Esc>h
 unbind * <Esc>i
+unbind * <Esc>j
 unbind * <Esc>k
 unbind * <Esc>l
+unbind * <Esc>m
 unbind * <Esc>n
+unbind * <Esc>o
 unbind * <Esc>p
-unbind * <Esc>P
+unbind * <Esc>q
 unbind * <Esc>r
 unbind * <Esc>s
 unbind * <Esc>t
 unbind * <Esc>u
-unbind * <Esc>V
 unbind * <Esc>v
+unbind * <Esc>w
+unbind * <Esc>x
+unbind * <Esc>y
+unbind * <Esc>z
+unbind * <Esc>A
+unbind * <Esc>B
+unbind * <Esc>C
+unbind * <Esc>D
+unbind * <Esc>E
+unbind * <Esc>F
+unbind * <Esc>G
+unbind * <Esc>H
+unbind * <Esc>I
+unbind * <Esc>J
+unbind * <Esc>K
+unbind * <Esc>L
+unbind * <Esc>M
+unbind * <Esc>N
+unbind * <Esc>O
+unbind * <Esc>P
+unbind * <Esc>Q
+unbind * <Esc>R
+unbind * <Esc>S
+unbind * <Esc>T
+unbind * <Esc>U
+unbind * <Esc>V
+unbind * <Esc>W
+unbind * <Esc>X
+unbind * <Esc>Y
+unbind * <Esc>Z
 unbind * <Esc>/
-unbind * <Esc>?
 unbind * <Esc><Tab>
+unbind * <Esc>?
 
-unbind * <Esc>
-
-unbind * j
-unbind * k
 bind index j next-entry
-bind pager j next-line
 bind index k previous-entry
+bind pager j next-line
 bind pager k previous-line
 
-unbind * h
-unbind * l
+unbind index h
 bind pager,attach h exit
 bind browser h goto-parent
 bind index l display-message
@@ -227,41 +294,7 @@ bind pager l view-attachments
 bind attach l view-mailcap
 bind browser l select-entry
 
-unbind * \031
-unbind * \005
-bind index \031 previous-undeleted  # Mouse wheel
-bind pager \031 previous-line       # Mouse wheel
-bind index \005 next-undeleted      # Mouse wheel
-bind pager \005 next-line           # Mouse wheel
-
-unbind * \Cp
-unbind * \Cn
-unbind * \Co
-bind index,pager \Cp sidebar-prev
-bind index,pager \Cn sidebar-next
-bind index,pager \Co sidebar-open
-
-unbind * \Cd
-unbind * \Cu
-bind index,pager,browser \Cd half-down
-bind index,pager,browser \Cu half-up
-
-#####################
-# Mail manipulation #
-#####################
-
-unbind * @
-bind index,pager,attach @ compose-to-sender
-
-#####################
-# Text manipulation #
-#####################
-
-unbind * <Tab>
-bind editor <Tab> complete-query
-
-unbind * g
-unbind * G
+unbind index,pager,browser g
 bind index gg first-entry
 bind pager gg top
 bind browser gg top-page
@@ -269,23 +302,58 @@ bind index G last-entry
 bind pager G bottom
 bind browser G bottom-page
 
-unbind * R
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+bind index,pager,browser \Cd half-down
+bind index,pager,browser \Cu half-up
+
+bind index,pager,attach @ compose-to-sender
+
 bind index,pager R group-reply
 
-unbind * D
 bind index,pager D delete-message
 
-unbind * \Cf
-macro index,pager \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.local/share/email/neomutt/notmuch/queries<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.local/share/email/neomutt/notmuch/queries) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
+##########
+# Macros #
+##########
 
-unbind * <return>
-bind attach <return> view-mailcap
+# I really tried to make this Ctrl-F notmuch feature readable
+macro index \Cf "\
+<enter-command>unset wait_key<enter>\
+\
+<shell-escape>\
+read -p 'Enter a search term to find with notmuch: ' x;\
+echo \$x > ~/.local/share/email/neomutt/notmuch/search_term\
+<enter>\
+\
+<limit> ~i \
+\"\`\
+notmuch search --output=messages \
+\$(cat ~/.local/share/email/neomutt/notmuch/search_term) \
+| head -n 600 \
+| perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' \
+| perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \
+\`\"\
+<enter>" "Ctrl-F using 'notmuch'"
 
-unbind * <space>
-macro index,pager <space>leet '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/leet<enter><change-folder>!<enter>;<check-stats>' "switch leet"
-macro index,pager <space>sanch '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sanch<enter><change-folder>!<enter>;<check-stats>' "switch sanch"
-macro index,pager <space>sbc '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/sbc<enter><change-folder>!<enter>;<check-stats>' "switch sbc"
-macro index,pager <space>spag '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/spag<enter><change-folder>!<enter>;<check-stats>' "switch spag"
+# Switch to accounts with ease
+macro index,pager <space>leet '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/leet<enter>\
+<change-folder>!<enter>;<check-stats>' "switch leet"
+
+macro index,pager <space>sanch '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/sanch<enter>\
+<change-folder>!<enter>;<check-stats>' "switch sanch"
+
+macro index,pager <space>sbc '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/sbc<enter>\
+<change-folder>!<enter>;<check-stats>' "switch sbc"
+
+macro index,pager <space>spag '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/spag<enter>\
+<change-folder>!<enter>;<check-stats>' "switch spag"
 
 ############
 # Accounts #

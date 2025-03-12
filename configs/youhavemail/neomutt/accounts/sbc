@@ -25,6 +25,6 @@ named-mailboxes "$from" "+INBOX"
 named-mailboxes "Drafts" "+Draft"
 
 # mailbox synchronization settings
-macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V sbc<enter>\
-<shell-escape>notmuch new<enter><check-stats>' "sync sbc"
+<shell-escape>notmuch new<enter><check-stats>' "sync-sbc"

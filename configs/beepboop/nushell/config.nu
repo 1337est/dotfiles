@@ -221,6 +221,7 @@ $env.PAGER      = 'bat'
 $env.MANPAGER   = 'nvim +Man!'
 $env.MANWIDTH   = 999
 $env.BROWSER    = 'qutebrowser'
+$env.ESCDELAY   = 0
 
 # XDG Base Directories ---------------------------------------------------------
 
@@ -231,7 +232,7 @@ $env.XDG_STATE_HOME     = ($env.HOME | path join '.local/state')
 $env.XDG_BIN_HOME       = ($env.HOME | path join '.local/bin')
 $env.XDG_LIB_HOME       = ($env.HOME | path join '.local/lib')
 
-# XDG/MY_SOMETHING_DIRECTORY ---------------------------------------------------
+# XDG/MY_USER_DIRS -------------------------------------------------------------
 
 $env.XDG_DESKTOP_DIR        = ($env.HOME | path join 'Desktop')
 $env.XDG_DOCUMENTS_DIR      = ($env.HOME | path join 'Documents')

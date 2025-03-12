@@ -27,6 +27,6 @@ mailboxes `find ~/.local/share/email/neomutt/mbsync/spag/ -type d -name cur \
 named-mailboxes "$from" "+INBOX"
 
 # mailbox synchronization settings
-macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V spag<enter>\
-<shell-escape>notmuch new<enter><check-stats>' "sync spag"
+<shell-escape>notmuch new<enter><check-stats>' "sync-spag"
