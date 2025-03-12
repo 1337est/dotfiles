@@ -1,0 +1,35 @@
+bind index j next-entry
+bind index k previous-entry
+bind pager j next-line
+bind pager k previous-line
+
+unbind index h
+bind pager,attach h exit
+bind browser h goto-parent
+bind index l display-message
+bind pager l view-attachments
+bind attach l view-mailcap
+bind browser l select-entry
+
+unbind index,pager,browser g
+bind index gg first-entry
+bind pager gg top
+bind browser gg top-page
+bind index G last-entry
+bind pager G bottom
+bind browser G bottom-page
+
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+bind index,pager,browser \Cd half-down
+bind index,pager,browser \Cu half-up
+
+bind index,pager,attach @ compose-to-sender
+
+bind index,pager R group-reply
+
+bind index,pager D delete-message
+bind index,pager B sidebar-toggle-visible
+

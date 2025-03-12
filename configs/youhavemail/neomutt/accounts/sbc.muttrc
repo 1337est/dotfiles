@@ -22,7 +22,11 @@ set message_cache_dir = "$XDG_CACHE_HOME/neomutt/sbc/message_cache"
 unmailboxes *
 mailboxes =INBOX =Draft =Sent =Bulk =Archive =Trash
 named-mailboxes "$from" "+INBOX"
-named-mailboxes "Drafts" "+Draft"
+named-mailboxes "$from" "+Draft"
+named-mailboxes "$from" "+Sent"
+named-mailboxes "$from" "+Bulk"
+named-mailboxes "$from" "+Archive"
+named-mailboxes "$from" "+Trash"
 
 # mailbox synchronization settings
 macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
