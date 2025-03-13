@@ -4,70 +4,70 @@
 
 # Special keys
 # TODO: Go through commented code to bind functions or keys
-unbind pager <Return>
-unbind pager <Backspace>
-unbind index,pager <Space>
+bind pager <Return> noop
+bind index,pager <Backspace> noop
+bind index,pager <Space> noop
 # https://neomutt.org/guide/configuration.html#6-3-%C2%A0enter-versus-return
-unbind * <Enter>
-unbind index,pager,browser <Tab> # TODO:
+bind index,pager <Enter> noop
+bind index,pager,browser <Tab> noop # TODO:
 
 
 # Symbol keys
-unbind * \*
-unbind * \# # TODO:
-unbind * <
-unbind * >
-unbind * =
-unbind * [
-unbind * ]
-unbind * % # TODO:
-unbind * \& # TODO:
-unbind * . # TODO:
+bind index,pager \* noop
+bind index,pager \# noop # TODO:
+bind index,pager < noop
+bind index,pager > noop
+bind index,pager = noop
+bind index,pager [ noop
+bind index,pager ] noop
+bind index,pager % noop # TODO:
+bind index,pager \& noop # TODO:
+bind index,pager . noop # TODO:
 
 # Uppercase keys
-unbind index A
-unbind generic H
-unbind * L # TODO:
-unbind * M # TODO:
-unbind * U # TODO:
-unbind * W # TODO:
-unbind * Z
+bind index A noop
+bind generic H noop
+bind index,pager L noop # TODO:
+bind index,pager M noop # TODO:
+bind index,pager U noop # TODO:
+bind index,pager W noop # TODO:
+bind index,pager Z noop
 
 # Lowercase keys
-unbind * i
-unbind index,pager,browser g # TODO:
-unbind index h # TODO:
-unbind * x
+bind index,pager i noop
+bind index,pager,browser g noop # TODO:
+bind index h noop # TODO:
+bind index,pager x noop
 
 # Ctrl-keys
-unbind * \CE # TODO:
-unbind * \CB # urlview
-unbind * \CF # TODO:
-unbind * \CK # TODO:
-unbind * \CL # TODO:
-unbind * \CR # TODO:
-unbind * \CT # TODO:
-unbind * \CU # TODO:
+bind index,pager \CE noop # TODO:
+bind index,pager \CB noop # urlview
+bind index,pager \CF noop # TODO:
+bind index,pager \CK noop # TODO:
+bind index,pager \CL noop # TODO:
+bind index,pager \CR noop # TODO:
+bind index,pager \CT noop # TODO:
+bind index,pager \CU noop # TODO:
 
 # Annoying Escape keys: Also have ESCDELAY = 0 (see `man ESCDELAY`)
-unbind * <Esc>/ # TODO:
-unbind * <Esc><Tab> # TODO:
-unbind * <Esc>?
-unbind * <Esc>b
-unbind * <Esc>c
-unbind * <Esc>d # TODO:
-unbind * <Esc>e # TODO:
-unbind * <Esc>f
-unbind * <Esc>i
-unbind * <Esc>k # TODO:
-unbind * <Esc>l # TODO:
-unbind * <Esc>n # TODO:
-unbind * <Esc>p # TODO:
-unbind * <Esc>r # TODO:
-unbind * <Esc>s # TODO:
-unbind * <Esc>t # TODO:
-unbind * <Esc>u # TODO:
-unbind * <Esc>v # TODO:
-unbind * <Esc>C # TODO:
-unbind * <Esc>P # TODO:
-unbind * <Esc>V # TODO:
+bind index,pager <Esc>/ noop # TODO:
+bind index,pager <Esc><Tab> noop # TODO:
+bind index,pager <Esc>? noop
+bind index,pager <Esc>b noop
+bind index,pager <Esc>c noop
+bind index,pager <Esc>d noop # TODO:
+bind index,pager <Esc>e noop # TODO:
+bind index,pager <Esc>f noop
+bind index,pager <Esc>i noop
+bind index,pager <Esc>k noop # TODO:
+bind index,pager <Esc>l noop # TODO:
+bind index,pager <Esc>n noop # TODO:
+bind index,pager <Esc>p noop # TODO:
+bind index,pager <Esc>r noop # TODO:
+bind index,pager <Esc>s noop # TODO:
+bind index,pager <Esc>t noop # TODO:
+bind index,pager <Esc>u noop # TODO:
+bind index,pager <Esc>v noop # TODO:
+bind index,pager <Esc>C noop # TODO:
+bind index,pager <Esc>P noop # TODO:
+bind index,pager <Esc>V noop # TODO:

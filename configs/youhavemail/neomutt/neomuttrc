@@ -3,10 +3,9 @@
 # Source config files
 source ~/.config/neomutt/custom/unbind.muttrc
 source ~/.config/neomutt/custom/settings.muttrc
-source ~/.config/neomutt/custom/direct_colors.muttrc
 
 # Source email account files
 source ~/.config/neomutt/accounts/spag.muttrc
 source ~/.config/neomutt/accounts/sbc.muttrc
-source ~/.config/neomutt/accounts/sanch.muttrc
 source ~/.config/neomutt/accounts/leet.muttrc
+source ~/.config/neomutt/accounts/sanch.muttrc
