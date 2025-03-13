@@ -30,6 +30,6 @@ named-mailboxes "$from" "+[Gmail].Starred"
 named-mailboxes "$from" "+[Gmail].Trash"
 
 # mailbox synchronization settings
-macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V leet<enter>\
 <shell-escape>notmuch new<enter><check-stats>' "sync-leet"

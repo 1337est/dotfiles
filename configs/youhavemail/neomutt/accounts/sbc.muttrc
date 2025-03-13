@@ -1,7 +1,7 @@
 # vim: syntax=neomuttrc
 
 # Who dis?
-set real_name = "Adrian Sanchez"
+set real_name = "Adrian Rene"
 set from = "`pass yahoo/sbc/username`"
 
 # View mail with isyncrc via mbsync
@@ -29,6 +29,6 @@ named-mailboxes "$from" "+Archive"
 named-mailboxes "$from" "+Trash"
 
 # mailbox synchronization settings
-macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V sbc<enter>\
 <shell-escape>notmuch new<enter><check-stats>' "sync-sbc"

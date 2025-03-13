@@ -1,0 +1,161 @@
+# vim: syntax=neomuttrc
+
+# General Settings -------------------------------------------------------------
+
+set     abort_key = "<Esc>" # Ctrl-G by default
+set     charset = "utf-8" # char set used by terminal
+set     date_format = "%y/%m/%d %I:%M%p"
+set     menu_scroll = yes # menus scroll 1 line at a time (unset = page scroll)
+set     markers = no # append a '+' marker at the beginning of wrapped lines
+set     mark_old = no # marks unread messages with an "O" if you leave mailbox without reading
+
+# Mailbox Settings -------------------------------------------------------------
+
+set     confirm_append = no # Prompt for append message to mailbox
+set     imap_check_subscribed = yes # fetch folders from mailbox server
+set     mail_check_stats = yes # periodically <check-stats> with mail_check_stats_interval
+set     mail_check_stats_interval = 60 # seconds
+
+# Message Settings -------------------------------------------------------------
+
+set     ask_cc = yes # Prompt for cc
+set     edit_headers = yes # Allows edit of headers for outgoing messages
+set     forward_format = "Fwd: %s"
+set     fast_reply = yes # skip to, cc, bcc when already provided
+set     forward_quote = yes # use indent_string to quote forwarded messages
+set     include = yes # include a copy of message in reply
+
+# Navigation Settings ----------------------------------------------------------
+
+
+# Notification Settings ----------------------------------------------------------
+
+set     beep_new = yes # Notify of new messages
+
+# Sidebar Settings -------------------------------------------------------------
+
+
+# Mailcap Settings -------------------------------------------------------------
+
+set     pipe_decode
+set     pager_index_lines = 8
+set     pager_context = 3
+set     pager_stop
+set     quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
+set     query_command = "abook --mutt-query '%s'"
+set     mime_type_query_command = "file --mime-type %s"
+
+set     reply_to
+set     reverse_name
+set     reply_regex = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set     status_on_top
+set     status_chars = " *%A"
+set     sort = threads
+set     sort_aux = reverse-last-date-received
+set     sidebar_visible
+set     sidebar_short_path
+set     sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
+set     text_flowed
+set     tmp_dir = ~/.cache/neomutt/temp
+set     timeout = 0
+set     tilde
+set     use_envelope_from
+set     uncollapse_jump
+
+set     mailcap_path = ~/.config/neomutt/mailcap
+
+auto_view           text/html text/calendar application/ics
+alternative_order   text/html text/plain text/enriched text/*
+
+sidebar_pin '~/.local/share/email/neomutt/mbsync/leet'
+sidebar_pin '~/.local/share/email/neomutt/mbsync/sanch'
+sidebar_pin '~/.local/share/email/neomutt/mbsync/sbc'
+sidebar_pin '~/.local/share/email/neomutt/mbsync/spag'
+
+# Bindings ---------------------------------------------------------------------
+
+bind index j next-entry
+bind index k previous-entry
+bind pager j next-line
+bind pager k previous-line
+
+bind pager,attach h exit
+bind browser h goto-parent
+bind index l display-message
+bind pager l view-attachments
+bind attach l view-mailcap
+bind browser l select-entry
+
+bind index gg first-entry
+bind pager gg top
+bind browser gg top-page
+bind index G last-entry
+bind pager G bottom
+bind browser G bottom-page
+
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+bind index,pager,browser \CD half-down
+bind index,pager,browser \CU half-up
+
+bind index,pager,attach @ compose-to-sender
+
+bind index,pager R group-reply
+
+bind index,pager D delete-message
+bind index,pager B sidebar-toggle-visible
+
+bind editor <Tab> complete-query
+
+# Macros -----------------------------------------------------------------------
+
+macro index,pager <f1> '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/sanch.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>' "[g]oto sanch - [m]ain"
+
+# Switch to accounts with ease
+macro index,pager <f2> '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/leet.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>' "[g]oto leet - [f]un"
+
+macro index,pager <f3> '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/sbc.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>' "[g]oto sbc - [j]unk"
+
+macro index,pager <f4> '<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/spag.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>' "[g]oto spag - [c]ode"
+
+# Add email to addressbook using 'abook'
+macro index,pager <space>a "\
+<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return>\
+<pipe-message>abook --add-email<return>\
+<enter-command>set pipe_decode=\$my_pipe_decode; \
+unset my_pipe_decode<return>" "add the sender address to 'abook'"
+
+# I really tried to make this Ctrl-F 'notmuch' feature readable
+macro index \Cf "\
+<enter-command>unset wait_key<enter>\
+\
+<shell-escape>\
+read -p 'Enter a search term to find with notmuch: ' x;\
+echo \$x > ~/.local/share/email/neomutt/notmuch/search_term\
+<enter>\
+\
+<limit> ~i \
+\"\`\
+notmuch search --output=messages \
+\$(cat ~/.local/share/email/neomutt/notmuch/search_term) \
+| head -n 600 \
+| perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' \
+| perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \
+\`\"\
+<enter>" "Ctrl-F using 'notmuch'"
+
+# mailbox synchronization settings
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+<shell-escape>mbsync -V spag<enter>\
+<shell-escape>notmuch new<enter><check-stats>' "sync-spag"

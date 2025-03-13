@@ -1,9 +1,9 @@
+# vim: syntax=neomuttrc
+
 # Source config files
-source ~/.config/neomutt/custom/set.muttrc
-source ~/.config/neomutt/custom/colors.muttrc
 source ~/.config/neomutt/custom/unbind.muttrc
-source ~/.config/neomutt/custom/bind.muttrc
-source ~/.config/neomutt/custom/macros.muttrc
+source ~/.config/neomutt/custom/settings.muttrc
+source ~/.config/neomutt/custom/direct_colors.muttrc
 
 # Source email account files
 source ~/.config/neomutt/accounts/spag.muttrc
