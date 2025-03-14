@@ -140,6 +140,12 @@ notmuch search --output=messages \
 \`\"\
 <enter>" "Ctrl-F using 'notmuch'"
 
+# normal color text
+color normal default default
+
+# highlight current line indicator
+color indicator "#1e242e" "#ccddee"
+
 # Default index color scheme
 color index "#ebc275" default '.*'
 color index_number "#5ab0f6" default
@@ -163,15 +169,17 @@ color index_subject "#56cadd" default "~F"
 # ~T Tagged mail in index
 color index_flags italic bold "#0e1013" "#a3d977" "~T"
 
-# TODO: last left off here
-color header "#5ab0f6" default ".*"
-color hdrdefault "#a3d977" default
-color header "#ef5f6b" default "^From"
-color header "#97ca72" default "^Subject"
-color header "#ffffff" default "^(CC|BCC)"
+# Header highlights in the pager - rgby with a default of red for hdrdefault
+color hdrdefault "#ef5f6b" default
+color header "#ef5f6b" default "^Date"
+color header "#97ca72" default "^From"
+color header "#56cadd" default "^(To|CC|BCC)"
+color header "#f0cc89" default "^Subject"
 
+# [ mime-stuff attachments are this color ]
 color attachment "#ca72e4" default
 
+# TODO: last left off here
 color body "#a13131" default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
 color body "#6db9f7" default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"
 color body "#97ca72" default "\`[^\`]*\`"
@@ -191,7 +199,6 @@ color body "#f0cc89" "#ef5f6b" "^gpg: BAD signature from.*"
 color body "#ef5f6b" default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
 color bold "#0e1013" default
 color error "#ef5f6b" default
-color indicator "#1e242e" "#ccddee"
 color markers "#ef5f6b" "#ccddee"
 color message "#4dbdcb" default
 color normal default default
