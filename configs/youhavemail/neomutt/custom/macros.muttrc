@@ -2,7 +2,7 @@
 
 # Macros -----------------------------------------------------------------------
 
-# sync all mailboxes
+# local mbsync all mailboxes
 macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V -a<enter>\
 <shell-escape>notmuch new<enter><check-stats>' "sync all"

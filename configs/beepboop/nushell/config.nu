@@ -276,6 +276,10 @@ mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/sbc"
 mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/spag"
 mkdir $"($env.MY_EMAIL_DIR)/neomutt/msmtp"
 mkdir $"($env.MY_EMAIL_DIR)/neomutt/notmuch"
+mkdir $"($env.XDG_CACHE_HOME)/neomutt/leet/message_cache"
+mkdir $"($env.XDG_CACHE_HOME)/neomutt/sanch/message_cache"
+mkdir $"($env.XDG_CACHE_HOME)/neomutt/sbc/message_cache"
+mkdir $"($env.XDG_CACHE_HOME)/neomutt/spag/message_cache"
 
 # App Environment Variables ----------------------------------------------------
 

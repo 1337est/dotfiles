@@ -17,9 +17,14 @@ source ~/.config/neomutt/custom/sidebar.muttrc
 source ~/.config/neomutt/custom/macros.muttrc
 
 # Source email account files
-source ~/.config/neomutt/accounts/sanch.muttrc
-source ~/.config/neomutt/accounts/leet.muttrc
-source ~/.config/neomutt/accounts/sbc.muttrc
 source ~/.config/neomutt/accounts/spag.muttrc
-# source one more time to start on this email
+folder-hook $folder 'source ~/.config/neomutt/accounts/spag.muttrc'
+
+source ~/.config/neomutt/accounts/sbc.muttrc
+folder-hook $folder 'source ~/.config/neomutt/accounts/sbc.muttrc'
+
+source ~/.config/neomutt/accounts/leet.muttrc
+folder-hook $folder 'source ~/.config/neomutt/accounts/leet.muttrc'
+
 source ~/.config/neomutt/accounts/sanch.muttrc
+folder-hook $folder 'source ~/.config/neomutt/accounts/sanch.muttrc'

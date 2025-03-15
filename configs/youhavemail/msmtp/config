@@ -7,16 +7,6 @@ tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile ~/.local/share/email/neomutt/msmtp/default.log
 
-################# LEET
-account leet
-host smtp.gmail.com
-port 465
-tls_starttls off
-logfile ~/.local/share/email/neomutt/msmtp/leet.log
-eval echo from "$(pass google/leet/username)"
-eval echo user "$(pass google/leet/username)"
-passwordeval "pass google/leet/app_pass"
-
 ################# SANCH
 account sanch
 host smtp.gmail.com
@@ -26,6 +16,16 @@ logfile ~/.local/share/email/neomutt/msmtp/sanch.log
 eval echo from "$(pass google/sanch/username)"
 eval echo user "$(pass google/sanch/username)"
 passwordeval "pass google/sanch/app_pass"
+
+################# LEET
+account leet
+host smtp.gmail.com
+port 465
+tls_starttls off
+logfile ~/.local/share/email/neomutt/msmtp/leet.log
+eval echo from "$(pass google/leet/username)"
+eval echo user "$(pass google/leet/username)"
+passwordeval "pass google/leet/app_pass"
 
 ################# SBC
 account sbc

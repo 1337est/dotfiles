@@ -1,21 +1,24 @@
 # vim: syntax=neomuttrc
+set my_account = spag
+unmailboxes *
 
 # Who dis?
-set my_account = spag
 set real_name = "Cryptic Spaghettios"
 set from = "`pass google/$my_account/username`"
 
-set greeting = "Honorable %n,"
+set greeting = "Honorable %n,\n"
 set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
 
-set mbox_type = Maildir
-set folder = "$HOME/.local/share/email/neomutt/mbsync/$my_account"
+# IMAP settings
+set imap_pass = "`pass google/$my_account/app_pass`"
+set folder = "imaps://$from@imap.gmail.com:993"
+account-hook $folder "set imap_pass=`pass google/spag/app_pass`"
 
-# local store for mail from mbsync
+# inbox,drafts,sent,trash
 set spool_file = "+INBOX"
-set record = "+[Gmail].Sent Mail"
-set postponed = "+[Gmail].Drafts"
-set trash = "+[Gmail].Trash"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
 
 # Send mail with msmtp
 set sendmail = "msmtp -a $my_account"
@@ -24,18 +27,17 @@ set sendmail = "msmtp -a $my_account"
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
 
-mailboxes =INBOX
 named-mailboxes $from =INBOX
-mailboxes =[Gmail].Drafts
-mailboxes =[Gmail].Sent\ Mail
-mailboxes =[Gmail].Spam
-mailboxes =[Gmail].Starred
-mailboxes =[Gmail].Trash
+named-mailboxes $from =[Gmail]/Drafts
+named-mailboxes $from =[Gmail]/Sent\ Mail
+named-mailboxes $from =[Gmail]/Spam
+named-mailboxes $from =[Gmail]/Starred
+named-mailboxes $from =[Gmail]/Trash
 
-# mailbox synchronization settings
+# Maildir synchronization settings
 macro index,pager S "<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V $my_account<enter>\
-<shell-escape>notmuch new<enter><check-stats>" "sync-$my_account"
+<shell-escape>notmuch new<enter><check-stats>" "local mbsync-$my_account"
 
 macro index,pager <f4> "<sync-mailbox>\
 <enter-command>source ~/.config/neomutt/accounts/$my_account.muttrc<enter>\

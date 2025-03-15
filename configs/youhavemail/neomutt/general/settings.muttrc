@@ -8,7 +8,6 @@ set     menu_scroll = yes # menus scroll 1 line at a time (unset = page scroll)
 set     pipe_decode = yes # attempt to decode <pipe-message>'s
 set     pipe_decode_weed = yes # further controls header weeding
 set     query_command = "abook --mutt-query '%s'" # external address query
-set     timeout = 0 # seconds neomutt waits for input/times out
 set     wait_key = no # prompt for "press key to continue"
 set     tmp_dir = ~/.cache/neomutt/temp # temp file
 
@@ -28,6 +27,8 @@ set     beep_new = yes # Notify of new messages
 # Mailbox Settings -------------------------------------------------------------
 set     confirm_append = no # Prompt for append message to mailbox
 set     imap_check_subscribed = yes # fetch folders from mailbox server
+set     timeout = 0 # seconds neomutt waits for input/times out
+set     mail_check = 90 # how often to check for new mail
 set     mail_check_stats = yes # periodically <check-stats> with mail_check_stats_interval
 set     mail_check_stats_interval = 60 # seconds defaults 60
 set     delete = yes
