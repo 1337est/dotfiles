@@ -1,0 +1,60 @@
+# vim: syntax=neomuttrc
+
+# Pager Settings -------------------------------------------------------------
+set     pager_format="-%Z- %C/%m: %b  %-20.20n   %s%*  -- (%P)"
+set     markers = no # append a '+' marker at the beginning of wrapped lines
+set     pager_index_lines = 10 # index menu lines shown while in pager defaults 0
+set     pager_stop = yes # no idea what this does, doesn't seem to make a diff
+set     tilde = yes # puts ~ in the pagers gutter like vim
+set     quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+bind    pager j next-line
+bind    pager k previous-line
+bind    pager J next-unread
+bind    pager K previous-unread
+bind    pager l view-attachments
+bind    pager \CY view-attachments
+bind    pager \CP previous-entry
+bind    pager \CN next-entry
+bind    pager h exit
+bind    pager \CD half-down
+bind    pager \CU half-up
+bind pager gg top
+bind pager G bottom
+bind pager \* flag-message
+bind pager @ compose-to-sender
+bind pager R group-reply
+bind pager M mail
+
+# Header highlights in pager - hdrdefault of red with rgby after
+color hdrdefault "#ef5f6b" default
+color header "#ef5f6b" default "^Date"
+color header "#97ca72" default "^From"
+color header "#56cadd" default "^(To|CC|BCC)"
+color header "#f0cc89" default "^Subject"
+
+color quoted "#97ca72" default
+color quoted1 "#5ab0f6" default
+color quoted2 "#4dbdcb" default
+color quoted3 "#ebc275" default
+color quoted4 "#ef5f6b" default
+color quoted5 "#a13131" default
+
+color body "#a13131" default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
+color body "#6db9f7" default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"
+color body "#97ca72" default "\`[^\`]*\`"
+color body "#6db9f7" default "^# \.*"
+color body "#56cadd" default "^## \.*"
+color body "#a3d977" default "^### \.*"
+color body "#ebc275" default "^(\t| )*(-|\\*) \.*"
+color body "#56cadd" default "[;:][-o][)/(|]"
+color body "#56cadd" default "[;:][)(|]"
+color body "#56cadd" default "[ ][*][^*]*[*][ ]?"
+color body "#56cadd" default "[ ]?[*][^*]*[*][ ]"
+color body "#ef5f6b" default "(BAD signature)"
+color body "#4dbdcb" default "(Good signature)"
+color body "#1e242e" default "^gpg: Good signature .*"
+color body "#f0cc89" default "^gpg: "
+color body "#f0cc89" "#ef5f6b" "^gpg: BAD signature from.*"
+color body "#ef5f6b" default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+color bold "#0e1013" default
+

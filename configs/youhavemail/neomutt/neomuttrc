@@ -1,11 +1,25 @@
 # vim: syntax=neomuttrc
 
-# Source config files
-source ~/.config/neomutt/custom/unbind.muttrc
-source ~/.config/neomutt/custom/settings.muttrc
+# General config files
+source ~/.config/neomutt/general/settings.muttrc
+source ~/.config/neomutt/general/unbinds.muttrc
+
+# Neomutt menu settings
+source ~/.config/neomutt/custom/menus/index.muttrc
+source ~/.config/neomutt/custom/menus/pager.muttrc
+source ~/.config/neomutt/custom/menus/attach.muttrc
+source ~/.config/neomutt/custom/menus/editor.muttrc
+source ~/.config/neomutt/custom/menus/alias.muttrc
+source ~/.config/neomutt/custom/menus/query.muttrc
+
+# custom sidebar and macros
+source ~/.config/neomutt/custom/sidebar.muttrc
+source ~/.config/neomutt/custom/macros.muttrc
 
 # Source email account files
-source ~/.config/neomutt/accounts/spag.muttrc
-source ~/.config/neomutt/accounts/sbc.muttrc
+source ~/.config/neomutt/accounts/sanch.muttrc
 source ~/.config/neomutt/accounts/leet.muttrc
+source ~/.config/neomutt/accounts/sbc.muttrc
+source ~/.config/neomutt/accounts/spag.muttrc
+# source one more time to start on this email
 source ~/.config/neomutt/accounts/sanch.muttrc

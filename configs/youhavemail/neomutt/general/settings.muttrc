@@ -1,0 +1,54 @@
+# vim: syntax=neomuttrc
+
+# General Settings -------------------------------------------------------------
+set     abort_key = "<Esc>" # Ctrl-G by default
+set     charset = "utf-8" # char set used by terminal
+set     date_format = "%b.%d %y %I:%M %p"
+set     menu_scroll = yes # menus scroll 1 line at a time (unset = page scroll)
+set     pipe_decode = yes # attempt to decode <pipe-message>'s
+set     pipe_decode_weed = yes # further controls header weeding
+set     query_command = "abook --mutt-query '%s'" # external address query
+set     timeout = 0 # seconds neomutt waits for input/times out
+set     wait_key = no # prompt for "press key to continue"
+set     tmp_dir = ~/.cache/neomutt/temp # temp file
+
+# Message Settings -------------------------------------------------------------
+set     edit_headers = yes # Allows edit of headers for outgoing messages
+set     ask_cc = yes # Prompt for cc
+set     forward_format = "Fwd: %s"
+set     forward_quote = yes # use indent_string to quote forwarded messages
+set     reply_to = yes # Uses the Reply-To when replying to a message
+set     reverse_name = yes # From is used to reply
+set     reply_regex = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set     include = yes # include a copy of message in reply
+set     fast_reply = yes # skip to, cc, bcc when already provided
+set     use_envelope_from = yes # sets the envelope sender of the message
+set     beep_new = yes # Notify of new messages
+
+# Mailbox Settings -------------------------------------------------------------
+set     confirm_append = no # Prompt for append message to mailbox
+set     imap_check_subscribed = yes # fetch folders from mailbox server
+set     mail_check_stats = yes # periodically <check-stats> with mail_check_stats_interval
+set     mail_check_stats_interval = 60 # seconds defaults 60
+set     delete = yes
+
+# Mime/Mailcap Settings -------------------------------------------------------------
+set     mailcap_path = ~/.config/neomutt/mailcap
+set     mime_type_query_command = "file --mime-type -b %s"
+set     text_flowed = yes # generates "format=flowed" content for mail
+alternative_order   text/html text/plain text/enriched text/*
+# TODO: add mutt2khal and khal features for adding calendar items
+auto_view           text/html text/calendar application/ics
+
+# Color ------------------------------------------------------------------------
+# normal color text, current location, status bar, etc
+color normal default default
+color indicator bold "#0e1013" "#ccddee"
+color status "#f0cc89" "#0e1013"
+color tilde "#f0cc89" default
+color underline "#0e1013" default
+color signature "#a3d977" default
+color error "#ef5f6b" default
+color markers "#ef5f6b" "#ccddee"
+color message "#4dbdcb" default
+color search bold "#97ca72" default

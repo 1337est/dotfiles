@@ -1,0 +1,5 @@
+# vim: syntax=neomuttrc
+
+# Alias Settings -------------------------------------------------------------
+bind alias M mail
+

@@ -1,0 +1,5 @@
+# vim: syntax=neomuttrc
+
+# Query Settings -------------------------------------------------------------
+bind query M mail
+

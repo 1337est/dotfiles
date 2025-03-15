@@ -2,14 +2,16 @@
 
 # Who dis?
 set my_account = spag
-set real_name = "C. Spag"
-
+set real_name = "Cryptic Spaghettios"
 set from = "`pass google/$my_account/username`"
-alias $my_account $real_name <$from>
 
-# local store for mail from mbsync
+set greeting = "Honorable %n,"
+set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
+
 set mbox_type = Maildir
 set folder = "$HOME/.local/share/email/neomutt/mbsync/$my_account"
+
+# local store for mail from mbsync
 set spool_file = "+INBOX"
 set record = "+[Gmail].Sent Mail"
 set postponed = "+[Gmail].Drafts"
@@ -22,15 +24,13 @@ set sendmail = "msmtp -a $my_account"
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
 
-unmailboxes *
-mailboxes =INBOX =[Gmail].Drafts =[Gmail].Sent\ Mail
-mailboxes =[Gmail].Spam =[Gmail].Starred =[Gmail].Trash
-named-mailboxes "$from" "+INBOX"
-named-mailboxes "$from" "+[Gmail].Drafts"
-named-mailboxes "$from" "+[Gmail].Sent Mail"
-named-mailboxes "$from" "+[Gmail].Spam"
-named-mailboxes "$from" "+[Gmail].Starred"
-named-mailboxes "$from" "+[Gmail].Trash"
+mailboxes =INBOX
+named-mailboxes $from =INBOX
+mailboxes =[Gmail].Drafts
+mailboxes =[Gmail].Sent\ Mail
+mailboxes =[Gmail].Spam
+mailboxes =[Gmail].Starred
+mailboxes =[Gmail].Trash
 
 # mailbox synchronization settings
 macro index,pager S "<sync-mailbox><enter-command>unset wait_key<enter>\

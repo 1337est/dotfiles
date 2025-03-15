@@ -37,6 +37,7 @@ bind index,pager Z noop
 bind index,pager i noop
 bind index,pager,browser g noop # TODO:
 bind index h noop # TODO:
+bind index,pager m noop
 bind index,pager x noop
 
 # Ctrl-keys

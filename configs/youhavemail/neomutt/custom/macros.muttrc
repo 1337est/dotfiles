@@ -1,0 +1,42 @@
+# vim: syntax=neomuttrc
+
+# Macros -----------------------------------------------------------------------
+
+# sync all mailboxes
+macro index,pager $ '<sync-mailbox><enter-command>unset wait_key<enter>\
+<shell-escape>mbsync -V -a<enter>\
+<shell-escape>notmuch new<enter><check-stats>' "sync all"
+
+# move mail to trash
+macro index,pager d "<delete-message><sync-mailbox><check-stats>" "move message to trash"
+# purge mail!
+macro index,pager D "<purge-message><sync-mailbox><check-stats>" "Delete message"
+# move mail to inbox
+macro index,pager s "<save-message>=INBOX<enter><sync-mailbox><check-stats>" "move mail to inbox"
+
+# Add email to addressbook using 'abook'
+macro index,pager A "\
+<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return>\
+<pipe-message>abook --add-email<return>\
+<enter-command>set pipe_decode=\$my_pipe_decode; \
+unset my_pipe_decode<return>" "add the sender address to 'abook'"
+
+# I really tried to make this Ctrl-F 'notmuch' feature readable
+macro index \Cf "\
+<enter-command>unset wait_key<enter>\
+\
+<shell-escape>\
+read -p 'Enter a search term to find with notmuch: ' x;\
+echo \$x > ~/.local/share/email/neomutt/notmuch/search_term\
+<enter>\
+\
+<limit> ~i \
+\"\`\
+notmuch search --output=messages \
+\$(cat ~/.local/share/email/neomutt/notmuch/search_term) \
+| head -n 600 \
+| perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' \
+| perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \
+\`\"\
+<enter>" "Ctrl-F using 'notmuch'"
+

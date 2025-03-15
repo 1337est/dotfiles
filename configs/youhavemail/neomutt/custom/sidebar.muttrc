@@ -1,0 +1,18 @@
+# vim: syntax=neomuttrc
+
+# Sidebar Settings -------------------------------------------------------------
+set     sidebar_visible = yes
+set     sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
+set     sidebar_short_path = no
+bind    index \CP sidebar-prev
+bind    index \CN sidebar-next
+bind    index \CY sidebar-open
+bind    index,pager B   sidebar-toggle-visible
+
+# Sidebar highlight selection/nav lines
+color sidebar_flagged italic bold underline "#f0cc89" default
+color sidebar_new bold "#f0cc89" "#0e1013"
+color sidebar_indicator bold "#0e1013" "#97ca72"
+color sidebar_highlight bold "#0e1013" "#ebc275"
+color sidebar_divider bold "#1e242e" "#0e1013"
+

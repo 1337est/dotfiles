@@ -2,14 +2,16 @@
 
 # Who dis?
 set my_account = sbc
-set real_name = "Adrian Sanchez"
-
+set real_name = "Adrian Rene"
 set from = "`pass yahoo/$my_account/username`"
-alias $my_account $real_name <$from>
 
-# View mail with isyncrc via mbsync
+set greeting = "Hello %n,"
+set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
+
 set mbox_type = Maildir
 set folder = "$HOME/.local/share/email/neomutt/mbsync/$my_account"
+
+# View mail with isyncrc via mbsync
 set spool_file = "+INBOX"
 set record = "+Sent"
 set postponed = "+Draft"
@@ -22,14 +24,14 @@ set sendmail = "msmtp -a $my_account"
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
 
-unmailboxes *
-mailboxes =INBOX =Draft =Sent =Bulk =Archive =Trash
-named-mailboxes "$from" "+INBOX"
-named-mailboxes "$from" "+Draft"
-named-mailboxes "$from" "+Sent"
-named-mailboxes "$from" "+Bulk"
-named-mailboxes "$from" "+Archive"
-named-mailboxes "$from" "+Trash"
+mailboxes =INBOX
+named-mailboxes $from =INBOX
+mailboxes =Draft
+mailboxes =Sent
+mailboxes =Bulk
+mailboxes =Archive
+mailboxes =Trash
+
 
 # mailbox synchronization settings
 macro index,pager S "<sync-mailbox><enter-command>unset wait_key<enter>\

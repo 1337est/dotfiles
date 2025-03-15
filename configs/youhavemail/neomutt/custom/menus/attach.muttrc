@@ -1,0 +1,7 @@
+# vim: syntax=neomuttrc
+
+bind    attach l view-mailcap
+bind    attach h exit
+bind    attach @ compose-to-sender
+color   attachment "#ca72e4" default
+
