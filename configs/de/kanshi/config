@@ -14,6 +14,8 @@ profile home {
     exec hyprctl dispatch moveworkspacetomonitor 5 HDMI-A-1
     exec hyprctl dispatch moveworkspacetomonitor 6 HDMI-A-1
     exec hyprctl keyword windowrulev2 workspace 5 silent, class:discord
+    exec pkill waybar
+    exec hyprctl dispatch exec waybar
 }
 
 profile laptop {
@@ -25,4 +27,6 @@ profile laptop {
     exec hyprctl keyword workspace 5, name:chat, monitor:eDP-1, persistent:true
     exec hyprctl keyword workspace 6, name:file, monitor:eDP-1, persistent:true
     exec hyprctl keyword windowrulev2 workspace 5 silent, class:discord
+    exec pkill waybar
+    exec hyprctl dispatch exec waybar
 }
