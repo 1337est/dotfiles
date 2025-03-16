@@ -1,6 +1,5 @@
 # vim: syntax=neomuttrc
 set my_account = sbc
-unmailboxes *
 
 # Who dis?
 set real_name = "Adrian Rene"
@@ -12,10 +11,9 @@ set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
 # IMAP settings
 set imap_pass = "`pass yahoo/$my_account/app_pass`"
 set folder = "imaps://$from@imap.mail.att.net:993"
-account-hook $folder "set imap_pass=`pass yahoo/sbc/app_pass`"
 
 # inbox,drafts,sent,trash
-set spool_file = "+INBOX"
+set spool_file = $folder
 set postponed = "+Draft"
 set record = "+Sent"
 set trash = "+Trash"
@@ -27,11 +25,12 @@ set sendmail = "msmtp -a $my_account"
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
 
-named-mailboxes $from =INBOX
-named-mailboxes $from =Draft
-named-mailboxes $from =Sent
-named-mailboxes $from =Bulk
-named-mailboxes $from =Archive
-named-mailboxes $from =Trash
+mailboxes -label $from/INBOX    -notify -poll =INBOX
+mailboxes -label $from/Drafts   -notify -poll =Draft
+mailboxes -label $from/Sent     -notify -poll =Sent
+mailboxes -label $from/Bulk     -notify -poll =Bulk
+mailboxes -label $from/Archive  -notify -poll =Archive
+mailboxes -label $from/Trash    -notify -poll =Trash
+account-hook $folder "set imap_user=`pass yahoo/sbc/username`; set imap_pass=`pass yahoo/sbc/app_pass`"
 
 unset my_account

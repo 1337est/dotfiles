@@ -1,6 +1,5 @@
 # vim: syntax=neomuttrc
 set my_account = spag
-unmailboxes *
 
 # Who dis?
 set real_name = "Cryptic Spaghettios"
@@ -12,10 +11,9 @@ set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
 # IMAP settings
 set imap_pass = "`pass google/$my_account/app_pass`"
 set folder = "imaps://$from@imap.gmail.com:993"
-account-hook $folder "set imap_pass=`pass google/spag/app_pass`"
 
 # inbox,drafts,sent,trash
-set spool_file = "+INBOX"
+set spool_file = $folder
 set postponed = "+[Gmail]/Drafts"
 set record = "+[Gmail]/Sent Mail"
 set trash = "+[Gmail]/Trash"
@@ -27,11 +25,12 @@ set sendmail = "msmtp -a $my_account"
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
 
-named-mailboxes $from =INBOX
-named-mailboxes $from =[Gmail]/Drafts
-named-mailboxes $from =[Gmail]/Sent\ Mail
-named-mailboxes $from =[Gmail]/Spam
-named-mailboxes $from =[Gmail]/Starred
-named-mailboxes $from =[Gmail]/Trash
+mailboxes -label $from/INBOX    -notify -poll =INBOX
+mailboxes -label $from/Drafts   -notify -poll =[Gmail]/Drafts
+mailboxes -label $from/Sent     -notify -poll =[Gmail]/Sent\ Mail
+mailboxes -label $from/Spam     -notify -poll =[Gmail]/Spam
+mailboxes -label $from/Starred  -notify -poll =[Gmail]/Starred
+mailboxes -label $from/Trash    -notify -poll =[Gmail]/Trash
+account-hook $folder "set imap_user=`pass google/spag/username`; set imap_pass=`pass google/spag/app_pass`"
 
 unset my_account

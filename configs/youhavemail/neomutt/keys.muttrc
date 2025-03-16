@@ -106,19 +106,19 @@ macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
 # switch to accounts using function keys
 macro index,pager <f1> "<sync-mailbox>\
 <enter-command>source ~/.config/neomutt/accounts/sanch.muttrc<enter>\
-<change-folder>!<enter>;<check-stats>" "switch to sanch"
+<change-folder>!<enter><check-stats>" "switch to sanch"
 
 macro index,pager <f2> "<sync-mailbox>\
 <enter-command>source ~/.config/neomutt/accounts/leet.muttrc<enter>\
-<change-folder>!<enter>;<check-stats>" "switch to leet"
+<change-folder>!<enter><check-stats>" "switch to leet"
 
 macro index,pager <f3> "<sync-mailbox>\
 <enter-command>source ~/.config/neomutt/accounts/sbc.muttrc<enter>\
-<change-folder>!<enter>;<check-stats>" "switch to sbc"
+<change-folder>!<enter><check-stats>" "switch to sbc"
 
 macro index,pager <f4> "<sync-mailbox>\
 <enter-command>source ~/.config/neomutt/accounts/spag.muttrc<enter>\
-<change-folder>!<enter>;<check-stats>" "switch to spag"
+<change-folder>!<enter><check-stats>" "switch to spag"
 
 # Add email to addressbook using 'abook'
 macro index,pager a "\

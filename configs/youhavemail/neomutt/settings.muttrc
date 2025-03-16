@@ -23,12 +23,13 @@ set     include = yes # include a copy of message in reply
 set     fast_reply = yes # skip to, cc, bcc when already provided
 set     use_envelope_from = yes # sets the envelope sender of the message
 set     beep_new = yes # Notify of new messages
+set     new_mail_command = "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail' &"
 
 # Mailbox Settings -------------------------------------------------------------
 set     confirm_append = no # Prompt for append message to mailbox
 set     imap_check_subscribed = yes # fetch folders from mailbox server
 set     timeout = 0 # seconds neomutt waits for input/times out
-set     mail_check = 90 # how often to check for new mail
+set     mail_check = 300 # how often to check for new mail
 set     mail_check_stats = yes # periodically <check-stats> with mail_check_stats_interval
 set     mail_check_stats_interval = 60 # seconds defaults 60
 set     delete = yes
