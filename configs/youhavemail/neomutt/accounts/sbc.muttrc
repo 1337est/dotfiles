@@ -34,13 +34,4 @@ named-mailboxes $from =Bulk
 named-mailboxes $from =Archive
 named-mailboxes $from =Trash
 
-# Maildir synchronization settings
-macro index,pager S "<sync-mailbox><enter-command>unset wait_key<enter>\
-<shell-escape>mbsync -V $my_account<enter>\
-<shell-escape>notmuch new<enter><check-stats>" "local mbsync-$my_account"
-
-macro index,pager <f3> "<sync-mailbox>\
-<enter-command>source ~/.config/neomutt/accounts/$my_account.muttrc<enter>\
-<change-folder>!<enter>;<check-stats>" "switch to $my_account"
-
 unset my_account

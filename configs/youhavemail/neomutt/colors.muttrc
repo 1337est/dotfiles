@@ -1,30 +1,56 @@
 # vim: syntax=neomuttrc
 
-# Pager Settings -------------------------------------------------------------
-set     pager_format="-%Z- %C/%m: %b  %-20.20n   %s%*  -- (%P)"
-set     markers = no # append a '+' marker at the beginning of wrapped lines
-set     pager_index_lines = 10 # index menu lines shown while in pager defaults 0
-set     pager_stop = yes # no idea what this does, doesn't seem to make a diff
-set     tilde = yes # puts ~ in the pagers gutter like vim
-set     quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-bind    pager j next-line
-bind    pager k previous-line
-bind    pager J next-unread
-bind    pager K previous-unread
-bind    pager l view-attachments
-bind    pager \CY view-attachments
-bind    pager \CP previous-entry
-bind    pager \CN next-entry
-bind    pager h exit
-bind    pager \CD half-down
-bind    pager \CU half-up
-bind pager gg top
-bind pager G bottom
-bind pager \* flag-message
-bind pager @ compose-to-sender
-bind pager R group-reply
-bind pager M mail
+# General Colors ------------------------------------------------------------------------
+# normal color text, current location, status bar, etc
+color normal default default
+color indicator bold "#0e1013" "#ccddee"
+color status "#f0cc89" "#0e1013"
+color tilde "#f0cc89" default
+color underline "#0e1013" default
+color signature "#a3d977" default
+color error "#ef5f6b" default
+color markers "#ef5f6b" "#ccddee"
+color message "#4dbdcb" default
+color search bold "#97ca72" default
 
+# Sidebar Colors ------------------------------------------------------------------------
+# Sidebar highlight selection/nav lines
+color sidebar_flagged italic bold underline "#f0cc89" default
+color sidebar_new bold "#f0cc89" "#0e1013"
+color sidebar_indicator bold "#0e1013" "#97ca72"
+color sidebar_highlight bold "#0e1013" "#ebc275"
+color sidebar_divider bold "#1e242e" "#0e1013"
+
+# Index Menu Colors ------------------------------------------------------------------------
+# Default index color scheme
+color index "#ebc275" default '.*'
+color index_number "#5ab0f6" default
+color index_flags "#ef5f6b" default '.*'
+color index_tags "#a3d977" default '.*'
+color index_author "#ef5f6b" default '.*'
+color index_subject "#4dbdcb" default '.*'
+
+# ~N New mail in index
+color index bold "#f0cc89" "#0e1013" "~N"
+color index_author "#a13131" "#0e1013" "~N"
+color index_subject "#56cadd" "#0e1013" "~N"
+color index bold "#f0cc89" "#0e1013" "~O"
+color index_author "#a13131" "#0e1013" "~O"
+color index_subject "#56cadd" "#0e1013" "~O"
+
+# ~F Flagged mail in index
+color index italic "#f0cc89" default "~F"
+color index_date bold underline "#f0cc89" default "~F"
+color index_author bold underline "#a13131" default "~F"
+color index_subject "#56cadd" default "~F"
+
+# ~T Tagged mail in index
+color index_flags italic bold "#0e1013" "#a3d977" "~T"
+
+# ~D Deleted mail in index
+color index bold "#0e1013" default "~D"
+
+# Pager Menu Colors ------------------------------------------------------------------------
 # Header highlights in pager - hdrdefault of red with rgby after
 color hdrdefault "#ef5f6b" default
 color header "#ef5f6b" default "^Date"
@@ -58,3 +84,4 @@ color body "#f0cc89" "#ef5f6b" "^gpg: BAD signature from.*"
 color body "#ef5f6b" default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
 color bold "#0e1013" default
 
+color attachment "#ca72e4" default

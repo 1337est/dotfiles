@@ -1,0 +1,148 @@
+# vim: syntax=neomuttrc
+
+# Unbinds ----------------------------------------------------------------------
+
+# https://neomutt.org/guide/configuration.html#6-3-%C2%A0enter-versus-return
+bind generic [ noop
+bind generic ] noop
+bind generic,pager <Esc>/ noop # <search-reverse>
+bind pager <Return> noop
+bind pager <Enter> noop
+bind pager <Backspace> noop
+bind index,pager <Space> noop
+bind index,pager i noop
+bind index,pager g noop
+bind index h noop
+bind index,pager,browser N noop
+bind index,pager \CB noop # unbind urlview
+bind index,pager <Esc>c noop # <change-folder-readonly>
+bind index <Esc>i noop # <change-newsgroup-readonly>
+bind index,pager,attach <Esc>P noop # <check-traditional-pgp>
+bind index,pager <Esc>C noop # <decode-copy>
+bind index,pager <Esc>s noop # <decode-save>
+bind index,pager <Esc>k noop # <mail-key>
+bind index <Esc><Tab> noop # <previous-new-then-unread> <BackTab> (shift tab)
+bind index <Esc>t noop # <tag-thread>
+bind index <Esc>V noop # <collapse-all>-toggle all threads
+bind index <Esc>v noop # <collapse-thread>-toggle current thread
+bind index,pager <Esc>n noop # <next-subthread>
+bind index,pager <Esc>p noop # <previous-subthread>
+bind index,pager <Esc>r noop # <read-subthread>
+bind index,pager <Esc>d noop # <delete-subthread>
+bind index,pager <Esc>u noop # <undelete-subthread>
+bind index,pager,attach <Esc>e noop # <resend-message>
+bind index <Esc>l noop # <show-limit>
+bind compose <Esc>k noop # <attach-key>
+bind compose <Esc>i noop # <edit-content-id>
+bind compose <Esc>e noop # <edit-file>
+bind compose <Esc>f noop # <edit-from>
+bind editor <Esc>b noop # <backward-word>
+bind editor <Esc>f noop # <forward-word>
+bind editor <Esc>c noop # <capitalize-word>
+bind editor <Esc>l noop # <downcase-word>
+bind editor <Esc>u noop # <upcase-word>
+bind editor <Esc>? noop # <help>
+bind editor \Ch help
+bind editor <Esc>d noop # <kill-eow>
+
+# Menus
+bind generic,pager          N search-opposite
+
+bind index                  j next-entry
+bind pager                  j next-line
+
+bind index                  k previous-entry
+bind pager                  k previous-line
+
+bind index                  l display-message
+bind pager                  l view-attachments
+bind browser                l select-entry
+bind attach                 l view-mailcap
+
+bind pager,attach           h exit
+bind browser                h goto-parent
+
+bind index,pager,browser    \CD half-down
+bind index,pager,browser    \CU half-up
+
+bind index                  gg first-entry
+bind pager                  gg top
+bind browser                gg top-page
+
+bind index                  G last-entry
+bind pager                  G bottom
+bind browser                G bottom-page
+
+bind index                  \# tag-entry
+
+bind index,pager            \* flag-message
+
+bind index,pager,attach     @ compose-to-sender
+
+bind index,pager            R group-reply
+
+bind index,pager            <BackTab> previous-new-then-unread
+
+bind index                  \CP sidebar-prev
+bind pager                  \CP previous-entry
+
+bind index                  \CN sidebar-next
+bind pager                  \CN next-entry
+
+bind index                  \CY sidebar-open
+bind pager                  \CY view-attachments
+
+bind index,pager            B sidebar-toggle-visible
+
+bind editor                 <Tab> complete-query
+
+# Macros -----------------------------------------------------------------------
+
+# mbsync all mailboxes for local storage
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+<shell-escape>mbsync -V -a<enter>\
+<shell-escape>notmuch new<enter><check-stats>' "sync all"
+
+# switch to accounts using function keys
+macro index,pager <f1> "<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/sanch.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>" "switch to sanch"
+
+macro index,pager <f2> "<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/leet.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>" "switch to leet"
+
+macro index,pager <f3> "<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/sbc.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>" "switch to sbc"
+
+macro index,pager <f4> "<sync-mailbox>\
+<enter-command>source ~/.config/neomutt/accounts/spag.muttrc<enter>\
+<change-folder>!<enter>;<check-stats>" "switch to spag"
+
+# Add email to addressbook using 'abook'
+macro index,pager a "\
+<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return>\
+<pipe-message>abook --add-email<return>\
+<enter-command>set pipe_decode=\$my_pipe_decode; \
+unset my_pipe_decode<return>" "add the sender address to 'abook'"
+
+# I really tried to make this Ctrl-F 'notmuch' find feature readable
+macro index \Cf "\
+<enter-command>unset wait_key<enter>\
+\
+<shell-escape>\
+read -p 'Enter a search term to find with notmuch: ' x;\
+echo \$x > ~/.local/share/email/neomutt/notmuch/search_term\
+<enter>\
+\
+<limit> ~i \
+\"\`\
+notmuch search --output=messages \
+\$(cat ~/.local/share/email/neomutt/notmuch/search_term) \
+| head -n 600 \
+| perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' \
+| perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \
+\`\"\
+<enter>" "Ctrl-F using 'notmuch'"
+

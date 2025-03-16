@@ -1,5 +1,0 @@
-# vim: syntax=neomuttrc
-
-# Editor Settings -------------------------------------------------------------
-bind editor <Tab> complete-query
-

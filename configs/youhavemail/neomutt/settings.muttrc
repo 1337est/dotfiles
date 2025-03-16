@@ -41,15 +41,31 @@ alternative_order   text/html text/plain text/enriched text/*
 # TODO: add mutt2khal and khal features for adding calendar items
 auto_view           text/html text/calendar application/ics
 
-# Color ------------------------------------------------------------------------
-# normal color text, current location, status bar, etc
-color normal default default
-color indicator bold "#0e1013" "#ccddee"
-color status "#f0cc89" "#0e1013"
-color tilde "#f0cc89" default
-color underline "#0e1013" default
-color signature "#a3d977" default
-color error "#ef5f6b" default
-color markers "#ef5f6b" "#ccddee"
-color message "#4dbdcb" default
-color search bold "#97ca72" default
+# Sidebar Settings -------------------------------------------------------------
+set     sidebar_visible = yes
+set     sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
+set     sidebar_short_path = no
+
+# Index Menu Settings ---------------------------------------------------------------
+set     status_on_top = yes # yes top, no bottom
+set     status_chars = " *%A"
+set     status_format = "-%r-NeoMutt: %D [Msgs:%<M?%M/>%m%<n? New:%n>%<o? Old:%o>%<d? Del:%d>%<F? Flag:%F>%<t? Tag:%t>%<p? Post:%p>%<b? Inc:%b>%<l? %l>]---(%<T?%T/>%s/%S)-%>-(%P)---"
+set     index_format='%4C %Z %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> %-15.15L (%<l?%4l&%4c>) %s'
+set     mark_old = no # marks unread messages with an "O" if you leave mailbox without reading
+set     use_threads = reverse # sort via threads starting from top to bottom
+set     sort = last-date # sort within index
+set     sort_aux = date # sort within threads
+set     uncollapse_jump = yes # jump to unread if thread is un-collapsed
+# Gutter characters to indicate flags, cryptographic tags, and to flags
+set     flag_chars  = "#*d@ronON-"
+set     crypt_chars = "VPsp "
+set     to_chars    = "X gc~SR"
+
+# Pager Menu Settings -------------------------------------------------------------
+set     pager_format="-%Z- %C/%m: %b  %-20.20n   %s%*  -- (%P)"
+set     markers = no # append a '+' marker at the beginning of wrapped lines
+set     pager_index_lines = 10 # index menu lines shown while in pager defaults 0
+set     pager_stop = yes # no idea what this does, doesn't seem to make a diff
+set     tilde = yes # puts ~ in the pagers gutter like vim
+set     quote_regex = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
