@@ -7,13 +7,17 @@ source ~/.config/neomutt/colors.muttrc
 
 # Source email account files
 source ~/.config/neomutt/accounts/spag.muttrc
-folder-hook $folder "source ~/.config/neomutt/accounts/spag.muttrc"
+account-hook "imaps://`pass google/spag/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/spag.muttrc"
+folder-hook "imaps://`pass google/spag/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/spag.muttrc"
 
 source ~/.config/neomutt/accounts/sbc.muttrc
-folder-hook $folder "source ~/.config/neomutt/accounts/sbc.muttrc"
+account-hook "imaps://`pass yahoo/sbc/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/sbc.muttrc"
+folder-hook "imaps://`pass yahoo/sbc/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/sbc.muttrc"
 
 source ~/.config/neomutt/accounts/leet.muttrc
-folder-hook $folder "source ~/.config/neomutt/accounts/leet.muttrc"
+account-hook "imaps://`pass google/leet/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/leet.muttrc"
+folder-hook "imaps://`pass google/leet/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/leet.muttrc"
 
 source ~/.config/neomutt/accounts/sanch.muttrc
-folder-hook $folder "source ~/.config/neomutt/accounts/sanch.muttrc"
+account-hook "imaps://`pass google/sanch/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/sanch.muttrc"
+folder-hook "imaps://`pass google/sanch/username`@imap.gmail.com:993" "source ~/.config/neomutt/accounts/sanch.muttrc"
