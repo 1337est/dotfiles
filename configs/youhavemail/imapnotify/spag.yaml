@@ -11,28 +11,28 @@ configurations:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'spag:INBOX'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in INBOX."
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New message(s) for spag in INBOX.'"
             -
                 mailbox: "[Gmail]/Drafts"
                 onNewMail: "mbsync 'spag:[Gmail]/Drafts'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in [Gmail]/Drafts."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Sent Mail"
                 onNewMail: "mbsync 'spag:[Gmail]/Sent Mail'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in [Gmail]/Sent Mail."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Trash"
                 onNewMail: "mbsync 'spag:[Gmail]/Trash'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in [Gmail]/Trash."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Starred"
                 onNewMail: "mbsync 'spag:[Gmail]/Starred'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in [Gmail]/Starred."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Spam"
                 onNewMail: "mbsync 'spag:[Gmail]/Spam'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in [Gmail]/Spam."
+                onNewMailPost: SKIPPED
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'spag:Archive'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New messages for spag in Archive."
+                onNewMailPost: SKIPPED

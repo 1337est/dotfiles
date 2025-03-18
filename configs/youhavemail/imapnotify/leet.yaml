@@ -11,28 +11,28 @@ configurations:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'leet:INBOX'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in INBOX."
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New message(s) for leet in INBOX.'"
             -
                 mailbox: "[Gmail]/Drafts"
                 onNewMail: "mbsync 'leet:[Gmail]/Drafts'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Drafts."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Sent Mail"
                 onNewMail: "mbsync 'leet:[Gmail]/Sent Mail'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Sent Mail."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Trash"
                 onNewMail: "mbsync 'leet:[Gmail]/Trash'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Trash."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Starred"
                 onNewMail: "mbsync 'leet:[Gmail]/Starred'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Starred."
+                onNewMailPost: SKIPPED
             -
                 mailbox: "[Gmail]/Spam"
                 onNewMail: "mbsync 'leet:[Gmail]/Spam'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Spam."
+                onNewMailPost: SKIPPED
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'leet:Archive'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in Archive."
+                onNewMailPost: SKIPPED

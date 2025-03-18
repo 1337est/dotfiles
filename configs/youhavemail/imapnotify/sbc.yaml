@@ -11,28 +11,28 @@ configurations:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'sbc:INBOX'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in INBOX'"
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New message(s) for sbc in INBOX'"
             -
                 mailbox: "Draft"
                 onNewMail: "mbsync 'sbc:Draft'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Drafts'"
+                onNewMailPost: SKIPPED
             -
                 mailbox: "Sent"
                 onNewMail: "mbsync 'sbc:Sent'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Sent'"
+                onNewMailPost: SKIPPED
             -
                 mailbox: "Trash"
                 onNewMail: "mbsync 'sbc:Trash'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Trash'"
+                onNewMailPost: SKIPPED
             -
                 mailbox: "Starred"
                 onNewMail: "mbsync 'sbc:Starred'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Starred'"
+                onNewMailPost: SKIPPED
             -
                 mailbox: "Bulk"
                 onNewMail: "mbsync 'sbc:Bulk'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Spam'"
+                onNewMailPost: SKIPPED
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'sbc:Archive'"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Archive'"
+                onNewMailPost: SKIPPED
