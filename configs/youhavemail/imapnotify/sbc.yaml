@@ -5,35 +5,34 @@ configurations:
         tls: true
         tlsOptions:
             rejectUnauthorized: true
-            starttls: true
         usernameCMD: "pass yahoo/sbc/username"
         passwordCMD: "pass yahoo/sbc/app_pass"
         boxes:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'sbc:INBOX'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in INBOX'"
             -
                 mailbox: "Draft"
                 onNewMail: "mbsync 'sbc:Draft'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Drafts'"
             -
                 mailbox: "Sent"
                 onNewMail: "mbsync 'sbc:Sent'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Sent'"
             -
                 mailbox: "Trash"
                 onNewMail: "mbsync 'sbc:Trash'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Trash'"
             -
                 mailbox: "Starred"
                 onNewMail: "mbsync 'sbc:Starred'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Starred'"
             -
                 mailbox: "Bulk"
                 onNewMail: "mbsync 'sbc:Bulk'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Spam'"
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'sbc:Archive'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New messages for sbc in Archive'"

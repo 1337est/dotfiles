@@ -5,35 +5,34 @@ configurations:
         tls: true
         tlsOptions:
             rejectUnauthorized: true
-            starttls: true
         usernameCMD: "pass google/sanch/username"
         passwordCMD: "pass google/sanch/app_pass"
         boxes:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'sanch:INBOX'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in INBOX."
             -
                 mailbox: "[Gmail]/Drafts"
                 onNewMail: "mbsync 'sanch:[Gmail]/Drafts'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in [Gmail]/Drafts."
             -
                 mailbox: "[Gmail]/Sent Mail"
                 onNewMail: "mbsync 'sanch:[Gmail]/Sent Mail'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in [Gmail]/Sent Mail."
             -
                 mailbox: "[Gmail]/Trash"
                 onNewMail: "mbsync 'sanch:[Gmail]/Trash'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in [Gmail]/Trash."
             -
                 mailbox: "[Gmail]/Starred"
                 onNewMail: "mbsync 'sanch:[Gmail]/Starred'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in [Gmail]/Starred."
             -
                 mailbox: "[Gmail]/Spam"
                 onNewMail: "mbsync 'sanch:[Gmail]/Spam'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in [Gmail]/Spam."
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'sanch:Archive'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New messages for sanch in Archive."

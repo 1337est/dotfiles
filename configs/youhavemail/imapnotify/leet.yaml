@@ -5,35 +5,34 @@ configurations:
         tls: true
         tlsOptions:
             rejectUnauthorized: true
-            starttls: true
         usernameCMD: "pass google/leet/username"
         passwordCMD: "pass google/leet/app_pass"
         boxes:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'leet:INBOX'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in INBOX."
             -
                 mailbox: "[Gmail]/Drafts"
                 onNewMail: "mbsync 'leet:[Gmail]/Drafts'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Drafts."
             -
                 mailbox: "[Gmail]/Sent Mail"
                 onNewMail: "mbsync 'leet:[Gmail]/Sent Mail'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Sent Mail."
             -
                 mailbox: "[Gmail]/Trash"
                 onNewMail: "mbsync 'leet:[Gmail]/Trash'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Trash."
             -
                 mailbox: "[Gmail]/Starred"
                 onNewMail: "mbsync 'leet:[Gmail]/Starred'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Starred."
             -
                 mailbox: "[Gmail]/Spam"
                 onNewMail: "mbsync 'leet:[Gmail]/Spam'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in [Gmail]/Spam."
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'leet:Archive'"
-                onNewMailPost: SKIP
+                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New messages for leet in Archive."
