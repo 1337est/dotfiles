@@ -6,33 +6,31 @@ unmailboxes *
 set real_name = "Adrian R. Sanchez"
 set from = "`pass google/$my_account/username`"
 
+# Send mail with msmtp
+set sendmail = "msmtp -a $my_account"
 set greeting = "Dear %n,\n"
 set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
 
-# IMAP settings
-set imap_pass = "`pass google/$my_account/app_pass`"
-set folder = "imaps://$from@imap.gmail.com:993"
-# Send mail with msmtp
-set sendmail = "msmtp -a $my_account"
+# Mailbox account settings
+set mbox_type = Maildir
+set folder = "$XDG_DATA_HOME/email/neomutt/mbsync/$my_account"
 
 # mailboxes
 set spool_file = "+INBOX"
-set postponed = "+[Gmail]/Drafts"
-set record = "+[Gmail]/Sent Mail"
-set trash = "+[Gmail]/Trash"
+set postponed = "+[Gmail].Drafts"
+set record = "+[Gmail].Sent Mail"
+set trash = "+[Gmail].Trash"
 
 mailboxes -label Inbox/$my_account      =INBOX
-mailboxes -label Drafts/$my_account     =[Gmail]/Drafts
-mailboxes -label Sent/$my_account       =[Gmail]/Sent\ Mail
-mailboxes -label Trash/$my_account      =[Gmail]/Trash
-mailboxes -label Starred/$my_account    =[Gmail]/Starred
-mailboxes -label Spam/$my_account       =[Gmail]/Spam
+mailboxes -label Drafts/$my_account     =[Gmail].Drafts
+mailboxes -label Sent/$my_account       =[Gmail].Sent\ Mail
+mailboxes -label Trash/$my_account      =[Gmail].Trash
+mailboxes -label Starred/$my_account    =[Gmail].Starred
+mailboxes -label Spam/$my_account       =[Gmail].Spam
 mailboxes -label Archive/$my_account    =Archive
 
 # Cache settings
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
-
-account-hook $folder "set imap_user=`pass google/sanch/username`; set imap_pass=`pass google/sanch/app_pass`"
 
 unset my_account

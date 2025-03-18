@@ -1,0 +1,39 @@
+configurations:
+    -
+        host: imap.mail.att.net
+        port: 993
+        tls: true
+        tlsOptions:
+            rejectUnauthorized: true
+            starttls: true
+        usernameCMD: "pass yahoo/sbc/username"
+        passwordCMD: "pass yahoo/sbc/app_pass"
+        boxes:
+            -
+                mailbox: INBOX
+                onNewMail: "mbsync 'sbc:INBOX'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "Draft"
+                onNewMail: "mbsync 'sbc:Draft'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "Sent"
+                onNewMail: "mbsync 'sbc:Sent'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "Trash"
+                onNewMail: "mbsync 'sbc:Trash'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "Starred"
+                onNewMail: "mbsync 'sbc:Starred'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "Bulk"
+                onNewMail: "mbsync 'sbc:Bulk'"
+                onNewMailPost: SKIP
+            -
+                mailbox: Archive
+                onNewMail: "mbsync 'sbc:Archive'"
+                onNewMailPost: SKIP

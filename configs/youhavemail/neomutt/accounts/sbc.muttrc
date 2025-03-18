@@ -6,17 +6,17 @@ unmailboxes *
 set real_name = "Adrian Rene"
 set from = "`pass yahoo/$my_account/username`"
 
+# Send mail with msmtp
+set sendmail = "msmtp -a $my_account"
 set greeting = "Hello %n,\n"
 set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
 
-# IMAP settings
-set imap_pass = "`pass yahoo/$my_account/app_pass`"
-set folder = "imaps://$from@imap.mail.att.net:993"
-# Send mail with msmtp
-set sendmail = "msmtp -a $my_account"
+# Mailbox account settings
+set mbox_type = Maildir
+set folder = "$XDG_DATA_HOME/email/neomutt/mbsync/$my_account"
 
 # inbox,drafts,sent,trash
-set spool_file = $folder
+set spool_file = "+INBOX"
 set postponed = "+Draft"
 set record = "+Sent"
 set trash = "+Trash"
@@ -32,7 +32,5 @@ mailboxes -label Archive/$my_account    =Archive
 # Cache settings
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"
 set message_cache_dir = "$XDG_CACHE_HOME/neomutt/$my_account/message_cache"
-
-account-hook $folder "set imap_user=`pass yahoo/sbc/username`; set imap_pass=`pass yahoo/sbc/app_pass`"
 
 unset my_account

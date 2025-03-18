@@ -1,0 +1,39 @@
+configurations:
+    -
+        host: imap.gmail.com
+        port: 993
+        tls: true
+        tlsOptions:
+            rejectUnauthorized: true
+            starttls: true
+        usernameCMD: "pass google/spag/username"
+        passwordCMD: "pass google/spag/app_pass"
+        boxes:
+            -
+                mailbox: INBOX
+                onNewMail: "mbsync 'spag:INBOX'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Drafts"
+                onNewMail: "mbsync 'spag:[Gmail]/Drafts'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Sent Mail"
+                onNewMail: "mbsync 'spag:[Gmail]/Sent Mail'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Trash"
+                onNewMail: "mbsync 'spag:[Gmail]/Trash'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Starred"
+                onNewMail: "mbsync 'spag:[Gmail]/Starred'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Spam"
+                onNewMail: "mbsync 'spag:[Gmail]/Spam'"
+                onNewMailPost: SKIP
+            -
+                mailbox: Archive
+                onNewMail: "mbsync 'spag:Archive'"
+                onNewMailPost: SKIP

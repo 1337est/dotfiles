@@ -23,7 +23,9 @@ set     include = yes # include a copy of message in reply
 set     fast_reply = yes # skip to, cc, bcc when already provided
 set     use_envelope_from = yes # sets the envelope sender of the message
 set     beep_new = yes # Notify of new messages
-set     new_mail_command = "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail' &"
+# NOTE: testing goimapnotify to take this commands place while also updating mail
+#       with Maildir instead of IMAP config
+# set     new_mail_command = "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail' &"
 
 # Mailbox Settings -------------------------------------------------------------
 set     confirm_append = no # Prompt for append message to mailbox

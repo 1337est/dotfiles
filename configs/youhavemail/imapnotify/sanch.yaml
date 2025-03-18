@@ -1,0 +1,39 @@
+configurations:
+    -
+        host: imap.gmail.com
+        port: 993
+        tls: true
+        tlsOptions:
+            rejectUnauthorized: true
+            starttls: true
+        usernameCMD: "pass google/sanch/username"
+        passwordCMD: "pass google/sanch/app_pass"
+        boxes:
+            -
+                mailbox: INBOX
+                onNewMail: "mbsync 'sanch:INBOX'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Drafts"
+                onNewMail: "mbsync 'sanch:[Gmail]/Drafts'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Sent Mail"
+                onNewMail: "mbsync 'sanch:[Gmail]/Sent Mail'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Trash"
+                onNewMail: "mbsync 'sanch:[Gmail]/Trash'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Starred"
+                onNewMail: "mbsync 'sanch:[Gmail]/Starred'"
+                onNewMailPost: SKIP
+            -
+                mailbox: "[Gmail]/Spam"
+                onNewMail: "mbsync 'sanch:[Gmail]/Spam'"
+                onNewMailPost: SKIP
+            -
+                mailbox: Archive
+                onNewMail: "mbsync 'sanch:Archive'"
+                onNewMailPost: SKIP
