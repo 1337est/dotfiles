@@ -1,6 +1,5 @@
 # vim: syntax=neomuttrc
 set my_account = spag
-unmailboxes *
 
 # Who dis?
 set real_name = "Cryptic Spaghettios"
@@ -13,21 +12,21 @@ set signature = "$XDG_CONFIG_HOME/neomutt/signatures/$my_account"
 
 # Mailbox account settings
 set mbox_type = Maildir
-set folder = "$XDG_DATA_HOME/email/neomutt/mbsync/$my_account"
+set folder = "$XDG_DATA_HOME/email/neomutt/mbsync"
 
 # mailboxes
-set spool_file = "+INBOX"
-set postponed = "+[Gmail].Drafts"
-set record = "+[Gmail].Sent Mail"
-set trash = "+[Gmail].Trash"
+set spool_file = "+$my_account/INBOX"
+set postponed = "+$my_account/[Gmail].Drafts"
+set record = "+$my_account/[Gmail].Sent Mail"
+set trash = "+$my_account/[Gmail].Trash"
 
-mailboxes -label Inbox/$my_account      =INBOX
-mailboxes -label Drafts/$my_account     =[Gmail].Drafts
-mailboxes -label Sent/$my_account       =[Gmail].Sent\ Mail
-mailboxes -label Trash/$my_account      =[Gmail].Trash
-mailboxes -label Starred/$my_account    =[Gmail].Starred
-mailboxes -label Spam/$my_account       =[Gmail].Spam
-mailboxes -label Archive/$my_account    =Archive
+mailboxes -label Inbox/$my_account      =$my_account/INBOX
+mailboxes -label Drafts/$my_account     =$my_account/[Gmail].Drafts
+mailboxes -label Sent/$my_account       =$my_account/[Gmail].Sent\ Mail
+mailboxes -label Trash/$my_account      =$my_account/[Gmail].Trash
+mailboxes -label Starred/$my_account    =$my_account/[Gmail].Starred
+mailboxes -label Spam/$my_account       =$my_account/[Gmail].Spam
+mailboxes -label Archive/$my_account    =$my_account/Archive
 
 # Cache settings
 set header_cache = "$XDG_CACHE_HOME/neomutt/$my_account/header_cache"

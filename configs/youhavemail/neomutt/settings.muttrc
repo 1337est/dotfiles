@@ -23,18 +23,28 @@ set     include = yes # include a copy of message in reply
 set     fast_reply = yes # skip to, cc, bcc when already provided
 set     use_envelope_from = yes # sets the envelope sender of the message
 set     beep_new = yes # Notify of new messages
-# NOTE: testing goimapnotify to take this commands place while also updating mail
-#       with Maildir instead of IMAP config
-# set     new_mail_command = "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail' &"
 
 # Mailbox Settings -------------------------------------------------------------
 set     confirm_append = no # Prompt for append message to mailbox
 set     imap_check_subscribed = yes # fetch folders from mailbox server
-set     timeout = 0 # seconds neomutt waits for input/times out
+set     delete = yes
+set     timeout = 60 # seconds neomutt waits for input/times out
 set     mail_check = 60 # how often to check for new mail
 set     mail_check_stats = yes # periodically <check-stats> with mail_check_stats_interval
 set     mail_check_stats_interval = 60 # seconds defaults 60
-set     delete = yes
+# Global Maildir account settings
+set mbox_type = Maildir
+set folder = "$XDG_DATA_HOME/email/neomutt/mbsync" # all accounts live under  this folder
+set maildir_check_cur = yes # polls new/cur for new messages
+
+# NOTE: sync-mailbox acts on the folder, not the active mailbox. Therefore, a
+# periodic call to sync-mailbox will update all my accounts locally. This will
+# effectively update all my accounts with one command set on a timer. It's
+# weird that running sync-mailbox manually seems to lag input while in neomutt
+# vs this implementation that runs automagically.
+timeout-hook    'exec sync-mailbox' # runs command after $timeout seconds
+startup-hook    'exec sync-mailbox' # runs at command neomutt program start
+shutdown-hook   'exec sync-mailbox' # runs command at neomutt program exit
 
 # Mime/Mailcap Settings -------------------------------------------------------------
 set     mailcap_path = ~/.config/neomutt/mailcap

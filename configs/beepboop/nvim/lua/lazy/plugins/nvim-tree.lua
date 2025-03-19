@@ -36,6 +36,6 @@ return {
             vim.wo.statusline = ' '
         end)
         vim.keymap.set("n", "<leader>tn", api.tree.toggle,
-            { desc = "nvim-tree: [T]oggle [N]vimTree", noremap = true, silent = true, nowait = true })
+            { desc = "nvim-tree: [T]oggle [F]ileExplorer", noremap = true, silent = true, nowait = true })
     end,
 }
