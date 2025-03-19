@@ -1,3 +1,4 @@
+abook
 alsa-firmware
 alsa-utils
 amd-ucode
@@ -14,6 +15,9 @@ cmake
 composer
 copyq
 cups
+dict-moby-thesaurus
+dict-wn
+dictd
 discord
 duf
 efibootmgr
@@ -26,6 +30,7 @@ ghostty
 git
 github-cli
 glm
+goimapnotify
 gopls
 grim
 grub
@@ -39,6 +44,7 @@ hyprpicker
 hyprpolkitagent
 imagemagick
 imv
+inotify-tools
 intel-ucode
 isync
 iw
@@ -49,7 +55,6 @@ julia
 kanshi
 keychain
 khal
-khard
 lazygit
 lib32-fontconfig
 libreoffice-still
@@ -127,4 +132,3 @@ yazi
 zathura
 zig
 zoxide
-zsh
