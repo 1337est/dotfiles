@@ -3,29 +3,34 @@
 # Define the directory holding my accounts
 let mbsync_dir = $"($env.HOME)/.local/share/email/neomutt/mbsync"
 
-# Function to sync only the affected account:mailbox
-def sync_mail [dir: string] {
-    # Convert the directory path into an array of parts
+# Valid account names go here as subdirectories to 'mbsync_dir'
+let accounts = ["leet", "sanch", "sbc", "spag"]
+
+# Function to extract the account name from the path
+def extract_account [dir: string] {
     let parts = ($dir | path split)
-
-    # Hardcoded assumption: accX is always at index -3, mailbox name is at index -2
-    # TODO: parts includes [leet sanch spag sbc], get that dir
-    # Therefore from $parts, get index of "leet,sanch,spag,sbc"
-    # whatever index that is, mailbox is +1 that index
-    let acc = $parts | drop 2 | last
-    let mailbox = $parts | drop 1 | last
-
-    # Ensure we have both values before proceeding
-    if ($acc | is-empty) or ($mailbox | is-empty) {
-        print "Error: Could not determine account/mailbox from path: ($dir)"
-        return
-    }
-
-    # Run mbsync for the specific account and mailbox
-    let mailbox_name = ($mailbox | str replace "." "/")  # change for mbsync mailbox
-    print $"Change detected in ($acc):($mailbox_name), running mbsync..."
-    ^mbsync -V $"($acc):($mailbox_name)"
+    let acc = ($parts | where { |p| $accounts | any { |a| $a == $p } } | first)
+    if ($acc | is-empty) { return "" }
+    return $acc
 }
 
-# Monitor the directories for changes and sync the affected account
-inotifywait -r -e modify -e move -e create -e delete --format '%w' $maildirs | lines | each { |dir| sync_mail $dir }
+# Run sync every 10-ish seconds
+while true {
+    let affected_accounts = (
+        # Monitor directories and handle events continuously for 10 seconds
+        # WARN: incomplete solution:
+        # while mbsync runs, you could miss update events
+        inotifywait -r -e modify -e move -e create -e delete --format '%w' $mbsync_dir
+        | lines
+        | each { |dir| extract_account $dir }
+        | where { |acc| not ($acc | is-empty) } # Remove empty results
+        | uniq
+    )
+
+    if ($affected_accounts | is-empty) {
+        continue # No changes, go back to waiting
+    }
+
+    print $"\n\n\nSyncing accounts: ($affected_accounts | str join ' ')"
+    mbsync -V ...$affected_accounts
+}
