@@ -3,85 +3,85 @@
 # General Colors ------------------------------------------------------------------------
 # normal color text, current location, status bar, etc
 color normal default default
-color indicator bold "#0e1013" "#ccddee"
-color status "#f0cc89" "#0e1013"
-color tilde "#f0cc89" default
-color underline "#0e1013" default
-color signature "#a3d977" default
-color error "#ef5f6b" default
-color markers "#ef5f6b" "#ccddee"
-color message "#4dbdcb" default
-color search bold "#97ca72" default
+color indicator bold black white
+color status yellow black
+color tilde yellow default
+color underline black default
+color signature brightgreen default
+color error red default
+color markers red white
+color message brightcyan default
+color search bold green default
 
 # Sidebar Colors ------------------------------------------------------------------------
 # Sidebar highlight selection/nav lines
-color sidebar_flagged italic bold underline "#f0cc89" default
-color sidebar_new bold "#f0cc89" "#0e1013"
-color sidebar_indicator bold "#0e1013" "#97ca72"
-color sidebar_highlight bold "#0e1013" "#ebc275"
-color sidebar_divider bold "#1e242e" "#0e1013"
+color sidebar_flagged italic bold underline yellow default
+color sidebar_new bold yellow black
+color sidebar_indicator bold black green
+color sidebar_highlight bold black brightyellow
+color sidebar_divider bold brightblack black
 
 # Index Menu Colors ------------------------------------------------------------------------
 # Default index color scheme
-color index "#ebc275" default '.*'
-color index_number "#5ab0f6" default
-color index_flags "#ef5f6b" default '.*'
-color index_tags "#a3d977" default '.*'
-color index_author "#ef5f6b" default '.*'
-color index_subject "#4dbdcb" default '.*'
+color index brightyellow default '.*'
+color index_number blue default
+color index_flags red default '.*'
+color index_tags brightgreen default '.*'
+color index_author red default '.*'
+color index_subject brightcyan default '.*'
 
 # ~N New mail in index
-color index bold "#f0cc89" "#0e1013" "~N"
-color index_author "#a13131" "#0e1013" "~N"
-color index_subject "#56cadd" "#0e1013" "~N"
-color index bold "#f0cc89" "#0e1013" "~O"
-color index_author "#a13131" "#0e1013" "~O"
-color index_subject "#56cadd" "#0e1013" "~O"
+color index bold yellow black "~N"
+color index_author brightred black "~N"
+color index_subject cyan black "~N"
+color index bold yellow black "~O"
+color index_author brightred black "~O"
+color index_subject cyan black "~O"
 
 # ~F Flagged mail in index
-color index italic "#f0cc89" default "~F"
-color index_date bold underline "#f0cc89" default "~F"
-color index_author bold underline "#a13131" default "~F"
-color index_subject "#56cadd" default "~F"
+color index italic yellow default "~F"
+color index_date bold underline yellow default "~F"
+color index_author bold underline brightred default "~F"
+color index_subject cyan default "~F"
 
 # ~T Tagged mail in index
-color index_flags italic bold "#0e1013" "#a3d977" "~T"
+color index_flags italic bold black brightgreen "~T"
 
 # ~D Deleted mail in index
-color index bold "#0e1013" default "~D"
+color index bold black default "~D"
 
 # Pager Menu Colors ------------------------------------------------------------------------
 # Header highlights in pager - hdrdefault of red with rgby after
-color hdrdefault "#ef5f6b" default
-color header "#ef5f6b" default "^Date"
-color header "#97ca72" default "^From"
-color header "#56cadd" default "^(To|CC|BCC)"
-color header "#f0cc89" default "^Subject"
+color hdrdefault red default
+color header red default "^Date"
+color header green default "^From"
+color header cyan default "^(To|CC|BCC)"
+color header yellow default "^Subject"
 
-color quoted "#97ca72" default
-color quoted1 "#5ab0f6" default
-color quoted2 "#4dbdcb" default
-color quoted3 "#ebc275" default
-color quoted4 "#ef5f6b" default
-color quoted5 "#a13131" default
+color quoted green default
+color quoted1 blue default
+color quoted2 brightcyan default
+color quoted3 brightyellow default
+color quoted4 red default
+color quoted5 brightred default
 
-color body "#a13131" default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
-color body "#6db9f7" default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"
-color body "#97ca72" default "\`[^\`]*\`"
-color body "#6db9f7" default "^# \.*"
-color body "#56cadd" default "^## \.*"
-color body "#a3d977" default "^### \.*"
-color body "#ebc275" default "^(\t| )*(-|\\*) \.*"
-color body "#56cadd" default "[;:][-o][)/(|]"
-color body "#56cadd" default "[;:][)(|]"
-color body "#56cadd" default "[ ][*][^*]*[*][ ]?"
-color body "#56cadd" default "[ ]?[*][^*]*[*][ ]"
-color body "#ef5f6b" default "(BAD signature)"
-color body "#4dbdcb" default "(Good signature)"
-color body "#1e242e" default "^gpg: Good signature .*"
-color body "#f0cc89" default "^gpg: "
-color body "#f0cc89" "#ef5f6b" "^gpg: BAD signature from.*"
-color body "#ef5f6b" default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
-color bold "#0e1013" default
+color body brightred default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
+color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"
+color body green default "\`[^\`]*\`"
+color body brightblue default "^# \.*"
+color body cyan default "^## \.*"
+color body brightgreen default "^### \.*"
+color body brightyellow default "^(\t| )*(-|\\*) \.*"
+color body cyan default "[;:][-o][)/(|]"
+color body cyan default "[;:][)(|]"
+color body cyan default "[ ][*][^*]*[*][ ]?"
+color body cyan default "[ ]?[*][^*]*[*][ ]"
+color body red default "(BAD signature)"
+color body brightcyan default "(Good signature)"
+color body brightblack default "^gpg: Good signature .*"
+color body yellow default "^gpg: "
+color body yellow red "^gpg: BAD signature from.*"
+color body red default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+color bold black default
 
-color attachment "#ca72e4" default
+color attachment magenta default

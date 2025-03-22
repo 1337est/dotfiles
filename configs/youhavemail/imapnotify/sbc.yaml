@@ -5,34 +5,31 @@ configurations:
         tls: true
         tlsOptions:
             rejectUnauthorized: true
+            starttls: false
         usernameCMD: "pass yahoo/sbc/username"
         passwordCMD: "pass yahoo/sbc/app_pass"
         boxes:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'sbc:INBOX'"
+                onDeletedMail: "mbsync 'sbc:INBOX'"
                 onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New message(s) for sbc in INBOX'"
+                onDeletedMailPost: SKIP
             -
                 mailbox: "Draft"
                 onNewMail: "mbsync 'sbc:Draft'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sbc:Draft'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "Sent"
                 onNewMail: "mbsync 'sbc:Sent'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sbc:Sent'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "Trash"
                 onNewMail: "mbsync 'sbc:Trash'"
-                onNewMailPost: SKIPPED
-            -
-                mailbox: "Starred"
-                onNewMail: "mbsync 'sbc:Starred'"
-                onNewMailPost: SKIPPED
-            -
-                mailbox: "Bulk"
-                onNewMail: "mbsync 'sbc:Bulk'"
-                onNewMailPost: SKIPPED
-            -
-                mailbox: Archive
-                onNewMail: "mbsync 'sbc:Archive'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sbc:Trash'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP

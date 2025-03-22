@@ -24,7 +24,7 @@ multipart/alternative=vivaldi-stable.desktop
 multipart/mixed=vivaldi-stable.desktop
 multipart/related=vivaldi-stable.desktop
 multipart/form-data=vivaldi-stable.desktop
-x-scheme-handler/mailto=vivaldi-stable.desktop
+x-scheme-handler/mailto=neomutt-mailto.desktop
 
 [Added Associations]
 # You can add more associations below as needed

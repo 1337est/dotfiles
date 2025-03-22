@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=NeoMutt Mailto Handler
+Icon=/home/adrian/Pictures/icons/neomutt.png
+Exec=ghostty -e bash /home/adrian/.config/neomutt/scripts/mailto.sh %u
+Terminal=true

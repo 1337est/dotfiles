@@ -5,34 +5,49 @@ configurations:
         tls: true
         tlsOptions:
             rejectUnauthorized: true
+            starttls: false
         usernameCMD: "pass google/sanch/username"
         passwordCMD: "pass google/sanch/app_pass"
         boxes:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'sanch:INBOX'"
+                onDeletedMail: "mbsync 'sanch:INBOX'"
                 onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New message(s) for sanch in INBOX.'"
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Drafts"
                 onNewMail: "mbsync 'sanch:[Gmail]/Drafts'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sanch:[Gmail]/Drafts'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Sent Mail"
                 onNewMail: "mbsync 'sanch:[Gmail]/Sent Mail'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sanch:[Gmail]/Sent Mail'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Trash"
                 onNewMail: "mbsync 'sanch:[Gmail]/Trash'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sanch:[Gmail]/Trash'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Starred"
                 onNewMail: "mbsync 'sanch:[Gmail]/Starred'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sanch:[Gmail]/Starred'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Spam"
                 onNewMail: "mbsync 'sanch:[Gmail]/Spam'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sanch:[Gmail]/Spam'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'sanch:Archive'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'sanch:Archive'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP

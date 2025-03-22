@@ -205,7 +205,6 @@ alias sanch = himalaya -c ~/.config/himalaya/accounts/sanch.toml
 alias leet = himalaya -c ~/.config/himalaya/accounts/leet.toml
 alias spag = himalaya -c ~/.config/himalaya/accounts/spag.toml
 alias sbc = himalaya -c ~/.config/himalaya/accounts/sbc.toml
-alias neomutt = with-env { TERM: "xterm-direct" } { neomutt }
 alias define = dict -d wn
 alias synonym = dict -d moby-thesaurus
 

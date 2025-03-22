@@ -5,34 +5,49 @@ configurations:
         tls: true
         tlsOptions:
             rejectUnauthorized: true
+            starttls: false
         usernameCMD: "pass google/spag/username"
         passwordCMD: "pass google/spag/app_pass"
         boxes:
             -
                 mailbox: INBOX
                 onNewMail: "mbsync 'spag:INBOX'"
+                onDeletedMail: "mbsync 'spag:INBOX'"
                 onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New message(s) for spag in INBOX.'"
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Drafts"
                 onNewMail: "mbsync 'spag:[Gmail]/Drafts'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'spag:[Gmail]/Drafts'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Sent Mail"
                 onNewMail: "mbsync 'spag:[Gmail]/Sent Mail'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'spag:[Gmail]/Sent Mail'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Trash"
                 onNewMail: "mbsync 'spag:[Gmail]/Trash'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'spag:[Gmail]/Trash'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Starred"
                 onNewMail: "mbsync 'spag:[Gmail]/Starred'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'spag:[Gmail]/Starred'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Spam"
                 onNewMail: "mbsync 'spag:[Gmail]/Spam'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'spag:[Gmail]/Spam'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
             -
                 mailbox: Archive
                 onNewMail: "mbsync 'spag:Archive'"
-                onNewMailPost: SKIPPED
+                onDeletedMail: "mbsync 'spag:Archive'"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
