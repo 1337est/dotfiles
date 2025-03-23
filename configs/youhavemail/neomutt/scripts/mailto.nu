@@ -8,4 +8,6 @@ if ($selection | is-empty) { exit 0 }
 
 let account_mutt_config = ($mutt_config | path join $"accounts/($selection).muttrc")
 
-# neomutt -F ($mutt_config | path join "neomuttrc") -F ($account_mutt_config)
+def main [x: string] {
+    neomutt -F ($mutt_config | path join "neomuttrc") -F $account_mutt_config $x
+}
