@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true -- For my nerd font
-
+vim.opt.termguicolors = true -- Enables 24-bit RGB color
 vim.opt.guicursor = "" -- Disable cursor styling
 
 vim.opt.number = true -- Make line numbers default
@@ -35,8 +35,6 @@ vim.opt.viewdir = vim.fn.stdpath("state") .. "/viewdir"
 
 vim.opt.hlsearch = true -- Set highlight on search
 vim.opt.incsearch = true -- Shows pattern match as you type
-
-vim.opt.termguicolors = true -- Enables 24-bit RGB color
 
 vim.opt.scrolloff = 8 -- Minimal screen lines above/below the cursor
 vim.opt.sidescrolloff = 3 -- Minimal screen lines to keep left/right
