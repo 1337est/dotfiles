@@ -5,6 +5,7 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true -- For my nerd font
 vim.opt.termguicolors = true -- Enables 24-bit RGB color
 vim.opt.guicursor = "" -- Disable cursor styling
+vim.opt.conceallevel = 0
 
 vim.opt.number = true -- Make line numbers default
 vim.opt.relativenumber = true -- Shows line # away from current line #
