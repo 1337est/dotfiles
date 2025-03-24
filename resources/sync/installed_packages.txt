@@ -2,6 +2,7 @@ abook
 alsa-firmware
 alsa-utils
 amd-ucode
+android-studio
 atuin
 base
 base-devel
@@ -34,6 +35,7 @@ goimapnotify
 gopls
 grim
 grub
+gtk2fontsel
 helvum
 himalaya
 hypridle
