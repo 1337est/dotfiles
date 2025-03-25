@@ -1,3 +1,19 @@
-* {
-    font-family: 'JetBrainsMono Nerd Font';
+code,
+pre,
+kbd,
+textarea,
+input,
+tt,
+samp {
+    font-family: 'JetBrainsMono Nerd Font', monospace !important;
+    font-size: 16px !important;
+}
+
+body,
+p,
+span,
+div,
+button,
+select {
+    font-size: 12pt !important
 }

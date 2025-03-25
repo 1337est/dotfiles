@@ -6,17 +6,14 @@ return {
         require("neorg").setup {
             load = {
                 ["core.defaults"] = {},
-                ["core.concealer"] = {
-                    config = {
-
-                    },
-                },
+                ["core.concealer"] = {},
                 ["core.dirman"] = {
                     config = {
                         index = "index.norg",
                         workspaces = {
                             main = "~/Notes",
                         },
+                        default_workspace = "main",
                     },
                 },
             },

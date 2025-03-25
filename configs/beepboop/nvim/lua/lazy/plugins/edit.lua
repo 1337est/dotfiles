@@ -40,13 +40,15 @@ return {
             "hrsh7th/cmp-nvim-lsp", -- adds more completions for LSP's
             "hrsh7th/cmp-path", -- completions for filesystem paths
             "hrsh7th/cmp-nvim-lsp-signature-help", -- display func-param signatures
+            "hrsh7th/cmp-cmdline", -- display func-param signatures
         },
         config = function()
             local cmp = require("cmp")
+            local cmp_select = { behavior = cmp.SelectBehavior.Select }
             local luasnip = require("luasnip")
-            luasnip.config.setup({})
+            luasnip.config.setup {}
 
-            cmp.setup({
+            cmp.setup {
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
@@ -55,13 +57,17 @@ return {
                 completion = { completeopt = "menu,menuone,noinsert" },
 
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-n>"] = cmp.mapping.select_next_item(),
-                    ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+                    ["<Tab>"] = cmp.mapping.select_next_item(cmp_select),
+
+                    ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select),
 
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
                     ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                    ['<C-e>'] = cmp.mapping.abort(),
 
                     ["<C-Space>"] = cmp.mapping.complete({}),
 
@@ -75,7 +81,6 @@ return {
                             luasnip.jump(-1)
                         end
                     end, { "i", "s" }),
-
                 }),
                 sources = {
                     { name = "nvim_lsp" },
@@ -84,7 +89,7 @@ return {
                     { name = "buffer" },
                     { name = "nvim_lsp_signature_help" },
                 },
-            })
+            }
         end,
     }
 }
