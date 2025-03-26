@@ -35,7 +35,7 @@ return {
         api.events.subscribe("TreeOpen", function()
             vim.wo.statusline = ' '
         end)
-        vim.keymap.set("n", "<leader>tn", api.tree.toggle,
-            { desc = "nvim-tree: [T]oggle [F]ileExplorer", noremap = true, silent = true, nowait = true })
+        vim.keymap.set("n", "<leader>tf", api.tree.toggle,
+            { desc = "nvim-tree: [t]oggle [f]ileExplorer", noremap = true, silent = true, nowait = true })
     end,
 }

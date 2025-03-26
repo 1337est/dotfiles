@@ -157,13 +157,13 @@ return {
         event = "VimEnter", -- Sets the loading event to 'VimEnter'
         opts = {
             spec = {
-                { "<leader>c", group = "[C]ode", mode = { "n", "x" } },
-                { "<leader>d", group = "[D]ocument", mode = "n" },
-                { "<leader>r", group = "[R]ename", mode = "n" },
-                { "<leader>s", group = "[S]earch", mode = "n" },
-                { "<leader>t", group = "[T]oggle", mode = "n" },
-                { "<leader>w", group = "[W]orkspace", mode = "n" },
-                { "<leader>k", group = "[K]eep", mode = { "n", "v" } },
+                { "<leader>c", group = "[c]ode", mode = { "n", "x" } },
+                { "<leader>d", group = "[d]ocument", mode = "n" },
+                { "<leader>r", group = "[r]ename", mode = "n" },
+                { "<leader>s", group = "[s]earch", mode = "n" },
+                { "<leader>t", group = "[t]oggle", mode = "n" },
+                { "<leader>w", group = "[w]orkspace", mode = "n" },
+                { "<leader>k", group = "[k]eep", mode = { "n", "v" } },
                 { "<leader>", group = "Leader", mode = { "n", "v" } },
                 { "[", group = "Previous", mode = "n" },
                 { "]", group = "Next", mode = "n" },

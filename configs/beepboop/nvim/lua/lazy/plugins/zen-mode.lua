@@ -12,6 +12,6 @@ return {
             vim.wo.wrap = false
             vim.wo.number = true
             vim.wo.rnu = true
-        end, { desc = "[Z]enmode" })
+        end, { desc = "[z]enmode" })
     end
 }

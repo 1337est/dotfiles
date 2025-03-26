@@ -5,15 +5,15 @@ local map = function(keys, func, desc)
         { desc = "TEL: " .. desc })
 end
 
-map("<leader>sh", telebuilt.help_tags, "[S]earch [H]elp")
-map("<leader>sk", telebuilt.keymaps, "[S]earch [K]eymaps")
-map("<leader>sf", telebuilt.find_files, "[S]earch [F]iles")
-map("<leader>ss", telebuilt.builtin, "[S]earch [S]elect Telescope")
-map("<leader>sw", telebuilt.grep_string, "[S]earch current [W]ord")
-map("<leader>sg", telebuilt.live_grep, "[S]earch by [G]rep")
-map("<leader>sd", telebuilt.diagnostics, "[S]earch [D]iagnostics")
-map("<leader>sr", telebuilt.resume, "[S]earch [R]esume")
-map("<leader>s.", telebuilt.oldfiles, '[S]earch Recent Files ("." for repeat)')
+map("<leader>sh", telebuilt.help_tags, "[s]earch [h]elp")
+map("<leader>sk", telebuilt.keymaps, "[s]earch [k]eymaps")
+map("<leader>sf", telebuilt.find_files, "[s]earch [f]iles")
+map("<leader>ss", telebuilt.builtin, "[s]earch [s]elect Telescope")
+map("<leader>sw", telebuilt.grep_string, "[s]earch current [w]ord")
+map("<leader>sg", telebuilt.live_grep, "[s]earch by [g]rep")
+map("<leader>sd", telebuilt.diagnostics, "[s]earch [d]iagnostics")
+map("<leader>sr", telebuilt.resume, "[s]earch [r]esume")
+map("<leader>s.", telebuilt.oldfiles, '[s]earch Recent Files ("." for repeat)')
 map("<leader><leader>", telebuilt.buffers, "[ ] Find existing buffers")
 
 -- Search in current buffer
@@ -31,9 +31,9 @@ map("<leader>s/", function()
         grep_open_files = true,
         prompt_title = "Live Grep in Open Files",
     })
-end, "[S]earch [/] in Open Files")
+end, "[s]earch [/] in Open Files")
 
 -- Shortcut for searching your Neovim configuration files
 map("<leader>sn", function()
     telebuilt.find_files({ cwd = vim.fn.stdpath("config") })
-end, "[S]earch [N]eovim files")
+end, "[s]earch [n]eovim files")
