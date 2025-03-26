@@ -38,6 +38,6 @@ return {
         pcall(require("telescope").load_extension, "fzf")
         pcall(require("telescope").load_extension, "ui-select")
 
-        require("lazy.plugins.custom.telescope.keys")
+        require("custom.telescope.keys")
     end,
 }

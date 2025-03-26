@@ -23,7 +23,7 @@ return {
                     {
                         desc = '[ Journal]',
                         group = '@function',
-                        action = 'Neorg journal today',
+                        action = 'Neorg journal',
                         key = 'j',
                     },
                     {

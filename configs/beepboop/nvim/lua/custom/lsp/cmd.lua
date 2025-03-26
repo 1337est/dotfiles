@@ -6,7 +6,7 @@ autocmd("LspAttach", {
     desc = "Sets keybindings when a LSP attaches to a buffer",
     group = lsp_attach_group,
     callback = function(e)
-        local keys = require("lazy.plugins.custom.lsp.keys")
+        local keys = require("custom.lsp.keys")
         local client = vim.lsp.get_client_by_id(e.data.client_id)
 
         if client then
