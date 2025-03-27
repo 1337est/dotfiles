@@ -24,6 +24,7 @@ duf
 efibootmgr
 fastfetch
 fd
+firefox
 fish
 fuzzel
 fzf
@@ -93,7 +94,6 @@ python-adblock
 python-pip
 python-pygments
 qt5-wayland
-qutebrowser
 ripgrep
 ruby
 rubygems
