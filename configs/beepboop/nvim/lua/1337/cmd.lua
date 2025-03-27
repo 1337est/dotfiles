@@ -1,14 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local _1337estGroup = augroup("1337est", {})
-autocmd({ "BufWritePre" }, {
-    desc = "Removes trailing whitespaces right before saving the file",
-    group = _1337estGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
-})
-
 local yank_group = augroup("HighlightYank", {})
 autocmd("TextYankPost", {
     desc = "Hightlight when yanking (copying) text",
