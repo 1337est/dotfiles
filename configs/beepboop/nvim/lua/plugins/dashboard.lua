@@ -29,7 +29,7 @@ return {
                     {
                         desc = '[󰄬 Todo]',
                         group = '@neorg.todo_items.done',
-                        action = 'e ~/Notes/todo.norg',
+                        action = 'e ~/Notes/neorg/todo.norg',
                         key = 't',
                     },
                     {
