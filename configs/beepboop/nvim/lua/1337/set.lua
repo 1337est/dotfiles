@@ -33,6 +33,7 @@ vim.opt.undofile = true -- Save undo history
 
 vim.opt.undodir = vim.fn.stdpath("state") .. "/undodir"
 vim.opt.viewdir = vim.fn.stdpath("state") .. "/viewdir"
+vim.opt.autochdir = true
 
 vim.opt.hlsearch = true -- Set highlight on search
 vim.opt.incsearch = true -- Shows pattern match as you type
