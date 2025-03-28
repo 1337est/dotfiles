@@ -53,11 +53,43 @@ cmap("<leader>tm", function()
     vim.cmd.Neorg("toggle-concealer")
 end, "[t]oggle [m]arkup")
 
-cmap("]j", function()
-    vim.cmd('exe "normal! /TODO\\<CR>"') -- Search for TODO and jump
-    vim.cmd("normal! zz")
-    vim.cmd("nohlsearch")
-    vim.cmd("normal! viw")
-    vim.cmd("") -- vim.cmd("normal! <C-g>")               -- Send CTRL-g to enter select mode
-end, "Next journal entry")
-cmap("[j", "<cmd>?TODO<CR>zz :noh<CR>", "Previous journal entry")
+vim.keymap.set(
+    { "n", "v", "i" },
+    "<M-]>",
+    function()
+        if vim.fn.mode() == "i" then
+            vim.cmd([[exe "call feedkeys('\<C-o>')"]]) -- Temporarily enter Normal mode
+        else
+            vim.cmd([[exe "call feedkeys('\<Esc>')"]]) -- Exit Visual/Select mode
+        end
+        vim.cmd([[exe "normal! /TODO\<CR>"]]) -- Search for TODO forwards
+        vim.cmd("normal! zz")
+        vim.cmd("nohlsearch")
+        vim.cmd([[exe "call feedkeys('viw\<C-g>')"]])
+    end,
+    {
+        buffer = true,
+        silent = true,
+        desc = "neorg: Next journal entry"
+    })
+
+vim.keymap.set(
+    { "n", "v", "i" },
+    "<M-[>",
+    function()
+        if vim.fn.mode() == "i" then
+            vim.cmd([[exe "call feedkeys('\<C-o>')"]]) -- Temporarily enter Normal mode
+            vim.cmd([[exe "normal! ?TODO\<CR>"]]) -- Search for TODO backwards
+        else
+            vim.cmd([[exe "call feedkeys('\<Esc>')"]]) -- Exit Visual/Select mode
+            vim.cmd([[exe "normal! ?TODO\<CR>n"]]) -- extra n needed to move cursor
+        end
+        vim.cmd("normal! zz")
+        vim.cmd("nohlsearch")
+        vim.cmd([[exe "call feedkeys('viw\<C-g>')"]])
+    end,
+    {
+        buffer = true,
+        silent = true,
+        desc = "neorg: Previous journal entry"
+    })
