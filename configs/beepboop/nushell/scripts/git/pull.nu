@@ -86,7 +86,7 @@ let git_repos_status = (
             print ($parsed_git_status | table)
 
             # TODO: If Changes are detected, should be prompted to: git add, commit, and push changes.
-            let commit_input = (input -n 1 -s $"(ansi yellow)\nChanges detected in ($repo.name).\nDo you want to commit and push changes? (ansi green)Y(ansi yellow)/(ansi red)n(ansi yellow): (ansi reset)" | str downcase)
+            let commit_input = (input -n 1 -s $"(ansi yellow)\nChanges detected in ($repo.name).\nDo you want to commit and push changes? (ansi green)Y(ansi yellow)/(ansi red)n(ansi yellow): (ansi reset)\n" | str downcase)
             if (($commit_input | is-empty) or ($commit_input == "y")) {
                 let git_commands = ["" "" ""]
 
