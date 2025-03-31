@@ -70,14 +70,14 @@ let git_repos_status = (
             try {
                 git pull | complete
                 {
-                    name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                    git_commands: $"(ansi attr_bold)Attempted Pull\n(ansi green)git pull(ansi reset)",
+                    name: $'(ansi attr_bold)($repo.name)(ansi reset)',
+                    git_commands: $"(ansi attr_underline)Attempted Pull\n(ansi reset)(ansi green)git pull(ansi reset)",
                     status: $'(ansi green)($repo_status)(ansi reset)'
                 }
             } catch {
                 {
-                    name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                    git_commands: $"(ansi attr_bold)Failed Pull?\n(ansi red)git pull(ansi reset)",
+                    name: $'(ansi attr_bold)($repo.name)(ansi reset)',
+                    git_commands: $"(ansi attr_underline)Failed Pull?\n(ansi reset)(ansi red)git pull(ansi reset)",
                     status: $'(ansi red)($full_status)(ansi reset)'
                 }
             }
@@ -94,36 +94,36 @@ let git_repos_status = (
                     print $"(ansi yellow)\nStaging all changes...(ansi reset)"
                     git add . | complete
                     let git_commands = $git_commands | update 0 "git add ."
-                    print $"(ansi green)\nStaging Successful(ansi reset)"
+                    print $"(ansi green)Staging Successful(ansi reset)\n"
 
-                    print $"(ansi yellow)\nCommitting all changes...(ansi reset)"
+                    print $"(ansi yellow)Committing all changes...(ansi reset)"
                     git commit -av
                     let git_commands = $git_commands | update 1 "git commit -av"
-                    print $"(ansi green)\nCommitting Successful(ansi reset)"
+                    print $"(ansi green)Committing Successful(ansi reset)\n"
 
                     print $"(ansi yellow)Pushing changes...(ansi reset)"
                     git push | complete
                     let git_commands = $git_commands | update 2 "git push"
-                    print $"(ansi green)Pushing Successful(ansi reset)"
+                    print $"(ansi green)Pushing Successful(ansi reset)\n"
 
                     {
-                        name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                        git_commands: $"(ansi attr_bold)Commited and pushed\n(ansi green)($git_commands | str join "\n")(ansi reset)",
+                        name: $'(ansi attr_bold)($repo.name)(ansi reset)',
+                        git_commands: $"(ansi attr_underline)Commited and pushed\n(ansi reset)(ansi green)($git_commands | str join "\n")(ansi reset)",
                         status: $'(ansi green)($full_status)(ansi reset)'
                     }
                 } catch {
                     {
-                        name: $'(ansi attr_underline)($repo.name)(ansi reset)',
+                        name: $'(ansi attr_bold)($repo.name)(ansi reset)',
                         # TODO: conditional to include git add ., git commit -av, and git push into commands
-                        git_commands: $"(ansi attr_bold)Commit/Push Failed\n(ansi red)($git_commands | str join "\n")(ansi reset)",
+                        git_commands: $"(ansi attr_underline)Commit/Push Failed\n(ansi reset)(ansi red)($git_commands | str join "\n")(ansi reset)",
                         status: $'(ansi red)($full_status)(ansi reset)'
                     }
                 }
             } else {
                 {
                     # manual skipped
-                    name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                    git_commands: $'(ansi attr_bold)Skipped(ansi reset)',
+                    name: $'(ansi attr_bold)($repo.name)(ansi reset)',
+                    git_commands: $'(ansi attr_underline)Skipped(ansi reset)',
                     status: $'(ansi yellow)($full_status)(ansi reset)'
                 }
             }
@@ -131,5 +131,5 @@ let git_repos_status = (
     }
 )
 
-print $"\n(ansi blue_bold)Git Repository Statuses:(ansi reset)"
+print $"\n(ansi green_bold)Git Repository Statuses:(ansi reset)"
 print ($git_repos_status | table -t thin)
