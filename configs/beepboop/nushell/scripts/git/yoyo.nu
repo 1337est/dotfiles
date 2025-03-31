@@ -123,7 +123,7 @@ let git_repos_status = (
                     # manual skipped
                     name: $'(ansi attr_bold)($repo.name)(ansi reset)',
                     git_commands: $'(ansi attr_underline)Skipped(ansi reset)',
-                    status: $'(ansi yellow)($full_status)(ansi reset)'
+                    status: $'(ansi yellow)($status_output)(ansi reset)'
                 }
             }
         }
