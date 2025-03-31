@@ -91,17 +91,17 @@ let git_repos_status = (
                 let git_commands = ["" "" ""]
 
                 try {
-                    print $"(ansi yellow)\nStaging all changes...(ansi reset)"
+                    print $"(ansi blue)\nStaging all changes...(ansi reset)"
                     git add . | complete
                     let git_commands = $git_commands | update 0 "git add ."
                     print $"(ansi green)Staging Successful(ansi reset)\n"
 
-                    print $"(ansi yellow)Committing all changes...(ansi reset)"
+                    print $"(ansi blue)Committing all changes...(ansi reset)"
                     git commit -av
                     let git_commands = $git_commands | update 1 "git commit -av"
                     print $"(ansi green)Committing Successful(ansi reset)\n"
 
-                    print $"(ansi yellow)Pushing changes...(ansi reset)"
+                    print $"(ansi blue)Pushing changes...(ansi reset)"
                     git push | complete
                     let git_commands = $git_commands | update 2 "git push"
                     print $"(ansi green)Pushing Successful(ansi reset)\n"
