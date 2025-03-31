@@ -66,47 +66,47 @@ let git_repos_status = (
         )
 
         if ($repo_status == "Clean") {
-            # TODO: If clean, then should git pull
-            print $"\n\n($repo.name) - ($repo_status): Pulling latest changes..."
+            print $"(ansi green)\n($repo.name) - ($repo_status): Pulling latest changes...(ansi reset)"
             try {
                 git pull | complete
                 {
                     name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                    git_command: $'(ansi attr_bold)Attempted Pull(ansi reset)',
+                    git_commands: $"(ansi attr_bold)Attempted Pull\n(ansi green)git pull(ansi reset)",
                     status: $'(ansi green)($repo_status)(ansi reset)'
                 }
             } catch {
                 {
                     name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                    git_command: $'(ansi attr_bold)Failed Pull?(ansi reset)',
+                    git_commands: $"(ansi attr_bold)Failed Pull?\n(ansi red)git pull(ansi reset)",
                     status: $'(ansi red)($full_status)(ansi reset)'
                 }
             }
         } else {
-            print $"\nStatus details for ($repo.name):"
+            print $"(ansi yellow)\nStatus details for ($repo.name):(ansi reset)"
             print ($parsed_git_status | table)
 
             # TODO: If Changes are detected, should be prompted to: git add, commit, and push changes.
-            let commit_input = (input -n 1 -s $"\n\nChanges detected in ($repo.name).\nDo you want to commit and push changes? Y/n: " | str downcase)
+            let commit_input = (input -n 1 -s $"(ansi yellow)\nChanges detected in ($repo.name).\nDo you want to commit and push changes? (ansi green)Y(ansi yellow)/(ansi red)n(ansi yellow): (ansi reset)" | str downcase)
             if (($commit_input | is-empty) or ($commit_input == "y")) {
                 try {
-                    print "\nStaging all changes..."
+                    print $"(ansi yellow)\nStaging all changes...(ansi reset)"
                     git add . | complete
 
+                    print $"(ansi yellow)\nCommitting all changes...(ansi reset)"
                     git commit -av
 
-                    print "\nPushing changes..."
+                    print $"(ansi yellow)Pushing changes...(ansi reset)"
                     git push | complete
 
                     {
                         name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                        git_command: $'(ansi attr_bold)Commited and pushed(ansi reset)',
+                        git_commands: $"(ansi attr_bold)Commited and pushed(ansi green)\ngit add .\ngit commit -av\ngit push(ansi reset)",
                         status: $'(ansi green)($full_status)(ansi reset)'
                     }
                 } catch {
                     {
                         name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                        git_command: $'(ansi attr_bold)Commit/Push Failed(ansi reset)',
+                        git_commands: $'(ansi attr_bold)Commit/Push Failed(ansi reset)',
                         status: $'(ansi red)($full_status)(ansi reset)'
                     }
                 }
@@ -114,7 +114,7 @@ let git_repos_status = (
                 {
                     # manual skipped
                     name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                    git_command: $'(ansi attr_bold)Skipped(ansi reset)',
+                    git_commands: $'(ansi attr_bold)Skipped(ansi reset)',
                     status: $'(ansi yellow)($full_status)(ansi reset)'
                 }
             }
