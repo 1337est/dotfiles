@@ -66,7 +66,7 @@ let git_repos_status = (
         )
 
         if ($repo_status == "Clean") {
-            print $"(ansi green)\n($repo.name) - ($repo_status): Pulling latest changes...(ansi reset)"
+            print $"(ansi green)($repo.name) - ($repo_status): Pulling latest changes...(ansi reset)"
             try {
                 git pull | complete
                 {
@@ -109,12 +109,11 @@ let git_repos_status = (
                     {
                         name: $'(ansi attr_bold)($repo.name)(ansi reset)',
                         git_commands: $"(ansi attr_underline)Commited and pushed\n(ansi reset)(ansi green)($git_commands | str join "\n")(ansi reset)",
-                        status: $'(ansi green)($full_status)(ansi reset)'
+                        status: $'(ansi green)($status_output)(ansi reset)'
                     }
                 } catch {
                     {
                         name: $'(ansi attr_bold)($repo.name)(ansi reset)',
-                        # TODO: conditional to include git add ., git commit -av, and git push into commands
                         git_commands: $"(ansi attr_underline)Commit/Push Failed\n(ansi reset)(ansi red)($git_commands | str join "\n")(ansi reset)",
                         status: $'(ansi red)($full_status)(ansi reset)'
                     }
