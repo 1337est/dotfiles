@@ -152,6 +152,7 @@ $env.config.display_errors = {
 
 $env.config.footer_mode = 25
 $env.config.table = {
+
     mode: "default"
     index_mode: "always"
     show_empty: false
