@@ -82,31 +82,40 @@ let git_repos_status = (
                 }
             }
         } else {
-            print $"(ansi yellow)\nStatus details for ($repo.name):(ansi reset)"
+            print $"(ansi magenta)\nStatus details for ($repo.name):(ansi reset)"
             print ($parsed_git_status | table)
 
             # TODO: If Changes are detected, should be prompted to: git add, commit, and push changes.
             let commit_input = (input -n 1 -s $"(ansi yellow)\nChanges detected in ($repo.name).\nDo you want to commit and push changes? (ansi green)Y(ansi yellow)/(ansi red)n(ansi yellow): (ansi reset)" | str downcase)
             if (($commit_input | is-empty) or ($commit_input == "y")) {
+                let git_commands = ["" "" ""]
+
                 try {
                     print $"(ansi yellow)\nStaging all changes...(ansi reset)"
                     git add . | complete
+                    let git_commands = $git_commands | update 0 "git add ."
+                    print $"(ansi green)\nStaging Successful(ansi reset)"
 
                     print $"(ansi yellow)\nCommitting all changes...(ansi reset)"
                     git commit -av
+                    let git_commands = $git_commands | update 1 "git commit -av"
+                    print $"(ansi green)\nCommitting Successful(ansi reset)"
 
                     print $"(ansi yellow)Pushing changes...(ansi reset)"
                     git push | complete
+                    let git_commands = $git_commands | update 2 "git push"
+                    print $"(ansi green)Pushing Successful(ansi reset)"
 
                     {
                         name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                        git_commands: $"(ansi attr_bold)Commited and pushed(ansi green)\ngit add .\ngit commit -av\ngit push(ansi reset)",
+                        git_commands: $"(ansi attr_bold)Commited and pushed\n(ansi green)($git_commands | str join "\n")(ansi reset)",
                         status: $'(ansi green)($full_status)(ansi reset)'
                     }
                 } catch {
                     {
                         name: $'(ansi attr_underline)($repo.name)(ansi reset)',
-                        git_commands: $'(ansi attr_bold)Commit/Push Failed(ansi reset)',
+                        # TODO: conditional to include git add ., git commit -av, and git push into commands
+                        git_commands: $"(ansi attr_bold)Commit/Push Failed\n(ansi red)($git_commands | str join "\n")(ansi reset)",
                         status: $'(ansi red)($full_status)(ansi reset)'
                     }
                 }
@@ -122,5 +131,5 @@ let git_repos_status = (
     }
 )
 
-print "\nGit Repository Statuses:"
+print $"\n(ansi blue_bold)Git Repository Statuses:(ansi reset)"
 print ($git_repos_status | table -t thin)
