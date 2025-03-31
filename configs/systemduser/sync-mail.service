@@ -4,11 +4,10 @@ After=network-online.target
 Wants=goimapnotify@leet.service goimapnotify@sanch.service goimapnotify@sbc.service goimapnotify@spag.service
 
 [Service]
-ExecStart=%h/.config/neomutt/scripts/sync.nu
+ExecStart=%h/.config/nushell/scripts/neomutt/sync.nu
 Restart=always
 RestartSec=30
 StandardOutput=journal
 StandardError=journal
-
 [Install]
 WantedBy=default.target

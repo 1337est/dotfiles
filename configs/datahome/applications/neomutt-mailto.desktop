@@ -2,5 +2,5 @@
 Type=Application
 Name=NeoMutt Mailto Handler
 Icon=/home/adrian/Pictures/icons/neomutt.png
-Exec=ghostty -e nu /home/adrian/.config/neomutt/scripts/mailto.nu %u
+Exec=ghostty -e nu /home/adrian/.config/nushell/scripts/neomutt/mailto.nu %u
 Terminal=true
