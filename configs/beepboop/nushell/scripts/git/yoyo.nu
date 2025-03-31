@@ -71,13 +71,13 @@ let git_repos_status = (
                 git pull | complete
                 {
                     name: $'(ansi attr_bold)($repo.name)(ansi reset)',
-                    git_commands: $"(ansi attr_underline)Attempted Pull\n(ansi reset)(ansi green)git pull(ansi reset)",
+                    git_commands: $"(ansi green)git pull(ansi reset)",
                     status: $'(ansi green)($repo_status)(ansi reset)'
                 }
             } catch {
                 {
                     name: $'(ansi attr_bold)($repo.name)(ansi reset)',
-                    git_commands: $"(ansi attr_underline)Failed Pull?\n(ansi reset)(ansi red)git pull(ansi reset)",
+                    git_commands: $"(ansi attr_underline)Pull Attempted\n(ansi reset)(ansi red)git pull(ansi reset)",
                     status: $'(ansi red)($full_status)(ansi reset)'
                 }
             }
@@ -85,7 +85,6 @@ let git_repos_status = (
             print $"(ansi magenta)\nStatus details for ($repo.name):(ansi reset)"
             print ($parsed_git_status | table)
 
-            # TODO: If Changes are detected, should be prompted to: git add, commit, and push changes.
             let commit_input = (input -n 1 -s $"(ansi yellow)\nChanges detected in ($repo.name).\nDo you want to commit and push changes? (ansi green)Y(ansi yellow)/(ansi red)n(ansi yellow): (ansi reset)\n" | str downcase)
             if (($commit_input | is-empty) or ($commit_input == "y")) {
                 let git_commands = ["" "" ""]
@@ -108,7 +107,7 @@ let git_repos_status = (
 
                     {
                         name: $'(ansi attr_bold)($repo.name)(ansi reset)',
-                        git_commands: $"(ansi attr_underline)Commited and pushed\n(ansi reset)(ansi green)($git_commands | str join "\n")(ansi reset)",
+                        git_commands: $"(ansi green)($git_commands | str join "\n")(ansi reset)",
                         status: $'(ansi green)($status_output)(ansi reset)'
                     }
                 } catch {
