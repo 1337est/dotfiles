@@ -39,5 +39,6 @@ loop {
     # sync mailboxes
     print $"\nSTART\nSyncing accounts: ($acc_mb_events | str join ' ')"
     mbsync ...$acc_mb_events
+    notmuch new
     print $"END\n"
 }

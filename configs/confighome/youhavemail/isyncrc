@@ -17,7 +17,7 @@ Channel sanch
 Expunge Both
 Far :sanch-remote:
 Near :sanch-local:
-Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
+Patterns "INBOX" !"Inbox" "[Gmail]/All Mail" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash" "[Gmail]/Starred" "[Gmail]/Spam" "Archive"
 Create Both
 SyncState *
 MaxMessages 0
@@ -43,7 +43,7 @@ Channel leet
 Expunge Both
 Far :leet-remote:
 Near :leet-local:
-Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
+Patterns "INBOX" !"Inbox" "[Gmail]/All Mail" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash" "[Gmail]/Starred" "[Gmail]/Spam" "Archive"
 Create Both
 SyncState *
 MaxMessages 0
@@ -69,7 +69,7 @@ Channel sbc
 Expunge Both
 Far :sbc-remote:
 Near :sbc-local:
-Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
+Patterns "INBOX" !"Inbox" "Draft" "Sent" "Trash"
 Create Both
 SyncState *
 MaxMessages 0
@@ -95,7 +95,7 @@ Channel spag
 Expunge Both
 Far :spag-remote:
 Near :spag-local:
-Patterns * "INBOX" !"Inbox" !"[Gmail]/All Mail" !"[Gmail]/Important"
+Patterns "INBOX" !"Inbox" "[Gmail]/All Mail" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash" "[Gmail]/Starred" "[Gmail]/Spam" "Archive"
 Create Both
 SyncState *
 MaxMessages 0

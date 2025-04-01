@@ -56,7 +56,7 @@ auto_view           text/html text/calendar application/ics
 
 # Sidebar Settings -------------------------------------------------------------
 set     sidebar_visible = yes
-set     sidebar_format = '%B%<F? [%F]>%* %<N?%N/>%S'
+set     sidebar_format = '%D%<F? [%F]>%* %<N?%N/>%S'
 set     sidebar_short_path = yes
 
 # Index Menu Settings ---------------------------------------------------------------

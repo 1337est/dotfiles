@@ -11,43 +11,49 @@ configurations:
         boxes:
             -
                 mailbox: INBOX
-                onNewMail: "mbsync 'spag:INBOX'"
-                onDeletedMail: "mbsync 'spag:INBOX'"
+                onNewMail: "mbsync 'spag:INBOX' && notmuch new"
+                onDeletedMail: "mbsync 'spag:INBOX' && notmuch new"
                 onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New message(s) for spag in INBOX.'"
                 onDeletedMailPost: SKIP
             -
+                mailbox: "[Gmail]/All Mail"
+                onNewMail: "mbsync 'spag:[Gmail]/All Mail' && notmuch new"
+                onDeletedMail: "mbsync 'spag:[Gmail]/All Mail' && notmuch new"
+                onNewMailPost: SKIP
+                onDeletedMailPost: SKIP
+            -
                 mailbox: "[Gmail]/Drafts"
-                onNewMail: "mbsync 'spag:[Gmail]/Drafts'"
-                onDeletedMail: "mbsync 'spag:[Gmail]/Drafts'"
+                onNewMail: "mbsync 'spag:[Gmail]/Drafts' && notmuch new"
+                onDeletedMail: "mbsync 'spag:[Gmail]/Drafts' && notmuch new"
                 onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Sent Mail"
-                onNewMail: "mbsync 'spag:[Gmail]/Sent Mail'"
-                onDeletedMail: "mbsync 'spag:[Gmail]/Sent Mail'"
+                onNewMail: "mbsync 'spag:[Gmail]/Sent Mail' && notmuch new"
+                onDeletedMail: "mbsync 'spag:[Gmail]/Sent Mail' && notmuch new"
                 onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Trash"
-                onNewMail: "mbsync 'spag:[Gmail]/Trash'"
-                onDeletedMail: "mbsync 'spag:[Gmail]/Trash'"
+                onNewMail: "mbsync 'spag:[Gmail]/Trash' && notmuch new"
+                onDeletedMail: "mbsync 'spag:[Gmail]/Trash' && notmuch new"
                 onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Starred"
-                onNewMail: "mbsync 'spag:[Gmail]/Starred'"
-                onDeletedMail: "mbsync 'spag:[Gmail]/Starred'"
+                onNewMail: "mbsync 'spag:[Gmail]/Starred' && notmuch new"
+                onDeletedMail: "mbsync 'spag:[Gmail]/Starred' && notmuch new"
                 onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/Spam"
-                onNewMail: "mbsync 'spag:[Gmail]/Spam'"
-                onDeletedMail: "mbsync 'spag:[Gmail]/Spam'"
+                onNewMail: "mbsync 'spag:[Gmail]/Spam' && notmuch new"
+                onDeletedMail: "mbsync 'spag:[Gmail]/Spam' && notmuch new"
                 onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: Archive
-                onNewMail: "mbsync 'spag:Archive'"
-                onDeletedMail: "mbsync 'spag:Archive'"
+                onNewMail: "mbsync 'spag:Archive' && notmuch new"
+                onDeletedMail: "mbsync 'spag:Archive' && notmuch new"
                 onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
