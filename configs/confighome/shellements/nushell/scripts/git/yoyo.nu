@@ -108,7 +108,7 @@ let git_repos_status = (
                     {
                         name: $'(ansi attr_bold)($repo.name)(ansi reset)',
                         git_commands: $"(ansi green)($git_commands | str join "\n")(ansi reset)",
-                        status: $'(ansi green)($status_output)(ansi reset)'
+                        status: $'(ansi green)($status_output | lines)(ansi reset)'
                     }
                 } catch {
                     {
@@ -122,7 +122,7 @@ let git_repos_status = (
                     # manual skipped
                     name: $'(ansi attr_bold)($repo.name)(ansi reset)',
                     git_commands: $'(ansi attr_underline)Skipped(ansi reset)',
-                    status: $'(ansi yellow)($status_output)(ansi reset)'
+                    status: $'(ansi yellow)($status_output | lines)(ansi reset)'
                 }
             }
         }

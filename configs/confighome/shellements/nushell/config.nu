@@ -208,7 +208,8 @@ alias spag = himalaya -c ~/.config/himalaya/accounts/spag.toml
 alias sbc = himalaya -c ~/.config/himalaya/accounts/sbc.toml
 alias define = dict -d wn
 alias synonym = dict -d moby-thesaurus
-alias yoyo-git = ~/.config/nushell/scripts/git/yoyo.nu
+alias git-yoyo = ~/.config/nushell/scripts/git/yoyo.nu
+alias stow-clean = ~/.config/nushell/scripts/stow/clean.nu
 
 # ------------------------------------------------------------------------------
 # Environment Variables

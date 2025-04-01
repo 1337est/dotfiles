@@ -31,3 +31,13 @@ rm ~/.config/systemd/user/default.target.wants/sync-mail.service
 systemctl --user daemon-reload
 systemctl --user enable sync-mail.service
 ```
+
+As an aside, if you don't have `~/.config/systemd/user/default.target.wants/goimapnotify@account.service`, then run the following commands:
+
+```nu
+systemctl --user enable goimapnotify@account1.service
+systemctl --user start goimapnotify@account1.service
+systemctl --user enable goimapnotify@account2.service
+systemctl --user start goimapnotify@account2.service
+# etc. You can find your `accountx` in $XDG_CONFIG_HOME/imapnotify/accountx.yaml
+```
