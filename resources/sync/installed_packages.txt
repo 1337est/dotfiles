@@ -91,6 +91,7 @@ pipewire-pulse
 plocate
 postgresql
 python-adblock
+python-aiohttp-oauthlib
 python-pip
 python-pygments
 qt5-wayland
