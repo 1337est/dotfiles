@@ -15,25 +15,25 @@
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/adrian/
 readonly = False
 type = calendar
-color = dark red
+color = yellow
 
 [[wife]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/wife/
 readonly = True
 type = calendar
-color = dark blue
+color = dark green
 
 [[holidays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/holidays/
 readonly = True
 type = calendar
-color = yellow
+color = light magenta
 
 [[birthdays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/birthdays/
 readonly = True
 type = birthdays
-color = light magenta
+color = light red
 
 # default values and other behaviors are set here
 ################################################################################
