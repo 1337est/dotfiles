@@ -1,22 +1,24 @@
 # vim: syntax=dosini
 
 # calendars section mandatory and must contain at least one subsection.
-################################################################################
-[calendars]
-[[adrian]]
-path = $XDG_DATA_HOME/vdirsyncer/calendars/$EMAIL1/
 # readonly True will keep khal from making any changes to this calendar
-readonly = False
 # type accepts calendar, birthdays, and discover
-type = calendar
 # valid calendar colors:
 # black, white, brown, yellow
 # dark  [gray, green, blue, magenta, cyan, red]
 # light [gray, green, blue, magenta, cyan, red]
+
+# Main calendars config
+################################################################################
+[calendars]
+[[adrian]]
+path = $XDG_DATA_HOME/vdirsyncer/sanch/caldav/calendars/adrian.rene.sanch@gmail.com/
+readonly = False
+type = calendar
 color = dark red
 
 [[wife]]
-path = $XDG_DATA_HOME/vdirsyncer/calendars/$EMAIL5/
+path = $XDG_DATA_HOME/vdirsyncer/sanch/caldav/calendars/lunarwolf123@gmail.com/
 readonly = True
 type = calendar
 color = dark blue
@@ -33,7 +35,7 @@ readonly = True
 type = birthdays
 color = light magenta
 
-# default values and behaviors are set here
+# default values and other behaviors are set here
 ################################################################################
 [default]
 default_calendar = adrian
@@ -42,14 +44,12 @@ print_new = path
 show_all_days = False
 timedelta = 7d
 
-################################################################################
 [highlight_days]
 color = ''
 default_color = light cyan
 method = fg
 multiple = ''
 
-################################################################################
 [keybindings]
 view = enter
 new = a
@@ -69,11 +69,9 @@ down = down, j
 up = up, k
 right = right, l, space
 
-################################################################################
 [sqlite]
 path = $XDG_DATA_HOME/khal/khal.db
 
-################################################################################
 [locale]
 dateformat = %x
 datetimeformat = %c
@@ -84,7 +82,6 @@ timeformat = %X
 unicode_symbols = True
 weeknumbers = right
 
-################################################################################
 [view]
 agenda_day_format = "{bold}{name}, {date-long}{reset}"
 agenda_event_format = "{calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}{alarm-symbol}{description-separator}{description}{reset}"
