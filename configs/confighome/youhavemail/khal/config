@@ -73,12 +73,12 @@ right = right, l, space
 path = $XDG_DATA_HOME/khal/khal.db
 
 [locale]
-dateformat = %x
-datetimeformat = %c
-firstweekday = 0
-longdateformat = %x
-longdatetimeformat = %c
-timeformat = %X
+longdatetimeformat = "%Y %m/%d @%H:%M %A"
+datetimeformat = "%Y %m/%d @%H:%M %a"
+longdateformat = "%Y %m/%d"
+dateformat = "%Y %m/%d"
+timeformat = "@%H:%M"
+firstweekday = 6
 unicode_symbols = True
 weeknumbers = right
 
