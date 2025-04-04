@@ -15,25 +15,25 @@
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/adrian/
 readonly = False
 type = calendar
-color = yellow
+color = "#ef5f6b"
 
 [[wife]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/wife/
 readonly = True
 type = calendar
-color = dark green
+color = "#4dbdcb"
 
 [[holidays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/holidays/
 readonly = True
 type = calendar
-color = light magenta
+color = "#97ca72"
 
 [[birthdays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/birthdays/
 readonly = True
 type = birthdays
-color = light red
+color = "#ebc275"
 
 # default values and other behaviors are set here
 ################################################################################
@@ -46,38 +46,24 @@ timedelta = 7d
 
 [highlight_days]
 color = ''
-default_color = light cyan
+default_color = "#ca72e4"
 method = fg
 multiple = ''
 
 [keybindings]
-view = enter
 new = a
-delete = d
-save = meta enter
-quit = q, Q
-today = t
-mark = v
-other = o
-duplicate = p
-log = L
-export = e
-search = /
-external_edit = meta E
 left = left, h
-down = down, j
-up = up, k
-right = right, l, space
+right = right, l
 
 [sqlite]
 path = $XDG_DATA_HOME/khal/khal.db
 
 [locale]
-longdatetimeformat = "%Y %m/%d @%H:%M %A"
-datetimeformat = "%Y %m/%d @%H:%M %a"
-longdateformat = "%Y %m/%d"
-dateformat = "%Y %m/%d"
-timeformat = "@%H:%M"
+longdatetimeformat = "%b %d, %Y @%H:%M"
+datetimeformat = "%Y-%m-%d @%H:%M"
+longdateformat = "%b %d, %Y"
+dateformat = "%Y-%m-%d"
+timeformat = "%H:%M"
 firstweekday = 6
 unicode_symbols = True
 weeknumbers = right

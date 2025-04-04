@@ -12,7 +12,8 @@ status_path = "~/.local/share/vdirsyncer/status/"
 [pair sanch_calendar]
 a = "sanch_calendar_local"
 b = "sanch_calendar_remote"
-collections = [["cal_adrian", "adrian", "adrian.email@example.com"], ["cal_wife", "wife", "wife.email@example.com"], ["cal_holidays", "holidays", "holidays.email@example.com"], ["cal_birthdays", "birthdays", "birthdays.email@example.com"]]
+# collections = [["cal_adrian", "adrian", "adrian.email@example.com"], ["cal_wife", "wife", "wife.email@example.com"], ["cal_holidays", "holidays", "holidays.email@example.com"], ["cal_birthdays", "birthdays", "birthdays.email@example.com"]]
+collections = ["from a", "from b"]
 conflict_resolution = "a wins"
 metadata = ["displayname", "color"]
 
