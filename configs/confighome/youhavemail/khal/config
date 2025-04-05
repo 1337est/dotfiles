@@ -15,48 +15,42 @@
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/adrian/
 readonly = False
 type = calendar
-color = "#ef5f6b"
+color = '#ef5f6b'
 
 [[wife]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/wife/
 readonly = True
 type = calendar
-color = "#4dbdcb"
+color = '#4dbdcb'
 
 [[holidays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/holidays/
 readonly = True
 type = calendar
-color = "#97ca72"
+color = '#97ca72'
 
 [[birthdays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/birthdays/
 readonly = True
 type = birthdays
-color = "#ebc275"
+color = '#ebc275'
 
 # default values and other behaviors are set here
 ################################################################################
 [default]
 default_calendar = adrian
 highlight_event_days = True
-print_new = path
-show_all_days = False
-timedelta = 7d
+print_new = event
+show_all_days = True
+timedelta = 15d
 
 [highlight_days]
-color = ''
-default_color = "#ca72e4"
-method = fg
-multiple = ''
+default_color = '#ca72e4'
 
 [keybindings]
 new = a
 left = left, h
 right = right, l
-
-[sqlite]
-path = $XDG_DATA_HOME/khal/khal.db
 
 [locale]
 longdatetimeformat = "%b %d, %Y @%H:%M"
@@ -64,14 +58,24 @@ datetimeformat = "%Y-%m-%d @%H:%M"
 longdateformat = "%b %d, %Y"
 dateformat = "%Y-%m-%d"
 timeformat = "%H:%M"
-firstweekday = 6
-unicode_symbols = True
-weeknumbers = right
+weeknumbers = left
+
+[sqlite]
+path = $XDG_DATA_HOME/khal/khal.db
 
 [view]
-agenda_day_format = "{bold}{name}, {date-long}{reset}"
-agenda_event_format = "{calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}{alarm-symbol}{description-separator}{description}{reset}"
+# defaults
+agenda_day_format = "{yellow-bold}{name} {date-long}{reset}"
+agenda_event_format = "{calendar-color}{bold}{cancelled}{calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}{description-separator}{reset}{description}"
+event_format = "{calendar-color}{cancelled}{start}-{end} {title}{repeat-symbol}{alarm-symbol}{description-separator}{description}{reset}"
+# non-defaults
 event_view_always_visible = True
-dynamic_days = True
-frame = color
-theme = dark
+frame = top
+monthdisplay = "firstfullweek"
+
+# TODO: khal --version 0.11.4 will introduce [palette]. Below is test.
+
+# [palette]
+# header = light red, default, default, '#ff0000', default
+# edit = '', '', 'bold', '#FF00FF', '#12FF14'
+# footer = '', '', '', '#121233', '#656599'
