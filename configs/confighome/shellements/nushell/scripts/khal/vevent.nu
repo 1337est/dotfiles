@@ -24,7 +24,9 @@ let indices_with_starting_space = $ics_ve_lines | each {||
 }
 
 let indices_to_join = $indices_with_starting_space | each {|list|
+    # top grouped list of lists
     mut grouped = []
+    # to hold the current list that will be added into grouped
     mut current = [$list.0]
     for number in ($list | skip 1) {
         if $number == ($current | last | into int) + 1 {
@@ -38,35 +40,55 @@ let indices_to_join = $indices_with_starting_space | each {|list|
     $grouped
 } | each {|list| each {|sublist| $sublist | prepend (($sublist | first) - 1) }}
 
-# TESTING: Below are things I'm testing
-# NOTE: $indices_to_join.0 = first event with list<manysublistings<int>> for the lines to get/join
-# NOTE: $ics_ve_lines.0 = first event with lines already applied
-# TEST: First event (0.item)'s first entry (0.item)
-# Same as: $ics_ve_lines.0 $ics.ve_lines.1 $ics.ve_lines.2 $ics.ve_lines.3
-let enumerated_ics_ve_lines = $ics_ve_lines | each {|event| $event | enumerate } | enumerate
-$enumerated_ics_ve_lines | each {|event|
-        # list = each events list of lines to join.
-        # 0[<3><2><2><17><2><2><2>] where 1st $list is 0<2> 3rd is 0<17>
-        # 1[<3><3><3><17><2><2><2>] where 1st $list is 1<3> 3rd is 1<17>
-        # 2[<3><3><3><17><2><2><2>] where 1st $list is 2<3> 3rd is 2<17>
-        # 3[<3><3><3><17><2><2><2>] where 1st $list is 3<3> 3rd is 3<17>
-            # list_item = each item in a $list. So the $list == 0<3> == [8 9 10] items themselves, which are 8 9 and 10.
-            # The first $list_item == 8, the second $list_item == 9, the third $list_item == 10, etc.
-    let cur_e_index = $event.index # event index 0 1 2 3
-    print $"Current event: ($cur_e_index)"
-    let cur_e_item = $event.item   # full event  0 1 2 3
-    print $cur_e_item
-    let cur_e_indices_list = $indices_to_join | get $cur_e_index # list of join indices 0 1 2 3
-    print $"Current list:"
-    print $cur_e_indices_list
-    # $cur_e_indices_list | each {|list| $list | each {|| print $in }}
-    # FIXME: Currently only gets first item of each sublist. Need to fix
-    let sublists = $cur_e_indices_list | each {|list| enumerate | each {|list_item| $list_item } } | enumerate | each {|| $in | get item.0 }
-    print $sublists
+mut fixed_vevents = []
+
+let total = ($ics_ve_lines | length)
+for i in 0..($total - 1) {
+    let ve_lines = $ics_ve_lines | get $i
+    let join_groups = $indices_to_join | get $i
+    mut updated = $ve_lines
+
+    # TODO: last left here
+    for group in $join_groups {
+        mut lines_to_join = []
+        for idx in $group {
+            let line = $updated | get $idx | str trim
+            $lines_to_join = ($lines_to_join ++ [$line])
+        }
+        let joined = ($lines_to_join | str join)
+        print $lines_to_join
+        print $joined
+        let before = $updated | take ($group | first)
+        let after = $updated | skip (($group | last) + 1)
+        let updated = ($before ++ [$joined] ++ $after)
+    }
+
+    let fixed_vevents = ($fixed_vevents ++ [$updated])
 }
-# NOTE: get (0-3 event index).item.(0-x line_item index).item
-# NOTE: each goes through the indices so the first each should be the $in.item
-# NOTE: The second each should be the line numbers to str join for each event
-# TEST: Find a formula to not hard-code $ics_ve_lines.0 test.0 test.1 etc.
-let test = [8 9 10] # should be 
-let test2 = $ics_ve_lines.0 | get $test.0 $test.1 $test.2 | each {|| str trim } | str join
+
+# let enumerated_ics_ve_lines = $ics_ve_lines | each {|event| $event | enumerate } | enumerate | each {|event|
+#     let cur_e_index = $event.index # event index 0 1 2 3
+#     print $"Current event: ($cur_e_index)"
+#     let cur_e_item = $event.item   # full event  0 1 2 3
+#     print $cur_e_item
+#     let cur_e_indices_list = $indices_to_join | get $cur_e_index # list of join indices 0 1 2 3
+#     print $"Current list for event:"
+#     print $cur_e_indices_list
+#     let cur_e_indices_sublists = $cur_e_indices_list | each {||
+#         $in | enumerate
+#     } | enumerate | each {|sublist|
+#         let cur_sublist_index = $sublist.index
+#         print $"Current sublist: ($cur_sublist_index)"
+#         let cur_sublist_item = $sublist.item
+#         print $cur_sublist_item
+#         let cur_sublist_indices_items = $cur_sublist_item | each {||
+#             $in | enumerate
+#         } | enumerate
+#         $cur_sublist_indices_items | each {|sublist_listitem|
+#             let cur_listitem_index = $sublist_listitem.index
+#             print $"Current sublist_listitem: ($cur_listitem_index)"
+#             let cur_listitem_item = $sublist_listitem.item.item.item.0
+#             print $cur_listitem_item
+#         }
+#     }
+# }
