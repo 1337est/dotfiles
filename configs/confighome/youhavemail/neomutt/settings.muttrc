@@ -50,8 +50,7 @@ shutdown-hook   'exec sync-mailbox' # runs command at neomutt program exit
 set     mailcap_path = ~/.config/neomutt/mailcap
 set     mime_type_query_command = "file --mime-type -b %s"
 set     text_flowed = yes # generates "format=flowed" content for mail
-alternative_order   text/html text/plain text/enriched text/*
-# TODO: add mutt2khal and khal features for adding calendar items
+alternative_order   text/html text/plain text/enriched text/calendar text/*
 auto_view           text/html text/calendar application/ics
 
 # Sidebar Settings -------------------------------------------------------------

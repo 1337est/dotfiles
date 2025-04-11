@@ -1,7 +1,7 @@
 text/plain; $EDITOR %s;
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
-text/calendar; khal printics --format "<br>{cancelled}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}<br>{nl}URL: {url}<br>{nl}DES: {description-separator}<br>{description}" %s | lynx -assume_charset=utf-8 -display_charset=utf-8 -dump -width=1024 -stdin; nametemplate=%s.ics; copiousoutput;
 text/calendar; khal import %s; nametemplate=%s.ics;
+text/calendar; khal printics --format "<br>{cancelled}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}<br>{nl}URL: {url}<br>{nl}DES: {description-separator}<br>{description}" %s | lynx -assume_charset=utf-8 -display_charset=utf-8 -dump -width=1024 -stdin; nametemplate=%s.ics; copiousoutput;
 image/*; /usr/bin/xdg-open %s;
 video/*; setsid mpv --quiet %s &; copiousoutput;
 audio/*; mpv %s;

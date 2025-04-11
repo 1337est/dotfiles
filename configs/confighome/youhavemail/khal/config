@@ -15,24 +15,6 @@
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/*
 type = discover
 
-[[wife]]
-path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/wife/
-readonly = True
-type = calendar
-color = '#ca72e4'
-
-[[holidays]]
-path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/holidays/
-readonly = True
-type = calendar
-color = '#5ab0f6'
-
-[[birthdays]]
-path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/birthdays/
-readonly = True
-type = birthdays
-color = '#ef5f6b'
-
 # default values and other behaviors are set here
 ################################################################################
 [default]

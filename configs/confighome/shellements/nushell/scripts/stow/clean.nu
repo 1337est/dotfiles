@@ -29,11 +29,13 @@ stow -d $stow_dir gnupghome -t $"($env.HOME)/.gnupg"
 # systemduser stow restore
 let systemduser_pkgs = ls -s $"($stow_dir)/systemduser" | where name != README.md | get name
 # remove packages before stow if they exist
-for pkg in $systemduser_pkgs { rm -r $"($env.XDG_CONFIG_HOME)/systemd/user/($pkg)" }
+for pkg in $systemduser_pkgs { rm -r -f $"($env.XDG_CONFIG_HOME)/systemd/user/($pkg)" }
 stow -d $stow_dir systemduser -t $"($env.XDG_CONFIG_HOME)/systemd/user"
 # reenable/restart all user services
 systemctl --user daemon-reload
 for service in $systemduser_pkgs {
-    systemctl --user enable $service
-    systemctl --user start $service
+    # skips vdirsyncer.service
+    if $service != "vdirsyncer.service" {
+        systemctl --user enable --now $service
+    }
 }
