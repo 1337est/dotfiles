@@ -11,41 +11,38 @@
 # Main calendars config
 ################################################################################
 [calendars]
-[[adrian]]
-path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/adrian/
-readonly = False
-type = calendar
-color = '#ef5f6b'
+[[calendars]]
+path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/*
+type = discover
 
 [[wife]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/wife/
 readonly = True
 type = calendar
-color = '#4dbdcb'
+color = '#ca72e4'
 
 [[holidays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/holidays/
 readonly = True
 type = calendar
-color = '#97ca72'
+color = '#5ab0f6'
 
 [[birthdays]]
 path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/birthdays/
 readonly = True
 type = birthdays
-color = '#ebc275'
+color = '#ef5f6b'
 
 # default values and other behaviors are set here
 ################################################################################
 [default]
-default_calendar = adrian
 highlight_event_days = True
 print_new = event
 show_all_days = True
 timedelta = 15d
 
 [highlight_days]
-default_color = '#ca72e4'
+default_color = '#ffffff'
 
 [keybindings]
 new = a
@@ -65,9 +62,9 @@ path = $XDG_DATA_HOME/khal/khal.db
 
 [view]
 # defaults
-agenda_day_format = "{yellow-bold}{name} {date-long}{reset}"
-agenda_event_format = "{calendar-color}{bold}{cancelled}{calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}{description-separator}{reset}{description}"
-event_format = "{calendar-color}{cancelled}{start}-{end} {title}{repeat-symbol}{alarm-symbol}{description-separator}{description}{reset}"
+agenda_day_format =     "{yellow-bold}{name} {date-long}{reset}"
+agenda_event_format =   "{cancelled}{calendar-color}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
+event_format =          "{cancelled}{yellow}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
 # non-defaults
 event_view_always_visible = True
 frame = top

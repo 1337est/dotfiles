@@ -1,0 +1,5 @@
+[Unit]
+Description=Synchronize vdirs with vdirsyncer
+
+[Service]
+ExecStart=/usr/bin/vdirsyncer sync

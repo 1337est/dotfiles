@@ -226,6 +226,7 @@ $env.MANPAGER   = 'nvim +Man!'
 $env.MANWIDTH   = 999
 $env.BROWSER    = 'firefox'
 $env.ESCDELAY   = 0
+$env.LANG       = 'en_US.UTF-8'
 
 # XDG Base Directories ---------------------------------------------------------
 
