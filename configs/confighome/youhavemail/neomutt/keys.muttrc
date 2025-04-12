@@ -57,7 +57,7 @@ bind pager                  k previous-line
 bind index                  l display-message
 bind pager                  l view-attachments
 bind browser                l select-entry
-bind attach                 l view-mailcap
+bind attach                 l view-pager
 
 bind pager,attach           h exit
 bind browser                h goto-parent
@@ -90,18 +90,12 @@ bind index                  \CN sidebar-next
 bind pager                  \CN next-entry
 
 bind index                  \CY sidebar-open
-bind pager                  \CY view-attachments
 
 bind index,pager            B sidebar-toggle-visible
 
 bind editor                 <Tab> complete-query
 
 # Macros -----------------------------------------------------------------------
-
-# mbsync all mailboxes for local storage
-macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
-<shell-escape>mbsync -V -a<enter>\
-<shell-escape>notmuch new<enter><check-stats>' "sync all"
 
 # switch to accounts using function keys
 macro index,pager <f1> "<sync-mailbox>\
@@ -120,12 +114,23 @@ macro index,pager <f4> "<sync-mailbox>\
 <enter-command>source ~/.config/neomutt/accounts/spag.muttrc<enter>\
 <change-folder>!<enter><check-stats>" "switch to spag"
 
+# mbsync all mailboxes for local storage
+macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
+<shell-escape>mbsync -V -a<enter>\
+<shell-escape>notmuch new<enter><check-stats>' "sync all"
+
 # Add email to addressbook using 'abook'
 macro index,pager a "\
 <enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return>\
 <pipe-message>abook --add-email<return>\
 <enter-command>set pipe_decode=\$my_pipe_decode; \
 unset my_pipe_decode<return>" "add the sender address to 'abook'"
+
+# Add calendar event to khal
+macro attach I "\
+<enter-command>unset wait_key<enter>\
+<save-entry>~/.cache/neomutt/temp/khal-import.ics<enter>\
+<shell-escape>khal import ~/.cache/neomutt/temp/khal-import.ics<enter>" "Import .ics into khal"
 
 # I really tried to make this Ctrl-F 'notmuch' find feature readable
 macro index \Cf "\

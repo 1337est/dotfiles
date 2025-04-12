@@ -9,7 +9,7 @@ set     pipe_decode = yes # attempt to decode <pipe-message>'s
 set     pipe_decode_weed = yes # further controls header weeding
 set     query_command = "abook --mutt-query '%s'" # external address query
 set     wait_key = no # prompt for "press key to continue"
-set     tmp_dir = ~/.cache/neomutt/temp # temp file
+set     tmp_dir = ~/.cache/neomutt/tmp # temp file
 
 # Message Settings -------------------------------------------------------------
 set     edit_headers = yes # Allows edit of headers for outgoing messages
@@ -50,8 +50,8 @@ shutdown-hook   'exec sync-mailbox' # runs command at neomutt program exit
 set     mailcap_path = ~/.config/neomutt/mailcap
 set     mime_type_query_command = "file --mime-type -b %s"
 set     text_flowed = yes # generates "format=flowed" content for mail
-alternative_order   text/html text/plain text/enriched text/calendar text/*
-auto_view           text/html text/calendar application/ics
+auto_view           text/html text/calendar
+alternative_order   text/html text/plain text/enriched text/*
 
 # Sidebar Settings -------------------------------------------------------------
 set     sidebar_visible = yes
