@@ -16,6 +16,7 @@ cmake
 composer
 copyq
 cups
+cups-pdf
 dict-moby-thesaurus
 dict-wn
 dictd
@@ -113,7 +114,9 @@ syncthing
 tealdeer
 timeshift
 ttf-jetbrains-mono-nerd
+usbutils
 vdirsyncer
+viu
 vivaldi
 vulkan-extra-layers
 vulkan-extra-tools
@@ -123,6 +126,7 @@ vulkan-radeon
 vulkan-tools
 vulkan-utility-libraries
 vulkan-validation-layers
+w3m
 waybar
 wf-recorder
 wireplumber-docs
