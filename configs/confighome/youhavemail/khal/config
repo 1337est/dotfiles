@@ -24,7 +24,8 @@ show_all_days = True
 timedelta = 15d
 
 [highlight_days]
-default_color = '#ffffff'
+color = ''
+default_color = ''
 
 [keybindings]
 new = a
@@ -32,29 +33,51 @@ left = left, h
 right = right, l
 
 [locale]
-longdatetimeformat = "%b %d, %Y @%H:%M"
-datetimeformat = "%Y-%m-%d @%H:%M"
-longdateformat = "%b %d, %Y"
-dateformat = "%Y-%m-%d"
+dateformat = "%b/%d"
 timeformat = "%H:%M"
+datetimeformat = "%b/%d @%H:%M"
+longdateformat = "%Y-%m-%d"
+longdatetimeformat = "%Y-%m-%d @%H:%M"
 weeknumbers = left
 
 [sqlite]
 path = $XDG_DATA_HOME/khal/khal.db
 
 [view]
-# defaults
-agenda_day_format =     "{yellow-bold}{name} {date-long}{reset}"
+agenda_day_format =     "{yellow-bold}{name} {date}{reset}"
 agenda_event_format =   "{cancelled}{calendar-color}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
-event_format =          "{cancelled}{yellow}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
-# non-defaults
+event_format =          "{cancelled}{yellow}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start} -> {end}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
 event_view_always_visible = True
-frame = top
+frame = color
 monthdisplay = "firstfullweek"
 
-# TODO: khal --version 0.11.4 will introduce [palette]. Below is test.
+# The format is fg, bg, mono, fg-hi, bg-hi
+[palette]
+# top-header, bottom-footer, frame of unfocused
+header = '', '', '', '#ebc275', '#242b38'
+footer = '', '', '', '#ebc275', '#242b38'
+frame =       '', '', '', '#a5b0c5', ''
 
-# [palette]
-# header = light red, default, default, '#ff0000', default
-# edit = '', '', 'bold', '#FF00FF', '#12FF14'
-# footer = '', '', '', '#121233', '#656599'
+# event editing screen
+edit = '', '', '', '#a5b0c5', '#242b38'
+button = '', '', '', '#a5b0c5', '#242b38'
+
+# Calendar
+today = '', '', '', '#a5b0c5', '#242b38'
+dayname = '', '', '', '#d99a5e', ''
+monthname = '', '', '', '#f0d197', '#242b38'
+weeknumber_right = '', '', '', '#4dbdcb', '#242b38'
+weeknumber_left = '', '', '', '#4dbdcb', '#242b38'
+mark =        '', '', '', '#54b0fd', '#c75ae8'
+
+# idk what this does
+list = '', '', '', '#54b0fd', '#c75ae8'
+alert =     '', '', '', '#54b0fd', '#c75ae8'
+# event day separator/highlighter
+eventcolumn = '', '', '', '#54b0fd', '#c75ae8'
+# calendar =    '', '', '', '#54b0fd', '#c75ae8'
+# editbx =      '', '', '', '#54b0fd', '#c75ae8'
+# editcp =      '', '', '', '#54b0fd', '#c75ae8'
+# popupbg =     '', '', '', '#54b0fd', '#c75ae8'
+# popupper =    '', '', '', '#54b0fd', '#c75ae8'
+# caption =     '', '', '', '#54b0fd', '#c75ae8'

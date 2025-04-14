@@ -127,10 +127,11 @@ macro index,pager a "\
 unset my_pipe_decode<return>" "add the sender address to 'abook'"
 
 # Add calendar event to khal
-macro attach I "\
-<enter-command>unset wait_key<enter>\
-<save-entry>~/.cache/neomutt/temp/khal-import.ics<enter>\
-<shell-escape>khal import ~/.cache/neomutt/temp/khal-import.ics<enter>" "Import .ics into khal"
+macro pager,attach I "\
+<enter-command>set wait_key<enter>\
+<shell-escape>\
+nu ~/.config/nushell/scripts/neomutt/import-ics.nu\
+<enter>" "Import .ics into khal"
 
 # I really tried to make this Ctrl-F 'notmuch' find feature readable
 macro index \Cf "\
