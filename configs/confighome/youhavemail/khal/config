@@ -48,23 +48,47 @@ agenda_day_format =     "{yellow-bold}{name} {date}{reset}"
 agenda_event_format =   "{cancelled}{calendar-color}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start-end-time-style}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
 event_format =          "{cancelled}{yellow}{bold}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start} -> {end}{nl}LOC: {location}{nl}URL: {url}{nl}{reset}{description-separator}{description}"
 event_view_always_visible = True
-frame = color
+frame = top
 monthdisplay = "firstfullweek"
 
 # The format is fg, bg, mono, fg-hi, bg-hi
 [palette]
 # top-header, bottom-footer, frame of unfocused
-header = '', '', '', '#ebc275', '#242b38'
-footer = '', '', '', '#ebc275', '#242b38'
+header = '', '', '', '#d99a5e', '#242b38'
+alt header = '', '', '', '#d99a5e', '#242b38'
+footer = '', '', '', '#d99a5e', '#242b38'
+# highlighting of unfocused frame (event/calendar)
 frame =       '', '', '', '#a5b0c5', ''
+frame focus =       '', '', '', '#a5b0c5', '#c75ae8'
+frame focus color =       '', '', '', '#151820', '#4dbdcb'
+frame focus top =       '', '', '', '#151820', '#4dbdcb'
+# event day separator/highlighter when not in focus
+eventcolumn = '', '', '', '#a5b0c5', '#151820'
+eventcolumn focus = '', '', '', '#a5b0c5', '#151820'
+# calendar highlighting when not in focus
+calendar =    '', '', '', '', ''
+calendar focus =    '', '', '', '', ''
 
 # event editing screen
 edit = '', '', '', '#a5b0c5', '#242b38'
-button = '', '', '', '#a5b0c5', '#242b38'
+edit focus = '', '', '', '#151820', '#4dbdcb'
+button = '', '', '', '#ebc275', '#151820'
+button focus = '', '', '', '#151820', '#4dbdcb'
+#  edit screen how often, until
+popupper =    '', '', '', '#ebc275', '#151820'
+# change popupper fg bg
+popupbg =     '', '', '', '#a5b0c5', '#242b38'
+popupbg focus =     '', '', '', '#151820', '#4dbdcb'
+# Title, Loc: Cat: Desc: Att:
+caption =     '', '', '', '#ebc275', '#151820'
 
 # Calendar
-today = '', '', '', '#a5b0c5', '#242b38'
-dayname = '', '', '', '#d99a5e', ''
+today = '', '', '', '#151820', '#ebc275'
+today focus = '', '', '', '#151820', '#4dbdcb'
+date header = '', '', '', '#d99a5e', '#242b38'
+date header focused = '', '', '', '#151820', '#ebc275'
+date header selected = '', '', '', '#151820', '#4dbdcb'
+reveal focus = '', '', '', '#151820', '#4dbdcb'
 monthname = '', '', '', '#f0d197', '#242b38'
 weeknumber_right = '', '', '', '#4dbdcb', '#242b38'
 weeknumber_left = '', '', '', '#4dbdcb', '#242b38'
@@ -72,12 +96,9 @@ mark =        '', '', '', '#54b0fd', '#c75ae8'
 
 # idk what this does
 list = '', '', '', '#54b0fd', '#c75ae8'
+list focus = '', '', '', '#54b0fd', '#c75ae8'
 alert =     '', '', '', '#54b0fd', '#c75ae8'
-# event day separator/highlighter
-eventcolumn = '', '', '', '#54b0fd', '#c75ae8'
-# calendar =    '', '', '', '#54b0fd', '#c75ae8'
-# editbx =      '', '', '', '#54b0fd', '#c75ae8'
-# editcp =      '', '', '', '#54b0fd', '#c75ae8'
-# popupbg =     '', '', '', '#54b0fd', '#c75ae8'
-# popupper =    '', '', '', '#54b0fd', '#c75ae8'
-# caption =     '', '', '', '#54b0fd', '#c75ae8'
+editbx =      '', '', '', '#54b0fd', '#c75ae8'
+editcp =      '', '', '', '#54b0fd', '#c75ae8'
+line header = '', '', '', '#54b0fd', '#c75ae8'
+bright = '', '', '', '#54b0fd', '#c75ae8'
