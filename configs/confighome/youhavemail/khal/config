@@ -54,8 +54,34 @@ monthdisplay = "firstfullweek"
 # The format is fg, bg, mono, fg-hi, bg-hi
 [palette]
 header =        '', '', '', '#d99a5e', '#151820'
-alt header =    '', '', '', '#d99a5e', '#151820'
 footer =        '', '', '', '#d99a5e', '#151820'
+line header = '', '', '', '#54b0fd', '#c75ae8'
+alt header =    '', '', '', '#d99a5e', '#151820'
+bright = '', '', '', '#54b0fd', '#c75ae8'
+list = '', '', '', '#54b0fd', '#c75ae8'
+list focused = '', '', '', '#54b0fd', '#c75ae8'
+
+edit = '', '', '', '#a5b0c5', ''
+edit focus = '', '', '','#151820', '#a5b0c5'
+
+button = '', '', '', '#ebc275', '#151820'
+button focus = '', '', '','#151820', '#a5b0c5'
+
+reveal focus = '', '', '','#151820', '#a5b0c5'
+today focus = '', '', '','#151820', '#a5b0c5'
+today = '', '', '', '#151820', '#ebc275'
+
+date header = '', '', '', '#d99a5e', '#242b38'
+date header focused = '', '', '', '#151820', '#ebc275'
+date header selected = '', '', '','#151820', '#a5b0c5'
+
+dayname = '', '', '', '#ebc275', ''
+monthname = '', '', '', '#f0d197', '#242b38'
+weeknumber_right = '', '', '', '#4dbdcb', '#242b38'
+weeknumber_left = '', '', '', '#4dbdcb', '#242b38'
+
+alert =     '', '', '', '#54b0fd', '#c75ae8'
+mark =        '', '', '', '#54b0fd', '#c75ae8'
 
 frame =             '', '', '', '#a5b0c5', ''
 frame focus =       '', '', '', '#a5b0c5', '#c75ae8'
@@ -64,46 +90,17 @@ frame focus top =   '', '', '', '#151820', '#a5b0c5'
 
 eventcolumn =       '', '', '', '#a5b0c5', ''
 eventcolumn focus = '', '', '', '#a5b0c5', ''
-
 calendar =          '', '', 'bold', '#a5b0c5', ''
 calendar focus =    '', '', 'bold', '#a5b0c5', ''
-
-button = '', '', '', '#ebc275', '#151820'
-button focus = '', '', '','#151820', '#a5b0c5'
-
 editor = '', '', '', '#ebc275', ''
 editor focus = '', '', '','#ebc275', ''
-caption =     '', '', '', '#ebc275', '#151820'
-edit = '', '', '', '#a5b0c5', ''
-edit focus = '', '', '','#151820', '#a5b0c5'
 
-popupper =    '', '', '', '#ebc275', '#151820'
-# change popupper fg bg
-popupbg =     '', '', '', '#a5b0c5', '#242b38'
-popupbg focus =     '', '', '','#151820', '#a5b0c5'
-# Title, Loc: Cat: Desc: Att:
-
-# Calendar
-today = '', '', '', '#151820', '#ebc275'
-today focus = '', '', '','#151820', '#a5b0c5'
-date header = '', '', '', '#d99a5e', '#242b38'
-date header focused = '', '', '', '#151820', '#ebc275'
-date header selected = '', '', '','#151820', '#a5b0c5'
-reveal focus = '', '', '','#151820', '#a5b0c5'
-dayname = '', '', '', '#ebc275', ''
-monthname = '', '', '', '#f0d197', '#242b38'
-weeknumber_right = '', '', '', '#4dbdcb', '#242b38'
-weeknumber_left = '', '', '', '#4dbdcb', '#242b38'
-mark =        '', '', '', '#54b0fd', '#c75ae8'
-
-# idk what this does
-list = '', '', '', '#54b0fd', '#c75ae8'
-list focus = '', '', '', '#54b0fd', '#c75ae8'
-alert =     '', '', '', '#54b0fd', '#c75ae8'
 editbx =      '', '', '', '#54b0fd', '#c75ae8'
 editcp =      '', '', '', '#54b0fd', '#c75ae8'
-line header = '', '', '', '#54b0fd', '#c75ae8'
-bright = '', '', '', '#54b0fd', '#c75ae8'
+popupbg =     '', '', '', '#a5b0c5', '#242b38'
+popupbg focus =     '', '', '','#151820', '#a5b0c5'
+popupper =    '', '', '', '#ebc275', '#151820'
+caption =     '', '', '', '#ebc275', '#151820'
 
 # this oddly works to change the color of your calendars by name
 # calendar adrian =          '', '', 'bold', '#00ff00', ''
