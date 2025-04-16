@@ -11,13 +11,34 @@
 # Main calendars config
 ################################################################################
 [calendars]
-[[calendars]]
-path = $XDG_DATA_HOME/vdirsyncer/sanch/calendars/*
-type = discover
+[[sanch]]
+path = $XDG_DATA_HOME/vdirsyncer/google/calendars/sanch
+priority = 20
+readonly = False
+type = calendar
+
+[[wife]]
+path = $XDG_DATA_HOME/vdirsyncer/google/calendars/wife
+priority = 15
+readonly = True
+type = calendar
+
+[[holidays]]
+path = $XDG_DATA_HOME/vdirsyncer/google/calendars/holidays
+priority = 10
+readonly = True
+type = calendar
+
+[[birthdays]]
+path = $XDG_DATA_HOME/vdirsyncer/google/calendars/birthdays
+priority = 10
+readonly = True
+type = birthdays
 
 # default values and other behaviors are set here
 ################################################################################
 [default]
+default_calendar = 'sanch'
 highlight_event_days = True
 print_new = event
 show_all_days = True
@@ -26,6 +47,8 @@ timedelta = 15d
 [highlight_days]
 color = ''
 default_color = ''
+multiple = ''
+multiple_on_overflow = False
 
 [keybindings]
 new = a
@@ -38,7 +61,7 @@ timeformat = "%H:%M"
 datetimeformat = "%b/%d @%H:%M"
 longdateformat = "%Y-%m-%d"
 longdatetimeformat = "%Y-%m-%d @%H:%M"
-weeknumbers = left
+weeknumbers = right
 
 [sqlite]
 path = $XDG_DATA_HOME/khal/khal.db
@@ -53,26 +76,27 @@ monthdisplay = "firstfullweek"
 
 # The format is fg, bg, mono, fg-hi, bg-hi
 [palette]
+# special rows/areas
 header =        '', '', '', '#d99a5e', '#151820'
 footer =        '', '', '', '#d99a5e', '#151820'
-line header = '', '', '', '#54b0fd', '#c75ae8'
 alt header =    '', '', '', '#d99a5e', '#151820'
-bright = '', '', '', '#54b0fd', '#c75ae8'
-list = '', '', '', '#54b0fd', '#c75ae8'
-list focused = '', '', '', '#54b0fd', '#c75ae8'
-
-edit = '', '', '', '#a5b0c5', ''
-edit focus = '', '', '','#151820', '#a5b0c5'
-
+alert =     '', '', '', '#5ab0f6', '#151820'
+# general items
 button = '', '', '', '#ebc275', '#151820'
 button focus = '', '', '','#151820', '#a5b0c5'
-
-reveal focus = '', '', '','#151820', '#a5b0c5'
+reveal focus = '', '', '','#151820', '#00ff00'
+# editor column
+edit = '', '', '', '#a5b0c5', ''
+edit focus = '', '', '','#151820', '#a5b0c5'
+editor = '', '', '', '#ebc275', ''
+editor focus = '', '', '','#ebc275', ''
+caption =     '', '', '', '#ebc275', '#151820'
+# calendar column
 today focus = '', '', '','#151820', '#a5b0c5'
-today = '', '', '', '#151820', '#ebc275'
-
+today = '', '', '', '#151820', '#d99a5e'
+# event column
 date header = '', '', '', '#d99a5e', '#242b38'
-date header focused = '', '', '', '#151820', '#ebc275'
+date header focused = '', '', '', '#151820', '#d99a5e'
 date header selected = '', '', '','#151820', '#a5b0c5'
 
 dayname = '', '', '', '#ebc275', ''
@@ -80,7 +104,6 @@ monthname = '', '', '', '#f0d197', '#242b38'
 weeknumber_right = '', '', '', '#4dbdcb', '#242b38'
 weeknumber_left = '', '', '', '#4dbdcb', '#242b38'
 
-alert =     '', '', '', '#54b0fd', '#c75ae8'
 mark =        '', '', '', '#54b0fd', '#c75ae8'
 
 frame =             '', '', '', '#a5b0c5', ''
@@ -92,21 +115,24 @@ eventcolumn =       '', '', '', '#a5b0c5', ''
 eventcolumn focus = '', '', '', '#a5b0c5', ''
 calendar =          '', '', 'bold', '#a5b0c5', ''
 calendar focus =    '', '', 'bold', '#a5b0c5', ''
-editor = '', '', '', '#ebc275', ''
-editor focus = '', '', '','#ebc275', ''
 
-editbx =      '', '', '', '#54b0fd', '#c75ae8'
-editcp =      '', '', '', '#54b0fd', '#c75ae8'
 popupbg =     '', '', '', '#a5b0c5', '#242b38'
 popupbg focus =     '', '', '','#151820', '#a5b0c5'
 popupper =    '', '', '', '#ebc275', '#151820'
-caption =     '', '', '', '#ebc275', '#151820'
+
+line header = '', '', '', '#54b0fd', '#c75ae8'
+bright = '', '', '', '#54b0fd', '#c75ae8'
+list = '', '', '', '#54b0fd', '#c75ae8'
+list focused = '', '', '', '#54b0fd', '#c75ae8'
+editbx =      '', '', '', '#54b0fd', '#c75ae8'
+editcp =      '', '', '', '#54b0fd', '#c75ae8'
 
 # this oddly works to change the color of your calendars by name
 # calendar adrian =          '', '', 'bold', '#00ff00', ''
 # calendar wife =          '', '', 'bold', '#ff0000', ''
 # calendar holidays =          '', '', 'bold', '#0000ff', ''
 # calendar birthdays =          '', '', 'bold', '#ffff00', ''
+
 # below should work, test it
 # date = '', '', '', '#d99a5e', '#242b38'
 # None = '', '', '', '#00ff00', '#00ffff'
