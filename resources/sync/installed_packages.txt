@@ -26,6 +26,7 @@ efibootmgr
 fastfetch
 fd
 firefox
+firewalld
 fish
 fuzzel
 fzf
@@ -52,6 +53,7 @@ inotify-tools
 intel-ucode
 isync
 iw
+iwd
 java-runtime-common
 jdk-openjdk
 jq
@@ -71,6 +73,7 @@ lynx
 mako
 man-db
 man-pages
+modemmanager
 mpv
 msmtp
 neomutt
@@ -106,10 +109,6 @@ sof-firmware
 starship
 stow
 swappy
-sway
-swaybg
-swayidle
-swaylock
 syncthing
 tealdeer
 timeshift
@@ -131,11 +130,11 @@ waybar
 wf-recorder
 wireplumber-docs
 wl-clipboard
-wmenu
 xdg-desktop-portal-hyprland
 yay
 yay-debug
 yazi
 zathura
+zathura-pdf-mupdf
 zig
 zoxide
