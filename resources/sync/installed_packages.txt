@@ -12,7 +12,9 @@ bat
 bluez
 bluez-utils
 brightnessctl
+btop
 carapace-bin
+clamav
 clang
 cmake
 composer
@@ -90,6 +92,7 @@ otf-font-awesome
 pacutils
 pandoc-cli
 pass
+pdfarranger
 pdfjs
 pipewire-alsa
 pipewire-docs
@@ -135,7 +138,6 @@ wireplumber-docs
 wl-clipboard
 xdg-desktop-portal-hyprland
 yay
-yay-debug
 yazi
 zathura
 zathura-pdf-mupdf
