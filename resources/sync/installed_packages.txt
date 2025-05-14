@@ -70,7 +70,6 @@ linux-docs
 linux-firmware
 luarocks
 lvm2
-lynx
 mako
 man-db
 man-pages
@@ -96,7 +95,6 @@ pipewire-docs
 pipewire-pulse
 plocate
 postgresql
-python-adblock
 python-aiohttp-oauthlib
 python-pip
 python-pygments
@@ -108,7 +106,6 @@ rofi-wayland
 ruby
 rubygems
 rustup
-sl
 slurp
 sof-firmware
 starship
