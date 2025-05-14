@@ -1,8 +1,6 @@
-abook
 alsa-firmware
 alsa-utils
 amd-ucode
-android-studio
 atuin
 audacity
 avidemux-qt
@@ -32,7 +30,6 @@ fd
 firefox
 firewalld
 fish
-fuzzel
 fzf
 ghostty
 gimp
@@ -44,7 +41,6 @@ gopls
 grim
 grub
 gtk2fontsel
-helvum
 himalaya
 hypridle
 hyprland
@@ -65,6 +61,7 @@ julia
 kanshi
 keychain
 khal
+khard
 lazygit
 lib32-fontconfig
 libreoffice-still
@@ -103,9 +100,11 @@ python-adblock
 python-aiohttp-oauthlib
 python-pip
 python-pygments
+qalculate-gtk
 qpwgraph
 qt5-wayland
 ripgrep
+rofi-wayland
 ruby
 rubygems
 rustup
@@ -122,7 +121,6 @@ ttf-jetbrains-mono-nerd
 usbutils
 vdirsyncer
 viu
-vivaldi
 vulkan-extra-layers
 vulkan-extra-tools
 vulkan-headers
