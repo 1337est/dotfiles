@@ -321,7 +321,7 @@ keychain --eval --quiet id_ed25519
     | transpose --header-row
     | into record
     | load-env
-keychain --eval --quiet --agents gpg FE1B05C31D8BACACDC77545B5596860E4313A9F5
+keychain --eval --quiet FE1B05C31D8BACACDC77545B5596860E4313A9F5
     | lines
     | where not ($it | is-empty)
     | parse "{k}={v}; export {k2};"
@@ -329,7 +329,7 @@ keychain --eval --quiet --agents gpg FE1B05C31D8BACACDC77545B5596860E4313A9F5
     | transpose --header-row
     | into record
     | load-env
-keychain --eval --quiet --agents gpg 8B75E4F45D7EAAA5E1AF400CF1ABF8C6D0B8B027
+keychain --eval --quiet 8B75E4F45D7EAAA5E1AF400CF1ABF8C6D0B8B027
     | lines
     | where not ($it | is-empty)
     | parse "{k}={v}; export {k2};"
