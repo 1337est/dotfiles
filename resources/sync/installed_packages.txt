@@ -43,6 +43,7 @@ github-cli
 glm
 goimapnotify
 gopls
+gptfdisk
 grim
 grub
 gtk2fontsel
@@ -112,6 +113,7 @@ qpwgraph
 qrencode
 qt5-wayland
 rclone
+refind
 ripgrep
 rocm-smi-lib
 rofi-wayland
