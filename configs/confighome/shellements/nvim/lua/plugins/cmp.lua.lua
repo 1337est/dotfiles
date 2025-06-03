@@ -4,13 +4,13 @@ return {
         enabled = true,
         event = "InsertEnter",
         dependencies = {
-            "L3MON4D3/LuaSnip", -- snippet engine written in Lua
-            "saadparwaiz1/cmp_luasnip", -- completions for LuaSnip
-            "hrsh7th/cmp-buffer", -- completions for words in different buffers
-            "hrsh7th/cmp-nvim-lsp", -- adds more completions for LSP's
-            "hrsh7th/cmp-path", -- completions for filesystem paths
+            "L3MON4D3/LuaSnip",                    -- snippet engine written in Lua
+            "saadparwaiz1/cmp_luasnip",            -- completions for LuaSnip
+            "hrsh7th/cmp-buffer",                  -- completions for words in different buffers
+            "hrsh7th/cmp-nvim-lsp",                -- adds more completions for LSP's
+            "hrsh7th/cmp-path",                    -- completions for filesystem paths
             "hrsh7th/cmp-nvim-lsp-signature-help", -- display func-param signatures
-            "hrsh7th/cmp-cmdline", -- display func-param signatures
+            "hrsh7th/cmp-cmdline",                 -- display func-param signatures
         },
         config = function()
             local cmp = require("cmp")

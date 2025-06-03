@@ -4,17 +4,9 @@ capabilities = vim.tbl_deep_extend("force", capabilities,
 
 local servers = {
     clangd = {},
-    gopls = {},
-    pyright = {},
-    rust_analyzer = {},
-    ts_ls = {},
-    bashls = {},
-    html = {},
-    cssls = {},
-    sqlls = {},
     glsl_analyzer = {},
+    gopls = {},
     hyprls = {},
-    zls = {},
     lua_ls = {
         cmd = { "lua-language-server" },
         filetypes = { "lua" },
@@ -45,6 +37,9 @@ local servers = {
             },
         },
     },
+    pylsp = {},
+    rust_analyzer = {},
+    zls = {},
 }
 
 return { servers = servers, capabilities = capabilities }

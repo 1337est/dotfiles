@@ -62,7 +62,7 @@ vim.keymap.set(
         else
             vim.cmd([[exe "call feedkeys('\<Esc>')"]]) -- Exit Visual/Select mode
         end
-        vim.cmd([[exe "normal! /TODO\<CR>"]]) -- Search for TODO forwards
+        vim.cmd([[exe "normal! /TODO\<CR>"]])          -- Search for TODO forwards
         vim.cmd("normal! zz")
         vim.cmd("nohlsearch")
         vim.cmd([[exe "call feedkeys('viw\<C-g>')"]])
@@ -79,10 +79,10 @@ vim.keymap.set(
     function()
         if vim.fn.mode() == "i" then
             vim.cmd([[exe "call feedkeys('\<C-o>')"]]) -- Temporarily enter Normal mode
-            vim.cmd([[exe "normal! ?TODO\<CR>"]]) -- Search for TODO backwards
+            vim.cmd([[exe "normal! ?TODO\<CR>"]])      -- Search for TODO backwards
         else
             vim.cmd([[exe "call feedkeys('\<Esc>')"]]) -- Exit Visual/Select mode
-            vim.cmd([[exe "normal! ?TODO\<CR>n"]]) -- extra n needed to move cursor
+            vim.cmd([[exe "normal! ?TODO\<CR>n"]])     -- extra n needed to move cursor
         end
         vim.cmd("normal! zz")
         vim.cmd("nohlsearch")

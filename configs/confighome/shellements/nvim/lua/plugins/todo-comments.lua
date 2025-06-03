@@ -5,12 +5,12 @@ return {
     config = function()
         require("todo-comments").setup {
             colors = {
-                error = { "#f65866" }, -- red
+                error = { "#f65866" },   -- red
                 warning = { "#efbd5d" }, -- yellow
-                info = { "#41a7fc" }, -- blue
-                hint = { "#c75ae8" }, -- purple
+                info = { "#41a7fc" },    -- blue
+                hint = { "#c75ae8" },    -- purple
                 default = { "#8bcd5b" }, -- green
-                test = { "#34bfd0" }, -- cyan
+                test = { "#34bfd0" },    -- cyan
             },
         }
     end,
