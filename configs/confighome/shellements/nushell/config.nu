@@ -376,6 +376,12 @@ let apps = [
         command: (carapace _carapace nushell)
         description: "carapace provides argument completion for multiple CLI commands, and works across multiple POSIX and non-POSIX shells (to include nushell)."
     },
+    {
+        name: "zoxide",
+        file: "zoxide.nu",
+        command: (zoxide init nushell)
+        description: "carapace provides argument completion for multiple CLI commands, and works across multiple POSIX and non-POSIX shells (to include nushell)."
+    },
 ]
 
 # Iterate over list of apps and generate the file
