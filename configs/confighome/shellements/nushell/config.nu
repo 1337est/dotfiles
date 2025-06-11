@@ -236,6 +236,12 @@ $env.XDG_DATA_HOME      = ($env.HOME | path join '.local/share')
 $env.XDG_STATE_HOME     = ($env.HOME | path join '.local/state')
 $env.XDG_BIN_HOME       = ($env.HOME | path join '.local/bin')
 $env.XDG_LIB_HOME       = ($env.HOME | path join '.local/lib')
+mkdir $env.XDG_CONFIG_HOME
+mkdir $env.XDG_CACHE_HOME
+mkdir $env.XDG_DATA_HOME
+mkdir $env.XDG_STATE_HOME
+mkdir $env.XDG_BIN_HOME
+mkdir $env.XDG_LIB_HOME
 
 # XDG/MY_USER_DIRS -------------------------------------------------------------
 
@@ -247,6 +253,14 @@ $env.XDG_PICTURES_DIR       = ($env.HOME | path join 'Pictures')
 $env.XDG_PUBLICSHARE_DIR    = ($env.HOME | path join 'Public')
 $env.XDG_TEMPLATES_DIR      = ($env.HOME | path join 'Templates')
 $env.XDG_VIDEOS_DIR         = ($env.HOME | path join 'Videos')
+mkdir $env.XDG_DESKTOP_DIR
+mkdir $env.XDG_DOCUMENTS_DIR
+mkdir $env.XDG_DOWNLOAD_DIR
+mkdir $env.XDG_MUSIC_DIR
+mkdir $env.XDG_PICTURES_DIR
+mkdir $env.XDG_PUBLICSHARE_DIR
+mkdir $env.XDG_TEMPLATES_DIR
+mkdir $env.XDG_VIDEOS_DIR
 
 # MY Personal Directories ------------------------------------------------------
 
@@ -255,13 +269,22 @@ $env.MY_ALGO_DIR    = ($env.HOME | path join 'Code/algo')
 $env.MY_CURIOUS_DIR = ($env.HOME | path join 'Code/curious')
 $env.MY_LEARN_DIR   = ($env.HOME | path join 'Code/learn')
 $env.MY_PJ_DIR      = ($env.HOME | path join 'Code/pajamas')
+mkdir $env.MY_CODE_DIR
+mkdir $env.MY_ALGO_DIR
+mkdir $env.MY_CURIOUS_DIR
+mkdir $env.MY_LEARN_DIR
+mkdir $env.MY_PJ_DIR
 
 $env.MY_SCHOOL_DIR  = ($env.HOME | path join 'Desktop/school')
 $env.MY_WORK_DIR    = ($env.HOME | path join 'Desktop/work')
+mkdir $env.MY_SCHOOL_DIR
+mkdir $env.MY_WORK_DIR  
 
 $env.MY_GITHUB_DIR  = ($env.HOME | path join 'Github')
+mkdir $env.MY_GITHUB_DIR
 
 $env.MY_NOTES_DIR   = ($env.HOME | path join 'Notes')
+mkdir $env.MY_NOTES_DIR
 
 $env.MY_CAM_DIR         = ($env.HOME | path join 'Pictures/camera')
 $env.MY_ICONS_DIR       = ($env.HOME | path join 'Pictures/icons')
@@ -269,6 +292,12 @@ $env.MY_PHONE_DIR       = ($env.HOME | path join 'Pictures/phone')
 $env.MY_PROFILE_DIR     = ($env.HOME | path join 'Pictures/profile')
 $env.MY_SCREENSHOTS_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.MY_WALLPAPERS_DIR  = ($env.HOME | path join 'Pictures/wallpapers')
+mkdir $env.MY_CAM_DIR
+mkdir $env.MY_ICONS_DIR
+mkdir $env.MY_PHONE_DIR
+mkdir $env.MY_PROFILE_DIR
+mkdir $env.MY_SCREENSHOTS_DIR
+mkdir $env.MY_WALLPAPERS_DIR
 
 $env.MY_EMAIL_DIR       = ($env.HOME | path join '.local/share/email')
 # Create email directories for email accounts in MY_EMAIL_DIR
