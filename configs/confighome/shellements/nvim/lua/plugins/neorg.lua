@@ -19,6 +19,11 @@ return {
                     },
                     default_workspace = "main",
                 } },
+                ["core.autocommands"] = {},
+                ["core.highlights"] = {},
+                ["core.integrations.treesitter"] = {},
+                ["core.export"] = {},          -- Enables exporting
+                ["core.export.markdown"] = {}, -- Export to markdown
             },
         }
         vim.wo.foldlevel = 99
