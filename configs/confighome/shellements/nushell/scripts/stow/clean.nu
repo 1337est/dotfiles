@@ -8,32 +8,43 @@ let gnupg_dir = ($env.HOME | path join ".gnupg")
 
 # First thing is to remove any dereferenced symbolic links
 let deref_syms = ^find $config_dir $data_dir $gnupg_dir -xtype l | lines
+
+# comment
 for broken_link in $deref_syms { rm -f $broken_link }
 
-# confighome stow restore
-let config_pkgs = ls -s $"($stow_dir)/confighome" | where name != README.md | get name
-let config_syms = ls -s $"($stow_dir)/confighome/de" $"($stow_dir)/confighome/shellements" $"($stow_dir)/confighome/youhavemail" | where name != README.md | get name
+# === confighome ===
+let config_pkgs = ls -s $"($stow_dir)/confighome" | where name != README.md | get name | sort
+let config_syms = ls -s $"($stow_dir)/confighome/de" $"($stow_dir)/confighome/shellements" $"($stow_dir)/confighome/youhavemail" | where name != README.md | get name | sort
+
 # remove packages before stow if they exist (e.g. carapace and atuin edge cases)
-for files in $config_syms { rm -r $"($config_dir)/($files)" }
+for filedir in $config_syms { rm -rf $"($config_dir)/($filedir)" }
+# comment
 for pkg in $config_pkgs { stow -d $"($stow_dir)/confighome" $pkg -t $config_dir }
 
-# datahome stow restore
-let data_pkgs = ls -s $"($stow_dir)/datahome" | where name != README.md | get name
+# === datahome ===
+let data_pkgs = ls -s $"($stow_dir)/datahome" | where name != README.md | get name | sort
+
 # remove packages before stow if they exist
-for pkg in $data_pkgs { rm -r $"($data_dir)/($pkg)" }
+for pkg in $data_pkgs { rm -rf $"($data_dir)/($pkg)" }
+# comment
 stow -d $stow_dir datahome -t $data_dir
 
-# gnupghome stow restore
-let gnupg_pkgs = ls -s $"($stow_dir)/gnupghome" | where name != README.md | get name
+# === gnupghome ===
+let gnupg_pkgs = ls -s $"($stow_dir)/gnupghome" | where name != README.md | get name | sort
+
 # remove packages before stow if they exist
-for pkg in $gnupg_pkgs { rm -r $"($gnupg_dir)/($pkg)" }
+for pkg in $gnupg_pkgs { rm -rf $"($gnupg_dir)/($pkg)" }
+# comment
 stow -d $stow_dir gnupghome -t $"($gnupg_dir)"
 
-# systemduser stow restore
-let systemduser_pkgs = ls -s $"($stow_dir)/systemduser" | where name != README.md | get name
+# === systemduser ===
+let systemduser_pkgs = ls -s $"($stow_dir)/systemduser" | where name != README.md | get name | sort
+
 # remove packages before stow if they exist
-for pkg in $systemduser_pkgs { rm -r -f $"($config_dir)/systemd/user/($pkg)" }
+for pkg in $systemduser_pkgs { rm -rf $"($config_dir)/systemd/user/($pkg)" }
 stow -d $stow_dir systemduser -t $"($config_dir)/systemd/user"
+
+# === systemd resets ===
 # reenable/restart all user services
 systemctl --user daemon-reload
 for service in $systemduser_pkgs {
