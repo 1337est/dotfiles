@@ -7,7 +7,7 @@ set     date_format = "%b.%d %y %I:%M %p"
 set     menu_scroll = yes # menus scroll 1 line at a time (unset = page scroll)
 set     pipe_decode = yes # attempt to decode <pipe-message>'s
 set     pipe_decode_weed = yes # further controls header weeding
-set     query_command = "abook --mutt-query '%s'" # external address query
+set     query_command = "khard email --parsable %s" # external address query
 set     wait_key = no # prompt for "press key to continue"
 set     tmp_dir = ~/.cache/neomutt/tmp # temp file
 

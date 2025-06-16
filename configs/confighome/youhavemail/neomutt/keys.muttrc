@@ -94,6 +94,7 @@ bind index                  \CY sidebar-open
 bind index,pager            B sidebar-toggle-visible
 
 bind editor                 <Tab> complete-query
+bind editor                 ^T complete
 
 # Macros -----------------------------------------------------------------------
 
@@ -119,12 +120,12 @@ macro index,pager S '<sync-mailbox><enter-command>unset wait_key<enter>\
 <shell-escape>mbsync -V -a<enter>\
 <shell-escape>notmuch new<enter><check-stats>' "sync all"
 
-# Add email to addressbook using 'abook'
+# Add email to addressbook using 'khard'
 macro index,pager a "\
 <enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return>\
-<pipe-message>abook --add-email<return>\
+<pipe-message>khard add-email<return>\
 <enter-command>set pipe_decode=\$my_pipe_decode; \
-unset my_pipe_decode<return>" "add the sender address to 'abook'"
+unset my_pipe_decode<return>" "add the sender address to 'khard'"
 
 # Add calendar event to khal
 macro pager,attach I "\

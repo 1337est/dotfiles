@@ -1,6 +1,13 @@
 #!/usr/bin/env nu
 
+let audio_device = pactl list sources | grep 'Name:' | str replace -a 'Name: ' ''
+| lines | each {|| str trim}
+| input list $"(ansi yellow)Select the audio device you want to use(ansi reset)"
+
 if (ps | where name == wf-recorder | is-empty) {
+    if ($audio_device | is-empty) {
+        notify-send "wf-recorder.nu" "No audio device selected"
+    }
     let region = (slurp | complete)
     if (($region.exit_code) == 1) {
         notify-send "wf-recorder.nu" "No selection made"
