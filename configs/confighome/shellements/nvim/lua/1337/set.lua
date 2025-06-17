@@ -59,9 +59,9 @@ vim.opt.splitbelow = true
 -- Preview substitutions live as you type
 vim.opt.inccommand = "split"
 
-vim.opt.colorcolumn = "81" -- Line at the nth column
+vim.opt.colorcolumn = "101" -- Line at the nth column
 
-vim.opt.mouse = "a"        -- Enables mouse mode
+vim.opt.mouse = "a"         -- Enables mouse mode
 vim.opt.mousescroll = "ver:1,hor:2"
 
 vim.opt.showmode = false -- Don't show mode, since it's already in status line
