@@ -224,7 +224,7 @@ $env.SHELL      = 'nu'
 $env.PAGER      = 'bat'
 $env.MANPAGER   = 'nvim +Man!'
 $env.MANWIDTH   = 999
-$env.BROWSER    = 'firefox'
+$env.BROWSER    = 'brave'
 $env.ESCDELAY   = 0
 $env.LANG       = 'en_US.UTF-8'
 
