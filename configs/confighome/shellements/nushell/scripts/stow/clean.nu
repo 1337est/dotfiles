@@ -4,7 +4,11 @@
 let stow_dir = ($env.HOME | path join "Github/dotfiles/configs")
 let config_dir = ($env.HOME | path join ".config")
 let data_dir = ($env.HOME | path join ".local/share")
+mkdir $data_dir
 let gnupg_dir = ($env.HOME | path join ".gnupg")
+mkdir $gnupg_dir
+let systemduser_dir = ($env.HOME | path join ".config/systemd/user")
+mkdir $systemduser_dir
 
 # First thing is to remove any dereferenced symbolic links
 let deref_syms = ^find $config_dir $data_dir $gnupg_dir -xtype l | lines
