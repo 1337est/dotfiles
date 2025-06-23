@@ -47,6 +47,7 @@ client_secret.fetch = ["command", "pass", "google/sanch/vdirsyncer/caldav/client
 a = "holidays_local"
 b = "holidays_remote"
 # collections = [["holidays_cal", "holidays", "holidays.email@example.com"]]
+# collections = ["from a", "from b"]
 conflict_resolution = "b wins"
 metadata = ["displayname", "color"]
 [storage holidays_local]
@@ -58,24 +59,6 @@ type = "google_calendar"
 start_date = "datetime.now() - timedelta(days=365)"
 end_date = "datetime.now() + timedelta(days=365)"
 token_file = "~/.local/share/vdirsyncer/google/tokens/caldav/holidays"
-client_id.fetch = ["command", "pass", "google/sanch/vdirsyncer/caldav/client_id"]
-client_secret.fetch = ["command", "pass", "google/sanch/vdirsyncer/caldav/client_secret"]
-
-[pair birthdays]
-a = "birthdays_local"
-b = "birthdays_remote"
-# collections = [["birthdays_cal", "birthdays", "birthdays.email@example.com"]]
-conflict_resolution = "b wins"
-metadata = ["displayname", "color"]
-[storage birthdays_local]
-type = "filesystem"
-path = "~/.local/share/vdirsyncer/google/calendars/"
-fileext = ".ics"
-[storage birthdays_remote]
-type = "google_calendar"
-start_date = "datetime.now() - timedelta(days=365)"
-end_date = "datetime.now() + timedelta(days=365)"
-token_file = "~/.local/share/vdirsyncer/google/tokens/caldav/birthdays"
 client_id.fetch = ["command", "pass", "google/sanch/vdirsyncer/caldav/client_id"]
 client_secret.fetch = ["command", "pass", "google/sanch/vdirsyncer/caldav/client_secret"]
 

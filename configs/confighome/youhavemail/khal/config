@@ -29,15 +29,6 @@ priority = 10
 readonly = True
 type = calendar
 
-# TODO: Find out if they removed birthdays from google's sync settings
-# https://calendar.google.com/calendar/u/0/syncselect
-
-# [[birthdays]]
-# path = $XDG_DATA_HOME/vdirsyncer/google/calendars/birthdays
-# priority = 10
-# readonly = True
-# type = birthdays
-
 # default values and other behaviors are set here
 ################################################################################
 [default]
@@ -134,7 +125,6 @@ editcp =      '', '', '', '#54b0fd', '#c75ae8'
 calendar sanch =          '', '', 'bold', '#97ca72', '#000000'
 calendar wife =          '', '', 'bold', '#c75ae8', '#000000'
 calendar holidays =          '', '', 'bold', '#a5b0c5', '#000000'
-# calendar birthdays =          '', '', 'bold', '#f0d197', '#000000'
 
 # below should work, test it
 # date = '', '', '', '#d99a5e', '#242b38'
