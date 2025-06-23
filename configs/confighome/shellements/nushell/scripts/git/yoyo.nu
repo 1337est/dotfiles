@@ -1,8 +1,8 @@
 #!/usr/bin/env nu
 
 let git_repos = [
-    { name: "dotfiles", path: "~/Github/dotfiles" },
-    { name: "notes", path: "~/Notes" },
+    { name: "dotfiles", path: "~/Code/github/dotfiles" },
+    { name: "notes", path: "~/Desktop/notes" },
     { name: "pass", path: "~/.password-store" },
 ]
 
