@@ -16,9 +16,12 @@ return {
                 "go",
 
                 "hyprlang",
+                "bash",
                 "nu",
                 "markdown",
                 "markdown_inline",
+                "rust",
+                "zig",
             },
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
