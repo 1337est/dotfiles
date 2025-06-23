@@ -13,8 +13,8 @@ return {
                 ["core.dirman"] = { config = {
                     index = "index.norg",
                     workspaces = {
-                        main = "~/Notes",
-                        neorg = "~/Notes/neorg",
+                        main = "~/Desktop/notes/",
+                        neorg = "~/Desktop/notes/neorg",
                         school = "~/Desktop/school",
                     },
                     default_workspace = "main",

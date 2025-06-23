@@ -29,13 +29,13 @@ return {
                     {
                         desc = '[󰄬 Todo]',
                         group = '@neorg.todo_items.done',
-                        action = 'e ~/Notes/neorg/todo.norg',
+                        action = 'e ~/Desktop/notes/neorg/todo.norg',
                         key = 't',
                     },
                     {
                         desc = '[ dotfiles]',
                         group = '@markup',
-                        action = 'Telescope find_files cwd=~/Github/dotfiles',
+                        action = 'Telescope find_files cwd=~/Code/github/dotfiles',
                         key = 'd',
                     },
                 },
