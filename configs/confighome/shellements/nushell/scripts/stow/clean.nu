@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 # Define the main stow directory
-let stow_dir = ($env.HOME | path join "Github/dotfiles/configs")
+let stow_dir = ($env.HOME | path join "Code/github/dotfiles/configs")
 let config_dir = ($env.HOME | path join ".config")
 let data_dir = ($env.HOME | path join ".local/share")
 mkdir $data_dir
@@ -45,8 +45,8 @@ stow -d $stow_dir gnupghome -t $"($gnupg_dir)"
 let systemduser_pkgs = ls -s $"($stow_dir)/systemduser" | where name != README.md | get name | sort
 
 # remove packages before stow if they exist
-for pkg in $systemduser_pkgs { rm -rf $"($config_dir)/systemd/user/($pkg)" }
-stow -d $stow_dir systemduser -t $"($config_dir)/systemd/user"
+for pkg in $systemduser_pkgs { rm -rf $"($systemduser_dir)/($pkg)" }
+stow -d $stow_dir systemduser -t $"($systemduser_dir)"
 
 # === systemd resets ===
 # reenable/restart all user services
