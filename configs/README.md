@@ -1,39 +1,13 @@
 # At the top level perform these operations
-```nu
-cd ~/Github/dotfiles/configs/
-```
 
-## confighome
-```nu
-stow -d confighome/ de shellements youhavemail -t ~/.config/
-
-# if errors due to atuin/carapace
-rm -r ~/.config/atuin ~/.config/carapace; stow -d confighome/ de shellements youhavemail -t ~/.config/
-```
-### youhavemail
+## youhavemail
 Under vdirsyncer, you have a `template` file that needs to be copied as a `config` file. After you `cp template config`, change the emails to be what vdirsyncer discover shows. Then enable the vdirsyncer timer.
 ```nu
-vdirsyncer discover
 cp template config
-
-# replace collections = [...] with:
-# collections = ["from a", "from b"]
-# go through the browser prompts to get the token, then select no for creating local directories.
-# replace the emails into the config directory
+nvim config
 vdirsyncer discover
 vdirsyncer sync
 ```
-
-## datahome
-```nu
-stow datahome -t ~/.local/share/
-```
-
-## gnupghome
-```nu
-stow gnupghome -t ~/.gnupg/
-```
-
 
 ## systemduser
 ```nu
