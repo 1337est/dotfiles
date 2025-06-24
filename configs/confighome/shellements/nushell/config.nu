@@ -259,7 +259,7 @@ mkdir $"($env.XDG_DESKTOP_DIR)/school"
 mkdir $"($env.XDG_DESKTOP_DIR)/work"
 
 $env.XDG_DOCUMENTS_DIR = ($env.HOME | path join 'Documents')
-mkdi $env.XDG_DOCUMENTS_DIR
+mkdir $env.XDG_DOCUMENTS_DIR
 
 $env.XDG_DOWNLOAD_DIR = ($env.HOME | path join 'Downloads')
 mkdir $env.XDG_DOWNLOAD_DIR 
