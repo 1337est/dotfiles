@@ -4,13 +4,13 @@
 # - script which can be used with `source starship.nu`
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
+    PROMPT_INDICATOR_VI_INSERT: "🚀 "
+    PROMPT_INDICATOR_VI_NORMAL: "👺 "
     PROMPT_MULTILINE_INDICATOR: "🐢 "
-    PROMPT_INDICATOR_VI_INSERT: "👺 "
-    PROMPT_INDICATOR_VI_NORMAL: "👻 "
 
     # Does not play well with default character module.
     # TODO: Also Use starship vi mode indicators?
-    PROMPT_INDICATOR: ""
+    PROMPT_INDICATOR: "👻 "
 
     PROMPT_COMMAND: {||
         # jobs are not supported
