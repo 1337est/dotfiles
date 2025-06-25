@@ -9,6 +9,7 @@ set     pipe_decode = yes # attempt to decode <pipe-message>'s
 set     pipe_decode_weed = yes # further controls header weeding
 set     query_command = "khard email --parsable %s" # external address query
 set     wait_key = no # prompt for "press key to continue"
+set     editor = "/usr/bin/nvim"
 set     tmp_dir = ~/.cache/neomutt/tmp # temp file
 
 # Message Settings -------------------------------------------------------------
@@ -34,7 +35,7 @@ set     mail_check_stats = yes # periodically <check-stats> with mail_check_stat
 set     mail_check_stats_interval = 30 # seconds defaults 60
 # Global Maildir account settings
 set mbox_type = Maildir
-set folder = "$XDG_DATA_HOME/email/neomutt/mbsync" # all accounts live under  this folder
+set folder = "/home/adrian/.local/share/email/neomutt/mbsync" # all accounts live under  this folder
 set maildir_check_cur = yes # polls new/cur for new messages
 
 # NOTE: sync-mailbox acts on the folder, not the active mailbox. Therefore, a

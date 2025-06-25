@@ -1,6 +1,6 @@
 text/plain; $EDITOR %s;
-text/html; w3m -I %{charset} -O utf-8 -T text/html -graph -F -s -no-cookie -o confirm_qq=FALSE -o display_link=TRUE -o display_link_number=TRUE -o color=TRUE -o auto_image=TRUE -o display_image=TRUE -o max_load_image=20 -o inline_img_protocol=4 %s; nametemplate=%s.html;
-text/html; w3m -I %{charset} -O utf-8 -T text/html -graph -F -s -no-cookie -o confirm_qq=FALSE -o display_link=TRUE -o display_link_number=TRUE -o color=TRUE -o auto_image=TRUE -o display_image=TRUE -o max_load_image=20 -o inline_img_protocol=4 %s; nametemplate=%s.html; copiousoutput;
+text/html; w3m -I %{charset} -O utf-8 -T text/html -graph -F -s -no-cookie -o confirm_qq=FALSE -o display_link=TRUE -o display_link_number=TRUE -o color=TRUE -o auto_image=TRUE -o display_image=1 -o max_load_image=20 -o inline_img_protocol=4 %s; nametemplate=%s.html;
+text/html; w3m -I %{charset} -O utf-8 -T text/html -graph -F -s -no-cookie -o confirm_qq=FALSE -o display_link=TRUE -o display_link_number=TRUE -o color=TRUE -o auto_image=TRUE -o display_image=1 -o max_load_image=20 -o inline_img_protocol=4 %s; nametemplate=%s.html; copiousoutput;
 text/calendar; khal printics --format "<br>{cancelled}SUM: {calendar}, {title}{repeat-symbol}{alarm-symbol} {start} -> {end}<br>{nl}URL: {url}<br>{nl}DES: {description-separator}<br>{description}" %s | w3m -I utf-8 -O utf-8 -T text/html -dump -cols 1024; nametemplate=%s.ics; copiousoutput;
 image/*; /usr/bin/xdg-open %s;
 video/*; setsid mpv --quiet %s &; copiousoutput;
