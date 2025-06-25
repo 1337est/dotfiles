@@ -247,6 +247,7 @@ mkdir $"($env.MY_CODE_DIR)/algo/easy"
 mkdir $"($env.MY_CODE_DIR)/algo/medium"
 mkdir $"($env.MY_CODE_DIR)/algo/hard"
 mkdir $"($env.MY_CODE_DIR)/curious"
+mkdir $"($env.MY_CODE_DIR)/github"
 mkdir $"($env.MY_CODE_DIR)/learn/c"
 mkdir $"($env.MY_CODE_DIR)/learn/zig"
 mkdir $"($env.MY_CODE_DIR)/pajamas"
@@ -254,7 +255,6 @@ mkdir $"($env.MY_CODE_DIR)/pajamas"
 # XDG/MY_USER_DIRS -------------------------------------------------------------
 
 $env.XDG_DESKTOP_DIR = ($env.HOME | path join 'Desktop')
-mkdir $"($env.XDG_DESKTOP_DIR)/notes"
 mkdir $"($env.XDG_DESKTOP_DIR)/school"
 mkdir $"($env.XDG_DESKTOP_DIR)/work"
 
