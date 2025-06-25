@@ -4,7 +4,10 @@ return {
         enabled = true,
         event = "InsertEnter",
         dependencies = {
-            "L3MON4D3/LuaSnip",                    -- snippet engine written in Lua
+            {
+                "L3MON4D3/LuaSnip",
+                build = "make install_jsregexp",
+            },                                     -- snippet engine written in Lua
             "saadparwaiz1/cmp_luasnip",            -- completions for LuaSnip
             "hrsh7th/cmp-buffer",                  -- completions for words in different buffers
             "hrsh7th/cmp-nvim-lsp",                -- adds more completions for LSP's
