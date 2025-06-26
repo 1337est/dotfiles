@@ -230,15 +230,25 @@ $env.LANG       = 'en_US.UTF-8'
 
 # XDG Base Directories ---------------------------------------------------------
 
-$env.XDG_CACHE_HOME  = ($env.HOME | path join '.cache')
-$env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
-mkdir $env.XDG_CACHE_HOME $env.XDG_CONFIG_HOME
+$env.XDG_CACHE_HOME = ($env.HOME | path join '.cache')
+mkdir $env.XDG_CACHE_HOME
 
-$env.XDG_BIN_HOME    = ($env.HOME | path join '.local/bin')
-$env.XDG_LIB_HOME    = ($env.HOME | path join '.local/lib')
-$env.XDG_DATA_HOME   = ($env.HOME | path join '.local/share')
-$env.XDG_STATE_HOME  = ($env.HOME | path join '.local/state')
-mkdir $env.XDG_BIN_HOME $env.XDG_LIB_HOME $env.XDG_DATA_HOME $env.XDG_STATE_HOME
+$env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+mkdir $env.XDG_CONFIG_HOME
+$env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship/starship.toml')
+
+$env.XDG_BIN_HOME = ($env.HOME | path join '.local/bin')
+mkdir $env.XDG_BIN_HOME
+
+$env.XDG_LIB_HOME = ($env.HOME | path join '.local/lib')
+mkdir $env.XDG_LIB_HOME
+
+$env.XDG_DATA_HOME = ($env.HOME | path join '.local/share')
+mkdir $env.XDG_DATA_HOME
+$env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
+
+$env.XDG_STATE_HOME = ($env.HOME | path join '.local/state')
+mkdir $env.XDG_STATE_HOME
 
 # MY Coding Directories --------------------------------------------------------
 
@@ -249,10 +259,12 @@ mkdir $"($env.MY_CODE_DIR)/algo/hard"
 mkdir $"($env.MY_CODE_DIR)/curious"
 mkdir $"($env.MY_CODE_DIR)/github"
 mkdir $"($env.MY_CODE_DIR)/learn/c"
+mkdir $"($env.MY_CODE_DIR)/learn/cpp"
+mkdir $"($env.MY_CODE_DIR)/learn/rust"
 mkdir $"($env.MY_CODE_DIR)/learn/zig"
 mkdir $"($env.MY_CODE_DIR)/pajamas"
 
-# XDG/MY_USER_DIRS -------------------------------------------------------------
+# XDG/MY_USER/MY_APPS_DIRS -----------------------------------------------------
 
 $env.XDG_DESKTOP_DIR = ($env.HOME | path join 'Desktop')
 mkdir $"($env.XDG_DESKTOP_DIR)/school"
@@ -273,6 +285,8 @@ mkdir   $"($env.XDG_PICTURES_DIR)/icons"
 mkdir   $"($env.XDG_PICTURES_DIR)/phone"
 mkdir   $"($env.XDG_PICTURES_DIR)/profile"
 mkdir   $"($env.XDG_PICTURES_DIR)/screenshots"
+$env.GRIM_DEFAULT_DIR = ($env.XDG_PICTURES_DIR | path join 'screenshots')
+$env.HYPRSHOT_DIR = ($env.XDG_PICTURES_DIR | path join 'screenshots')
 mkdir   $"($env.XDG_PICTURES_DIR)/wallpapers"
 
 $env.XDG_PUBLICSHARE_DIR = ($env.HOME | path join 'Public')
@@ -286,13 +300,12 @@ mkdir $env.XDG_VIDEOS_DIR
 
 # MY Email Directories ---------------------------------------------------------
 
-$env.MY_EMAIL_DIR = ($env.HOME | path join '.local/share/email')
-mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/leet"
-mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/sanch"
-mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/sbc"
-mkdir $"($env.MY_EMAIL_DIR)/neomutt/mbsync/spag"
-mkdir $"($env.MY_EMAIL_DIR)/neomutt/msmtp"
-mkdir $"($env.MY_EMAIL_DIR)/neomutt/notmuch"
+mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/leet"
+mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/sanch"
+mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/sbc"
+mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/spag"
+mkdir $"($env.XDG_DATA_HOME)email/neomutt/msmtp"
+mkdir $"($env.XDG_DATA_HOME)email/neomutt/notmuch"
 mkdir $"($env.XDG_CACHE_HOME)/neomutt/leet/message_cache"
 mkdir $"($env.XDG_CACHE_HOME)/neomutt/sanch/message_cache"
 mkdir $"($env.XDG_CACHE_HOME)/neomutt/sbc/message_cache"
@@ -300,10 +313,7 @@ mkdir $"($env.XDG_CACHE_HOME)/neomutt/spag/message_cache"
 
 # App Environment Variables ----------------------------------------------------
 
-$env.GRIM_DEFAULT_DIR = ($env.HOME | path join 'Pictures/screenshots')
 $env.GPG_TTY = (tty)
-$env.GOPATH = ($env.XDG_DATA_HOME | path join 'go')
-$env.STARSHIP_CONFIG = ($env.HOME | path join '.config/starship/starship.toml')
 $env.CARAPACE_BRIDGES = 'fish,bash'
 
 # PROMPT -----------------------------------------------------------------------
