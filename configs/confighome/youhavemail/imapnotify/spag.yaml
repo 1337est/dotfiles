@@ -13,7 +13,7 @@ configurations:
                 mailbox: INBOX
                 onNewMail: "mbsync 'spag:INBOX' && notmuch new"
                 onDeletedMail: "mbsync 'spag:INBOX' && notmuch new"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: spag' 'New message(s) for spag in INBOX.'"
+                onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/All Mail"

@@ -13,7 +13,7 @@ configurations:
                 mailbox: INBOX
                 onNewMail: "mbsync 'sanch:INBOX' && notmuch new"
                 onDeletedMail: "mbsync 'sanch:INBOX' && notmuch new"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sanch' 'New message(s) for sanch in INBOX.'"
+                onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/All Mail"

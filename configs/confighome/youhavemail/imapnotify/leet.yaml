@@ -13,7 +13,7 @@ configurations:
                 mailbox: INBOX
                 onNewMail: "mbsync 'leet:INBOX' && notmuch new"
                 onDeletedMail: "mbsync 'leet:INBOX' && notmuch new"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: leet' 'New message(s) for leet in INBOX.'"
+                onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "[Gmail]/All Mail"

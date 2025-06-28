@@ -13,7 +13,7 @@ configurations:
                 mailbox: INBOX
                 onNewMail: "mbsync 'sbc:INBOX' && notmuch new"
                 onDeletedMail: "mbsync 'sbc:INBOX' && notmuch new"
-                onNewMailPost: "notify-send --icon='/home/adrian/Pictures/icons/neomutt.png' 'youhavemail: sbc' 'New message(s) for sbc in INBOX'"
+                onNewMailPost: SKIP
                 onDeletedMailPost: SKIP
             -
                 mailbox: "Draft"
