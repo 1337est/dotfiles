@@ -1,11 +1,11 @@
 #!/usr/bin/env nu
 
-# Root directory to watch with inotifywait
+# Root directory to watch
 let mbsync_dir = $"($env.HOME)/.local/share/email/neomutt/mbsync"
 let valid_accounts = ["leet", "sanch", "sbc", "spag"]
 let cnt = ["cur", "new", "tmp"]
 
-# Sync account mailboxes corresponding to inotifywait events
+# Sync account mailboxes corresponding to events
 loop {
     # set check to happen every minute
     let result = (

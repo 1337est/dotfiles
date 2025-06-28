@@ -280,14 +280,14 @@ $env.XDG_MUSIC_DIR = ($env.HOME | path join 'Music')
 mkdir $env.XDG_MUSIC_DIR
 
 $env.XDG_PICTURES_DIR = ($env.HOME | path join 'Pictures')
-mkdir   $"($env.XDG_PICTURES_DIR)/camera"
-mkdir   $"($env.XDG_PICTURES_DIR)/icons"
-mkdir   $"($env.XDG_PICTURES_DIR)/phone"
-mkdir   $"($env.XDG_PICTURES_DIR)/profile"
-mkdir   $"($env.XDG_PICTURES_DIR)/screenshots"
+mkdir $"($env.XDG_PICTURES_DIR)/camera"
+mkdir $"($env.XDG_PICTURES_DIR)/icons"
+mkdir $"($env.XDG_PICTURES_DIR)/phone"
+mkdir $"($env.XDG_PICTURES_DIR)/profile"
+mkdir $"($env.XDG_PICTURES_DIR)/screenshots"
 $env.GRIM_DEFAULT_DIR = ($env.XDG_PICTURES_DIR | path join 'screenshots')
 $env.HYPRSHOT_DIR = ($env.XDG_PICTURES_DIR | path join 'screenshots')
-mkdir   $"($env.XDG_PICTURES_DIR)/wallpapers"
+mkdir $"($env.XDG_PICTURES_DIR)/wallpapers"
 
 $env.XDG_PUBLICSHARE_DIR = ($env.HOME | path join 'Public')
 mkdir $env.XDG_PUBLICSHARE_DIR
@@ -300,12 +300,12 @@ mkdir $env.XDG_VIDEOS_DIR
 
 # MY Email Directories ---------------------------------------------------------
 
-mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/leet"
-mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/sanch"
-mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/sbc"
-mkdir $"($env.XDG_DATA_HOME)email/neomutt/mbsync/spag"
-mkdir $"($env.XDG_DATA_HOME)email/neomutt/msmtp"
-mkdir $"($env.XDG_DATA_HOME)email/neomutt/notmuch"
+mkdir $"($env.XDG_DATA_HOME)/email/neomutt/mbsync/leet"
+mkdir $"($env.XDG_DATA_HOME)/email/neomutt/mbsync/sanch"
+mkdir $"($env.XDG_DATA_HOME)/email/neomutt/mbsync/sbc"
+mkdir $"($env.XDG_DATA_HOME)/email/neomutt/mbsync/spag"
+mkdir $"($env.XDG_DATA_HOME)/email/neomutt/msmtp"
+mkdir $"($env.XDG_DATA_HOME)/email/neomutt/notmuch"
 mkdir $"($env.XDG_CACHE_HOME)/neomutt/leet/message_cache"
 mkdir $"($env.XDG_CACHE_HOME)/neomutt/sanch/message_cache"
 mkdir $"($env.XDG_CACHE_HOME)/neomutt/sbc/message_cache"
