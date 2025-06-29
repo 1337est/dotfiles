@@ -37,3 +37,8 @@ end, "[s]earch [/] in Open Files")
 map("<leader>sn", function()
     telebuilt.find_files({ cwd = vim.fn.stdpath("config") })
 end, "[s]earch [n]eovim files")
+
+-- Shortcut for searching your Neorg notes
+map("<leader>sN", function()
+    telebuilt.find_files({ cwd = vim.fs.abspath("~/Desktop/notes") })
+end, "[s]earch [n]eovim files")

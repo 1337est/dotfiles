@@ -8,7 +8,7 @@ return {
             disable_move = true,
             shortcut_type = 'letter',
             shuffle_letter = false,
-            letter_list = 'abcdefghijklmnopqrstuvwxyz',
+            letter_list = 'abcdefghijklmnNopqrstuvwxyz',
             config = {
                 week_header = {
                     enable = true,
@@ -21,7 +21,7 @@ return {
                         key = 'n',
                     },
                     {
-                        desc = '[ Journal]',
+                        desc = '[ Journal]',
                         group = '@function',
                         action = 'Neorg journal',
                         key = 'j',

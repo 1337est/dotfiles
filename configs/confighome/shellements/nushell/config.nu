@@ -267,8 +267,6 @@ mkdir $"($env.MY_CODE_DIR)/pajamas"
 # XDG/MY_USER/MY_APPS_DIRS -----------------------------------------------------
 
 $env.XDG_DESKTOP_DIR = ($env.HOME | path join 'Desktop')
-mkdir $"($env.XDG_DESKTOP_DIR)/school"
-mkdir $"($env.XDG_DESKTOP_DIR)/work"
 
 $env.XDG_DOCUMENTS_DIR = ($env.HOME | path join 'Documents')
 mkdir $env.XDG_DOCUMENTS_DIR
