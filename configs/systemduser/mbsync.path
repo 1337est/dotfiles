@@ -1,0 +1,9 @@
+[Unit]
+Description=Trigger mail sync when maildir changes
+
+[Path]
+PathChanged=%h/.local/share/email/neomutt/mbsync
+Unit=mbsync.service
+
+[Install]
+WantedBy=default.target
