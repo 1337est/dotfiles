@@ -198,18 +198,17 @@ $env.config.hooks = {
     command_not_found: []
 }
 
+# Making the background completely opaque with alpha 00, and making "hidden"
+# Then setting the hints (autosuggestions) to be the same
+$env.config.color_config.background = { fg: '#00000000' bg: '#00000000' attr: h}
+$env.config.color_config.hints = $env.config.color_config.background
+
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------
 
-alias sanch = himalaya -c ~/.config/himalaya/accounts/sanch.toml
-alias leet = himalaya -c ~/.config/himalaya/accounts/leet.toml
-alias spag = himalaya -c ~/.config/himalaya/accounts/spag.toml
-alias sbc = himalaya -c ~/.config/himalaya/accounts/sbc.toml
 alias define = dict -d wn
 alias synonym = dict -d moby-thesaurus
-alias git-yoyo = ~/.config/nushell/scripts/git/yoyo.nu
-alias stow-clean = ~/.config/nushell/scripts/stow/clean.nu
 
 # ------------------------------------------------------------------------------
 # Environment Variables
