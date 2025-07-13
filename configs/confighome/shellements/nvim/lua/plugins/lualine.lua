@@ -6,7 +6,7 @@ return {
         local symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
         require("lualine").setup {
             options = {
-                theme = "onedark",
+                theme = "tokyonight",
                 disabled_filetypes = {
                     statusline = { 'NvimTree' },
                     winbar = { 'NvimTree' },
@@ -14,18 +14,15 @@ return {
             },
             sections = {
                 lualine_a = { { "mode" } },
-                lualine_b = { { "diagnostics", symbols = symbols } },
+                lualine_b = { { "diagnostics", symbols = symbols, color = { bg = '#232323' } } },
                 lualine_c = { { "filename", path = 4 } },
                 lualine_x = { {
                     "filetype",
                     icon = { align = 'left' }
                 } },
                 lualine_y = {
-                    {
-                        "branch",
-                        color = { fg = '#f2cc81', bg = nil }
-                    },
-                    { "diff" },
+                    { "branch", color = { bg = '#232323' } },
+                    { "diff",   color = { bg = '#323232' } },
                 },
                 lualine_z = { "location", "progress" },
             },
