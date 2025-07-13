@@ -16,38 +16,7 @@
         "memory",
         "disk",
         "idle_inhibitor",
-        "hyprland/submap",
-    ],
-
-    "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "",
-            "2": "󰊠",
-            "3": "󰇮",
-            "4": "󱍢",
-            "5": "",
-            "6": "",
-            "default": ""
-        },
-    },
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " ",
-        },
-    },
-
-    // ************************************************************ //
-    // CENTER MODULES
-    // ************************************************************ //
-    "modules-center": [
-        "hyprland/workspaces",
-        "clock",
+        "wlr/taskbar",
     ],
 
     "cpu": {
@@ -68,59 +37,58 @@
         "interval": 5,
     },
 
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " ",
+        },
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 40,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [ ],
+        "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+
     // ************************************************************ //
-    // RIGHT MODULES
+    // CENTER MODULES
     // ************************************************************ //
-    "modules-right": [
-        "tray",
-        "wireplumber",
-        "network",
-        "battery",
+    "modules-center": [
+        "hyprland/workspaces",
+        "clock",
+        "hyprland/submap",
     ],
 
-    "hyprland/submap": {
-        "format": " {}",
-        "max-length": 15,
-        "tooltip": false,
-    },
-
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10,
-    },
-
-    "wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-muted": " ",
-        "on-click": "helvum",
-        "max-volume": 100.0,
-        "scroll-step": 0.2,
-        "format-icons": ["", "", ""],
-    },
-
-    "network": {
-        "format-wifi": "{essid}  {signalStrength}%",
-        "format-ethernet": "{ipaddr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-disconnected": "No Network ",
-    },
-
-    "battery": {
-        "states": {
-            "good": 65,
-            "warning": 30,
-            "critical": 15,
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "󰊠",
+            "3": "󰇮",
+            "4": "󱍢",
+            "5": "",
+            "6": "",
+            "default": ""
         },
-        "format": "{capacity}% {icon} ",
-        "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% 󰂄 ",
-        "format-plugged": "{capacity}%  ",
-        "format-alt": "{time} {icon} ",
     },
 
     "clock": {
         "interval": 1,
-        "format": "{:%T}",
+        "format": "{:%d %b | %T %a}",
         "format-alt": "{:%F}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -143,5 +111,55 @@
                     "on-scroll-up": "shift_up",
                     "on-scroll-down": "shift_down"
                     }
+    },
+
+    "hyprland/submap": {
+        "format": " {}",
+        "max-length": 15,
+        "tooltip": false,
+    },
+
+    // ************************************************************ //
+    // RIGHT MODULES
+    // ************************************************************ //
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "network",
+        "battery",
+    ],
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
+        "on-click": "helvum",
+        "max-volume": 100.0,
+        "scroll-step": 0.2,
+        "format-icons": ["", "", ""],
+    },
+
+    "network": {
+        "format-wifi": "{essid}  {signalStrength}%",
+        "format-ethernet": " wired",
+        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-disconnected": "No Network ",
+    },
+
+    "battery": {
+        "states": {
+            "good": 65,
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "{capacity}% {icon} ",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% 󰂄 ",
+        "format-plugged": "{capacity}%  ",
+        "format-alt": "{time} {icon} ",
     },
 }
