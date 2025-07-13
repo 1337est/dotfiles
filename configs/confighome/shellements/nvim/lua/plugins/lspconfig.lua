@@ -5,7 +5,7 @@ return {
         { "williamboman/mason.nvim", opts = {} }, -- manages LSP, DAP, linters, formatters
         "williamboman/mason-lspconfig.nvim",      -- integrates mason & lspconfig
         { 'j-hui/fidget.nvim',       opts = {} },
-        "hrsh7th/cmp-nvim-lsp",                   -- adds more completions for LSP's
+        "saghen/blink.cmp",                       -- adds more completions for LSP's
     },
 
     config = function()

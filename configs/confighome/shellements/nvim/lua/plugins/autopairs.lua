@@ -2,7 +2,6 @@ return {
     "windwp/nvim-autopairs",
     enabled = true,
     event = "InsertEnter",
-    dependencies = { "hrsh7th/nvim-cmp" },
     config = function()
         require("nvim-autopairs").setup({
             disable_filetype = { "TelescopePrompt", "spectre_panel" },
@@ -22,8 +21,5 @@ return {
             map_c_h = false, -- Map the <C-h> key to delete a pair
             map_c_w = false, -- map <c-w> to delete a pair if possible
         })
-        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-        local cmp = require("cmp")
-        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
 }
