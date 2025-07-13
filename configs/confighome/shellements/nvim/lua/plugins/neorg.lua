@@ -14,9 +14,8 @@ return {
                     index = "index.norg",
                     workspaces = {
                         main = "~/Desktop/notes/",
-                        neorg = "~/Desktop/notes/neorg",
-                        school = "~/Desktop/notes/school",
-                        work = "~/Desktop/notes/work",
+                        school = "~/Desktop/school",
+                        work = "~/Desktop/work",
                     },
                     default_workspace = "main",
                 } },
@@ -25,7 +24,7 @@ return {
                     strategy = "nested",             -- "flat" = 2022-03-02.norg, nested = 2022/03/02.norg
                     template_name = "template.norg", -- name of the template file to use
                     use_template = true,             -- Whether to use the template file for new entries
-                    workspace = "neorg",             -- default workspace for journal
+                    workspace = "main",              -- default workspace for journal
                 } },
                 ["core.autocommands"] = {},
                 ["core.highlights"] = {},
