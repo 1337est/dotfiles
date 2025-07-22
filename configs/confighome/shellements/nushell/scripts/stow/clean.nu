@@ -1,17 +1,18 @@
 #!/usr/bin/env nu
 
 # Define the main stow directory
-let stow_dir = ($env.HOME | path join "Code/github/dotfiles/configs")
+let stow_dir = ($env.HOME | path join "Code/dotfiles/configs")
 let config_dir = ($env.HOME | path join ".config")
-let data_dir = ($env.HOME | path join ".local/share")
-mkdir $data_dir
+let local_data_dir = ($env.HOME | path join ".local/share")
+let local_bin_dir = ($env.HOME | path join ".local/bin")
+mkdir $config_dir $local_data_dir $local_bin_dir
 let gnupg_dir = ($env.HOME | path join ".gnupg")
 mkdir $gnupg_dir
 let systemduser_dir = ($env.HOME | path join ".config/systemd/user")
 mkdir $systemduser_dir
 
 # First thing is to remove any dereferenced symbolic links
-let deref_syms = ^find $config_dir $data_dir $gnupg_dir -xtype l | lines
+let deref_syms = ^find $config_dir $local_data_dir $gnupg_dir -xtype l | lines
 
 # comment
 for broken_link in $deref_syms { rm -f $broken_link }
@@ -29,9 +30,9 @@ for pkg in $config_pkgs { stow -d $"($stow_dir)/confighome" $pkg -t $config_dir 
 let data_pkgs = ls -s $"($stow_dir)/datahome" | where name != README.md | get name | sort
 
 # remove packages before stow if they exist
-for pkg in $data_pkgs { rm -rf $"($data_dir)/($pkg)" }
+for pkg in $data_pkgs { rm -rf $"($local_data_dir)/($pkg)" }
 # comment
-stow -d $stow_dir datahome -t $data_dir
+stow -d $stow_dir datahome -t $local_data_dir
 
 # === gnupghome ===
 let gnupg_pkgs = ls -s $"($stow_dir)/gnupghome" | where name != README.md | get name | sort
@@ -57,3 +58,7 @@ for service in $systemduser_pkgs {
         systemctl --user enable --now $service
     }
 }
+
+# === Binaries ===
+cp $"($stow_dir)/confighome/shellements/nushell/scripts/stow/clean.nu" $"($local_bin_dir)/stow-clean"
+cp $"($stow_dir)/confighome/shellements/nushell/scripts/git/yoyo.nu" $"($local_bin_dir)/git-yoyo"

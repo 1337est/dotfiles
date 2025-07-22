@@ -256,12 +256,12 @@ mkdir $"($env.MY_CODE_DIR)/algo/easy"
 mkdir $"($env.MY_CODE_DIR)/algo/medium"
 mkdir $"($env.MY_CODE_DIR)/algo/hard"
 mkdir $"($env.MY_CODE_DIR)/curious"
-mkdir $"($env.MY_CODE_DIR)/github"
+mkdir $"($env.MY_CODE_DIR)/gh"
 mkdir $"($env.MY_CODE_DIR)/learn/c"
 mkdir $"($env.MY_CODE_DIR)/learn/cpp"
 mkdir $"($env.MY_CODE_DIR)/learn/rust"
 mkdir $"($env.MY_CODE_DIR)/learn/zig"
-mkdir $"($env.MY_CODE_DIR)/pajamas"
+mkdir $"($env.MY_CODE_DIR)/pjs"
 
 # XDG/MY_USER/MY_APPS_DIRS -----------------------------------------------------
 
