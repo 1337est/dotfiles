@@ -2,10 +2,10 @@ return {
     "neovim/nvim-lspconfig",
     enabled = true,
     dependencies = {
-        { "williamboman/mason.nvim", opts = {} }, -- manages LSP, DAP, linters, formatters
-        "williamboman/mason-lspconfig.nvim",      -- integrates mason & lspconfig
-        { 'j-hui/fidget.nvim',       opts = {} },
-        "saghen/blink.cmp",                       -- adds more completions for LSP's
+        { "mason-org/mason.nvim", opts = {} }, -- manages LSP, DAP, linters, formatters
+        "mason-org/mason-lspconfig.nvim",      -- integrates mason & lspconfig
+        { 'j-hui/fidget.nvim',    opts = {} },
+        "saghen/blink.cmp",                    -- adds more completions for LSP's
     },
 
     config = function()
