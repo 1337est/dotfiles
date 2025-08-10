@@ -15,16 +15,16 @@ return {
                     workspaces = {
                         main = "~/Desktop/notes/",
                         school = "~/Desktop/school",
-                        work = "~/Desktop/work",
+                        journal = "~/Desktop/journal",
                     },
                     default_workspace = "main",
                 } },
                 ["core.journal"] = { config = {
-                    journal_folder = "journal",      -- name of the journal folder
+                    journal_folder = "nexus",        -- name of the journal folder
                     strategy = "nested",             -- "flat" = 2022-03-02.norg, nested = 2022/03/02.norg
                     template_name = "template.norg", -- name of the template file to use
                     use_template = true,             -- Whether to use the template file for new entries
-                    workspace = "main",              -- default workspace for journal
+                    workspace = "journal",           -- default workspace for journal
                 } },
                 ["core.autocommands"] = {},
                 ["core.highlights"] = {},
