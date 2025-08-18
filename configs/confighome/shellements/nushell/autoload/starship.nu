@@ -4,8 +4,8 @@
 # - script which can be used with `source starship.nu`
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
-    PROMPT_INDICATOR_VI_INSERT: "🚀 "
-    PROMPT_INDICATOR_VI_NORMAL: "👺 "
+    PROMPT_INDICATOR_VI_INSERT: "👺 "
+    PROMPT_INDICATOR_VI_NORMAL: "🚀 "
     PROMPT_MULTILINE_INDICATOR: "🐢 "
 
     # Does not play well with default character module.
