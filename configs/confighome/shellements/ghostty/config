@@ -2,7 +2,7 @@ font-family = JetBrainsMono Nerd Font
 
 font-size = 16
 
-theme = tokyonight
+theme = TokyoNight
 
 background-opacity = 0.95
 unfocused-split-opacity = 0.95
